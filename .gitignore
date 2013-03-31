@@ -9,5 +9,5 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 vendor/bundler_gems
-vim/.netrwhist
+.vim/.netrwhist
 zeus.json
