@@ -1,0 +1,17 @@
+[push]
+  default = upstream
+
+[color]
+  ui = true
+
+[user]
+  name = Micke Lisinge
+  email = lisinge@gmail.com
+
+[mergetool]
+  keepBackup = true
+
+[alias]
+  ci = commit
+  st = status -sb
+  de = push heroku master
