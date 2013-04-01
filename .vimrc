@@ -45,6 +45,11 @@ Bundle 'xenoterracide/html.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'reusee/vim.rust'
 
+Bundle 'Lokaltog/vim-powerline'
+let g:Powerline_symbols = 'fancy'
+Bundle 'stephenmckinney/vim-solarized-powerline'
+let g:Powerline_colorscheme='solarized16'
+
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
