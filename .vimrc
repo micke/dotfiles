@@ -48,8 +48,8 @@ Bundle 'reusee/vim.rust'
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#073642 ctermbg=0
 
 Bundle 'majutsushi/tagbar'
 let g:tagbar_compact = 1
