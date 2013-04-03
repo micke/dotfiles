@@ -75,6 +75,21 @@ set autoread " Reload files saved outside of VIM
 " Syntax highlightning
 syntax on
 
+" Bundler
+au BufNewFile,BufRead Gemfile set filetype=ruby
+
+" Guard
+au BufNewFile,BufRead Guardfile,.Guardfile set filetype=ruby
+
+" Vagrant
+au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
+
+" Rabl
+au BufNewFile,BufRead *.rabl set filetype=ruby
+
+" Jbuilder
+au BufNewFile,BufRead *.jbuilder set filetype=ruby
+
 " Theming
 set background=dark
 colorscheme solarized
