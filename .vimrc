@@ -117,10 +117,15 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-nnoremap <Leader>c :TComment<CR>
-nnoremap <Leader>t :TagbarToggle<CR>
-nnoremap <Leader>v :e $MYVIMRC<CR>
-nnoremap <Leader>s :so $MYVIMRC<CR>
+nnoremap <Leader>c :TComment<CR> " Toggle comment
+nnoremap <Leader>t :TagbarToggle<CR> " Toggle tagbar
+nnoremap <Leader>v :e $MYVIMRC<CR> " Edit .vimrc
+nnoremap <Leader>s :so $MYVIMRC<CR> " Source .vimrc
+
+" Insert blank line below cursor
+nnoremap <Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
+" Insert blank line above cursor
+nnoremap <Leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
