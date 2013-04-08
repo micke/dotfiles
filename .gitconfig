@@ -2,7 +2,9 @@
   default = upstream
 
 [color]
-  ui = true
+  branch = auto
+  diff = auto
+  status = auto
 
 [user]
   name = Micke Lisinge
@@ -10,6 +12,9 @@
 
 [mergetool]
   keepBackup = true
+
+[merge]
+  defaultToUpstream = true
 
 [alias]
   ci = commit
