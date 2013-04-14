@@ -122,8 +122,8 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nnoremap <Leader>c :TComment<CR> " Toggle comment
 nnoremap <Leader>t :TagbarToggle<CR> " Toggle tagbar
-nnoremap <Leader>v :e $MYVIMRC<CR> " Edit .vimrc
-nnoremap <Leader>s :so $MYVIMRC<CR> " Source .vimrc
+nnoremap <Leader>s :leftabove split<CR> " Split window vertically
+nnoremap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 
 " Insert blank line below cursor
 nnoremap <Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
