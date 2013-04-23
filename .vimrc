@@ -122,7 +122,7 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nnoremap <Leader>c :TComment<CR> " Toggle comment
-nnoremap <Leader>t :TagbarToggle<CR> " Toggle tagbar
+nnoremap <c-t> :TagbarToggle<CR> " Toggle tagbar
 nnoremap <Leader>s :leftabove split<CR> " Split window vertically
 nnoremap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 
