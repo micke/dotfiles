@@ -72,9 +72,13 @@ Bundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
+Bundle 'terryma/vim-expand-region'
+
 filetype plugin indent on
 
 set autoread " Reload files saved outside of VIM
+
+set clipboard=unnamed
 
 " Syntax highlightning
 syntax on
