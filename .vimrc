@@ -49,8 +49,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
-let g:gist_open_browser_after_post = 1
 let g:gist_detect_filetype = 1
+let g:gist_clip_command = 'pbcopy'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'jgdavey/vim-turbux'
 let g:turbux_command_rspec = 'rspec --drb'
