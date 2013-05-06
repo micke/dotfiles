@@ -40,13 +40,17 @@ Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
+Bundle 'terryma/vim-expand-region'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'reusee/vim.rust'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
+Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+let g:gist_open_browser_after_post = 1
+let g:gist_detect_filetype = 1
 Bundle 'jgdavey/tslime.vim'
 Bundle 'jgdavey/vim-turbux'
 let g:turbux_command_rspec = 'rspec --drb'
@@ -73,8 +77,6 @@ let g:delimitMate_expand_cr = 1
 Bundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-
-Bundle 'terryma/vim-expand-region'
 
 filetype plugin indent on
 
@@ -131,6 +133,13 @@ nnoremap <Leader>c :TComment<CR> " Toggle comment
 nnoremap <c-t> :TagbarToggle<CR> " Toggle tagbar
 nnoremap <Leader>s :leftabove split<CR> " Split window vertically
 nnoremap <Leader>v :rightbelow vsplit<CR> " Split window vertically
+
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
 
 " Insert blank line below cursor
 nnoremap <Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
