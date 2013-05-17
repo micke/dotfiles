@@ -48,12 +48,14 @@ Bundle 'reusee/vim.rust'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
 Bundle 'mattn/webapi-vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 Bundle 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'jgdavey/vim-turbux'
-let g:turbux_command_rspec = 'rspec --drb'
+let g:turbux_command_rspec = 'bundle exec rspec --drb'
 
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
@@ -133,6 +135,8 @@ nnoremap <Leader>c :TComment<CR> " Toggle comment
 nnoremap <c-t> :TagbarToggle<CR> " Toggle tagbar
 nnoremap <Leader>s :leftabove split<CR> " Split window vertically
 nnoremap <Leader>v :rightbelow vsplit<CR> " Split window vertically
+
+nmap <Leader>d <Plug>DashSearch
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
