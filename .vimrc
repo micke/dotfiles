@@ -40,22 +40,23 @@ Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
-Bundle 'terryma/vim-expand-region'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'reusee/vim.rust'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
 Bundle 'mattn/webapi-vim'
 Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'derekwyatt/vim-scala'
+
 Bundle 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
+
 Bundle 'jgdavey/tslime.vim'
 Bundle 'jgdavey/vim-turbux'
-let g:turbux_command_rspec = 'bundle exec rspec --drb'
+let g:turbux_command_prefix = 'bundle exec'
 
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
@@ -109,8 +110,12 @@ set background=dark
 colorscheme solarized
 
 " Use Ag
-if executable("ag")
-  set grepprg=ag\ --noheading\ --nogroup\ --nocolor
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 " Mouse support
@@ -135,8 +140,6 @@ nnoremap <Leader>c :TComment<CR> " Toggle comment
 nnoremap <c-t> :TagbarToggle<CR> " Toggle tagbar
 nnoremap <Leader>s :leftabove split<CR> " Split window vertically
 nnoremap <Leader>v :rightbelow vsplit<CR> " Split window vertically
-
-nmap <Leader>d <Plug>DashSearch
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
@@ -182,6 +185,12 @@ set list listchars=tab:»·,trail:·
 " Numbers
 set number
 set numberwidth=5
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Do not wrap and color column 80
 set nowrap
