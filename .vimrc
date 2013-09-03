@@ -24,6 +24,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
+Bundle "scrooloose/nerdtree"
 Bundle 'danro/rename.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -45,18 +46,24 @@ Bundle 'xenoterracide/html.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
-Bundle 'mattn/webapi-vim'
-Bundle 'rizzatti/funcoo.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'mileszs/ack.vim'
+
+Bundle "vim-ruby/vim-ruby"
+Bundle "ervandew/supertab"
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_classes_in_global = 1
 
 Bundle 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-Bundle 'jgdavey/tslime.vim'
-Bundle 'jgdavey/vim-turbux'
-let g:turbux_command_prefix = 'bundle exec'
+" Send test output to Tmux
+" Bundle 'jgdavey/tslime.vim'
+" Bundle 'jgdavey/vim-turbux'
+" let g:turbux_command_prefix = 'bundle exec'
 
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
@@ -85,6 +92,8 @@ filetype plugin indent on
 
 set autoread " Reload files saved outside of VIM
 
+set scrolloff=3
+
 set clipboard=unnamed
 
 " Syntax highlightning
@@ -99,18 +108,13 @@ au BufNewFile,BufRead Guardfile,.Guardfile set filetype=ruby
 " Vagrant
 au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
-" Rabl
-au BufNewFile,BufRead *.rabl set filetype=ruby
-
-" Jbuilder
-au BufNewFile,BufRead *.jbuilder set filetype=ruby
-
 " Theming
 set background=dark
 colorscheme solarized
 
 " Use Ag
 if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
@@ -136,10 +140,11 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-nnoremap <Leader>c :TComment<CR> " Toggle comment
-nnoremap <c-t> :TagbarToggle<CR> " Toggle tagbar
-nnoremap <Leader>s :leftabove split<CR> " Split window vertically
-nnoremap <Leader>v :rightbelow vsplit<CR> " Split window vertically
+nmap <Leader>n :NERDTreeToggle<CR>
+nmap <leader>t :TagbarToggle<CR> " Toggle tagbar
+nmap <Leader>h :leftabove split<CR> " Split window vertically
+nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
+nmap <leader>s :Ack
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
