@@ -21,6 +21,9 @@
   st = status -sb
   de = !git push $1 master
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ctags = !.git/hooks/ctags
 
 [github]
   user = lisinge
+[init]
+	templatedir = ~/.git_template
