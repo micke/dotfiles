@@ -50,6 +50,11 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mileszs/ack.vim'
 
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+
 Bundle "vim-ruby/vim-ruby"
 Bundle "ervandew/supertab"
 let g:rubycomplete_buffer_loading = 1
@@ -91,6 +96,7 @@ let g:syntastic_auto_loc_list=2
 filetype plugin indent on
 
 set autoread " Reload files saved outside of VIM
+set autowrite
 
 set scrolloff=3
 
@@ -140,11 +146,14 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
+nmap <Leader><Leader> <c-^>
 nmap <Leader>n :NERDTreeToggle<CR>
-nmap <leader>t :TagbarToggle<CR> " Toggle tagbar
+nmap <Leader>t :TagbarToggle<CR> " Toggle tagbar
 nmap <Leader>h :leftabove split<CR> " Split window vertically
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
-nmap <leader>s :Ack
+nmap <Leader>s :Ack
+nmap <Leader>d :tj <C-r><C-w><CR> " Jump to tag
+nmap <Leader>D :rightbelow vsplit<CR> :tj <C-r><C-w><CR> " Split window and jump to tag
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
