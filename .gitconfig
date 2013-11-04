@@ -7,11 +7,11 @@
   status = auto
 
 [user]
-  name = Micke Lisinge
-  email = lisinge@gmail.com
+	name = Micke Lisinge
+	email = lisinge@gmail.com
 
 [mergetool]
-  keepBackup = true
+	keepBackup = true
 
 [merge]
   defaultToUpstream = true
