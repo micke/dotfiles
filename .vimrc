@@ -100,7 +100,7 @@ set autowrite
 
 set scrolloff=3
 
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " Syntax highlightning
 syntax on
@@ -131,6 +131,7 @@ endif
 
 " Mouse support
 set mouse=a
+set ttymouse=xterm2
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -167,6 +168,11 @@ endif
 nnoremap <Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
 " Insert blank line above cursor
 nnoremap <Leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+" Go to end of line
+noremap L g_
+" Go to beginning of line
+noremap H ^
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
