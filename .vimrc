@@ -157,6 +157,13 @@ nmap <Leader>s :Ack
 nmap <Leader>d :tj <C-r><C-w><CR> " Jump to tag
 nmap <Leader>D :rightbelow vsplit<CR> :tj <C-r><C-w><CR> " Split window and jump to tag
 
+" Fugitive mappings
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gr :Gread<CR>
+
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
