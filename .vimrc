@@ -12,6 +12,7 @@ set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
+set autowrite
 
 set ttyfast
 set lazyredraw
@@ -95,15 +96,14 @@ let g:syntastic_auto_loc_list=2
 
 filetype plugin indent on
 
-set autoread " Reload files saved outside of VIM
-set autowrite
-
 set scrolloff=3
 
 set clipboard+=unnamed
 
 " Syntax highlightning
-syntax on
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -151,7 +151,7 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 nmap <Leader><Leader> <c-^>
 nmap <Leader>n :NERDTreeToggle<CR>
 nmap <Leader>t :TagbarToggle<CR> " Toggle tagbar
-nmap <Leader>h :leftabove split<CR> " Split window vertically
+nmap <Leader>h :rightbelow split<CR> " Split window horizontal
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 nmap <Leader>s :Ack
 nmap <Leader>d :tj <C-r><C-w><CR> " Jump to tag
@@ -186,20 +186,33 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
 augroup vimrcEx
-  au!
+  autocmd!
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
   autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+  " Cucumber navigation commands
+  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+  " Enable spellchecking for Markdown
+  autocmd FileType markdown setlocal spell
+
+  " Automatically wrap at 80 characters for Markdown
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
 " Softtabs, 2 spaces
@@ -209,6 +222,10 @@ set expandtab
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 " Numbers
 set number
