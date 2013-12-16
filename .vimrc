@@ -81,6 +81,9 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#073642 ctermbg=0
+autocmd VimEnter,Colorscheme * :hi CursorLine       guibg=#073642 ctermbg=0
+autocmd VimEnter,Colorscheme * :hi CursorLineNr     guibg=#073642 ctermbg=0
+set cursorline
 
 Bundle 'majutsushi/tagbar'
 let g:tagbar_compact = 1
@@ -226,7 +229,7 @@ set splitbelow
 set splitright
 
 " Numbers
-set number
+set relativenumber
 set numberwidth=5
 
 " Quicker window movement
