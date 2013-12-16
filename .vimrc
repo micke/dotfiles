@@ -83,7 +83,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#073642 ctermbg=0
 autocmd VimEnter,Colorscheme * :hi CursorLine       guibg=#073642 ctermbg=0
 autocmd VimEnter,Colorscheme * :hi CursorLineNr     guibg=#073642 ctermbg=0
-set cursorline
 
 Bundle 'majutsushi/tagbar'
 let g:tagbar_compact = 1
@@ -231,6 +230,9 @@ set splitright
 " Numbers
 set relativenumber
 set numberwidth=5
+
+" Display current line in a different color
+set cursorline
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
