@@ -25,7 +25,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
-Bundle "scrooloose/nerdtree"
 Bundle 'danro/rename.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -149,7 +148,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nmap <Leader><Leader> <c-^>
-nmap <Leader>n :NERDTreeToggle<CR>
 nmap <Leader>t :TagbarToggle<CR> " Toggle tagbar
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
