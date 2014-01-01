@@ -49,6 +49,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-vinegar'
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
