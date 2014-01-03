@@ -50,6 +50,10 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-dispatch'
+
+Bundle 'thoughtbot/vim-rspec'
+let g:rspec_command = "Dispatch rspec {spec}"
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -65,11 +69,6 @@ let g:rubycomplete_classes_in_global = 1
 Bundle 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
-
-" Send test output to Tmux
-" Bundle 'jgdavey/tslime.vim'
-" Bundle 'jgdavey/vim-turbux'
-" let g:turbux_command_prefix = 'bundle exec'
 
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
@@ -155,6 +154,10 @@ nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 nmap <Leader>s :Ack
 nmap <Leader>d :tj <C-r><C-w><CR> " Jump to tag
 nmap <Leader>D :rightbelow vsplit<CR> :tj <C-r><C-w><CR> " Split window and jump to tag
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Fugitive mappings
 nnoremap <Leader>gs :Gstatus<CR>
@@ -170,10 +173,8 @@ if exists(":Tabularize")
   vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
-" Insert blank line below cursor
-nnoremap <Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
-" Insert blank line above cursor
-nnoremap <Leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
+nnoremap <Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR> " Insert blank line below cursor
+nnoremap <Leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR> " Insert blank line above cursor
 
 " Go to end of line
 noremap L g_
