@@ -48,7 +48,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-dispatch'
 
@@ -119,8 +119,6 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 set background=dark
 colorscheme solarized
 
-" Use Ag
-let g:ackprg = 'ag --nogroup --nocolor --column'
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
 
@@ -151,7 +149,6 @@ nmap <Leader><Leader> <c-^>
 nmap <Leader>t :TagbarToggle<CR> " Toggle tagbar
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
-nmap <Leader>s :Ack
 nmap <Leader>d :tj <C-r><C-w><CR> " Jump to tag
 nmap <Leader>D :rightbelow vsplit<CR> :tj <C-r><C-w><CR> " Split window and jump to tag
 map <Leader>t :call RunCurrentSpecFile()<CR>
