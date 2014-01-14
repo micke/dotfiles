@@ -43,7 +43,7 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'w0ng/vim-hybrid'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'godlygeek/tabular'
 Bundle 'elixir-lang/vim-elixir'
@@ -72,16 +72,14 @@ let g:gist_clip_command = 'pbcopy'
 
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
-Bundle 'stephenmckinney/vim-solarized-powerline'
-let g:Powerline_colorscheme='solarized16'
 
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#073642 ctermbg=0
-autocmd VimEnter,Colorscheme * :hi CursorLine       guibg=#073642 ctermbg=0
-autocmd VimEnter,Colorscheme * :hi CursorLineNr     guibg=#073642 ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
+autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
+autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
 
 Bundle 'majutsushi/tagbar'
 let g:tagbar_compact = 1
@@ -117,7 +115,8 @@ au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
 " Theming
 set background=dark
-colorscheme solarized
+let g:hybrid_use_iTerm_colors = 1
+colorscheme hybrid
 
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
