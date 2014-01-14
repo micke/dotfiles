@@ -97,6 +97,8 @@ filetype plugin indent on
 
 set scrolloff=3
 
+set cryptmethod=blowfish
+
 set clipboard+=unnamed
 
 " Syntax highlightning
