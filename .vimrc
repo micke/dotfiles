@@ -50,6 +50,7 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-vinegar'
+Bundle 'jamessan/vim-gnupg'
 Bundle 'tpope/vim-dispatch'
 
 Bundle 'thoughtbot/vim-rspec'
@@ -98,6 +99,8 @@ filetype plugin indent on
 set scrolloff=3
 
 set cryptmethod=blowfish
+
+set noesckeys
 
 set clipboard+=unnamed
 
