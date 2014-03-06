@@ -52,6 +52,7 @@ Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-vinegar'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'tpope/vim-dispatch'
+Bundle 'guns/xterm-color-table.vim'
 
 Bundle 'thoughtbot/vim-rspec'
 let g:rspec_command = "Dispatch rspec {spec}"
