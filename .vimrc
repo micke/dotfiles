@@ -72,9 +72,6 @@ Bundle 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
-
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
@@ -82,6 +79,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
 autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
+autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
+autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
 Bundle 'majutsushi/tagbar'
 let g:tagbar_compact = 1
