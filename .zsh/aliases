@@ -1,0 +1,8 @@
+alias g=git
+alias h=heroku
+alias heroku="nocorrect heroku"
+alias serve="ruby -run -e httpd . -p 5000"
+alias todos="glo | ag TODO: --nocolor"
+alias v=vim
+alias x=exit
+alias java6="export JAVA_HOME=`/usr/libexec/java_home -v 1.6`"

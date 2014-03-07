@@ -1,0 +1,12 @@
+# Enable completion
+autoload -U compinit
+compinit
+
+# Show currently selected completion in menu
+zstyle ':completion:*:*:*:*:*' menu select
+
+# Show colors in completion list
+zstyle ':completion:*' list-colors ''
+
+# case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
