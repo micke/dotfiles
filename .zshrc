@@ -23,7 +23,3 @@ setopt auto_cd
 
 # Avoid issues in tmux
 export LC_CTYPE="UTF-8"
-
-# Disable flow control commands (keeps C-s from freezing everything)
-stty stop undef
-stty start undef
