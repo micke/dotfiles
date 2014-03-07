@@ -1,1 +1,2 @@
 todo() { git commit --allow-empty -m "TODO: $*" }
+clone() { git clone git@github.com:$1.git ~/code/$1 && cd ~/code/$1 }
