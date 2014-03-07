@@ -18,7 +18,7 @@ export PATH="./bin:$PATH"
 export EDITOR=/usr/local/bin/vim
 
 # cd
-export CDPATH="$CDPATH:$HOME:$HOME/Projects"
+export CDPATH="$CDPATH:$HOME:$HOME/code"
 setopt auto_cd
 
 # Avoid issues in tmux
