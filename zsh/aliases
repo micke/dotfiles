@@ -5,4 +5,4 @@ alias serve="ruby -run -e httpd . -p 5000"
 alias todos="glo | ag TODO: --nocolor"
 alias v=vim
 alias x=exit
-alias java6="export JAVA_HOME=`/usr/libexec/java_home -v 1.6`"
+alias java6="JAVA_HOME=`/usr/libexec/java_home -v 1.6` java"
