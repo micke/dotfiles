@@ -1,3 +1,4 @@
+alias git=hub
 alias g=git
 alias h=heroku
 alias heroku="nocorrect heroku"
