@@ -55,6 +55,7 @@ Bundle 'tpope/vim-vinegar'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'tpope/vim-dispatch'
 Bundle 'guns/xterm-color-table.vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 Bundle 'thoughtbot/vim-rspec'
 let g:rspec_command = "Dispatch rspec {spec}"
@@ -236,12 +237,6 @@ set numberwidth=5
 
 " Display current line in a different color
 set cursorline
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 " Do not wrap and color column 80
 set nowrap
