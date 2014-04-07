@@ -164,9 +164,14 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Fugitive mappings
+nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gbl :Gblame<CR>
+nnoremap <Leader>gbr :Gbrowse<CR>
+nnoremap <Leader>gpl :Git pull<CR>
+nnoremap <Leader>gps :Git push<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gr :Gread<CR>
 
