@@ -1,10 +1,10 @@
 install ab
-install apr-util
 install coreutils
 install ctags
 install dnsmasq
 install elixir
 install erlang
+install ettercap
 install ffmpeg
 install geos
 install gifsicle
@@ -19,11 +19,12 @@ install ios-sim
 install libspotify
 install libyaml
 install lua
-install macvim
+install macvim --override-system-vim
 install memcached
 install mitmproxy
 install mongodb
 install node
+install openssh --with-keychain-support
 install ossp-uuid
 install play
 install py2cairo
