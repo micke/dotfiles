@@ -101,6 +101,15 @@ filetype plugin indent on
 
 set scrolloff=3
 
+set statusline=%f         " Path to the file
+set statusline+=%=        " Switch to the right side
+set statusline+=%l        " Current line
+set statusline+=:%c       " Column number
+set statusline+=/         " Separator
+set statusline+=%L        " Total lines
+set statusline+=\         " Space
+set statusline+=[%{fugitive#head(7)}]
+
 set cryptmethod=blowfish
 
 set noesckeys
