@@ -56,6 +56,7 @@ Bundle 'jamessan/vim-gnupg'
 Bundle 'tpope/vim-dispatch'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'Raimondi/delimitMate'
 
 Bundle 'thoughtbot/vim-rspec'
 let g:rspec_command = "Dispatch rspec {spec}"
@@ -88,10 +89,6 @@ autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 Bundle 'majutsushi/tagbar'
 let g:tagbar_compact = 1
 let g:tagbar_autoshowtag = 1
-
-Bundle 'Raimondi/delimitMate'
-let g:delimitMate_expand_space = 1
-let g:delimitMate_expand_cr = 1
 
 Bundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
