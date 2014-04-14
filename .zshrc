@@ -10,7 +10,7 @@ HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
 # PATH
-export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="./bin:$PATH"
 
