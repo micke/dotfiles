@@ -1,5 +1,6 @@
 install ab
 install coreutils
+install cscope
 install ctags
 install dnsmasq
 install elixir
@@ -19,13 +20,13 @@ install ios-sim
 install libspotify
 install libyaml
 install lua
-install macvim --override-system-vim
 install memcached
 install mitmproxy
 install mongodb
 install node
 install openssh --with-keychain-support
 install ossp-uuid
+install phantomjs
 install play
 install py2cairo
 install pygobject
@@ -41,7 +42,9 @@ install the_silver_searcher
 install tmate
 install tmux
 install tree
+install vim --override-system-vi
 install watch
 install wget
 install wrk
 install xctool
+install zsh
