@@ -163,8 +163,6 @@ nmap <Leader>t :TagbarToggle<CR> " Toggle tagbar
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 nmap <Leader>av :AV<CR>
-nmap <Leader>d :tj <C-r><C-w><CR> " Jump to tag
-nmap <Leader>D :rightbelow vsplit<CR> :tj <C-r><C-w><CR> " Split window and jump to tag
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
