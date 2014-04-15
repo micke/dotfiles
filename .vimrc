@@ -48,13 +48,11 @@ Bundle "xenoterracide/html.vim"
 Bundle "w0ng/vim-hybrid"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "godlygeek/tabular"
-Bundle "elixir-lang/vim-elixir"
 Bundle "derekwyatt/vim-scala"
 Bundle "rking/ag.vim"
 Bundle "tpope/vim-vinegar"
 Bundle "jamessan/vim-gnupg"
 Bundle "tpope/vim-dispatch"
-Bundle "guns/xterm-color-table.vim"
 Bundle "christoomey/vim-tmux-navigator"
 
 Bundle 'Raimondi/delimitMate'
@@ -152,7 +150,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nmap <Leader><Leader> <c-^>
-nmap <Leader>t :TagbarToggle<CR> " Toggle tagbar
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 nmap <Leader>av :AV<CR>
