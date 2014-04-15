@@ -65,14 +65,8 @@ let g:rspec_command = "Dispatch rspec {spec}"
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
 
 Bundle "vim-ruby/vim-ruby"
-Bundle "ervandew/supertab"
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_rails = 1
-let g:rubycomplete_classes_in_global = 1
 
 Bundle 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
@@ -87,10 +81,6 @@ autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
 autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
 autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
 autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
-
-Bundle 'majutsushi/tagbar'
-let g:tagbar_compact = 1
-let g:tagbar_autoshowtag = 1
 
 Bundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
