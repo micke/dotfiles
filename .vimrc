@@ -55,6 +55,7 @@ Bundle "rking/ag.vim"
 Bundle "jamessan/vim-gnupg"
 Bundle "tpope/vim-dispatch"
 Bundle "christoomey/vim-tmux-navigator"
+Bundle "ervandew/supertab"
 
 Bundle 'Raimondi/delimitMate'
 let g:delimitMate_expand_space = 1
