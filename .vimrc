@@ -56,7 +56,9 @@ Bundle 'jamessan/vim-gnupg'
 Bundle 'tpope/vim-dispatch'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'christoomey/vim-tmux-navigator'
+
 Bundle 'Raimondi/delimitMate'
+let g:delimitMate_expand_space = 1
 
 Bundle 'thoughtbot/vim-rspec'
 let g:rspec_command = "Dispatch rspec {spec}"
