@@ -59,6 +59,7 @@ Bundle "christoomey/vim-tmux-navigator"
 
 Bundle 'Raimondi/delimitMate'
 let g:delimitMate_expand_space = 1
+set backspace=2
 
 Bundle "thoughtbot/vim-rspec"
 let g:rspec_command = "Dispatch rspec {spec}"
