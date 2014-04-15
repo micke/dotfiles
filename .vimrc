@@ -22,45 +22,45 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Bundle "gmarik/vundle"
 
 " Define bundles via Github repos
-Bundle 'danro/rename.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'nanki/treetop.vim'
-Bundle 'timcharper/textile.vim'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rake'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'vim-scripts/ctags.vim'
-Bundle 'vim-scripts/greplace.vim'
-Bundle 'vim-scripts/tComment'
-Bundle 'xenoterracide/html.vim'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'godlygeek/tabular'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'rking/ag.vim'
-Bundle 'tpope/vim-vinegar'
-Bundle 'jamessan/vim-gnupg'
-Bundle 'tpope/vim-dispatch'
-Bundle 'guns/xterm-color-table.vim'
-Bundle 'christoomey/vim-tmux-navigator'
+Bundle "danro/rename.vim"
+Bundle "kchmck/vim-coffee-script"
+Bundle "kien/ctrlp.vim"
+Bundle "nanki/treetop.vim"
+Bundle "timcharper/textile.vim"
+Bundle "tpope/vim-cucumber"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-haml"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-bundler"
+Bundle "tpope/vim-rake"
+Bundle "vim-scripts/matchit.zip"
+Bundle "vim-scripts/ctags.vim"
+Bundle "vim-scripts/greplace.vim"
+Bundle "vim-scripts/tComment"
+Bundle "xenoterracide/html.vim"
+Bundle "w0ng/vim-hybrid"
+Bundle "terryma/vim-multiple-cursors"
+Bundle "godlygeek/tabular"
+Bundle "elixir-lang/vim-elixir"
+Bundle "derekwyatt/vim-scala"
+Bundle "rking/ag.vim"
+Bundle "tpope/vim-vinegar"
+Bundle "jamessan/vim-gnupg"
+Bundle "tpope/vim-dispatch"
+Bundle "guns/xterm-color-table.vim"
+Bundle "christoomey/vim-tmux-navigator"
 
 Bundle 'Raimondi/delimitMate'
 let g:delimitMate_expand_space = 1
 
-Bundle 'thoughtbot/vim-rspec'
+Bundle "thoughtbot/vim-rspec"
 let g:rspec_command = "Dispatch rspec {spec}"
 
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -68,11 +68,11 @@ Bundle "tomtom/tlib_vim"
 
 Bundle "vim-ruby/vim-ruby"
 
-Bundle 'mattn/gist-vim'
+Bundle "mattn/gist-vim"
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-Bundle 'nathanaelkane/vim-indent-guides'
+Bundle "nathanaelkane/vim-indent-guides"
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
@@ -82,7 +82,7 @@ autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
 autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
 autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
-Bundle 'scrooloose/syntastic'
+Bundle "scrooloose/syntastic"
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
