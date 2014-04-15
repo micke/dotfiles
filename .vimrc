@@ -179,9 +179,6 @@ if exists(":Tabularize")
   vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
-nnoremap <Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR> " Insert blank line below cursor
-nnoremap <Leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR> " Insert blank line above cursor
-
 " Go to end of line
 noremap L g_
 " Go to beginning of line
