@@ -1,6 +1,9 @@
 # Enable completion
-autoload -U compinit
+autoload -Uz compinit
 compinit
+
+# Fix for hub messing with git completion
+setopt complete_aliases
 
 # Show currently selected completion in menu
 zstyle ':completion:*:*:*:*:*' menu select
