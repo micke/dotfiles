@@ -32,7 +32,6 @@ Bundle "nanki/treetop.vim"
 Bundle "timcharper/textile.vim"
 Bundle "tpope/vim-cucumber"
 Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-haml"
 Bundle "tpope/vim-markdown"
@@ -56,6 +55,9 @@ Bundle "jamessan/vim-gnupg"
 Bundle "tpope/vim-dispatch"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "ervandew/supertab"
+
+Bundle "tpope/vim-fugitive"
+autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
 Bundle 'Raimondi/delimitMate'
 let g:delimitMate_expand_space = 1
