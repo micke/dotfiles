@@ -93,7 +93,7 @@ filetype plugin indent on
 
 set scrolloff=3
 
-set statusline=%f         " Path to the file
+set statusline=%10f       " Path to the file
 set statusline+=%=        " Switch to the right side
 set statusline+=%l        " Current line
 set statusline+=:%c       " Column number
