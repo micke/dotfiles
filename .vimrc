@@ -61,7 +61,6 @@ autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
 Bundle 'Raimondi/delimitMate'
 let g:delimitMate_expand_space = 1
-set backspace=2
 
 Bundle "thoughtbot/vim-rspec"
 let g:rspec_command = "Dispatch rspec {spec}"
@@ -103,10 +102,9 @@ set statusline+=\         " Space
 set statusline+=[%{fugitive#head(7)}]
 
 set cryptmethod=blowfish
-
 set noesckeys
-
 set clipboard+=unnamed
+set backspace=indent,eol,start
 
 " Syntax highlightning
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -115,12 +113,6 @@ endif
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
-
-" Guard
-au BufNewFile,BufRead Guardfile,.Guardfile set filetype=ruby
-
-" Vagrant
-au BufNewFile,BufRead [vV]agrantfile set filetype=ruby
 
 " Theming
 set background=dark
