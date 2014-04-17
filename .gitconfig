@@ -7,11 +7,8 @@
   status = auto
 
 [user]
-	name = Micke Lisinge
-	email = lisinge@gmail.com
-
-[mergetool]
-	keepBackup = true
+  name = Micke Lisinge
+  email = lisinge@gmail.com
 
 [merge]
   defaultToUpstream = true
@@ -19,13 +16,14 @@
 [alias]
   ci = commit
   st = status -sb
-  de = !git push $1 master
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ctags = !.git/hooks/ctags
+  ctags = !.git/hooks/ctags
 
 [github]
   user = lisinge
+
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
+
 [pull]
-	rebase = true
+  rebase = true
