@@ -229,3 +229,8 @@ set cursorline
 " Do not wrap and color column 80
 set nowrap
 set colorcolumn=80
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
