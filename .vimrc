@@ -42,6 +42,8 @@ Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-rake"
 Bundle "tpope/vim-vinegar"
 Bundle "tpope/vim-commentary"
+Bundle "tpope/vim-dispatch"
+Bundle "tpope/vim-rhubarb"
 Bundle "vim-scripts/matchit.zip"
 Bundle "vim-scripts/ctags.vim"
 Bundle "vim-scripts/greplace.vim"
@@ -52,9 +54,11 @@ Bundle "godlygeek/tabular"
 Bundle "derekwyatt/vim-scala"
 Bundle "rking/ag.vim"
 Bundle "jamessan/vim-gnupg"
-Bundle "tpope/vim-dispatch"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "ervandew/supertab"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "vim-ruby/vim-ruby"
 
 Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
@@ -65,10 +69,6 @@ let g:delimitMate_expand_space = 1
 Bundle "thoughtbot/vim-rspec"
 let g:rspec_command = "Dispatch rspec {spec}"
 
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-
-Bundle "vim-ruby/vim-ruby"
 
 Bundle "mattn/gist-vim"
 let g:gist_detect_filetype = 1
@@ -172,11 +172,6 @@ if exists(":Tabularize")
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
-
-" Go to end of line
-noremap L g_
-" Go to beginning of line
-noremap H ^
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
