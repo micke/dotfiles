@@ -3,6 +3,7 @@ source $HOME/.zsh/keybindings
 source $HOME/.zsh/functions
 source $HOME/.zsh/aliases
 source $HOME/.zsh_prompt
+source $HOME/.secrets
 
 # Save a ton of history
 HISTSIZE=20000
