@@ -1,5 +1,9 @@
 alias git=hub
 alias g=git
+alias gp="git push"
+alias gl="git pull"
+alias grbi="git rebase -i"
+
 alias h=heroku
 alias heroku="nocorrect heroku"
 alias serve="ruby -run -e httpd . -p 5000"
