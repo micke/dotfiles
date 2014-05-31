@@ -11,3 +11,4 @@ alias todos="glo | ag TODO: --nocolor"
 alias v=vim
 alias x=exit
 alias java6="JAVA_HOME=`/usr/libexec/java_home -v 1.6` java"
+alias weechat='mosh -p 60000 wat.lisinge.sexy -- screen -D -RR weechat weechat-curses'
