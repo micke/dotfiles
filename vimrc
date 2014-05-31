@@ -18,11 +18,11 @@ set ttyfast
 set lazyredraw
 
 " Declare bundles are handled via Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " Let Vundle manage Vundle
-Bundle "gmarik/vundle"
+Bundle "gmarik/Vundle.vim"
 
 " Define bundles via Github repos
 Bundle "danro/rename.vim"
@@ -87,6 +87,7 @@ Bundle "scrooloose/syntastic"
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
+call vundle#end()
 filetype plugin indent on
 
 set scrolloff=3
