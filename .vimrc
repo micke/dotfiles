@@ -106,9 +106,7 @@ set clipboard+=unnamed
 set backspace=indent,eol,start
 
 " Syntax highlightning
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
+syntax on
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -160,23 +158,22 @@ nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gbl :Gblame<CR>
 nnoremap <Leader>gbr :Gbrowse<CR>
-nnoremap <Leader>gpl :Git pull<CR>
-nnoremap <Leader>gps :Git push<CR>
+nnoremap <Leader>gpl :Dispatch git pull<CR>
+nnoremap <Leader>gps :Dispatch git push<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gr :Gread<CR>
 
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
 augroup vimrcEx
   autocmd!
 
