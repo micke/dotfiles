@@ -1,6 +1,6 @@
 install ab
+install boost
 install coreutils
-install cscope
 install ctags
 install dnsmasq
 install elixir
@@ -8,30 +8,32 @@ install erlang
 install ettercap
 install ffmpeg
 install geos
+install ghostscript
 install gifsicle
+install glew
+install glm
 install gnupg
 install go
-install gource
 install graphviz
 install gtk+
+install haskell-platform
 install hub
 install imagemagick
 install ios-sim
-install libspotify
 install libyaml
 install lua
+install macvim
 install memcached
 install mitmproxy
+install mobile-shell
 install mongodb
 install node
 install openssh --with-keychain-support
 install ossp-uuid
-install phantomjs
 install play
-install py2cairo
-install pygobject
 install python
 install rbenv
+install rcm
 install reattach-to-user-namespace
 install redis
 install ruby-build
@@ -44,6 +46,7 @@ install tmux
 install tree
 install vim --override-system-vi
 install watch
+install webp
 install wget
 install wrk
 install xctool
