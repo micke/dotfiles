@@ -76,12 +76,6 @@ let g:gist_clip_command = 'pbcopy'
 Bundle "nathanaelkane/vim-indent-guides"
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
-autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
-autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
-autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
-autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
 Bundle "scrooloose/syntastic"
 let g:syntastic_enable_signs=1
@@ -105,6 +99,12 @@ set cryptmethod=blowfish
 set noesckeys
 set clipboard+=unnamed
 set backspace=indent,eol,start
+
+" Colors
+autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
+autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
+autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
+autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
 " Syntax highlightning
 syntax on

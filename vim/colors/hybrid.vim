@@ -73,6 +73,11 @@ endif
 
 let colors_name = "hybrid"
 
+
+" vim-indent-guides
+hi IndentGuidesOdd  ctermbg=8
+hi IndentGuidesEven ctermbg=0
+
 "}}}
 " GUI And Cterm Palettes:"{{{
 " ----------------------------------------------------------------------------
