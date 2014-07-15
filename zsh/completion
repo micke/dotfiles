@@ -1,9 +1,9 @@
+# Append autocomplete scripts installed by brew
+fpath=('/usr/local/share/zsh/site-functions' $fpath)
+
 # Enable completion
 autoload -Uz compinit
 compinit
-
-# Fix for hub messing with git completion
-setopt complete_aliases
 
 # Show currently selected completion in menu
 zstyle ':completion:*:*:*:*:*' menu select
