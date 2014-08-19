@@ -1,0 +1,36 @@
+#!/bin/sh
+
+source=$1
+
+if [ -z "$source" ]; then
+    echo 'Usage: upload SOURCE' >&2
+    exit 64
+fi
+
+if [ ! -f "$source" ]; then
+    echo "Could not read file: $source" >&2
+    exit 66
+fi
+
+bucket=$S3_UPLOAD_BUCKET_NAME
+key=$S3_UPLOAD_KEY
+secret=$S3_UPLOAD_SECRET
+extension="${source##*.}"
+destination="$(gsha256sum "$source" | awk '{ print $1 }').$extension"
+content_type="$(file --mime-type -b "$source")"
+now=`gdate -R`
+string_to_sign="PUT\n\n$content_type\n$now\n/$bucket/$destination"
+signature=`gecho -en $string_to_sign | openssl sha1 -hmac $secret -binary | base64`
+status=$(curl --insecure -s -o /dev/null -w '%{http_code}' -X PUT -T "$source" \
+  -H "Host: $bucket.s3.amazonaws.com" \
+  -H "Date: $now" \
+  -H "Content-Type: $content_type" \
+  -H "Authorization: AWS $key:$signature" \
+  https://$bucket.s3-eu-west-1.amazonaws.com/$destination)
+
+if [ $status -eq 200 ]; then
+  echo "http://mick.es/$destination"
+else
+  echo "Error while uploading file: $source" >&2
+  exit 74
+fi
