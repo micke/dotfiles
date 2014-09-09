@@ -50,7 +50,6 @@ Bundle "vim-scripts/greplace.vim"
 Bundle "xenoterracide/html.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "godlygeek/tabular"
-Bundle "derekwyatt/vim-scala"
 Bundle "rking/ag.vim"
 Bundle "jamessan/vim-gnupg"
 Bundle "christoomey/vim-tmux-navigator"
@@ -58,6 +57,9 @@ Bundle "ervandew/supertab"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "vim-ruby/vim-ruby"
+
+Bundle "derekwyatt/vim-scala"
+au BufNewFile,BufRead *.scala setlocal virtualedit=all " https://github.com/derekwyatt/vim-scala/issues/29
 
 Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
