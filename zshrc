@@ -28,3 +28,6 @@ setopt auto_cd
 
 # Avoid issues in tmux
 export LC_CTYPE="UTF-8"
+
+# Fix java issue on yosemite
+export JAVA_HOME=$(/usr/libexec/java_home)

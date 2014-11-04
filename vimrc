@@ -58,9 +58,7 @@ Bundle "ervandew/supertab"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "vim-ruby/vim-ruby"
-
 Bundle "derekwyatt/vim-scala"
-au BufNewFile,BufRead *.scala setlocal virtualedit=all " https://github.com/derekwyatt/vim-scala/issues/29
 
 Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
@@ -230,6 +228,7 @@ set cursorline
 " Do not wrap and color column 80
 set nowrap
 set colorcolumn=80
+autocmd FileType scala setlocal colorcolumn=120
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
