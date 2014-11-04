@@ -161,8 +161,8 @@ nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gbl :Gblame<CR>
 nnoremap <Leader>gbr :Gbrowse<CR>
-nnoremap <Leader>gpl :Dispatch git pull<CR>
-nnoremap <Leader>gps :Dispatch git push<CR>
+nnoremap <Leader>gpl :Gpull<CR>
+nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gr :Gread<CR>
 
