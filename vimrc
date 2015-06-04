@@ -29,6 +29,7 @@ Bundle "danro/rename.vim"
 Bundle "kchmck/vim-coffee-script"
 Bundle "kien/ctrlp.vim"
 Bundle "nanki/treetop.vim"
+Bundle "SirVer/ultisnips"
 Bundle "timcharper/textile.vim"
 Bundle "tpope/vim-cucumber"
 Bundle "tpope/vim-endwise"
@@ -45,6 +46,7 @@ Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-dispatch"
 Bundle "tpope/vim-rhubarb"
 Bundle "tpope/vim-projectionist"
+Bundle "tpope/vim-abolish"
 Bundle "vim-scripts/matchit.zip"
 Bundle "vim-scripts/ctags.vim"
 Bundle "vim-scripts/greplace.vim"
@@ -82,6 +84,8 @@ Bundle "scrooloose/syntastic"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
+let g:syntastic_mode_map = { "mode": "active",
+                           \ "passive_filetypes": ["scala"] }
 
 call vundle#end()
 filetype plugin indent on
@@ -132,7 +136,14 @@ set ttymouse=xterm2
 
 " Tab completion
 " will insert tab at beginning of line,
-" will use completion if not at beginning
+" will expand snippet if not at beginning
+" will use completion if snippet not available
+let g:ulti_expand_or_jump_res = 0
+function! Ulti_ExpandOrJump_and_getRes()
+  call UltiSnips#ExpandSnippetOrJump()
+  return g:ulti_expand_or_jump_res
+endfunction
+
 set wildmode=list:longest,list:full
 set complete=.,w,t
 function! InsertTabWrapper()
@@ -143,7 +154,7 @@ function! InsertTabWrapper()
     return "\<c-p>"
   endif
 endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <Tab> <c-r>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":InsertTabWrapper()<cr>
 
 nmap <Leader><Leader> <c-^>
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
@@ -228,7 +239,7 @@ set cursorline
 " Do not wrap and color column 80
 set nowrap
 set colorcolumn=80
-autocmd FileType scala setlocal colorcolumn=120
+autocmd FileType scala setlocal colorcolumn=100
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
