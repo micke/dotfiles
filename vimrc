@@ -29,7 +29,6 @@ Bundle "danro/rename.vim"
 Bundle "kchmck/vim-coffee-script"
 Bundle "kien/ctrlp.vim"
 Bundle "nanki/treetop.vim"
-Bundle "SirVer/ultisnips"
 Bundle "timcharper/textile.vim"
 Bundle "tpope/vim-cucumber"
 Bundle "tpope/vim-endwise"
@@ -61,6 +60,8 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "vim-ruby/vim-ruby"
 Bundle "derekwyatt/vim-scala"
+Bundle "SirVer/ultisnips"
+let g:UltiSnipsUsePythonVersion = 2
 
 Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
