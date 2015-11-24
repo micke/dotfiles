@@ -133,6 +133,5 @@ brew 'wrk'
 brew 'xctool', args: ['HEAD']
 brew 'zsh'
 brew 'homebrew/dupes/openssh'
-brew 'homebrew/versions/erlang-r16'
 brew 'nviennot/tmate/tmate'
 brew 'thoughtbot/formulae/rcm'
