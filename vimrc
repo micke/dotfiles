@@ -14,6 +14,10 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite
 
+" Fix for slow ruby syntax
+" https://github.com/vim-ruby/vim-ruby/issues/243
+" https://github.com/vim/vim/issues/282
+set regexpengine=1
 set ttyfast
 set lazyredraw
 
@@ -27,7 +31,7 @@ Bundle "gmarik/Vundle.vim"
 " Define bundles via Github repos
 Bundle "danro/rename.vim"
 Bundle "kchmck/vim-coffee-script"
-Bundle "kien/ctrlp.vim"
+Bundle "ctrlpvim/ctrlp.vim"
 Bundle "nanki/treetop.vim"
 Bundle "timcharper/textile.vim"
 Bundle "tpope/vim-cucumber"
@@ -36,9 +40,9 @@ Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-haml"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-rails"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-bundler"
+Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "tpope/vim-vinegar"
 Bundle "tpope/vim-commentary"
@@ -59,19 +63,23 @@ Bundle "ervandew/supertab"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "vim-ruby/vim-ruby"
+Bundle "kana/vim-textobj-user"
+Bundle "airblade/vim-gitgutter"
+Bundle "nelstrom/vim-textobj-rubyblock"
+
 Bundle "derekwyatt/vim-scala"
+let g:scala_sort_across_groups=1
+let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
+Bundle "jiangmiao/auto-pairs"
+let g:AutoPairsShortcutFastWrap = "<C-s>"
 Bundle "SirVer/ultisnips"
 let g:UltiSnipsUsePythonVersion = 2
 
 Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
-Bundle 'Raimondi/delimitMate'
-let g:delimitMate_expand_space = 1
-
 Bundle "thoughtbot/vim-rspec"
 let g:rspec_command = "Dispatch rspec {spec}"
-
 
 Bundle "mattn/gist-vim"
 let g:gist_detect_filetype = 1
@@ -87,6 +95,31 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_mode_map = { "mode": "active",
                            \ "passive_filetypes": ["scala"] }
+
+Bundle "luochen1990/rainbow"
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+  \ 'guifgs': ['white', 'red', 'darkgreen', 'darkblue', 'brown', 'darkred', 'cyan'],
+  \ 'ctermfgs': ['white', 'red', 'darkgreen', 'darkblue', 'brown', 'darkred', 'cyan'],
+  \ 'operators': '_,_',
+  \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+  \ 'separately': {
+  \   '*': {},
+  \   'tex': {
+  \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+  \   },
+  \   'lisp': {
+  \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+  \   },
+  \   'vim': {
+  \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+  \   },
+  \   'html': {
+  \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+  \   },
+  \   'css': 0,
+  \ }
+  \}
 
 call vundle#end()
 filetype plugin indent on
@@ -165,6 +198,9 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>d :Dispatch<CR>
+
+nnoremap <Leader>si :SortScalaImports<CR>
 
 " Fugitive mappings
 nnoremap <Leader>gl :Glog<CR>
@@ -203,13 +239,10 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 
-  " Cucumber navigation commands
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile conf/messages.* set filetype=jproperties
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
@@ -232,7 +265,7 @@ set splitright
 
 " Numbers
 set relativenumber
-set numberwidth=5
+set number
 
 " Display current line in a different color
 set cursorline

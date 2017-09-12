@@ -3,3 +3,29 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 setopt prompt_subst
 
 PROMPT='%{$fg[cyan]%}%~ $ %{$reset_color%}'
+
+function zle-keymap-select zle-line-init
+{
+  # change cursor shape in iTerm2
+  case $KEYMAP in
+    # vicmd)      print -n -- "\E]Ptmux;\E]\E]50;CursorShape=0\C-G";;  # block cursor
+    vicmd)      PROMPT='%{$fg[yellow]%}%~ $ %{$reset_color%}';;
+    # viins|main) print -n -- "\E]Ptmux;\E]\E]50;CursorShape=1\C-G";;  # line cursor
+    viins|main) PROMPT='%{$fg[cyan]%}%~ $ %{$reset_color%}';;
+  esac
+
+  zle reset-prompt
+  zle -R
+}
+
+function zle-line-finish
+{
+  PROMPT='%{$fg[cyan]%}%~ $ %{$reset_color%}'
+  # print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+  zle reset-prompt
+  zle -R
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select

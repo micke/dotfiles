@@ -1,5 +1,7 @@
-# Enable emacs bindings (makes Alt arrow keys work)
-bindkey -e
+# Enable emacs bindings
+bindkey -v
+
+export KEYTIMEOUT=1
 
 # History search with arrows up/down.
 bindkey '^[[A' up-line-or-search

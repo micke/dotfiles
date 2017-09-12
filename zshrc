@@ -26,8 +26,23 @@ export EDITOR=/usr/local/bin/vim
 export CDPATH="$CDPATH:$HOME:$HOME/code"
 setopt auto_cd
 
+# Go
+export GOPATH=$HOME/.go
+
 # Avoid issues in tmux
 export LC_CTYPE="UTF-8"
 
 # Fix java issue on yosemite
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# added by travis gem
+[ -f /Users/lisinge/.travis/travis.sh ] && source /Users/lisinge/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+source "/Users/lisinge/google-cloud-sdk/path.zsh.inc"
+
+# The next line enables shell command completion for gcloud.
+source "/Users/lisinge/google-cloud-sdk/completion.zsh.inc"
+
+# Load kubectl autocompletion
+source $HOME/code/kubernetes/kubernetes/contrib/completions/zsh/kubectl
