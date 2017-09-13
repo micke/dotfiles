@@ -1,5 +1,5 @@
 # Enable emacs bindings
-bindkey -v
+bindkey -e
 
 export KEYTIMEOUT=1
 
