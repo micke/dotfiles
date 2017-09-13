@@ -79,7 +79,7 @@ Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
 Bundle "thoughtbot/vim-rspec"
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 Bundle "mattn/gist-vim"
 let g:gist_detect_filetype = 1
