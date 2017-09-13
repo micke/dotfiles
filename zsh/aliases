@@ -1,7 +1,10 @@
 alias git=hub
 alias g=git
-alias gp="git push"
-alias gl="git pull"
+alias gs="git st"
+alias gr="git read"
+alias gw="git write"
+alias gps="git push"
+alias gpl="git pull"
 alias grbi="git rebase -i"
 
 alias h=heroku
