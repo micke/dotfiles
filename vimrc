@@ -71,7 +71,7 @@ Bundle "derekwyatt/vim-scala"
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
 Bundle "jiangmiao/auto-pairs"
-let g:AutoPairsShortcutFastWrap = "<C-s>"
+let g:AutoPairsFlyMode = 1
 Bundle "SirVer/ultisnips"
 let g:UltiSnipsUsePythonVersion = 2
 
@@ -79,7 +79,7 @@ Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
 Bundle "thoughtbot/vim-rspec"
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
 
 Bundle "mattn/gist-vim"
 let g:gist_detect_filetype = 1
