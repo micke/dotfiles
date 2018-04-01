@@ -26,7 +26,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " Let Vundle manage Vundle
-Bundle "gmarik/Vundle.vim"
+Bundle "VundleVim/Vundle.vim"
 
 " Define bundles via Github repos
 Bundle "danro/rename.vim"
@@ -64,8 +64,9 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "vim-ruby/vim-ruby"
 Bundle "kana/vim-textobj-user"
-Bundle "airblade/vim-gitgutter"
 Bundle "nelstrom/vim-textobj-rubyblock"
+Bundle "vim-scripts/argtextobj.vim"
+Bundle "airblade/vim-gitgutter"
 
 Bundle "derekwyatt/vim-scala"
 let g:scala_sort_across_groups=1
