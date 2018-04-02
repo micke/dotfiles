@@ -22,82 +22,82 @@ set ttyfast
 set lazyredraw
 
 " Declare bundles are handled via Vundle
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let Vundle manage Vundle
-Plugin "VundleVim/Vundle.vim"
+Plugin 'VundleVim/Vundle.vim'
 
 " Define bundles via Github repos
-Plugin "danro/rename.vim"
-Plugin "kchmck/vim-coffee-script"
-Plugin "ctrlpvim/ctrlp.vim"
-Plugin "nanki/treetop.vim"
-Plugin "timcharper/textile.vim"
-Plugin "tpope/vim-cucumber"
-Plugin "tpope/vim-endwise"
-Plugin "tpope/vim-unimpaired"
-Plugin "tpope/vim-haml"
-Plugin "tpope/vim-markdown"
-Plugin "tpope/vim-repeat"
-Plugin "tpope/vim-surround"
-Plugin "tpope/vim-bundler"
-Plugin "tpope/vim-rails"
-Plugin "tpope/vim-rake"
-Plugin "tpope/vim-vinegar"
-Plugin "tpope/vim-commentary"
-Plugin "tpope/vim-dispatch"
-Plugin "tpope/vim-rhubarb"
-Plugin "tpope/vim-projectionist"
-Plugin "tpope/vim-abolish"
-Plugin "vim-scripts/matchit.zip"
-Plugin "vim-scripts/ctags.vim"
-Plugin "vim-scripts/greplace.vim"
-Plugin "xenoterracide/html.vim"
-Plugin "terryma/vim-multiple-cursors"
-Plugin "godlygeek/tabular"
-Plugin "rking/ag.vim"
-Plugin "jamessan/vim-gnupg"
-Plugin "christoomey/vim-tmux-navigator"
-Plugin "ervandew/supertab"
-Plugin "MarcWeber/vim-addon-mw-utils"
-Plugin "tomtom/tlib_vim"
-Plugin "vim-ruby/vim-ruby"
-Plugin "kana/vim-textobj-user"
-Plugin "nelstrom/vim-textobj-rubyblock"
-Plugin "vim-scripts/argtextobj.vim"
-Plugin "airblade/vim-gitgutter"
+Plugin 'danro/rename.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'nanki/treetop.vim'
+Plugin 'timcharper/textile.vim'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-abolish'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'vim-scripts/greplace.vim'
+Plugin 'xenoterracide/html.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'godlygeek/tabular'
+Plugin 'rking/ag.vim'
+Plugin 'jamessan/vim-gnupg'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ervandew/supertab'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'vim-scripts/argtextobj.vim'
+Plugin 'airblade/vim-gitgutter'
 
-Plugin "derekwyatt/vim-scala"
+Plugin 'derekwyatt/vim-scala'
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
-Plugin "jiangmiao/auto-pairs"
+Plugin 'jiangmiao/auto-pairs'
 let g:AutoPairsFlyMode = 1
-Plugin "SirVer/ultisnips"
+Plugin 'SirVer/ultisnips'
 let g:UltiSnipsUsePythonVersion = 2
 
-Plugin "tpope/vim-fugitive"
-autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
+Plugin 'tpope/vim-fugitive'
+autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers
 
-Plugin "thoughtbot/vim-rspec"
-let g:rspec_command = "Dispatch rspec {spec}"
+Plugin 'thoughtbot/vim-rspec'
+let g:rspec_command = 'Dispatch rspec {spec}'
 
-Plugin "mattn/gist-vim"
+Plugin 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-Plugin "nathanaelkane/vim-indent-guides"
+Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 
-Plugin "scrooloose/syntastic"
+Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_mode_map = { "mode": "active",
                            \ "passive_filetypes": ["scala"] }
 
-Plugin "luochen1990/rainbow"
+Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1
 let g:rainbow_conf = {
   \ 'guifgs': ['white', 'red', 'darkgreen', 'darkblue', 'brown', 'darkred', 'cyan'],
@@ -157,9 +157,6 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 set background=dark
 let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
-
-" Use Ag over Grep
-set grepprg=ag\ --nogroup\ --nocolor
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
