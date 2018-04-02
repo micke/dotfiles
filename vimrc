@@ -75,13 +75,15 @@ endif
 Plugin 'derekwyatt/vim-scala'
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
+
 Plugin 'jiangmiao/auto-pairs'
 let g:AutoPairsFlyMode = 1
+
 Plugin 'SirVer/ultisnips'
 let g:UltiSnipsUsePythonVersion = 2
 
 Plugin 'tpope/vim-fugitive'
-autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
 Plugin 'thoughtbot/vim-rspec'
 let g:rspec_command = 'Dispatch rspec {spec}'
@@ -159,8 +161,10 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 
 " Theming
 set background=dark
-let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
+
+" Use Ag over Grep
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
