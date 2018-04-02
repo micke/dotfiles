@@ -26,78 +26,78 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " Let Vundle manage Vundle
-Bundle "VundleVim/Vundle.vim"
+Plugin "VundleVim/Vundle.vim"
 
 " Define bundles via Github repos
-Bundle "danro/rename.vim"
-Bundle "kchmck/vim-coffee-script"
-Bundle "ctrlpvim/ctrlp.vim"
-Bundle "nanki/treetop.vim"
-Bundle "timcharper/textile.vim"
-Bundle "tpope/vim-cucumber"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-unimpaired"
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-vinegar"
-Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-rhubarb"
-Bundle "tpope/vim-projectionist"
-Bundle "tpope/vim-abolish"
-Bundle "vim-scripts/matchit.zip"
-Bundle "vim-scripts/ctags.vim"
-Bundle "vim-scripts/greplace.vim"
-Bundle "xenoterracide/html.vim"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "godlygeek/tabular"
-Bundle "rking/ag.vim"
-Bundle "jamessan/vim-gnupg"
-Bundle "christoomey/vim-tmux-navigator"
-Bundle "ervandew/supertab"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "vim-ruby/vim-ruby"
-Bundle "kana/vim-textobj-user"
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "vim-scripts/argtextobj.vim"
-Bundle "airblade/vim-gitgutter"
+Plugin "danro/rename.vim"
+Plugin "kchmck/vim-coffee-script"
+Plugin "ctrlpvim/ctrlp.vim"
+Plugin "nanki/treetop.vim"
+Plugin "timcharper/textile.vim"
+Plugin "tpope/vim-cucumber"
+Plugin "tpope/vim-endwise"
+Plugin "tpope/vim-unimpaired"
+Plugin "tpope/vim-haml"
+Plugin "tpope/vim-markdown"
+Plugin "tpope/vim-repeat"
+Plugin "tpope/vim-surround"
+Plugin "tpope/vim-bundler"
+Plugin "tpope/vim-rails"
+Plugin "tpope/vim-rake"
+Plugin "tpope/vim-vinegar"
+Plugin "tpope/vim-commentary"
+Plugin "tpope/vim-dispatch"
+Plugin "tpope/vim-rhubarb"
+Plugin "tpope/vim-projectionist"
+Plugin "tpope/vim-abolish"
+Plugin "vim-scripts/matchit.zip"
+Plugin "vim-scripts/ctags.vim"
+Plugin "vim-scripts/greplace.vim"
+Plugin "xenoterracide/html.vim"
+Plugin "terryma/vim-multiple-cursors"
+Plugin "godlygeek/tabular"
+Plugin "rking/ag.vim"
+Plugin "jamessan/vim-gnupg"
+Plugin "christoomey/vim-tmux-navigator"
+Plugin "ervandew/supertab"
+Plugin "MarcWeber/vim-addon-mw-utils"
+Plugin "tomtom/tlib_vim"
+Plugin "vim-ruby/vim-ruby"
+Plugin "kana/vim-textobj-user"
+Plugin "nelstrom/vim-textobj-rubyblock"
+Plugin "vim-scripts/argtextobj.vim"
+Plugin "airblade/vim-gitgutter"
 
-Bundle "derekwyatt/vim-scala"
+Plugin "derekwyatt/vim-scala"
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
-Bundle "jiangmiao/auto-pairs"
+Plugin "jiangmiao/auto-pairs"
 let g:AutoPairsFlyMode = 1
-Bundle "SirVer/ultisnips"
+Plugin "SirVer/ultisnips"
 let g:UltiSnipsUsePythonVersion = 2
 
-Bundle "tpope/vim-fugitive"
+Plugin "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
-Bundle "thoughtbot/vim-rspec"
+Plugin "thoughtbot/vim-rspec"
 let g:rspec_command = "Dispatch rspec {spec}"
 
-Bundle "mattn/gist-vim"
+Plugin "mattn/gist-vim"
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-Bundle "nathanaelkane/vim-indent-guides"
+Plugin "nathanaelkane/vim-indent-guides"
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 
-Bundle "scrooloose/syntastic"
+Plugin "scrooloose/syntastic"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_mode_map = { "mode": "active",
                            \ "passive_filetypes": ["scala"] }
 
-Bundle "luochen1990/rainbow"
+Plugin "luochen1990/rainbow"
 let g:rainbow_active = 1
 let g:rainbow_conf = {
   \ 'guifgs': ['white', 'red', 'darkgreen', 'darkblue', 'brown', 'darkred', 'cyan'],
