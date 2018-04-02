@@ -56,7 +56,6 @@ Plugin 'vim-scripts/greplace.vim'
 Plugin 'xenoterracide/html.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
-Plugin 'rking/ag.vim'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ervandew/supertab'
@@ -67,6 +66,11 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'airblade/vim-gitgutter'
+
+Plugin 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 Plugin 'derekwyatt/vim-scala'
 let g:scala_sort_across_groups=1
