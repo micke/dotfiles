@@ -29,6 +29,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Define bundles via Github repos
+Plugin 'wincent/terminus'
 Plugin 'danro/rename.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -65,7 +66,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
+
 Plugin 'airblade/vim-gitgutter'
+autocmd BufWritePost * GitGutter
 
 Plugin 'mileszs/ack.vim'
 if executable('ag')
@@ -77,10 +80,8 @@ let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
 
 Plugin 'jiangmiao/auto-pairs'
+let g:AutoPairsShortcutFastWrap = '<M-w>'
 let g:AutoPairsFlyMode = 1
-
-Plugin 'SirVer/ultisnips'
-let g:UltiSnipsUsePythonVersion = 2
 
 Plugin 'tpope/vim-fugitive'
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
@@ -176,13 +177,7 @@ set ttymouse=xterm2
 
 " Tab completion
 " will insert tab at beginning of line,
-" will expand snippet if not at beginning
-" will use completion if snippet not available
-let g:ulti_expand_or_jump_res = 0
-function! Ulti_ExpandOrJump_and_getRes()
-  call UltiSnips#ExpandSnippetOrJump()
-  return g:ulti_expand_or_jump_res
-endfunction
+" will use completion if not at beginning
 
 set wildmode=list:longest,list:full
 set complete=.,w,t
@@ -194,7 +189,7 @@ function! InsertTabWrapper()
     return "\<c-p>"
   endif
 endfunction
-inoremap <Tab> <c-r>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":InsertTabWrapper()<cr>
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nmap <Leader><Leader> <c-^>
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
@@ -224,6 +219,8 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,\zs<CR>
+vmap <Leader>a, :Tabularize /,\zs<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>

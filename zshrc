@@ -12,10 +12,13 @@ SAVEHIST=20000
 
 # PATH
 export PATH="$HOME/.bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
+export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+export PATH="/Applications/Arduino.app/Contents/MacOS:$PATH"
 eval "$(rbenv init -)"
 export PATH="./bin:$PATH"
 
@@ -39,10 +42,10 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 [ -f /Users/lisinge/.travis/travis.sh ] && source /Users/lisinge/.travis/travis.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-source "/Users/lisinge/google-cloud-sdk/path.zsh.inc"
+# source "/Users/lisinge/google-cloud-sdk/path.zsh.inc"
 
 # The next line enables shell command completion for gcloud.
-source "/Users/lisinge/google-cloud-sdk/completion.zsh.inc"
+# source "/Users/lisinge/google-cloud-sdk/completion.zsh.inc"
 
 # Load kubectl autocompletion
-source $HOME/code/kubernetes/kubernetes/contrib/completions/zsh/kubectl
+# source <(kubectl completion zsh)
