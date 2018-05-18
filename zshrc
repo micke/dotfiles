@@ -36,7 +36,7 @@ export GOPATH=$HOME/.go
 export LC_CTYPE="UTF-8"
 
 # Fix java issue on yosemite
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_172)
 
 # added by travis gem
 [ -f /Users/lisinge/.travis/travis.sh ] && source /Users/lisinge/.travis/travis.sh
