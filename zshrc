@@ -26,7 +26,7 @@ export PATH="./bin:$PATH"
 export EDITOR=/usr/local/bin/vim
 
 # cd
-export CDPATH="$CDPATH:$HOME:$HOME/code"
+export CDPATH="$CDPATH:$HOME/code"
 setopt auto_cd
 
 # Go
