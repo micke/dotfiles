@@ -17,7 +17,6 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
-export PATH="/Applications/Arduino.app/Contents/MacOS:$PATH"
 eval "$(rbenv init -)"
 export PATH="./bin:$PATH"
 
