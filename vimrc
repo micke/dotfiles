@@ -216,6 +216,12 @@ nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gr :Gread<CR>
 
+" Config mappings
+nnoremap <Leader>cc :e ~/.dotfiles/vimrc<CR>
+nnoremap <Leader>cs :so ~/.dotfiles/vimrc<CR>
+nnoremap <Leader>pi :PluginInstall<CR>
+nnoremap <Leader>pu :PluginUpdate<CR>
+
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
