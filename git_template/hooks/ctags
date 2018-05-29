@@ -2,5 +2,5 @@
 set -e
 PATH="/usr/local/bin:$PATH"
 trap "rm -f .git/tags.$$" EXIT
-ctags --tag-relative -Rf.git/tags.$$ --fields=+l --exclude=.git --exclude=db/migrate --languages=-javascript,sql
+ctags --tag-relative=yes -Rf.git/tags.$$ --fields=+l --exclude=.git --exclude=db/migrate --languages=-javascript,sql
 mv .git/tags.$$ .git/tags
