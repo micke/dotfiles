@@ -155,6 +155,10 @@ autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
 autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
 autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
+" Fix bug where VIM sometimes start with line cursor
+autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
+autocmd VimLeave * silent exec "! echo -ne '\e[6 q'" 
+
 " Syntax highlightning
 syntax on
 
