@@ -68,6 +68,9 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
 
+Plugin 'ludovicchabant/vim-gutentags'
+let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options'
+
 Plugin 'airblade/vim-gitgutter'
 autocmd BufWritePost * GitGutter
 
@@ -125,6 +128,7 @@ set statusline+=/         " Separator
 set statusline+=%L        " Total lines
 set statusline+=\         " Space
 set statusline+=[%{fugitive#head(7)}]
+:set statusline+=%{gutentags#statusline()}
 
 set cryptmethod=blowfish
 set noesckeys
