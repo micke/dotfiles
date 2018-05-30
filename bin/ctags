@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ --languages=Ruby = "$1" ]; then
-  shift
-  unset RUBYOPT # needed to run inside bundler
-  exec ripper-tags "$@"
-fi
-
-exec /usr/local/bin/ctags "$@"
