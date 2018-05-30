@@ -11,13 +11,13 @@ HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
 # PATH
-export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="$HOME/.bin:$PATH"
 export PATH="./bin:$PATH"
 
 # editor
