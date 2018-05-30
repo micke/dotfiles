@@ -192,8 +192,6 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>d :Dispatch<CR>
 
-nnoremap <Leader>si :SortScalaImports<CR>
-
 " Fugitive mappings
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gs :Gstatus<CR>
