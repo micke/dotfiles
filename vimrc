@@ -192,6 +192,8 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>d :Dispatch<CR>
 
+map <Leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
+
 " Fugitive mappings
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gs :Gstatus<CR>
