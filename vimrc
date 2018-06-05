@@ -67,6 +67,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
+Plugin 'deepredsky/vim-rubocop'
 
 Plugin 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options'
@@ -192,6 +193,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>d :Dispatch<CR>
+map <Leader>r :RuboCop<CR>
 
 map <Leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
 
