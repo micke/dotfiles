@@ -75,6 +75,7 @@ let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-option
 
 Plugin 'airblade/vim-gitgutter'
 autocmd BufWritePost * GitGutter
+set signcolumn=yes
 
 Plugin 'mileszs/ack.vim'
 if executable('ag')
