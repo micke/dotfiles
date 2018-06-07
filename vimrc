@@ -197,7 +197,11 @@ map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>d :Dispatch<CR>
 map <Leader>r :RuboCop<CR>
 
+" Convert all single quoted strings to double quotes
 map <Leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
+
+" Remove all trailing whitespaces
+nnoremap <Leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Fugitive mappings
 nnoremap <Leader>gl :Glog<CR>
