@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.2.7.195 on 2017-11-30 at 08:59 (GMT+1)-->
-<keyboard group="126" id="-2428" name="ABC swe" maxout="1">
+<!--Last edited by Ukelele version 3.2.7.195 on 2018-06-08 at 12:50 (CEST)-->
+<keyboard group="126" id="-2428" name="Swansi" maxout="1">
 	<layouts>
 		<layout first="0" last="17" mapSet="16c" modifiers="f4"/>
 		<layout first="18" last="18" mapSet="984" modifiers="f4"/>
