@@ -69,6 +69,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'deepredsky/vim-rubocop'
+Plugin 'glts/vim-textobj-comment'
 
 Plugin 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options'
