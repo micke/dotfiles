@@ -70,6 +70,8 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'deepredsky/vim-rubocop'
 Plugin 'glts/vim-textobj-comment'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'slim-template/vim-slim.git'
 
 Plugin 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options'
