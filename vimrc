@@ -204,6 +204,12 @@ map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>d :Dispatch<CR>
 map <Leader>r :RuboCop<CR>
 
+" Tab bindings
+map <M-l> :tabnext<CR>
+map <M-k> :tablast<CR>
+map <M-j> :tabfirst<CR>
+map <M-h> :tabprevious<CR>
+
 " Convert all single quoted strings to double quotes
 map <Leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
 
