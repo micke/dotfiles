@@ -14,6 +14,10 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite
 
+" Persistent undo
+set undodir=~/.vim/undodir
+set undofile
+
 " Fix for slow ruby syntax
 " https://github.com/vim-ruby/vim-ruby/issues/243
 " https://github.com/vim/vim/issues/282
