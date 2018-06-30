@@ -76,6 +76,10 @@ Plugin 'glts/vim-textobj-comment'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'slim-template/vim-slim.git'
 
+" Stores a session file and automatically starts vim from the previous session
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
+
 Plugin 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options'
 
