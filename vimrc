@@ -40,7 +40,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanki/treetop.vim'
 Plugin 'timcharper/textile.vim'
 Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
@@ -93,9 +92,13 @@ Plugin 'derekwyatt/vim-scala'
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
 
-Plugin 'jiangmiao/auto-pairs'
-let g:AutoPairsShortcutFastWrap = '<M-w>'
-let g:AutoPairsFlyMode = 1
+Plugin 'Raimondi/delimitMate'
+let g:delimitMate_expand_space=1
+let g:delimitMate_expand_cr=2
+inoremap <expr> <C-j> delimitMate#JumpAny()
+
+" vim-endwise needs to load after delimitMate
+Plugin 'tpope/vim-endwise'
 
 Plugin 'tpope/vim-fugitive'
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
@@ -227,6 +230,7 @@ nnoremap <Leader>gpl :Gpull<CR>
 nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>ga :Gcommit -a<CR>
 
 " Config mappings
 nnoremap <Leader>cc :e ~/.dotfiles/vimrc<CR>
