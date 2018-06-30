@@ -137,7 +137,9 @@ filetype plugin indent on
 
 set scrolloff=3
 
-set statusline=%10f       " Path to the file
+set statusline=[%{fugitive#head(7)}]
+set statusline+=\         " Space
+set statusline+=%10f      " Path to the file
 set statusline+=%=        " Switch to the right side
 set statusline+=%{gutentags#statusline()}
 set statusline+=\         " Space
@@ -145,8 +147,6 @@ set statusline+=%l        " Current line
 set statusline+=:%c       " Column number
 set statusline+=/         " Separator
 set statusline+=%L        " Total lines
-set statusline+=\         " Space
-set statusline+=[%{fugitive#head(7)}]
 
 set cryptmethod=blowfish
 set noesckeys
@@ -170,6 +170,7 @@ syntax on
 au BufNewFile,BufRead Gemfile set filetype=ruby
 
 " Theming
+set termguicolors
 set background=dark
 colorscheme hybrid
 
@@ -235,6 +236,7 @@ nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>ga :Gcommit -a<CR>
+nnoremap <Leader>go :Git checkout 
 
 " Config mappings
 nnoremap <Leader>cc :e ~/.dotfiles/vimrc<CR>
