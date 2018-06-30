@@ -1,5 +1,5 @@
 [push]
-  default = upstream
+  default = current
 
 [color]
   branch = auto
@@ -15,6 +15,7 @@
 
 [alias]
   ci = commit
+  co = checkout
   st = status -sb
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   ctags = !.git/hooks/ctags
@@ -27,3 +28,5 @@
 
 [pull]
   rebase = true
+[core]
+  excludesfile = ~/.gitignore
