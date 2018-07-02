@@ -1,4 +1,5 @@
 *.DS_Store
+Session.vim
 *.sw[nop]
 .bundle
 .sass-cache/

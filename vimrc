@@ -75,6 +75,16 @@ Plugin 'deepredsky/vim-rubocop'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'lisinge/vim-hybrid-material'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme = "hybrid"
+
+Plugin 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Stores a session file and automatically starts vim from the previous session
 Plugin 'tpope/vim-obsession'
@@ -84,7 +94,6 @@ Plugin 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options'
 
 Plugin 'airblade/vim-gitgutter'
-autocmd BufWritePost * GitGutter
 set signcolumn=yes
 
 Plugin 'mileszs/ack.vim'
@@ -114,10 +123,6 @@ Plugin 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-Plugin 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_signs = 1
@@ -125,54 +130,59 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_mode_map = { "mode": "active",
                            \ "passive_filetypes": ["scala"] }
 
-Plugin 'luochen1990/rainbow'
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-  \ 'guifgs': ['white', 'red', 'darkgreen', 'darkblue', 'brown', 'darkred', 'cyan'],
-  \ 'ctermfgs': ['white', 'red', 'darkgreen', 'darkblue', 'brown', 'darkred', 'cyan']
-  \}
-
 call vundle#end()
 filetype plugin indent on
 
 set scrolloff=3
 
-set statusline=[%{fugitive#head(7)}]
-set statusline+=\         " Space
-set statusline+=%10f      " Path to the file
-set statusline+=%=        " Switch to the right side
-set statusline+=%{gutentags#statusline()}
-set statusline+=\         " Space
-set statusline+=%l        " Current line
-set statusline+=:%c       " Column number
-set statusline+=/         " Separator
-set statusline+=%L        " Total lines
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', '%3v'])
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#obsession#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_buffers = 0
+
+" set statusline=[%{fugitive#head(7)}]
+" set statusline+=\         " Space
+" set statusline+=%10f      " Path to the file
+" set statusline+=%=        " Switch to the right side
+" set statusline+=%{gutentags#statusline()}
+" set statusline+=\         " Space
+" set statusline+=%l        " Current line
+" set statusline+=:%c       " Column number
+" set statusline+=/         " Separator
+" set statusline+=%L        " Total lines
 
 set cryptmethod=blowfish
 set noesckeys
 set clipboard+=unnamed
 set backspace=indent,eol,start
 
+" Theming
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_sign_column = 'bg0'
+let g:gruvbox_invert_selection = 0
+set termguicolors
+set background=dark
+colorscheme hybrid
+
 " Colors
-autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
-autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
-autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
-autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
+" autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
+" autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
+" autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
+" autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
 " Fix bug where VIM sometimes start with line cursor
 autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
-autocmd VimLeave * silent exec "! echo -ne '\e[6 q'" 
+autocmd VimLeave * silent exec "! echo -ne '\e[6 q'"
 
 " Syntax highlightning
 syntax on
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
-
-" Theming
-set termguicolors
-set background=dark
-colorscheme hybrid
 
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor

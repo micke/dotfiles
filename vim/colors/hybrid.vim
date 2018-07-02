@@ -91,7 +91,7 @@ if exists("g:hybrid_reduced_contrast") && g:hybrid_reduced_contrast == 1
   let s:gui_comment    = "#6c7a80"
 else
   let s:gui_background = "#1d1f21"
-  let s:gui_selection  = "#373b41"
+  let s:gui_selection  = "#585c63"
   let s:gui_line       = "#282a2e"
   let s:gui_comment    = "#707880"
 endif
