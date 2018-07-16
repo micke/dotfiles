@@ -104,7 +104,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
 
 Plugin 'ludovicchabant/vim-gutentags'
-let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options'
+let g:gutentags_ctags_executable_ruby = 'rtags'
 
 Plugin 'airblade/vim-gitgutter'
 autocmd BufWritePost * GitGutter
