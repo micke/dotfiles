@@ -247,7 +247,7 @@ nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>ga :Gcommit -a<CR>
-nnoremap <Leader>go :Git checkout 
+nnoremap <Leader>go :Git checkout<space>
 
 " Config mappings
 nnoremap <Leader>cc :e $MYVIMRC<CR>
