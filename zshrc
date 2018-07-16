@@ -21,7 +21,7 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="./bin:$PATH"
 
 # editor
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/nvim
 
 # cd
 export CDPATH="$CDPATH:$HOME/code"
