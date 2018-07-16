@@ -68,7 +68,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ervandew/supertab'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
@@ -78,6 +77,9 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'rakr/vim-one'
+
+Plugin 'vim-ruby/vim-ruby'
+let g:ruby_indent_block_style = 'do'
 
 Plugin 'w0rp/ale'
 map <Leader>f :ALEFix<CR>
