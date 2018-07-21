@@ -33,6 +33,10 @@ export GOPATH=$HOME/.go
 # Avoid issues in tmux
 export LC_CTYPE="UTF-8"
 
+# Lang
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
 # Fix java issue on yosemite
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_172)
 
