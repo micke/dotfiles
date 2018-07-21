@@ -28,7 +28,8 @@ set ttyfast
 set lazyredraw
 
 " Declare bundles are handled via Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/hybrid-redux
 call vundle#begin()
 
 " Let Vundle manage Vundle
@@ -71,12 +72,14 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/argtextobj.vim'
-Plugin 'deepredsky/vim-rubocop'
+Plugin 'ngmy/vim-rubocop'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'rakr/vim-one'
+Plugin 'gerw/vim-HiLinkTrace'
+
+Plugin 'chrisbra/Colorizer'
 
 Plugin 'vim-ruby/vim-ruby'
 let g:ruby_indent_block_style = 'do'
@@ -95,7 +98,7 @@ nnoremap <silent> <leader>w :ArgWrap<CR>
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme = "one"
+let g:airline_theme = "hybrid"
 
 Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
@@ -148,11 +151,11 @@ set scrolloff=3
 
 " Theming
 set termguicolors
-colorscheme one
-au VimEnter * colorscheme one
+set background=dark
+colorscheme hybrid-redux
+au VimEnter * colorscheme hybrid-redux
 au VimEnter * set termguicolors
 au VimEnter * AirlineRefresh
-set background=dark
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
