@@ -58,7 +58,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-git'
-Plugin 'vim-scripts/matchit.zip'
+Plugin 'andymass/vim-matchup'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/greplace.vim'
 Plugin 'xenoterracide/html.vim'
@@ -85,19 +85,18 @@ Plugin 'vim-ruby/vim-ruby'
 let g:ruby_indent_block_style = 'do'
 
 Plugin 'w0rp/ale'
-map <Leader>f :ALEFix<CR>
 let g:ale_fixers = {
 \   'ruby': [
 \       'rubocop'
 \   ],
 \}
+map <Leader>f :ALEFix<CR>
 
 Plugin 'FooSoft/vim-argwrap'
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme = "hybrid"
 
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -152,9 +151,8 @@ set scrolloff=3
 " Theming
 set termguicolors
 set background=dark
-colorscheme hybrid-redux
-au VimEnter * colorscheme hybrid-redux
-au VimEnter * set termguicolors
+colorscheme hybrid
+au VimEnter * colorscheme hybrid
 au VimEnter * AirlineRefresh
 
 let g:airline#extensions#tabline#enabled = 1
@@ -177,8 +175,8 @@ set backspace=indent,eol,start
 " autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
 " Fix bug where VIM sometimes start with line cursor
-autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
-autocmd VimLeave * silent exec "! echo -ne '\e[6 q'"
+" autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
+" autocmd VimLeave * silent exec "! echo -ne '\e[6 q'"
 
 " Syntax highlightning
 syntax on
@@ -256,7 +254,7 @@ nnoremap <Leader>go :Git checkout<space>
 
 " Config mappings
 nnoremap <Leader>cc :e $MYVIMRC<CR>
-nnoremap <Leader>cs :so $MYVIMRC<CR>
+nnoremap <Leader>cs :so $MYVIMRC<CR>:AirlineRefresh<CR>
 nnoremap <Leader>pi :PluginInstall<CR>
 nnoremap <Leader>pu :PluginUpdate<CR>
 
