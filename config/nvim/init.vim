@@ -74,6 +74,28 @@ Plug 'slim-template/vim-slim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'gerw/vim-HiLinkTrace'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+" Required for operations modifying multiple buffers like rename.
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['solargraph', 'stdio'],
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return deoplete#close_popup() . "\<CR>"
+endfunction
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap ; :Files<CR>
