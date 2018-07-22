@@ -28,7 +28,6 @@ set ttyfast
 set lazyredraw
 
 " Declare bundles are handled via Vundle
-set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.config/nvim/bundle/hybrid-redux
 call plug#begin('~/.vim/plugged')
 
