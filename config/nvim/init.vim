@@ -34,7 +34,6 @@ call plug#begin('~/.vim/plugged')
 " Define bundles via Github repos
 Plug 'danro/rename.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanki/treetop.vim'
 Plug 'timcharper/textile.vim'
 Plug 'tpope/vim-cucumber'
@@ -74,6 +73,10 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'slim-template/vim-slim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'gerw/vim-HiLinkTrace'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+nnoremap ; :Files<CR>
 
 Plug 'chrisbra/Colorizer'
 
@@ -178,10 +181,6 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
-
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
 
 " Mouse support
 set mouse=a

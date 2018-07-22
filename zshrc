@@ -51,3 +51,5 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_172)
 
 # Load kubectl autocompletion
 # source <(kubectl completion zsh)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
