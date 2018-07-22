@@ -30,61 +30,58 @@ set lazyredraw
 " Declare bundles are handled via Vundle
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.config/nvim/bundle/hybrid-redux
-call vundle#begin()
-
-" Let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Define bundles via Github repos
-Plugin 'danro/rename.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'nanki/treetop.vim'
-Plugin 'timcharper/textile.vim'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-rbenv'
-Plugin 'tpope/vim-git'
-Plugin 'andymass/vim-matchup'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'vim-scripts/greplace.vim'
-Plugin 'xenoterracide/html.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'godlygeek/tabular'
-Plugin 'jamessan/vim-gnupg'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ervandew/supertab'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'vim-scripts/argtextobj.vim'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'glts/vim-textobj-comment'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'slim-template/vim-slim.git'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'gerw/vim-HiLinkTrace'
+Plug 'danro/rename.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nanki/treetop.vim'
+Plug 'timcharper/textile.vim'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-git'
+Plug 'andymass/vim-matchup'
+Plug 'vim-scripts/ctags.vim'
+Plug 'vim-scripts/greplace.vim'
+Plug 'xenoterracide/html.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'jamessan/vim-gnupg'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ervandew/supertab'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'ngmy/vim-rubocop'
+Plug 'glts/vim-textobj-comment'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'slim-template/vim-slim'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'gerw/vim-HiLinkTrace'
 
-Plugin 'chrisbra/Colorizer'
+Plug 'chrisbra/Colorizer'
 
-Plugin 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 let g:ruby_indent_block_style = 'do'
 
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 let g:ale_fixers = {
 \   'ruby': [
 \       'rubocop'
@@ -92,59 +89,58 @@ let g:ale_fixers = {
 \}
 map <Leader>f :ALEFix<CR>
 
-Plugin 'FooSoft/vim-argwrap'
+Plug 'FooSoft/vim-argwrap'
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 let g:airline_theme = "hybrid"
 
-Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Stores a session file and automatically starts vim from the previous session
-Plugin 'tpope/vim-obsession'
-Plugin 'dhruvasagar/vim-prosession'
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
 
-Plugin 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_executable_ruby = 'rtags'
 
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 autocmd BufWritePost * GitGutter
 set updatetime=100
 set signcolumn=yes
 
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-Plugin 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
 
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
 let g:delimitMate_jump_expansion=1
 inoremap <expr> <C-j> delimitMate#JumpAny()
 
 " vim-endwise needs to load after delimitMate
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
-Plugin 'thoughtbot/vim-rspec'
+Plug 'thoughtbot/vim-rspec'
 let g:rspec_command = 'Dispatch rspec {spec}'
 
-Plugin 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 set scrolloff=3
 
@@ -177,9 +173,6 @@ set backspace=indent,eol,start
 " Fix bug where VIM sometimes start with line cursor
 " autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
 " autocmd VimLeave * silent exec "! echo -ne '\e[6 q'"
-
-" Syntax highlightning
-syntax on
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -255,8 +248,8 @@ nnoremap <Leader>go :Git checkout<space>
 " Config mappings
 nnoremap <Leader>cc :e $MYVIMRC<CR>
 nnoremap <Leader>cs :so $MYVIMRC<CR>:AirlineRefresh<CR>
-nnoremap <Leader>pi :PluginInstall<CR>
-nnoremap <Leader>pu :PluginUpdate<CR>
+nnoremap <Leader>pi :PlugInstall<CR>
+nnoremap <Leader>pu :PlugUpdate<CR>
 
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
