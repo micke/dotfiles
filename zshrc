@@ -40,6 +40,8 @@ export LANG=en_US.UTF-8
 # Fix java issue on yosemite
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_172)
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 # added by travis gem
 [ -f /Users/lisinge/.travis/travis.sh ] && source /Users/lisinge/.travis/travis.sh
 
