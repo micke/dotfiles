@@ -74,31 +74,12 @@ Plug 'slim-template/vim-slim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'gerw/vim-HiLinkTrace'
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-" Required for operations modifying multiple buffers like rename.
-set hidden
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['solargraph', 'stdio'],
-    \ }
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  return deoplete#close_popup() . "\<CR>"
-endfunction
-
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-nnoremap ; :Files<CR>
+nnoremap <space> :Files<CR>
 
 Plug 'chrisbra/Colorizer'
 
@@ -111,7 +92,7 @@ let g:ale_fixers = {
 \       'rubocop'
 \   ],
 \}
-map <Leader>f :ALEFix<CR>
+map <leader>f :ALEFix<CR>
 
 Plug 'FooSoft/vim-argwrap'
 let g:argwrap_padded_braces = '{'
@@ -175,6 +156,9 @@ colorscheme hybrid
 au VimEnter * colorscheme hybrid
 au VimEnter * AirlineRefresh
 
+" Deoplete
+call deoplete#custom#option('smart_case', v:true)
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
@@ -187,16 +171,6 @@ let g:airline#extensions#obsession#enabled = 0
 
 set clipboard+=unnamed
 set backspace=indent,eol,start
-
-" Colors
-" autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
-" autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
-" autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
-" autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
-
-" Fix bug where VIM sometimes start with line cursor
-" autocmd VimEnter * silent exec "! echo -ne '\e[2 q'"
-" autocmd VimLeave * silent exec "! echo -ne '\e[6 q'"
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -223,16 +197,16 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-nmap <Leader><Leader> <c-^>
-nmap <Leader>h :rightbelow split<CR> " Split window horizontal
-nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
-nmap <Leader>av :AV<CR>
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>d :Dispatch<CR>
-map <Leader>r :RuboCop<CR>
+nmap <leader><Leader> <c-^>
+nmap <leader>h :rightbelow split<CR>
+nmap <leader>v :rightbelow vsplit<CR>
+nmap <leader>av :AV<CR>
+map <leader>t :call RunCurrentSpecFile()<CR>
+map <leader>s :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunAllSpecs()<CR>
+map <leader>d :Dispatch<CR>
+map <leader>r :RuboCop<CR>
 
 " Tab bindings
 map <M-l> :tabnext<CR>
@@ -246,37 +220,37 @@ nnoremap <silent><expr> <c-w>] ':<c-u>'.(winwidth(0) > 79 ? 'vert' : '').' wincm
 nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Convert all single quoted strings to double quotes
-nnoremap <Leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
+nnoremap <leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
 
 " Remove all trailing whitespaces
-" nnoremap <Leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+" nnoremap <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Fugitive mappings
-nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gbl :Gblame<CR>
-nnoremap <Leader>gbr :Gbrowse<CR>
-nnoremap <Leader>gpl :Gpull<CR>
-nnoremap <Leader>gps :Gpush<CR>
-nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>gr :Gread<CR>
-nnoremap <Leader>ga :Gcommit -a<CR>
-nnoremap <Leader>go :Git checkout<space>
+nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gbl :Gblame<CR>
+nnoremap <leader>gbr :Gbrowse<CR>
+nnoremap <leader>gpl :Gpull<CR>
+nnoremap <leader>gps :Gpush<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>ga :Gcommit -a<CR>
+nnoremap <leader>go :Git checkout<space>
 
 " Config mappings
-nnoremap <Leader>cc :e $MYVIMRC<CR>
-nnoremap <Leader>cs :so $MYVIMRC<CR>:AirlineRefresh<CR>
-nnoremap <Leader>pi :PlugInstall<CR>
-nnoremap <Leader>pu :PlugUpdate<CR>
+nnoremap <leader>cc :e $MYVIMRC<CR>
+nnoremap <leader>cs :so $MYVIMRC<CR>:AirlineRefresh<CR>
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
 
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,\zs<CR>
-vmap <Leader>a, :Tabularize /,\zs<CR>
+nmap <leader>a= :Tabularize /=<CR>
+vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a: :Tabularize /:\zs<CR>
+vmap <leader>a: :Tabularize /:\zs<CR>
+nmap <leader>a, :Tabularize /,\zs<CR>
+vmap <leader>a, :Tabularize /,\zs<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
