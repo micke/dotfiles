@@ -153,8 +153,6 @@ set scrolloff=3
 set termguicolors
 set background=dark
 colorscheme hybrid
-au VimEnter * colorscheme hybrid
-au VimEnter * AirlineRefresh
 
 " Deoplete
 call deoplete#custom#option('smart_case', v:true)
