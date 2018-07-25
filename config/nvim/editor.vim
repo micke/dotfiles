@@ -6,7 +6,7 @@ let mapleader=","
 set nobackup
 set autoindent
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile         " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
 set ruler              " show the cursor position all the time
 set showcmd            " display incomplete commands
@@ -22,8 +22,6 @@ set scrolloff=3
 set clipboard+=unnamed
 set backspace=indent,eol,start
 
-" Bundler
-au BufNewFile,BufRead Gemfile set filetype=ruby
 
 " Mouse support
 set mouse=a
@@ -53,13 +51,14 @@ set cursorline
 " Do not wrap and color column 80
 set nowrap
 set colorcolumn=80
-autocmd FileType scala setlocal colorcolumn=100
 
 augroup vimrcEx
   autocmd!
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
+
+  autocmd FileType scala setlocal colorcolumn=100
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
@@ -72,6 +71,7 @@ augroup vimrcEx
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile conf/messages.* set filetype=jproperties
+  autocmd BufRead,BufNewFile Gemfile set filetype=ruby
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
