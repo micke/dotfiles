@@ -37,3 +37,57 @@ set mouse=a
 
 set wildmode=list:longest,list:full
 set complete=.,w,t
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Numbers
+set relativenumber
+set number
+
+" Display current line in a different color
+set cursorline
+
+" Do not wrap and color column 80
+set nowrap
+set colorcolumn=80
+autocmd FileType scala setlocal colorcolumn=100
+
+augroup vimrcEx
+  autocmd!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile conf/messages.* set filetype=jproperties
+
+  " Enable spellchecking for Markdown
+  autocmd FileType markdown setlocal spell
+
+  " Automatically wrap at 80 characters for Markdown
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup END
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
