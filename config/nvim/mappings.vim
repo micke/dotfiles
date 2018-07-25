@@ -15,12 +15,12 @@ nmap <leader><Leader> <c-^>
 nmap <leader>h :rightbelow split<CR>
 nmap <leader>v :rightbelow vsplit<CR>
 nmap <leader>av :AV<CR>
-map <leader>t :call RunCurrentSpecFile()<CR>
-map <leader>s :call RunNearestSpec()<CR>
-map <leader>l :call RunLastSpec()<CR>
-map <leader>a :call RunAllSpecs()<CR>
-map <leader>d :Dispatch<CR>
-map <leader>r :RuboCop<CR>
+nmap <leader>t :call RunCurrentSpecFile()<CR>
+nmap <leader>s :call RunNearestSpec()<CR>
+nmap <leader>l :call RunLastSpec()<CR>
+nmap <leader>a :call RunAllSpecs()<CR>
+nmap <leader>d :Dispatch<CR>
+nmap <leader>r :RuboCop<CR>
 
 " Tag bindings
 nnoremap <silent><expr> <c-w><c-]> ':<c-u>'.(winwidth(0) > 79 ? 'vert' : '').' wincmd ]<cr>'
@@ -31,9 +31,9 @@ nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
 
 " Remove all trailing whitespaces
-" nnoremap <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+nnoremap <leader>tw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
-" Fugitive mappings
+" Fugitive
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
@@ -45,7 +45,7 @@ nnoremap <leader>gps :Gpush<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>ga :Gcommit -a<CR>
-nnoremap <leader>go :Git checkout<space>
+nnoremap <leader>go :Git co<space>
 
 " Config mappings
 nnoremap <leader>cc :e $MYVIMRC<CR>
