@@ -21,7 +21,6 @@ set undofile
 " https://github.com/vim-ruby/vim-ruby/issues/243
 " https://github.com/vim/vim/issues/282
 set regexpengine=1
-set ttyfast
 set lazyredraw
 
 set scrolloff=3
