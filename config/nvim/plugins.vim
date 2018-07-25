@@ -41,20 +41,40 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'slim-template/vim-slim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'gerw/vim-HiLinkTrace'
-
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'chrisbra/Colorizer'
+Plug 'vim-ruby/vim-ruby'
+Plug 'w0rp/ale'
+Plug 'FooSoft/vim-argwrap'
+Plug 'vim-airline/vim-airline'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'airblade/vim-gitgutter'
+Plug 'mileszs/ack.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
+Plug 'tpope/vim-fugitive'
+Plug 'thoughtbot/vim-rspec'
+Plug 'mattn/gist-vim'
+
+call plug#end()
+
+" Shougo/deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('smart_case', v:true)
+
+" junegunn/fzf
 nnoremap <space> :Files<CR>
 
-Plug 'chrisbra/Colorizer'
-
-Plug 'vim-ruby/vim-ruby'
+" vim-ruby/vim-ruby
 let g:ruby_indent_block_style = 'do'
 
-Plug 'w0rp/ale'
+" w0rp/ale
 let g:ale_fixers = {
 \   'ruby': [
 \       'rubocop'
@@ -62,62 +82,11 @@ let g:ale_fixers = {
 \}
 map <leader>f :ALEFix<CR>
 
-Plug 'FooSoft/vim-argwrap'
+" FooSoft/vim-argwrap
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
-Plug 'vim-airline/vim-airline'
-let g:airline_theme = "hybrid"
-
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-
-" Stores a session file and automatically starts vim from the previous session
-Plug 'tpope/vim-obsession'
-Plug 'dhruvasagar/vim-prosession'
-
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_ctags_executable_ruby = 'rtags'
-
-Plug 'airblade/vim-gitgutter'
-autocmd BufWritePost * GitGutter
-set updatetime=100
-set signcolumn=yes
-
-Plug 'mileszs/ack.vim'
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-Plug 'derekwyatt/vim-scala'
-let g:scala_sort_across_groups=1
-let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
-
-Plug 'Raimondi/delimitMate'
-let g:delimitMate_expand_space=1
-let g:delimitMate_expand_cr=2
-let g:delimitMate_jump_expansion=1
-inoremap <expr> <C-j> delimitMate#JumpAny()
-
-" vim-endwise needs to load after delimitMate
-Plug 'tpope/vim-endwise'
-
-Plug 'tpope/vim-fugitive'
-autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
-
-Plug 'thoughtbot/vim-rspec'
-let g:rspec_command = 'Dispatch rspec {spec}'
-
-Plug 'mattn/gist-vim'
-let g:gist_detect_filetype = 1
-let g:gist_clip_command = 'pbcopy'
-
-call plug#end()
-
-" Deoplete
-call deoplete#custom#option('smart_case', v:true)
-
+" vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
@@ -127,3 +96,38 @@ let g:airline_section_y = ''
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', '%3v'])
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#obsession#enabled = 0
+
+" nathanaelkane/vim-indent-guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+
+" ludovicchabant/vim-gutentags
+let g:gutentags_ctags_executable_ruby = 'rtags'
+
+" airblade/vim-gitgutter
+autocmd BufWritePost * GitGutter
+set updatetime=100
+set signcolumn=yes
+
+" mileszs/ack.vim
+let g:ackprg = 'ag --vimgrep'
+
+" Raimondi/vim-scala
+let g:scala_sort_across_groups=1
+let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
+
+" Raimondi/delimitMate
+let g:delimitMate_expand_space=1
+let g:delimitMate_expand_cr=2
+let g:delimitMate_jump_expansion=1
+inoremap <expr> <C-j> delimitMate#JumpAny()
+
+" tpope/vim-fugitive
+autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
+
+" thoughtbot/vim-rspec
+let g:rspec_command = 'Dispatch rspec {spec}'
+
+" mattn/gist-vim
+let g:gist_detect_filetype = 1
+let g:gist_clip_command = 'pbcopy'
