@@ -31,3 +31,4 @@
   rebase = true
 [core]
   excludesfile = ~/.gitignore
+	editor = nvr --remote-tab-wait-silent +'set bufhidden=delete'
