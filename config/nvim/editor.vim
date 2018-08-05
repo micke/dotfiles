@@ -34,7 +34,7 @@ set shiftwidth=2
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·
+set list listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
