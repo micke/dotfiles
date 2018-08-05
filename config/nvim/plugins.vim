@@ -105,7 +105,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:gutentags_ctags_executable_ruby = 'rtags'
 
 " airblade/vim-gitgutter
-autocmd BufWritePost * GitGutter
+autocmd BufReadPost,BufWritePost * GitGutter
 set updatetime=100
 set signcolumn=yes
 
@@ -124,6 +124,10 @@ inoremap <expr> <C-j> delimitMate#JumpAny()
 
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
+" Delete git buffers spawned by fugitive through neovim-remote
+autocmd BufReadPost,BufNewFile .git/**/* set bufhidden=delete 
+autocmd BufReadPost,BufNewFile .git/* set bufhidden=delete 
+autocmd TermOpen * set bufhidden=delete 
 
 " thoughtbot/vim-rspec
 let g:rspec_command = 'Dispatch rspec {spec}'
