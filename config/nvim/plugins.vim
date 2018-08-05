@@ -126,9 +126,9 @@ inoremap <expr> <C-j> delimitMate#JumpAny()
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 " Delete git buffers spawned by fugitive through neovim-remote
-autocmd BufReadPost,BufNewFile .git/**/* set bufhidden=delete 
-autocmd BufReadPost,BufNewFile .git/* set bufhidden=delete 
-autocmd TermOpen * set bufhidden=delete 
+autocmd BufReadPost,BufNewFile .git/**/* set bufhidden=delete
+autocmd BufReadPost,BufNewFile .git/* set bufhidden=delete
+autocmd TermOpen * set bufhidden=delete
 
 " thoughtbot/vim-rspec
 let g:rspec_command = 'Dispatch rspec {spec}'
