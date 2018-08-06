@@ -11,6 +11,8 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
+nnoremap Y y$
+
 nmap <leader><Leader> <c-^>
 nmap <leader>h :rightbelow split<CR>
 nmap <leader>v :rightbelow vsplit<CR>
