@@ -13,16 +13,17 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nnoremap Y y$
 
+tnoremap <Esc> <C-\><C-n>
+
 nmap <leader><Leader> <c-^>
 nmap <leader>h :rightbelow split<CR>
 nmap <leader>v :rightbelow vsplit<CR>
 nmap <leader>av :AV<CR>
-nmap <leader>t :call RunCurrentSpecFile()<CR>
-nmap <leader>s :call RunNearestSpec()<CR>
-nmap <leader>l :call RunLastSpec()<CR>
-nmap <leader>a :call RunAllSpecs()<CR>
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>s :TestNearest<CR>
+nmap <silent> <leader>l :TestLast<CR> 
+nmap <silent> <leader>a :TestSuite<CR>
 nmap <leader>d :Dispatch<CR>
-nmap <leader>r :RuboCop<CR>
 
 " Tag bindings
 nnoremap <silent><expr> <c-w><c-]> ':<c-u>'.(winwidth(0) > 79 ? 'vert' : '').' wincmd ]<cr>'
@@ -33,7 +34,7 @@ nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>q :%s/\'\([^']*\)\'/"\1"/g<CR>
 
 " Remove all trailing whitespaces
-nnoremap <leader>tw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+nnoremap <leader>rtw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Fugitive
 nnoremap <leader>gl :Glog<CR>

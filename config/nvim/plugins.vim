@@ -59,7 +59,8 @@ Plug 'derekwyatt/vim-scala'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
 Plug 'tpope/vim-fugitive'
-Plug 'thoughtbot/vim-rspec'
+Plug 'lisinge/neomake'
+Plug 'janko-m/vim-test'
 Plug 'mattn/gist-vim'
 
 call plug#end()
@@ -87,16 +88,32 @@ let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
 " vim-airline/vim-airline
+function! NeomakeRunningStatus()
+return neomake#statusline#get_status(bufnr('%'), {
+          \ 'format_running': '…',
+          \ 'format_loclist_ok': '✓',
+          \ 'format_quickfix_ok': '✓',
+          \ 'format_loclist_unknown': '',
+          \ 'format_quickfix_issues': '',
+          \ })
+endfunction
+
+call airline#parts#define_function('neomake_status', 'NeomakeRunningStatus')
+
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1
-let g:airline_section_x = ''
+let g:airline_section_x = airline#section#create(['neomake_status'])
 let g:airline_section_y = ''
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', '%3v'])
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#obsession#enabled = 0
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.whitespace = ''
+let g:airline_symbols.linenr = ''
 
 " nathanaelkane/vim-indent-guides
 let g:indent_guides_auto_colors = 0
@@ -130,8 +147,28 @@ autocmd BufReadPost,BufNewFile .git/**/* set bufhidden=delete
 autocmd BufReadPost,BufNewFile .git/* set bufhidden=delete
 autocmd TermOpen * set bufhidden=delete
 
-" thoughtbot/vim-rspec
-let g:rspec_command = 'Dispatch rspec {spec}'
+" neomake/neomake
+let g:neomake_open_list = 2
+
+" function! MyOnNeomakeJobStarted() abort
+"   let g:airline_section_x = '…'
+" endfunction
+" function! MyOnNeomakeJobFinished() abort
+"   let context = g:neomake_hook_context
+"   if context.jobinfo.exit_code == 0
+"     let g:airline_section_x = '✓'
+"   else
+"     let g:airline_section_x = ''
+"   endif
+" endfunction
+" augroup my_neomake_hooks
+"   au!
+"   autocmd User NeomakeJobStarted call MyOnNeomakeJobStarted()
+"   autocmd User NeomakeJobFinished call MyOnNeomakeJobFinished()
+" augroup END
+
+" janko-m/vim-test
+let test#strategy = "neomake"
 
 " mattn/gist-vim
 let g:gist_detect_filetype = 1
