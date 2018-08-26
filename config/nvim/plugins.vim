@@ -27,6 +27,7 @@ Plug 'vim-scripts/greplace.vim'
 Plug 'xenoterracide/html.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 Plug 'jamessan/vim-gnupg'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'
@@ -62,12 +63,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'lisinge/neomake'
 Plug 'janko-m/vim-test'
 Plug 'mattn/gist-vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'c-brenn/phoenix.vim'
 
 call plug#end()
 
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 call deoplete#custom#option('smart_case', v:true)
+call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 
 " junegunn/fzf
 nnoremap <space> :Files<CR>
@@ -87,19 +92,53 @@ map <leader>f :ALEFix<CR>
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
-" vim-airline/vim-airline
-function! NeomakeRunningStatus()
-return neomake#statusline#get_status(bufnr('%'), {
-          \ 'format_running': '…',
-          \ 'format_loclist_ok': '✓',
-          \ 'format_quickfix_ok': '✓',
-          \ 'format_loclist_unknown': '',
-          \ 'format_quickfix_issues': '',
-          \ })
+" neomake/neomake
+let g:neomake_open_list = 2
+
+let s:spinner_index = 0
+let s:active_spinners = 0
+let s:spinner_states = ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']
+
+function! StartSpinner()
+    let b:show_spinner = 1
+    let s:active_spinners += 1
+    if s:active_spinners == 1
+        let s:spinner_timer = timer_start(500 / len(s:spinner_states), 'SpinSpinner', {'repeat': -1})
+    endif
 endfunction
 
-call airline#parts#define_function('neomake_status', 'NeomakeRunningStatus')
+function! StopSpinner()
+    let b:show_spinner = 0
+    let s:active_spinners -= 1
+    if s:active_spinners == 0
+        :call timer_stop(s:spinner_timer)
+    endif
+endfunction
 
+function! SpinSpinner(timer)
+    let s:spinner_index = float2nr(fmod(s:spinner_index + 1, len(s:spinner_states)))
+    redraw
+endfunction
+
+function! SpinnerText()
+    if get(b:, 'show_spinner', 0) == 0
+        return " "
+    endif
+
+    return s:spinner_states[s:spinner_index]
+endfunction
+
+augroup neomake_hooks
+    au!
+    autocmd User NeomakeJobInit :call StartSpinner()
+    autocmd User NeomakeFinished :call StopSpinner()
+augroup END
+
+" vim-airline/vim-airline
+call airline#parts#define_function('neomake_status', 'SpinnerText')
+
+let g:airline#extensions#ale#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#show_splits = 0
@@ -147,28 +186,9 @@ autocmd BufReadPost,BufNewFile .git/**/* set bufhidden=delete
 autocmd BufReadPost,BufNewFile .git/* set bufhidden=delete
 autocmd TermOpen * set bufhidden=delete
 
-" neomake/neomake
-let g:neomake_open_list = 2
-
-" function! MyOnNeomakeJobStarted() abort
-"   let g:airline_section_x = '…'
-" endfunction
-" function! MyOnNeomakeJobFinished() abort
-"   let context = g:neomake_hook_context
-"   if context.jobinfo.exit_code == 0
-"     let g:airline_section_x = '✓'
-"   else
-"     let g:airline_section_x = ''
-"   endif
-" endfunction
-" augroup my_neomake_hooks
-"   au!
-"   autocmd User NeomakeJobStarted call MyOnNeomakeJobStarted()
-"   autocmd User NeomakeJobFinished call MyOnNeomakeJobFinished()
-" augroup END
-
 " janko-m/vim-test
-let test#strategy = "neomake"
+let g:test#strategy = "dispatch"
+let g:test#runner_commands = ['RSpec']
 
 " mattn/gist-vim
 let g:gist_detect_filetype = 1

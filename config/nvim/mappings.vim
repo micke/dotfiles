@@ -13,7 +13,7 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nnoremap Y y$
 
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 
 nmap <leader><Leader> <c-^>
 nmap <leader>h :rightbelow split<CR>
@@ -23,7 +23,11 @@ nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>l :TestLast<CR> 
 nmap <silent> <leader>a :TestSuite<CR>
-nmap <leader>d :Dispatch<CR>
+" nmap <silent> <leader>dt :TestFile -strategy=dispatch<CR>
+" nmap <silent> <leader>ds :TestNearest -strategy=dispatch<CR>
+" nmap <silent> <leader>dl :TestLast -strategy=dispatch<CR>
+" nmap <silent> <leader>da :TestSuite -strategy=dispatch<CR>
+" nmap <silent> <leader>dd :Dispatch -strategy=dispatch<CR>
 
 " Tag bindings
 nnoremap <silent><expr> <c-w><c-]> ':<c-u>'.(winwidth(0) > 79 ? 'vert' : '').' wincmd ]<cr>'
@@ -62,6 +66,9 @@ nmap <leader>a: :Tabularize /:\zs<CR>
 vmap <leader>a: :Tabularize /:\zs<CR>
 nmap <leader>a, :Tabularize /,\zs<CR>
 vmap <leader>a, :Tabularize /,\zs<CR>
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>

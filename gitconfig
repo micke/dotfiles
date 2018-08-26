@@ -20,6 +20,7 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   ctags = !.git/hooks/ctags
   deletemergedbranches = !gitdeletemergedbranches
+  pushu = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 
 [github]
   user = lisinge

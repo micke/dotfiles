@@ -34,7 +34,7 @@ set shiftwidth=2
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set list listchars=tab:>\ ,trail:-,nbsp:+
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -77,6 +77,11 @@ augroup vimrcEx
 
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup END
+
+augroup quickfix
+  autocmd!
+  autocmd FileType qf setlocal nolist wrap linebreak
 augroup END
 
 " Local config
