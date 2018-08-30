@@ -65,6 +65,7 @@ Plug 'janko-m/vim-test'
 Plug 'mattn/gist-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'c-brenn/phoenix.vim'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -73,6 +74,7 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 call deoplete#custom#option('smart_case', v:true)
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#source('ultisnips', 'rank', 1000)
 
 " junegunn/fzf
 nnoremap <space> :Files<CR>
@@ -177,7 +179,7 @@ let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
 let g:delimitMate_jump_expansion=1
-inoremap <expr> <C-j> delimitMate#JumpAny()
+" inoremap <expr> <C-j> delimitMate#JumpAny()
 
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
@@ -193,3 +195,9 @@ let g:test#runner_commands = ['RSpec']
 " mattn/gist-vim
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
+
+" SirVer/ultisnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"

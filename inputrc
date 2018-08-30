@@ -47,3 +47,6 @@ TAB: menu-complete
 # Needed because binding 'p' in command mode above wipes its insert mode
 # function, too. This fixes that, and will insert 'p' when you type 'p'.
 "p": self-insert
+
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word

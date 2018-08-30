@@ -42,6 +42,9 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_172)
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
+# Enable history in erlang and elixir shell
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # added by travis gem
 [ -f /Users/lisinge/.travis/travis.sh ] && source /Users/lisinge/.travis/travis.sh
 
