@@ -58,3 +58,4 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # source <(kubectl completion zsh)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/local/opt/asdf/asdf.sh
