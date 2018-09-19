@@ -604,12 +604,26 @@
 	<real>1</real>
 	<key>GlobalKeyMap</key>
 	<dict>
+		<key>0x22-0xa0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>Ä</string>
+		</dict>
 		<key>0x27-0x80000</key>
 		<dict>
 			<key>Action</key>
 			<integer>12</integer>
 			<key>Text</key>
 			<string>ä</string>
+		</dict>
+		<key>0x3a-0xa0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>Ö</string>
 		</dict>
 		<key>0x3b-0x80000</key>
 		<dict>
@@ -624,6 +638,13 @@
 			<integer>12</integer>
 			<key>Text</key>
 			<string>å</string>
+		</dict>
+		<key>0x7b-0xa0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>Å</string>
 		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
@@ -791,9 +812,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>280 339 937 512 0 0 1440 900 </string>
+	<string>280 374 958 451 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>419 475 585 402 0 0 1440 900 </string>
+	<string>419 475 570 402 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>8 475 570 402 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1680,7 +1701,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-03T14:07:03Z</date>
+	<date>2018-09-12T07:30:29Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1726,7 +1747,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.1beta2</string>
+	<string>3.2.1beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

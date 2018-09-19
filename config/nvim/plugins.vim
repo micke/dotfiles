@@ -66,15 +66,18 @@ Plug 'mattn/gist-vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'c-brenn/phoenix.vim'
 Plug 'SirVer/ultisnips'
+Plug 'bkad/CamelCaseMotion'
 
 call plug#end()
 
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#disable_auto_complete = 1
 let g:deoplete#enable_smart_case = 1
 call deoplete#custom#option('smart_case', v:true)
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 call deoplete#custom#source('ultisnips', 'rank', 1000)
+inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
 
 " junegunn/fzf
 nnoremap <space> :Files<CR>
@@ -201,3 +204,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
+
+" bkad/CamelCaseMotion
+call camelcasemotion#CreateMotionMappings('s')
