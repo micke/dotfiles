@@ -12,6 +12,11 @@ set ruler              " show the cursor position all the time
 set showcmd            " display incomplete commands
 set laststatus=2       " Always display the status line
 set autowrite
+
+" Fix for slow ruby syntax
+" https://github.com/vim-ruby/vim-ruby/issues/243
+" https://github.com/vim/vim/issues/282
+set regexpengine=1
 set lazyredraw
 
 " Persistent undo
