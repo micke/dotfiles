@@ -15,3 +15,5 @@ alias v=vim
 alias x=exit
 alias k=kubectl
 alias ks="k --namespace staging"
+
+alias dc="docker-compose"
