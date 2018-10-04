@@ -34,3 +34,5 @@
 [core]
   excludesfile = ~/.gitignore
   editor = nvr --remote-tab-wait-silent +'-tabmove' +'set bufhidden=delete'
+[commit]
+	gpgsign = true
