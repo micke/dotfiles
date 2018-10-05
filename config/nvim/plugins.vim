@@ -191,6 +191,28 @@ autocmd BufReadPost,BufNewFile .git/**/* set bufhidden=delete
 autocmd BufReadPost,BufNewFile .git/* set bufhidden=delete
 autocmd TermOpen * set bufhidden=delete
 
+" tpope/vim-projectionist
+let g:projectionist_heuristics = {
+  \   "mix.exs": {
+  \     "lib/*.ex": {
+  \       "type": "lib",
+  \       "alternate": "test/{}_test.exs",
+  \       "template": [
+  \         "defmodule {capitalize|camelcase|dot} do",
+  \         "end"
+  \       ]
+  \     },
+  \     "test/*_test.exs": {
+  \       "type": "test",
+  \       "alternate": "lib/{}.ex",
+  \       "template": [
+  \         "defmodule {capitalize|camelcase|dot}Test do",
+  \         "end"
+  \       ]
+  \     }
+  \   }
+  \ }
+
 " janko-m/vim-test
 let g:test#strategy = "dispatch"
 let g:test#runner_commands = ['RSpec']
