@@ -207,6 +207,7 @@ let g:projectionist_heuristics = {
   \       "alternate": "lib/{}.ex",
   \       "template": [
   \         "defmodule {capitalize|camelcase|dot}Test do",
+  \         "  use ExUnit.Case, async: true",
   \         "end"
   \       ]
   \     }
