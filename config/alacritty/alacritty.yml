@@ -366,12 +366,14 @@ key_bindings:
   - { key: Delete,                  chars: "\x1b[3~"                     }
   - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
   - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
-  - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
+  # - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                   }
   - { key: Left,                    chars: "\x1b[D",   mode: ~AppCursor  }
   - { key: Left,                    chars: "\x1bOD",   mode: AppCursor   }
   - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                   }
   - { key: Right,    mods: Control, chars: "\x1b[1;5C"                   }
-  - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
+  # - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
+  - { key: Right,    mods: Alt,     chars: "\x1be"                   }
   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
   - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                   }
@@ -445,3 +447,14 @@ key_bindings:
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
   - { key: NumpadEnter,             chars: "\n"                          }
+  - { key: Key0,     mods: Control, chars: "\x1b[27;5;48~" }
+  - { key: Key1,     mods: Control, chars: "\x1b[27;5;49~" }
+  - { key: Key2,     mods: Control, chars: "\x1b[27;5;50~" }
+  - { key: Key3,     mods: Control, chars: "\x1b[27;5;51~" }
+  - { key: Key4,     mods: Control, chars: "\x1b[27;5;52~" }
+  - { key: Key5,     mods: Control, chars: "\x1b[27;5;53~" }
+  - { key: Key6,     mods: Control, chars: "\x1b[27;5;54~" }
+  - { key: Key7,     mods: Control, chars: "\x1b[27;5;55~" }
+  - { key: Key8,     mods: Control, chars: "\x1b[27;5;56~" }
+  - { key: Key9,     mods: Control, chars: "\x1b[27;5;57~" }
+  - { key: b,     mods: Control, chars: "\x1b[27;5;57~" }
