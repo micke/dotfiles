@@ -88,7 +88,10 @@ let g:ruby_indent_block_style = 'do'
 " w0rp/ale
 let g:ale_fixers = {
 \   'ruby': [
-\       'rubocop'
+\     'rubocop',
+\   ],
+\   'elixir': [
+\     'mix_format'
 \   ],
 \}
 map <leader>f :ALEFix<CR>
