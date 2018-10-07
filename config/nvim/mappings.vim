@@ -44,15 +44,15 @@ nnoremap <leader>rtw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl 
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gc :Git co<space>
 nnoremap <leader>gbl :Gblame<CR>
 nnoremap <leader>gbr :Gbrowse<CR>
 nnoremap <leader>gpl :Gpull<CR>
 nnoremap <leader>gps :Gpush<CR>
+nnoremap <leader>gpu :Git pushu<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>ga :Gcommit -a<CR>
-nnoremap <leader>go :Git co<space>
 
 " Config mappings
 nnoremap <leader>cc :e $MYVIMRC<CR>
