@@ -2,6 +2,7 @@
 
 ```bash
 git clone git://github.com/lisinge/dotfiles ~/.dotfiles
+git submodule init && git submodule update
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew bundle
 rcup
