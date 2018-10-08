@@ -18,6 +18,7 @@ export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="./bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 # editor
 export EDITOR=/usr/local/bin/nvim
