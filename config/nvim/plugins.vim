@@ -167,6 +167,7 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 
 " ludovicchabant/vim-gutentags
+let g:gutentags_file_list_command = 'rg --files --ignore-file=.tagignore'
 let g:gutentags_ctags_executable_ruby = 'rtags'
 
 " airblade/vim-gitgutter
