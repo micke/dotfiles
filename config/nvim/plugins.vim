@@ -237,3 +237,12 @@ let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
 
 " bkad/CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('s')
+
+" carakan/pmv.vim
+let g:pmv_no_default_key_mappings = 1
+nmap <leader>pl <Plug>(pmv-last-release)
+nmap <leader>pa <Plug>(pmv-all-releases)
+nmap <leader>pp <Plug>(pmv-append-release)
+nmap <leader>pi <Plug>(pmv-package-info)
+nmap <leader>pb <Plug>(pmv-open-repo-page)
+nmap <leader>pd <Plug>(pmv-open-docs)

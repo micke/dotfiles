@@ -57,8 +57,8 @@ nnoremap <leader>ga :Gcommit -a<CR>
 " Config mappings
 nnoremap <leader>cc :e $MYVIMRC<CR>
 nnoremap <leader>cs :so $MYVIMRC<CR>:AirlineRefresh<CR>
-nnoremap <leader>pi :PlugInstall<CR>
-nnoremap <leader>pu :PlugUpdate<CR>
+nnoremap <leader>cpi :PlugInstall<CR>
+nnoremap <leader>cpu :PlugUpdate<CR>
 
 nmap <leader>a= :Tabularize /=<CR>
 vmap <leader>a= :Tabularize /=<CR>
