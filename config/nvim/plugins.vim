@@ -1,13 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'danro/rename.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'nanki/treetop.vim'
-Plug 'timcharper/textile.vim'
-Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-bundler'
@@ -23,8 +16,6 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-git'
 Plug 'andymass/vim-matchup'
 Plug 'vim-scripts/ctags.vim'
-Plug 'vim-scripts/greplace.vim'
-Plug 'xenoterracide/html.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
@@ -36,17 +27,12 @@ Plug 'tomtom/tlib_vim'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'vim-scripts/argtextobj.vim'
-Plug 'ngmy/vim-rubocop'
 Plug 'glts/vim-textobj-comment'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'slim-template/vim-slim'
-Plug 'ecomba/vim-ruby-refactoring'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'chrisbra/Colorizer'
-Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
 Plug 'FooSoft/vim-argwrap'
 Plug 'vim-airline/vim-airline'
@@ -55,20 +41,15 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
-Plug 'mileszs/ack.vim'
-Plug 'derekwyatt/vim-scala'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
 Plug 'tpope/vim-fugitive'
-Plug 'lisinge/neomake'
 Plug 'janko-m/vim-test'
-Plug 'mattn/gist-vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'c-brenn/phoenix.vim'
 Plug 'SirVer/ultisnips'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mattn/webapi-vim'
 Plug 'carakan/pmv.vim'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -176,9 +157,6 @@ let g:gutentags_ctags_executable_ruby = 'rtags'
 autocmd BufReadPost,BufWritePost * GitGutter
 set updatetime=100
 set signcolumn=yes
-
-" mileszs/ack.vim
-let g:ackprg = 'ag --vimgrep'
 
 " Raimondi/vim-scala
 let g:scala_sort_across_groups=1
