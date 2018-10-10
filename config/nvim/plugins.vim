@@ -67,6 +67,8 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'c-brenn/phoenix.vim'
 Plug 'SirVer/ultisnips'
 Plug 'bkad/CamelCaseMotion'
+Plug 'mattn/webapi-vim'
+Plug 'carakan/pmv.vim'
 
 call plug#end()
 
