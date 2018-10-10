@@ -158,10 +158,6 @@ autocmd BufReadPost,BufWritePost * GitGutter
 set updatetime=100
 set signcolumn=yes
 
-" Raimondi/vim-scala
-let g:scala_sort_across_groups=1
-let g:scala_first_party_namespaces= '\(controllers\|views\|models\|libs\|utils\|services\|formatters\)'
-
 " Raimondi/delimitMate
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
