@@ -155,6 +155,7 @@ let g:gutentags_ctags_executable_ruby = 'rtags'
 
 " airblade/vim-gitgutter
 autocmd BufReadPost,BufWritePost * GitGutter
+autocmd BufWinLeave * GitGutterAll
 set updatetime=100
 set signcolumn=yes
 
