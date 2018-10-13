@@ -70,6 +70,9 @@ vmap <leader>a, :Tabularize /,\zs<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" Remap <C-c> to <C-a> (increment). As <C-a> is used by tmux
+nnoremap <C-c> <C-a>
+
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
