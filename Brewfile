@@ -83,6 +83,7 @@ brew "ossp-uuid"
 brew "pick"
 brew "postgresql"
 brew "qt"
+brew "rbenv"
 brew "reattach-to-user-namespace"
 brew "redis", restart_service: true
 brew "ripgrep"
