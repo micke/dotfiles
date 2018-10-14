@@ -9,7 +9,7 @@
 [user]
   name = Micke Lisinge
   email = hi@micke.me
-	signingkey = 9168A4019C579B81
+  signingkey = 9168A4019C579B81
 
 [merge]
   defaultToUpstream = true
@@ -35,6 +35,6 @@
   excludesfile = ~/.gitignore
   editor = nvr --remote-tab-wait-silent +'-tabmove' +'set bufhidden=delete'
 [commit]
-	gpgsign = true
+  gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg
+  program = /usr/local/bin/gpg
