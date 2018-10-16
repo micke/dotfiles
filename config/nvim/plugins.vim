@@ -43,7 +43,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
-Plug 'micke/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'janko-m/vim-test'
 Plug 'SirVer/ultisnips'
 Plug 'bkad/CamelCaseMotion'
