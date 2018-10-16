@@ -84,51 +84,6 @@ map <leader>f :ALEFix<CR>
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
-" neomake/neomake
-let g:neomake_open_list = 2
-
-let s:spinner_index = 0
-let s:active_spinners = 0
-let s:spinner_states = ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']
-
-function! StartSpinner()
-    let b:show_spinner = 1
-    let s:active_spinners += 1
-    if s:active_spinners == 1
-        let s:spinner_timer = timer_start(500 / len(s:spinner_states), 'SpinSpinner', {'repeat': -1})
-    endif
-endfunction
-
-function! StopSpinner()
-    let b:show_spinner = 0
-    let s:active_spinners -= 1
-    if s:active_spinners == 0
-        :call timer_stop(s:spinner_timer)
-    endif
-endfunction
-
-function! SpinSpinner(timer)
-    let s:spinner_index = float2nr(fmod(s:spinner_index + 1, len(s:spinner_states)))
-    redraw
-endfunction
-
-function! SpinnerText()
-    if get(b:, 'show_spinner', 0) == 0
-        return " "
-    endif
-
-    return s:spinner_states[s:spinner_index]
-endfunction
-
-augroup neomake_hooks
-    au!
-    autocmd User NeomakeJobInit :call StartSpinner()
-    autocmd User NeomakeFinished :call StopSpinner()
-augroup END
-
-" vim-airline/vim-airline
-call airline#parts#define_function('neomake_status', 'SpinnerText')
-
 let g:airline#extensions#ale#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -136,7 +91,7 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1
-let g:airline_section_x = airline#section#create(['neomake_status'])
+let g:airline_section_x = ''
 let g:airline_section_y = ''
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', '%3v'])
 let g:airline_skip_empty_sections = 1
