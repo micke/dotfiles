@@ -43,19 +43,20 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
-Plug 'tpope/vim-fugitive'
+Plug 'micke/vim-fugitive'
 Plug 'janko-m/vim-test'
 Plug 'SirVer/ultisnips'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mattn/webapi-vim'
 Plug 'carakan/pmv.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-expand-region'
 
 call plug#end()
 
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
+" let g:deoplete#disable_auto_complete = 1
 let g:deoplete#enable_smart_case = 1
 call deoplete#custom#option('smart_case', v:true)
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
