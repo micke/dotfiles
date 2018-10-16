@@ -39,6 +39,9 @@ export LANG=en_US.UTF-8
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
+# Fix gpg...
+export GPG_TTY=$(tty)
+
 # Enable history in erlang and elixir shell
 export ERL_AFLAGS="-kernel shell_history enabled"
 
