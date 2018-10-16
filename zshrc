@@ -59,5 +59,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/opt/asdf/asdf.sh
+source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 eval "$(rbenv init -)"
