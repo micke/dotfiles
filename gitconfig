@@ -36,5 +36,3 @@
   editor = nvr --remote-tab-wait-silent +'-tabmove' +'set bufhidden=delete'
 [commit]
   gpgsign = true
-[gpg]
-  program = /usr/local/bin/gpg
