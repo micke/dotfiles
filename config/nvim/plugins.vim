@@ -51,6 +51,7 @@ Plug 'mattn/webapi-vim'
 Plug 'carakan/pmv.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
