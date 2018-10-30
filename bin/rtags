@@ -30,10 +30,10 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 
 if [[ $* = *"--append"* ]]; then
   cat ${TAGS_FILE_NAME} \
-    | (cat && ripper-tags --ignore-unsupported-options -f - ${*/--append}) \
+    | (cat && ripper-tags --ignore-unsupported-options --extra=q -f - ${*/--append}) \
     | grep -v '^!_' \
     | sort \
     > tags~ && mv tags~ ${TAGS_FILE_NAME}
 else
-  ripper-tags --ignore-unsupported-options $*
+  ripper-tags --ignore-unsupported-options --extra=q $*
 fi
