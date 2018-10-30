@@ -37,8 +37,6 @@ Plug 'w0rp/ale'
 Plug 'FooSoft/vim-argwrap'
 Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'tpope/vim-obsession'
-Plug 'dhruvasagar/vim-prosession'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
@@ -97,7 +95,6 @@ let g:airline_section_y = ''
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', '%3v'])
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#hunks#enabled = 0
-let g:airline#extensions#obsession#enabled = 0
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.whitespace = ''
 let g:airline_symbols.linenr = ''
