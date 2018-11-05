@@ -16,4 +16,6 @@ alias x=exit
 alias k=kubectl
 alias ks="k --namespace staging"
 
+alias publickey="cat ~/.ssh/id_rsa.pub | pbcopy"
+
 alias dc="docker-compose"
