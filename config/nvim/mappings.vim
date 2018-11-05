@@ -60,6 +60,7 @@ nnoremap <leader>cc :e $MYVIMRC<CR>
 nnoremap <leader>cs :so $MYVIMRC<CR>:AirlineRefresh<CR>
 nnoremap <leader>cpi :PlugInstall<CR>
 nnoremap <leader>cpu :PlugUpdate<CR>
+nnoremap <leader>cpc :PlugClean<CR>
 
 nmap <leader>a= :Tabularize /=<CR>
 vmap <leader>a= :Tabularize /=<CR>
