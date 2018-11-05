@@ -28,6 +28,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'glts/vim-textobj-comment'
+Plug 'beloglazov/vim-textobj-quotes'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -50,6 +51,7 @@ Plug 'carakan/pmv.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
 Plug 'posva/vim-vue'
+Plug 'junegunn/vim-peekaboo'
 
 call plug#end()
 
