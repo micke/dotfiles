@@ -70,6 +70,7 @@ nnoremap <space> :Files<CR>
 let g:ruby_indent_block_style = 'do'
 
 " w0rp/ale
+let $MIX_ENV = 'editor'
 let g:ale_fixers = {
 \   'ruby': [
 \     'rubocop',
