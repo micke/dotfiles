@@ -26,6 +26,7 @@ set undofile
 
 set scrolloff=3
 
+set clipboard+=unnamed
 set backspace=indent,eol,start
 
 " Mouse support
