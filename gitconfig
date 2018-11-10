@@ -35,6 +35,6 @@
   rebase = true
 [core]
   excludesfile = ~/.gitignore
-  editor = nvr --remote-tab-wait-silent +'-tabmove' +'set bufhidden=delete'
+  editor = nvr --remote-tab-wait-silent +'set bufhidden=delete'
 [commit]
   gpgsign = true
