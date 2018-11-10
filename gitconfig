@@ -22,6 +22,8 @@
   ctags = !.git/hooks/ctags
   deletemergedbranches = !gitdeletemergedbranches
   pushu = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+  pu = pushu
+  pr = "!hub -c core.commentChar=';' pull-request -oe"
 
 [github]
   user = lisinge
