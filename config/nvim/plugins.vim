@@ -57,6 +57,7 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-gtags'
+Plug 'ncm2/ncm2-ultisnips'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -169,7 +170,7 @@ let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
 " SirVer/ultisnips
-let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
@@ -187,14 +188,15 @@ nmap <leader>pi <Plug>(pmv-package-info)
 nmap <leader>pb <Plug>(pmv-open-repo-page)
 nmap <leader>pd <Plug>(pmv-open-docs)
 
-" roxma/nvim-yarp
+" ncm2
 autocmd BufEnter * call ncm2#enable_for_buffer()
+imap <C-j> <Plug>(ncm2_ultisnips_expand_completed)
 
 " LanguageClient
-autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
 let g:LanguageClient_autoStop = 0
 let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['tcp://localhost:7658']
+    \ 'ruby': ['solargraph',  'stdio'],
+    \ 'elixir': ['/Users/lisinge/code/JakeBecker/elixir-ls/rel/language_server.sh']
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
