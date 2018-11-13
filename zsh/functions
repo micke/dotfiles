@@ -2,3 +2,24 @@ todo() { git commit --allow-empty -m "TODO: $*" }
 clone() { git clone git@github.com:$1.git ~/code/$1 && cd ~/code/$1 }
 json_pretty(){ ruby -rjson -e "STDOUT.puts JSON.pretty_generate(JSON[STDIN.read])" }
 uuid(){ ruby -rsecurerandom -e "STDOUT.puts SecureRandom.uuid" }
+gc() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+grb() {
+  local commits
+  commits=$(git lg --color=always -30) &&
+  commit=$(echo "$commits" | fzf --ansi +s) &&
+  git rebase -i $(echo "$commit" | cut -d" " -f2)
+}
+gd() {
+  git lg --color=always |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}

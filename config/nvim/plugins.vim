@@ -57,6 +57,10 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-gtags'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 call plug#end()
 
@@ -185,3 +189,14 @@ nmap <leader>pd <Plug>(pmv-open-docs)
 
 " roxma/nvim-yarp
 autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" LanguageClient
+autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
+let g:LanguageClient_autoStop = 0
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['tcp://localhost:7658']
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
