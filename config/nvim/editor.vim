@@ -34,6 +34,7 @@ set mouse=a
 
 set wildmode=list:longest,list:full
 set complete=.,w,t
+set completeopt=noinsert,menuone,noselect
 
 " Softtabs, 2 spaces
 set tabstop=2

@@ -31,7 +31,7 @@ Plug 'glts/vim-textobj-comment'
 Plug 'beloglazov/vim-textobj-quotes'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'gerw/vim-HiLinkTrace'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
@@ -51,17 +51,22 @@ Plug 'carakan/pmv.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/vim-peekaboo'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-gtags'
 
 call plug#end()
 
 " Shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
-" let g:deoplete#disable_auto_complete = 1
-let g:deoplete#enable_smart_case = 1
-call deoplete#custom#option('smart_case', v:true)
-call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('ultisnips', 'rank', 1000)
-inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+" call deoplete#custom#option('smart_case', v:true)
+" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+" call deoplete#custom#source('ultisnips', 'rank', 1000)
+" inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
 
 " junegunn/fzf
 nnoremap <space> :Files<CR>
@@ -177,3 +182,6 @@ nmap <leader>pp <Plug>(pmv-append-release)
 nmap <leader>pi <Plug>(pmv-package-info)
 nmap <leader>pb <Plug>(pmv-open-repo-page)
 nmap <leader>pd <Plug>(pmv-open-docs)
+
+" roxma/nvim-yarp
+autocmd BufEnter * call ncm2#enable_for_buffer()
