@@ -197,7 +197,8 @@ imap <C-j> <Plug>(ncm2_ultisnips_expand_completed)
 let g:LanguageClient_autoStop = 0
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['solargraph',  'stdio'],
-    \ 'elixir': ['/Users/lisinge/code/JakeBecker/elixir-ls/rel/language_server.sh']
+    \ 'elixir': ['/Users/lisinge/code/JakeBecker/elixir-ls/rel/language_server.sh'],
+    \ 'vue': ['vls']
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
