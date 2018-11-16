@@ -1,0 +1,23 @@
+#! /bin/bash
+
+function titleize() {
+  echo $1 | sed -e 's/-/ /g'
+}
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+story_regex="(\d+)-(.*)"
+fv_regex="fv-(.*)"
+if [[ $branch =~ $story_regex ]]; then
+  story_id="${BASH_REMATCH[1]}"
+  title="[#$story_id] $(titleize BASH_REMATCH[2])"
+elif [[ $branch =~ $fv_regex ]]; then
+  title="[FV] $(titleize BASH_REMATCH[1])"
+else
+  title="$(titleize $branch)"
+fi
+
+echo $branch
+echo $title
+
+#if [ -f .github/PULL_REQUEST_TEMPLATE.md ]; then
+#fi
