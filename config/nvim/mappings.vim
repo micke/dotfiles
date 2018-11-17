@@ -49,7 +49,7 @@ nnoremap <leader>gbl :Gblame<CR>
 nnoremap <leader>gbr :Gbrowse<CR>
 nnoremap <leader>gpl :Gpull<CR>
 nnoremap <leader>gps :Gpush<CR>
-nnoremap <leader>gpr :Dispatch! hub -c core.commentChar=';' pull-request -oe<CR>
+nnoremap <leader>gpr :Dispatch! git p-r<CR>
 nnoremap <leader>gpu :Dispatch! hub pushu<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gr :Gread<CR>
