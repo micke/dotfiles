@@ -23,7 +23,7 @@
   deletemergedbranches = !gitdeletemergedbranches
   pushu = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
   pu = pushu
-  p-r = "!pr_template_builder | hub -c core.commentChar=';' pull-request -oe -F -"
+  p-r = "!devflow pr | hub -c core.commentChar=';' pull-request -oe -F -"
 
 [github]
   user = lisinge
