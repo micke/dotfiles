@@ -10,6 +10,9 @@ HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
+# Go
+export GOPATH=$HOME/code/micke/go
+
 # PATH
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
@@ -19,6 +22,7 @@ export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="./bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 # editor
 export EDITOR=/usr/local/bin/nvim
@@ -26,9 +30,6 @@ export EDITOR=/usr/local/bin/nvim
 # cd
 export CDPATH="$CDPATH:$HOME/code"
 setopt auto_cd
-
-# Go
-export GOPATH=$HOME/.go
 
 # Avoid issues in tmux
 export LC_CTYPE="UTF-8"
