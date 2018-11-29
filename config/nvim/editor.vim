@@ -52,6 +52,9 @@ set splitright
 set relativenumber
 set number
 
+" Netrw
+let g:netrw_localrmdir='rm -r'
+
 " Display current line in a different color
 set cursorline
 
