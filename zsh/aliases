@@ -6,6 +6,7 @@ alias gw="git write"
 alias gps="git push"
 alias gpl="git pull"
 alias grbi="git rebase -i"
+alias d=devflow
 
 alias h=heroku
 alias heroku="nocorrect heroku"
