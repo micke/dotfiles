@@ -75,14 +75,14 @@ nnoremap <space> :Files<CR>
 let g:ruby_indent_block_style = 'do'
 
 " w0rp/ale
-let $MIX_ENV = 'test'
 let g:ale_fixers = {
 \   'ruby': [
 \     'rubocop',
 \   ],
-\   'elixir': [
-\     'mix_format'
-\   ],
+\}
+let g:ale_pattern_options = {
+\   '.*\.ex$': {'ale_enabled': 0},
+\   '.*\.exs$': {'ale_enabled': 0},
 \}
 map <leader>f :ALEFix<CR>
 
