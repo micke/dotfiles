@@ -1,4 +1,4 @@
-set rtp+=~/.config/nvim/bundle/hybrid-redux
+set rtp+=~/.config/nvim/colors/hybrid
 set termguicolors
 set background=dark
 colorscheme hybrid

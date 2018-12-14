@@ -70,7 +70,10 @@ call plug#end()
 " inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
 
 " junegunn/fzf
-nnoremap <space> :Files<CR>
+nnoremap <space><space> :Files<CR>
+nnoremap <space>t :Tags<CR>
+nnoremap <space>r :Rg<CR>
+nnoremap <space>c :Commits<CR>
 
 " vim-ruby/vim-ruby
 let g:ruby_indent_block_style = 'do'
