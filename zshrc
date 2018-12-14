@@ -17,8 +17,7 @@ export GOPATH=$HOME/code/micke/go
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin/:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="./bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
@@ -60,6 +59,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Load kubectl autocompletion
 # source <(kubectl completion zsh)
+
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/opt/asdf/asdf.sh
