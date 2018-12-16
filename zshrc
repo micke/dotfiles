@@ -27,6 +27,9 @@ export PATH="$GOPATH/bin:$PATH"
 # editor
 export EDITOR=/usr/local/bin/nvim
 
+# shell
+export SHELL=/usr/local/bin/zsh
+
 # cd
 export CDPATH="$CDPATH:$HOME/code"
 setopt auto_cd
