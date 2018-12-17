@@ -51,12 +51,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # added by travis gem
 [ -f /Users/lisinge/.travis/travis.sh ] && source /Users/lisinge/.travis/travis.sh
 
-# The next line updates PATH for the Google Cloud SDK.
-# source "/Users/lisinge/google-cloud-sdk/path.zsh.inc"
-
-# The next line enables shell command completion for gcloud.
-# source "/Users/lisinge/google-cloud-sdk/completion.zsh.inc"
-
 # Load kubectl autocompletion
 # source <(kubectl completion zsh)
 
