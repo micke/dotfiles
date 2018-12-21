@@ -37,7 +37,7 @@ setopt auto_cd
 export LC_CTYPE="UTF-8"
 
 # Lang
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
