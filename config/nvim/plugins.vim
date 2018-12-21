@@ -53,6 +53,7 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-gtags'
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'thalesmello/webcomplete.vim'
+Plug 'AndrewRadev/deleft.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -169,7 +170,7 @@ let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
 " SirVer/ultisnips
-" let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
@@ -194,7 +195,6 @@ imap <C-j> <Plug>(ncm2_ultisnips_expand_completed)
 " LanguageClient
 let g:LanguageClient_autoStop = 0
 let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['solargraph',  'stdio'],
     \ 'elixir': ['/Users/lisinge/code/JakeBecker/elixir-ls/rel/language_server.sh'],
     \ 'vue': ['vls']
     \ }
