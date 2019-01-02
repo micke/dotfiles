@@ -60,7 +60,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'machakann/vim-highlightedyank'
 Plug 'AndrewRadev/deleft.vim'
-Plug 'Shougo/denite.nvim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -73,7 +73,21 @@ call plug#end()
 " inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
 
 " junegunn/fzf
-nnoremap <space><space> :Files<CR>
+
+function! Fzf_files_with_dev_icons(command)
+  let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
+   function! s:edit_devicon_prepended_file(item)
+    let l:file_path = a:item[4:-1]
+    execute 'silent e' l:file_path
+  endfunction
+   call fzf#run({
+        \ 'source': a:command.' | devicon-lookup',
+        \ 'sink':   function('s:edit_devicon_prepended_file'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down':    '40%' })
+endfunction
+
+nnoremap <space><space> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
 nnoremap <space>t :Tags<CR>
 nnoremap <space>r :Rg<CR>
 nnoremap <space>c :Commits<CR>
