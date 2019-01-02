@@ -75,12 +75,12 @@ call plug#end()
 " junegunn/fzf
 
 function! Fzf_files_with_dev_icons(command)
-  let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
-   function! s:edit_devicon_prepended_file(item)
+  let l:fzf_files_options = '--bind ctrl-d:preview-page-down,ctrl-u:preview-page-up --preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
+  function! s:edit_devicon_prepended_file(item)
     let l:file_path = a:item[4:-1]
     execute 'silent e' l:file_path
   endfunction
-   call fzf#run({
+  call fzf#run({
         \ 'source': a:command.' | devicon-lookup',
         \ 'sink':   function('s:edit_devicon_prepended_file'),
         \ 'options': '-m ' . l:fzf_files_options,
