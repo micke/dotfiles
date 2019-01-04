@@ -41,7 +41,7 @@ export LC_CTYPE="UTF-8"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='fd --type file --no-ignore-vcs --hidden --follow --exclude .git'
 
 # Fix OBJC error on mojave
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
