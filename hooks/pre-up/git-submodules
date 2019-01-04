@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+set -e
+
+git submodule init --quiet
+git submodule update --recursive

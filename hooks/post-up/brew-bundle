@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e
+
+if ! [ -x "$(command -v brew)" ]; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew bundle
+fi

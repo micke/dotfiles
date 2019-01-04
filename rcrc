@@ -1,1 +1,1 @@
-EXCLUDES="README.md LICENSE Brewfile hybrid.itermcolors"
+EXCLUDES="README.md LICENSE hybrid.itermcolors"
