@@ -45,32 +45,12 @@ Plug 'mattn/webapi-vim'
 Plug 'carakan/pmv.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-tmux'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-gtags'
-" Plug 'ncm2/ncm2-ultisnips'
-" Plug 'thalesmello/webcomplete.vim'
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'machakann/vim-highlightedyank'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
-" Shougo/deoplete.nvim
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#enable_smart_case = 1
-" call deoplete#custom#option('smart_case', v:true)
-" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-" call deoplete#custom#source('ultisnips', 'rank', 1000)
-" inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
 
 " junegunn/fzf
 
@@ -232,21 +212,6 @@ nmap <leader>pp <Plug>(pmv-append-release)
 nmap <leader>pi <Plug>(pmv-package-info)
 nmap <leader>pb <Plug>(pmv-open-repo-page)
 nmap <leader>pd <Plug>(pmv-open-docs)
-
-" ncm2
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-" imap <C-j> <Plug>(ncm2_ultisnips_expand_completed)
-
-" LanguageClient
-" let g:LanguageClient_autoStop = 0
-" let g:LanguageClient_serverCommands = {
-"     \ 'elixir': ['/Users/lisinge/code/JakeBecker/elixir-ls/rel/language_server.sh'],
-"     \ 'vue': ['vls']
-"     \ }
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " coc.nvim
 inoremap <silent><expr> <TAB>
