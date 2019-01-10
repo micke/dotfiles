@@ -7,6 +7,7 @@ alias gps="git push"
 alias gpl="git pull"
 alias grbi="git rebase -i"
 alias d=devflow
+alias dc="devflow checkout"
 
 alias h=heroku
 alias heroku="nocorrect heroku"
@@ -19,5 +20,3 @@ alias kp="kubectl --namespace=prod"
 alias ks="k --namespace staging"
 
 alias publickey="cat ~/.ssh/id_rsa.pub | pbcopy"
-
-alias dc="docker-compose"
