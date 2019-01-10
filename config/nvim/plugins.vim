@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plug')
 
 Plug 'micke/vim-hybrid'
 Plug 'tpope/vim-unimpaired'

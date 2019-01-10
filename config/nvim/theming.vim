@@ -1,4 +1,4 @@
-set rtp+=~/.vim/plugged/vim-hybrid
+set rtp+=~/.config/nvim/plug/vim-hybrid
 set termguicolors
 set background=dark
 colorscheme hybrid
