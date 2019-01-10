@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'micke/vim-hybrid'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
