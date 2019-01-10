@@ -1,5 +1,5 @@
 [push]
-  default = upstream
+  default = current
 
 [color]
   branch = auto
@@ -12,6 +12,7 @@
   signingkey = 9168A4019C579B81
 
 [merge]
+  tool = nvim -d
   defaultToUpstream = true
 
 [alias]
@@ -42,3 +43,9 @@
 
 [fetch]
   prune = true
+
+[rebase]
+  autosquash = true
+
+[diff]
+  colorMoved = zebra

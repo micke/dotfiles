@@ -76,6 +76,9 @@ let g:ale_pattern_options = {
 \}
 map <leader>f :ALEFix<CR>
 
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
+
 " FooSoft/vim-argwrap
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
