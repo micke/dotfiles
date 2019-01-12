@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e
+
+if ! [ -e "$HOME/Library/Keyboard Layouts/Swansi.bundle" ]; then
+  echo "Installing Swansi"
+  cp -r ../../Swansi.bundle "$HOME/Library/Keyboard Layouts/Swansi.bundle"
+fi
