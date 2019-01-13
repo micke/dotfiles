@@ -43,6 +43,9 @@ export LANG=en_US.UTF-8
 
 export FZF_DEFAULT_COMMAND='fd --type file --no-ignore-vcs --hidden --follow --exclude .git'
 
+# Homebrew config
+export HOMEBREW_INSTALL_CLEANUP=true
+
 # Fix OBJC error on mojave
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
