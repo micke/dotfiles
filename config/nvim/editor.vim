@@ -33,7 +33,7 @@ set backspace=indent,eol,start
 " Mouse support
 set mouse=a
 
-set wildmode=list:longest,list:full
+set wildmode=longest:full,list:full
 set complete=.,w,t
 set completeopt=noinsert,menuone,noselect
 
