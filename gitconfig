@@ -26,7 +26,7 @@
   p-r = "!devflow pr | hub -c core.commentChar=';' pull-request -oe -F -"
 
 [github]
-  user = lisinge
+  user = micke
 
 [init]
   templatedir = ~/.git_template
