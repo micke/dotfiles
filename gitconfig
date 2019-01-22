@@ -13,6 +13,7 @@
 
 [merge]
   tool = nvim -d
+  conflictstyle = diff3
   defaultToUpstream = true
 
 [alias]
