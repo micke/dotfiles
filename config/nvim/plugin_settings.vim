@@ -63,6 +63,7 @@ let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
 let g:delimitMate_jump_expansion=1
 " inoremap <expr> <C-j> delimitMate#JumpAny()
+inoremap <expr> <C-l> delimitMate#JumpAny()
 
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
