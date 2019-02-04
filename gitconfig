@@ -12,7 +12,6 @@
   signingkey = 9168A4019C579B81
 
 [merge]
-  tool = fugitive
   defaultToUpstream = true
 
 [alias]
@@ -50,6 +49,3 @@
 
 [diff]
   colorMoved = zebra
-
-[mergetool "fugitive"]
-  cmd = nvr --remote-tab-wait-silent -c "Gdiff" "$MERGED"
