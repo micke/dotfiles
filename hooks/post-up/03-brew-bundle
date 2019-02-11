@@ -4,4 +4,4 @@ set -e
 
 brew bundle --global
 brew update
-brew upgrade -y
+brew upgrade

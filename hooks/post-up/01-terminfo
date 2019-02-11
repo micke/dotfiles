@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -e
+
+tic "../../terminfo/tmux.terminfo"
+tic "../../terminfo/xterm-256color.terminfo"
+tic "../../terminfo/tmux-256color.terminfo"
