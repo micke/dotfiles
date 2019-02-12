@@ -209,3 +209,9 @@ nnoremap <silent> <space>dc  :<C-u>Denite coc-command<cr>
 nnoremap <silent> <space>ds  :<C-u>Denite coc-service<cr>
 " Show links of current buffer
 nnoremap <silent> <space>dl  :<C-u>Denite coc-link<cr>
+
+" junegunn/vim-easy-align
+
+let g:easy_align_delimiters = {
+\  '>': { 'pattern': '->',  'left_margin': 1, 'right_margin': 1, 'stick_to_left': 0 }
+\ }
