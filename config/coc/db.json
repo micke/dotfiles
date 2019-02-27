@@ -1,1 +1,14 @@
-{"extension":{"coc-solargraph":{"ts":1549120723671},"coc-json":{"ts":1549059059497},"coc-emoji":{"ts":1549726973735}}}
+{
+    "extension": {
+        "coc-solargraph": {
+            "ts": 1549120723671
+        },
+        "coc-json": {
+            "ts": 1549059059497
+        },
+        "coc-emoji": {
+            "ts": 1549726973735
+        }
+    },
+    "lastUpdate": 1551253917840
+}
