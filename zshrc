@@ -19,11 +19,12 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin/:$PATH"
 export PATH="$HOME/.bin:$PATH"
-export PATH="./bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="./bin:$PATH"
 
 # editor
 export EDITOR=/usr/local/bin/nvim
@@ -65,5 +66,3 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
-eval "$(rbenv init -)"
