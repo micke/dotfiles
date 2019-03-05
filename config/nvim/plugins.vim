@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plug')
 
+Plug 'sheerun/vim-polyglot'
 Plug 'micke/vim-hybrid'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
@@ -15,6 +16,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-git'
+Plug 'wellle/targets.vim'
 Plug 'andymass/vim-matchup'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/vim-easy-align'
@@ -28,7 +30,6 @@ Plug 'gilligan/textobj-gitgutter'
 Plug 'beloglazov/vim-textobj-quotes'
 Plug 'glts/vim-textobj-comment'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'vim-scripts/argtextobj.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -49,12 +50,10 @@ Plug 'SirVer/ultisnips'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mattn/webapi-vim'
 Plug 'carakan/pmv.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'machakann/vim-highlightedyank'
 Plug 'AndrewRadev/deleft.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 call plug#end()
