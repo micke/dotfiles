@@ -10,7 +10,10 @@ nnoremap <space>c :Commits<CR>
 let g:ruby_indent_block_style = 'do'
 
 " w0rp/ale
+let g:ale_cache_executable_check_failures = 1
+let g:ale_virtualenv_dir_names = []
 let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'ruby': [
 \     'rubocop',
 \   ],
