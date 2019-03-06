@@ -43,7 +43,6 @@ Plug 'w0rp/ale'
 Plug 'FooSoft/vim-argwrap'
 Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
