@@ -7,6 +7,7 @@ nnoremap <space>r :Rg<CR>
 nnoremap <space>c :Commits<CR>
 
 " vim-ruby/vim-ruby
+let g:ruby_path = system('rbenv prefix')
 let g:ruby_indent_block_style = 'do'
 
 " w0rp/ale
