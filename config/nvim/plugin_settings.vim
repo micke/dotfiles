@@ -98,6 +98,7 @@ let g:projectionist_heuristics = {
   \     }
   \   }
   \ }
+let g:projectionist_ignore_term = 1
 
 " janko-m/vim-test
 let g:test#strategy = "dispatch"
