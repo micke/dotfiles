@@ -22,6 +22,7 @@ Plug 'junegunn/vim-slash'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'wellle/targets.vim'
 Plug 'andymass/vim-matchup'
 Plug 'terryma/vim-multiple-cursors'
