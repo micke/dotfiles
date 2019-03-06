@@ -218,3 +218,6 @@ nnoremap <silent> <space>dl  :<C-u>Denite coc-link<cr>
 let g:easy_align_delimiters = {
 \  '>': { 'pattern': '->',  'left_margin': 1, 'right_margin': 1, 'stick_to_left': 0 }
 \ }
+
+" luochen1990/rainbow
+let g:rainbow_active = 1
