@@ -133,7 +133,14 @@ nmap <leader>pb <Plug>(pmv-open-repo-page)
 nmap <leader>pd <Plug>(pmv-open-docs)
 
 " coc.nvim
-call coc#add_extension('coc-emoji', 'coc-solargraph', 'coc-tsserver', 'coc-json')
+call coc#add_extension(
+      \ 'coc-emoji',
+      \ 'coc-solargraph',
+      \ 'coc-tsserver',
+      \ 'coc-json',
+      \ 'coc-css',
+      \ 'coc-ultisnips',
+      \)
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
