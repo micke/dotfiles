@@ -1,10 +1,14 @@
 " junegunn/fzf
-
-nnoremap <space>f :FilesMru<CR>
+nnoremap <space>f :FilesMru --tiebreak=end<CR>
 nnoremap <space>F :Files<CR>
 nnoremap <space>t :Tags<CR>
 nnoremap <space>r :Rg<CR>
-nnoremap <space>c :Commits<CR>
+
+nnoremap <space>c :Files app/controllers<CR>
+nnoremap <space>m :Files app/models<CR>
+nnoremap <space>j :Files app/jobs<CR>
+nnoremap <space>v :Files app/views<CR>
+nnoremap <space>s :Files app/services<CR>
 
 " vim-ruby/vim-ruby
 let g:ruby_path = system('rbenv prefix')
@@ -97,9 +101,13 @@ let g:projectionist_heuristics = {
   \ }
 let g:projectionist_ignore_term = 1
 
+" tpope/vim-surround
+autocmd FileType ruby let b:surround_45 = "\1block: \1 do\r end"
+
 " janko-m/vim-test
 let g:test#strategy = "dispatch"
 let g:test#runner_commands = ['RSpec']
+let g:test#ruby#use_spring_binstub = 1
 
 " mattn/gist-vim
 let g:gist_detect_filetype = 1
@@ -125,6 +133,8 @@ nmap <leader>pb <Plug>(pmv-open-repo-page)
 nmap <leader>pd <Plug>(pmv-open-docs)
 
 " coc.nvim
+call coc#add_extension('coc-emoji', 'coc-solargraph', 'coc-tsserver', 'coc-json')
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :

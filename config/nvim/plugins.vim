@@ -52,7 +52,6 @@ Plug 'SirVer/ultisnips'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mattn/webapi-vim'
 Plug 'carakan/pmv.vim'
-Plug 'terryma/vim-expand-region'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'machakann/vim-highlightedyank'
 Plug 'AndrewRadev/deleft.vim'
