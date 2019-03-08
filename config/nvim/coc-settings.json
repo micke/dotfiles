@@ -1,4 +1,4 @@
 {
-  "coc.preferences.noselect": true,
-  "coc.preferences.preferCompleteThanJumpPlaceholder": true
+  "suggest.noselect": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
 }
