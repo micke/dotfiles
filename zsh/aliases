@@ -19,4 +19,6 @@ alias k=kubectl
 alias kp="kubectl --namespace=prod"
 alias ks="k --namespace staging"
 
+alias ssh="TERM=xterm-256color ssh"
+
 alias publickey="cat ~/.ssh/id_rsa.pub | pbcopy"
