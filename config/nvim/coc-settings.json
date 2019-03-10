@@ -1,4 +1,7 @@
 {
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
+  "yaml.schemas": {
+    "kubernetes": "/*.yml"
+  }
 }

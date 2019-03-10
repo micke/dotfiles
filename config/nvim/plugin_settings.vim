@@ -140,6 +140,7 @@ call coc#add_extension(
       \ 'coc-json',
       \ 'coc-css',
       \ 'coc-ultisnips',
+      \ 'coc-yaml',
       \)
 
 inoremap <silent><expr> <TAB>
