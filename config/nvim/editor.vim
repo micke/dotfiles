@@ -3,6 +3,7 @@ set nocompatible
 " change the mapleader from \ to ,
 let mapleader=","
 
+set hidden
 set nobackup
 set autoindent
 set nowritebackup
