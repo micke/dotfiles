@@ -120,9 +120,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
 
-" bkad/CamelCaseMotion
-call camelcasemotion#CreateMotionMappings('s')
-
 " carakan/pmv.vim
 let g:pmv_no_default_key_mappings = 1
 nmap <leader>pl <Plug>(pmv-last-release)
