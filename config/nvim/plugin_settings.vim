@@ -15,6 +15,8 @@ let g:ruby_path = system('rbenv prefix')
 let g:ruby_indent_block_style = 'do'
 
 " w0rp/ale
+set updatetime=100
+set signcolumn=yes
 let g:ale_cache_executable_check_failures = 1
 let g:ale_virtualenv_dir_names = []
 let g:ale_fixers = {
@@ -56,12 +58,6 @@ let g:airline_symbols.linenr = ''
 " nathanaelkane/vim-indent-guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-
-" airblade/vim-gitgutter
-autocmd BufReadPost,BufWritePost * GitGutter
-autocmd BufWinLeave * GitGutterAll
-set updatetime=100
-set signcolumn=yes
 
 " Raimondi/delimitMate
 let g:delimitMate_expand_space=1
