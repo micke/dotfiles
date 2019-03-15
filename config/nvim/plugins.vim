@@ -51,5 +51,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'luochen1990/rainbow'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()

@@ -11,7 +11,6 @@ set noswapfile         " http://robots.thoughtbot.com/post/18739402579/global-gi
 set history=50
 set ruler              " show the cursor position all the time
 set showcmd            " display incomplete commands
-set laststatus=2       " Always display the status line
 set autowrite
 set diffopt+=vertical
 set nojoinspaces
@@ -63,6 +62,9 @@ set cursorline
 " Do not wrap and color column 80
 set nowrap
 set colorcolumn=80
+
+" Statusline
+set laststatus=2          " Always display the status line
 
 augroup vimrcEx
   autocmd!

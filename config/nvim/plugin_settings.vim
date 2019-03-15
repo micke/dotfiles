@@ -213,3 +213,17 @@ let g:easy_align_delimiters = {
 
 " luochen1990/rainbow
 let g:rainbow_active = 1
+
+" itchyny/lightline.vim
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left':  [ [ 'mode' ],
+      \              [ 'gitbranch', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
