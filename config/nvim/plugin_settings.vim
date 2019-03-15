@@ -38,23 +38,6 @@ nnoremap [r :ALEPreviousWrap<CR>
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
-let g:airline#extensions#ale#enabled = 0
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#tabline#tab_min_count = 2
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_powerline_fonts = 1
-let g:airline_section_x = ''
-let g:airline_section_y = ''
-let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', '%3v'])
-let g:airline_skip_empty_sections = 1
-let g:airline#extensions#hunks#enabled = 0
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.whitespace = ''
-let g:airline_symbols.linenr = ''
-
 " nathanaelkane/vim-indent-guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1

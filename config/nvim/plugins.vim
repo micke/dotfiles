@@ -39,7 +39,6 @@ Plug 'gerw/vim-HiLinkTrace'
 Plug 'tweekmonster/fzf-filemru'
 Plug 'w0rp/ale'
 Plug 'FooSoft/vim-argwrap'
-Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
