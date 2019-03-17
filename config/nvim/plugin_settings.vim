@@ -1,3 +1,6 @@
+" onedark
+let g:onedark_terminal_italics=1
+
 " junegunn/fzf
 nnoremap <space>f :FilesMru --tiebreak=end<CR>
 nnoremap <space>F :Files<CR>
@@ -109,13 +112,13 @@ nmap <leader>pb <Plug>(pmv-open-repo-page)
 nmap <leader>pd <Plug>(pmv-open-docs)
 
 " coc.nvim
+set shortmess+=c
 call coc#add_extension(
       \ 'coc-emoji',
       \ 'coc-solargraph',
       \ 'coc-tsserver',
       \ 'coc-json',
       \ 'coc-css',
-      \ 'coc-ultisnips',
       \ 'coc-yaml',
       \)
 
@@ -215,15 +218,32 @@ let g:easy_align_delimiters = {
 let g:rainbow_active = 1
 
 " itchyny/lightline.vim
+set noshowmode " Don't show mode as lightline already shows mode
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? ''.branch : ''
+  endif
+  return ''
+endfunction
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left':  [ [ 'mode' ],
-      \              [ 'gitbranch', 'filename' ] ],
+      \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'filetype' ] ]
       \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \ 'inactive': {
+      \   'right': [ [ 'lineinfo' ] ]
       \ },
+      \ 'component_function': {
+      \   'readonly': 'LightlineReadonly',
+      \   'fugitive': 'LightlineFugitive'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
