@@ -230,7 +230,7 @@ function! LightlineFugitive()
   return ''
 endfunction
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'hybrid',
       \ 'active': {
       \   'left':  [ [ 'mode' ],
       \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ],

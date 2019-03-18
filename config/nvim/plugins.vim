@@ -1,7 +1,6 @@
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'sheerun/vim-polyglot'
-Plug 'joshdick/onedark.vim'
 Plug 'micke/vim-hybrid'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
