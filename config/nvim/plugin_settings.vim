@@ -230,7 +230,7 @@ let g:lightline = {
       \ 'colorscheme': 'hybrid',
       \ 'active': {
       \   'left':  [ [ 'mode' ],
-      \              [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+      \              [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'filetype' ] ]
       \ },
