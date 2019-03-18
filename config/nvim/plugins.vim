@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plug')
 
 Plug 'sheerun/vim-polyglot'
 Plug 'micke/vim-hybrid'
+Plug 'cocopon/lightline-hybrid.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
