@@ -1,6 +1,3 @@
-" onedark
-let g:onedark_terminal_italics=1
-
 " junegunn/fzf
 nnoremap <space>f :FilesMru --tiebreak=end<CR>
 nnoremap <space>F :Files<CR>
