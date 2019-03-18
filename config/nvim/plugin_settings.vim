@@ -89,7 +89,7 @@ autocmd FileType ruby let b:surround_45 = "\1block: \1 do\r end"
 " janko-m/vim-test
 let g:test#strategy = "dispatch"
 let g:test#runner_commands = ['RSpec']
-let g:test#ruby#use_spring_binstub = 1
+let g:test#ruby#use_spring_binstub = 0
 
 " mattn/gist-vim
 let g:gist_detect_filetype = 1
