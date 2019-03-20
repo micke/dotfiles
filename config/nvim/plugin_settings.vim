@@ -231,10 +231,10 @@ let g:lightline = {
       \ 'active': {
       \   'left':  [ [ 'mode' ],
       \              [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'filetype' ] ]
+      \   'right': [ [ 'lineinfo' ] ]
       \ },
       \ 'inactive': {
+      \   'left':  [ [ 'relativepath' ] ],
       \   'right': [ [ 'lineinfo' ] ]
       \ },
       \ 'component_function': {
