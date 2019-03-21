@@ -21,7 +21,7 @@ nmap <leader>v :rightbelow vsplit<CR>
 nmap <leader>av :AV<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>s :TestNearest<CR>
-nmap <silent> <leader>l :TestLast<CR> 
+nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>d :Dispatch<CR>
 " nmap <silent> <leader>dt :TestFile -strategy=dispatch<CR>
@@ -61,13 +61,6 @@ nnoremap <leader>cs :so $MYVIMRC<CR>
 nnoremap <leader>cpi :PlugInstall<CR>
 nnoremap <leader>cpu :PlugUpdate<CR>
 nnoremap <leader>cpc :PlugClean<CR>
-
-nmap <leader>a= :Tabularize /=<CR>
-vmap <leader>a= :Tabularize /=<CR>
-nmap <leader>a: :Tabularize /:\zs<CR>
-vmap <leader>a: :Tabularize /:\zs<CR>
-nmap <leader>a, :Tabularize /,\zs<CR>
-vmap <leader>a, :Tabularize /,\zs<CR>
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
