@@ -19,7 +19,6 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-rsi'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-slash'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
