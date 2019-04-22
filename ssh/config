@@ -1,0 +1,5 @@
+Include ~/.ssh/local
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
