@@ -24,6 +24,7 @@ let g:ale_fixers = {
 \   'ruby': [
 \     'rubocop',
 \   ],
+\   'terraform': ['terraform']
 \}
 let g:ale_pattern_options = {
 \   '.*\.ex$': {'ale_enabled': 0},
