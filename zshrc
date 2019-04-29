@@ -67,5 +67,7 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
+eval $(thefuck --alias)
+
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
