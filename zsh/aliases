@@ -6,6 +6,7 @@ alias gw="git write"
 alias gps="git push"
 alias gpl="git pull"
 alias grbi="git rebase -i"
+alias gcm="git checkout master"
 alias d=devflow
 alias dc="devflow checkout"
 alias :q=exit
