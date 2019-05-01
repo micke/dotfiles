@@ -10,6 +10,9 @@ nnoremap <space>j :Files app/jobs<CR>
 nnoremap <space>v :Files app/views<CR>
 nnoremap <space>s :Files app/services<CR>
 
+nnoremap <leader>c :Commits<CR>
+nnoremap <leader>b :BCommits<CR>
+
 " vim-ruby/vim-ruby
 let g:ruby_path = system('rbenv prefix')
 let g:ruby_indent_block_style = 'do'
@@ -83,6 +86,9 @@ let g:projectionist_ignore_term = 1
 
 " tpope/vim-surround
 autocmd FileType ruby let b:surround_45 = "\1block: \1 do\r end"
+autocmd FileType ruby let b:surround_99 = "class \1class: \1\r end"
+autocmd FileType ruby let b:surround_100 = "def \1method: \1\r end"
+autocmd FileType ruby let b:surround_109 = "module \1module: \1\r end"
 
 " janko-m/vim-test
 let g:test#strategy = "dispatch"
@@ -227,6 +233,9 @@ function! LightlineFugitive()
   endif
   return ''
 endfunction
+function LightlineRelativePath()
+  return fnamemodify(expand("%"), ":~:.")
+endfunction
 let g:lightline = {
       \ 'colorscheme': 'hybrid',
       \ 'active': {
@@ -240,7 +249,8 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
-      \   'fugitive': 'LightlineFugitive'
+      \   'fugitive': 'LightlineFugitive',
+      \   'relativepath': 'LightlineRelativePath'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }

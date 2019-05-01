@@ -56,7 +56,7 @@ nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>ga :Gcommit -a<CR>
 
 " Config mappings
-nnoremap <leader>cc :e $MYVIMRC<CR>
+nnoremap <leader>ce :e $MYVIMRC<CR>
 nnoremap <leader>cs :so $MYVIMRC<CR>
 nnoremap <leader>cpi :PlugInstall<CR>
 nnoremap <leader>cpu :PlugUpdate<CR>
