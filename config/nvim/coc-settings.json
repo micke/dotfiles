@@ -3,5 +3,10 @@
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "yaml.schemas": {
     "kubernetes": "/*.yml"
-  }
+  },
+  "git.changedSign.hlGroup": "HybridAquaSign",
+  "git.addedSign.hlGroup": "HybridGreenSign",
+  "git.removedSign.hlGroup": "HybridRedSign",
+  "git.topRemovedSign.hlGroup": "HybridRedSign",
+  "git.changeRemovedSign.hlGroup": "HybridPurpleSign",
 }
