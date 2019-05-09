@@ -233,7 +233,7 @@ function! LightlineFugitive()
   endif
   return ''
 endfunction
-function LightlineRelativePath()
+function! LightlineRelativePath()
   return fnamemodify(expand("%"), ":~:.")
 endfunction
 let g:lightline = {
