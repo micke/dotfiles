@@ -124,6 +124,7 @@ call coc#add_extension(
       \ 'coc-json',
       \ 'coc-css',
       \ 'coc-yaml',
+      \ 'coc-tag',
       \)
 
 inoremap <silent><expr> <TAB>
