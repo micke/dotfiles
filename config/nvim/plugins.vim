@@ -47,11 +47,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'janko-m/vim-test'
 Plug 'mattn/webapi-vim'
 Plug 'carakan/pmv.vim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'machakann/vim-highlightedyank'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'luochen1990/rainbow'
 Plug 'itchyny/lightline.vim'
+Plug 'rhysd/git-messenger.vim'
 
 call plug#end()
