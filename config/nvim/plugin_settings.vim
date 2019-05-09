@@ -125,6 +125,7 @@ call coc#add_extension(
       \ 'coc-css',
       \ 'coc-yaml',
       \ 'coc-tag',
+      \ 'coc-git',
       \)
 
 inoremap <silent><expr> <TAB>
@@ -263,3 +264,7 @@ let g:splitjoin_ruby_trailing_comma = 1
 let g:splitjoin_ruby_options_as_arguments = 1
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_align = 1
+
+" git-messenger
+let g:git_messenger_always_into_popup = 1
+nmap gm <Plug>(git-messenger)
