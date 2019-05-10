@@ -9,4 +9,11 @@
   "git.removedSign.hlGroup": "HybridRedSign",
   "git.topRemovedSign.hlGroup": "HybridRedSign",
   "git.changeRemovedSign.hlGroup": "HybridPurpleSign",
+  "solargraph.hover": true,
+  "solargraph.rename": true,
+  "solargraph.symbols": true,
+  "solargraph.completion": true,
+  "solargraph.references": true,
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true
 }
