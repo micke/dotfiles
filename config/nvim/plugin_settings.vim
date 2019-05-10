@@ -166,7 +166,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -197,22 +197,9 @@ command! -nargs=0 Format :call CocAction('format')
 " Use `:Fold` for fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-
-" Shortcuts for denite interface
-" Show extension list
-nnoremap <silent> <space>de  :<C-u>Denite coc-extension<cr>
-" Show symbols of current buffer
-nnoremap <silent> <space>do  :<C-u>Denite coc-symbols<cr>
-" Search symbols of current workspace
-nnoremap <silent> <space>dt  :<C-u>Denite coc-workspace<cr>
-" Show diagnostics of current workspace
-nnoremap <silent> <space>da  :<C-u>Denite coc-diagnostic<cr>
-" Show available commands
-nnoremap <silent> <space>dc  :<C-u>Denite coc-command<cr>
-" Show available services
-nnoremap <silent> <space>ds  :<C-u>Denite coc-service<cr>
-" Show links of current buffer
-nnoremap <silent> <space>dl  :<C-u>Denite coc-link<cr>
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+nmap gs <Plug>(coc-git-chunkinfo)
 
 " junegunn/vim-easy-align
 
