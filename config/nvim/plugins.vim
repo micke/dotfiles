@@ -18,6 +18,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-rsi'
+Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'

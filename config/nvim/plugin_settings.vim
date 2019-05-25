@@ -90,6 +90,10 @@ autocmd FileType ruby let b:surround_99 = "class \1class: \1\r end"
 autocmd FileType ruby let b:surround_100 = "def \1method: \1\r end"
 autocmd FileType ruby let b:surround_109 = "module \1module: \1\r end"
 
+" plasticboy/vim-markdown
+let g:vim_markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'css']
+let g:vim_markdown_folding_disabled = 1
+
 " janko-m/vim-test
 let g:test#strategy = "dispatch"
 let g:test#runner_commands = ['RSpec']
