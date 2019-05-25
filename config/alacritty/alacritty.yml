@@ -7,7 +7,7 @@ window:
     y: 2
   dynamic_padding: false
   decorations: none
-  start_maximized: true
+  startup_mode: Maximized
 
 scrolling:
   history: 10000
