@@ -262,3 +262,12 @@ let g:splitjoin_align = 1
 " git-messenger
 let g:git_messenger_always_into_popup = 1
 nmap gm <Plug>(git-messenger)
+
+" vim-indent-object
+let g:textobj_comment_no_default_key_mappings = 1
+xmap ak <Plug>(textobj-comment-a)
+omap ak <Plug>(textobj-comment-a)
+xmap aK <Plug>(textobj-comment-big-a)
+omap aK <Plug>(textobj-comment-big-a)
+xmap ik <Plug>(textobj-comment-i)
+omap ik <Plug>(textobj-comment-i)
