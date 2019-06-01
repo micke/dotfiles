@@ -17,6 +17,9 @@ nnoremap <leader>b :BCommits<CR>
 let g:ruby_path = system('rbenv prefix')
 let g:ruby_indent_block_style = 'do'
 
+" vim-textobj-ruby
+let g:textobj_ruby_no_mappings = 1
+
 " w0rp/ale
 set updatetime=100
 set signcolumn=yes
