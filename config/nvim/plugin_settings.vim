@@ -207,6 +207,9 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
 nmap gs <Plug>(coc-git-chunkinfo)
+nmap gu :CocCommand git.chunkUndo<CR>
+nmap gs :CocCommand git.chunkStage<CR>
+nmap gf :CocCommand git.foldUnchanged<CR>
 
 " junegunn/vim-easy-align
 
