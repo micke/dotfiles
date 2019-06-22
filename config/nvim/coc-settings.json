@@ -17,5 +17,4 @@
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
-  "solargraph.useBundler": true,
 }
