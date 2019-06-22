@@ -14,7 +14,8 @@
   "solargraph.symbols": true,
   "solargraph.completion": true,
   "solargraph.references": true,
-  "solargraph.formatting": false,
+  "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
+  "solargraph.useBundler": true,
 }
