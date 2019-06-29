@@ -53,5 +53,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'luochen1990/rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'rhysd/git-messenger.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()

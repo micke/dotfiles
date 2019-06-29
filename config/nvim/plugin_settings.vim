@@ -271,3 +271,7 @@ xmap aK <Plug>(textobj-comment-big-a)
 omap aK <Plug>(textobj-comment-big-a)
 xmap ik <Plug>(textobj-comment-i)
 omap ik <Plug>(textobj-comment-i)
+
+" ludovicchabant/vim-gutentags	
+let g:gutentags_file_list_command = 'rg --files --ignore-file=.tagignore'
+let g:gutentags_ctags_executable_ruby = 'rtags'
