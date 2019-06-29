@@ -1,6 +1,6 @@
 # Enable completion
 autoload -Uz compinit
-compinit
+compinit -u
 
 # Show currently selected completion in menu
 zstyle ':completion:*:*:*:*:*' menu select
