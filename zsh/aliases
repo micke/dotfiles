@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias git=hub
 alias g=git
 alias gs="git st"

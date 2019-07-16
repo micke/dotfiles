@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 todo() { git commit --allow-empty -m "TODO: $*" }
 clone() { git clone git@github.com:$1.git ~/code/$1 && cd ~/code/$1 }
 json_pretty(){ ruby -rjson -e "STDOUT.puts JSON.pretty_generate(JSON[STDIN.read])" }

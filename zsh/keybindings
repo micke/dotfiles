@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Enable emacs bindings (makes Alt arrow keys work)
 bindkey -e
 
