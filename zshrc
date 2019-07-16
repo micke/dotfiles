@@ -1,10 +1,3 @@
-source $HOME/.zsh/completion
-source $HOME/.zsh/keybindings
-source $HOME/.zsh/functions
-source $HOME/.zsh/aliases
-source $HOME/.zsh_prompt
-source $HOME/.secrets
-
 # Save a ton of history
 HISTSIZE=20000
 HISTFILE=~/.zsh_history
@@ -54,20 +47,20 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # Enable history in erlang and elixir shell
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# added by travis gem
-[ -f /Users/lisinge/.travis/travis.sh ] && source /Users/lisinge/.travis/travis.sh
-
 # Load kubectl autocompletion
 # source <(kubectl completion zsh)
 
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/opt/asdf/asdf.sh
-source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 eval $(thefuck --alias)
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source $HOME/.zsh/completion
+source $HOME/.zsh/keybindings
+source $HOME/.zsh/functions
+source $HOME/.zsh/aliases
+source $HOME/.zsh_prompt
+source $HOME/.secrets
