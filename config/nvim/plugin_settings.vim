@@ -3,6 +3,10 @@ nnoremap <space>f :FilesMru --tiebreak=end<CR>
 nnoremap <space>F :Files<CR>
 nnoremap <space>t :Tags<CR>
 nnoremap <space>r :Rg<CR>
+nnoremap <space>r :Rg<CR>
+nmap <Leader>/ <Plug>RgRawSearch
+vmap <Leader>/ <Plug>RgRawVisualSelection
+nmap <Leader>* <Plug>RgRawWordUnderCursor
 
 nnoremap <space>c :Files app/controllers<CR>
 nnoremap <space>m :Files app/models<CR>
