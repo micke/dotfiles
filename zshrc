@@ -53,8 +53,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/opt/asdf/asdf.sh
 
-eval $(thefuck --alias)
-
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
