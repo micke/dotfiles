@@ -19,6 +19,8 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="./bin:$PATH"
 
+export WORDCHARS=""
+
 # editor
 export EDITOR=/usr/local/bin/nvim
 
