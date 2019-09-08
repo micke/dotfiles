@@ -210,10 +210,11 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
-nmap gs <Plug>(coc-git-chunkinfo)
-nmap gu :CocCommand git.chunkUndo<CR>
-nmap gs :CocCommand git.chunkStage<CR>
-nmap gf :CocCommand git.foldUnchanged<CR>
+nmap gi <Plug>(coc-git-chunkinfo)
+nmap gc <Plug>(coc-git-commit)
+nmap <silent> gu :CocCommand git.chunkUndo<CR>
+nmap <silent> gs :CocCommand git.chunkStage<CR>
+nmap <silent> gf :CocCommand git.foldUnchanged<CR>
 
 " junegunn/vim-easy-align
 
@@ -224,40 +225,36 @@ let g:easy_align_delimiters = {
 " luochen1990/rainbow
 let g:rainbow_active = 1
 
-" itchyny/lightline.vim
-set noshowmode " Don't show mode as lightline already shows mode
-function! LightlineReadonly()
-  return &readonly ? '' : ''
-endfunction
-function! LightlineFugitive()
-  if exists('*fugitive#head')
-    let branch = fugitive#head()
-    return branch !=# '' ? ''.branch : ''
-  endif
-  return ''
-endfunction
-function! LightlineRelativePath()
-  return fnamemodify(expand("%"), ":~:.")
-endfunction
-let g:lightline = {
-      \ 'colorscheme': 'hybrid',
-      \ 'active': {
-      \   'left':  [ [ 'mode' ],
-      \              [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ] ]
-      \ },
-      \ 'inactive': {
-      \   'left':  [ [ 'relativepath' ] ],
-      \   'right': [ [ 'lineinfo' ] ]
-      \ },
-      \ 'component_function': {
-      \   'readonly': 'LightlineReadonly',
-      \   'fugitive': 'LightlineFugitive',
-      \   'relativepath': 'LightlineRelativePath'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
+" airline
+set noshowmode
+let g:airline#extensions#ale#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'b', 'c' ],
+      \ [ 'z', 'error', 'warning' ]
+      \ ]
+let g:airline_section_z = airline#section#create(['linenr', '%3v'])
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#hunks#enabled = 0
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.whitespace = ''
+let g:airline_symbols.linenr = ''
+let g:airline#extensions#default#section_truncate_width = {
+      \ 'b': 10,
+      \ 'x': 60,
+      \ 'y': 88,
+      \ 'z': 45,
+      \ 'warning': 80,
+      \ 'error': 80,
       \ }
+au VimEnter * call airline#parts#define('branch', {'raw': '', 'minwidth': 10})
+au VimEnter * let g:airline_section_b = airline#section#create(['branch'])
 
 " splitjoin
 let g:splitjoin_ruby_hanging_args = 0
