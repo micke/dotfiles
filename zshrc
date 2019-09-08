@@ -52,7 +52,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Load kubectl autocompletion
 # source <(kubectl completion zsh)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/opt/asdf/asdf.sh
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
@@ -64,3 +63,5 @@ source $HOME/.zsh/functions
 source $HOME/.zsh/aliases
 source $HOME/.zsh_prompt
 source $HOME/.secrets
+
+source ~/.fzf.zsh
