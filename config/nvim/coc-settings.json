@@ -17,6 +17,6 @@
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
-  "solargraph.useBundler": true,
+  "solargraph.useBundler": false,
   "solargraph.bundlerPath": "/Users/lisinge/.rbenv/shims/bundle",
 }
