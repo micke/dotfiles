@@ -137,6 +137,7 @@ call coc#add_extension(
       \ 'coc-yaml',
       \ 'coc-tag',
       \ 'coc-git',
+      \ 'coc-docker',
       \)
 
 inoremap <silent><expr> <TAB>
