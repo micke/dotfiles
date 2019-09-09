@@ -2,7 +2,7 @@
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "yaml.schemas": {
-    "kubernetes": "/*.yml"
+    "kubernetes": "/*.y*ml"
   },
   "git.changedSign.hlGroup": "HybridAquaSign",
   "git.addedSign.hlGroup": "HybridGreenSign",
@@ -19,4 +19,5 @@
   "solargraph.autoformat": true,
   "solargraph.useBundler": false,
   "solargraph.bundlerPath": "/Users/lisinge/.rbenv/shims/bundle",
+  "git.enableGutters": true,
 }
