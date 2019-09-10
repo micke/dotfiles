@@ -212,7 +212,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
 nmap gi <Plug>(coc-git-chunkinfo)
-nmap gc <Plug>(coc-git-commit)
 nmap <silent> gu :CocCommand git.chunkUndo<CR>
 nmap <silent> gs :CocCommand git.chunkStage<CR>
 nmap <silent> gf :CocCommand git.foldUnchanged<CR>
