@@ -215,6 +215,10 @@ nmap gi <Plug>(coc-git-chunkinfo)
 nmap <silent> gu :CocCommand git.chunkUndo<CR>
 nmap <silent> gs :CocCommand git.chunkStage<CR>
 nmap <silent> gf :CocCommand git.foldUnchanged<CR>
+omap ic <Plug>(coc-text-object-inner)
+xmap ic <Plug>(coc-text-object-inner)
+omap ic <Plug>(coc-text-object-outer)
+xmap ic <Plug>(coc-text-object-outer)
 
 " junegunn/vim-easy-align
 
@@ -224,6 +228,41 @@ let g:easy_align_delimiters = {
 
 " luochen1990/rainbow
 let g:rainbow_active = 1
+
+" itchyny/lightline.vim
+set noshowmode " Don't show mode as lightline already shows mode
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? ''.branch : ''
+  endif
+  return ''
+endfunction
+function! LightlineRelativePath()
+  return fnamemodify(expand("%"), ":~:.")
+endfunction
+let g:lightline = {
+      \ 'colorscheme': 'hybrid',
+      \ 'active': {
+      \   'left':  [ [ 'mode' ],
+      \              [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left':  [ [ 'relativepath' ] ],
+      \   'right': [ [ 'lineinfo' ] ]
+      \ },
+      \ 'component_function': {
+      \   'readonly': 'LightlineReadonly',
+      \   'fugitive': 'LightlineFugitive',
+      \   'relativepath': 'LightlineRelativePath'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
 
 " splitjoin
 let g:splitjoin_ruby_hanging_args = 0
@@ -248,3 +287,7 @@ omap ik <Plug>(textobj-comment-i)
 " ludovicchabant/vim-gutentags	
 let g:gutentags_file_list_command = 'rg --files --ignore-file=.tagignore'
 let g:gutentags_ctags_executable_ruby = 'rtags'
+
+" sbdchd/neoformat
+
+autocmd BufWritePre *.y*ml Neoformat prettier
