@@ -20,4 +20,11 @@
   "solargraph.useBundler": false,
   "solargraph.bundlerPath": "/Users/lisinge/.rbenv/shims/bundle",
   "git.enableGutters": true,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  },
 }
