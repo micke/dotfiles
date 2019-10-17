@@ -290,4 +290,6 @@ let g:gutentags_ctags_executable_ruby = 'rtags'
 
 " sbdchd/neoformat
 
-autocmd BufWritePre *.y*ml Neoformat prettier
+autocmd BufWritePre *.yaml Neoformat prettier
+autocmd BufWritePre *.yml Neoformat prettier
+autocmd BufWritePre *.tf Neoformat terraform
