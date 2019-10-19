@@ -57,11 +57,10 @@ set number
 let g:netrw_localrmdir='rm -r'
 
 " Display current line in a different color
-set cursorline
+" set cursorline
 
 " Do not wrap and color column 80
 set nowrap
-set colorcolumn=80
 
 " Statusline
 set laststatus=2          " Always display the status line
