@@ -44,7 +44,6 @@ nnoremap <leader>rtw :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl 
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gc :Git co<space>
 nnoremap <leader>gbl :Gblame<CR>
 nnoremap <leader>gbr :Gbrowse<CR>
 nnoremap <leader>gpl :Gpull<CR>

@@ -14,39 +14,58 @@ nnoremap <silent> <space>s :Files app/services<CR>
 nnoremap <silent> <leader>c :Commits<CR>
 nnoremap <silent> <leader>b :BCommits<CR>
 
+nnoremap <silent> <leader>gc :Gcheckout<CR>
+nnoremap <silent> <leader>gpc :Gprcheckout<CR>
+
+let g:fzf_action = {
+  \ 'ctrl-s': 'vsplit',
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
 " Open fzf in floating window
-if has('nvim') && exists('&winblend') && &termguicolors
-  set winblend=10
+set winblend=10
 
-  if exists('g:fzf_colors.bg')
-    call remove(g:fzf_colors, 'bg')
-  endif
-
-  let $FZF_DEFAULT_OPTS .= ' --border --margin=0,2 --layout=reverse'
-
-  function! FloatingFZF()
-    let width = float2nr(&columns * 0.9)
-    let height = float2nr(&lines * 0.6)
-    let opts = { 'relative': 'editor',
-               \ 'row': (&lines - height) / 2,
-               \ 'col': (&columns - width) / 2,
-               \ 'width': width,
-               \ 'height': height,
-               \ 'style': 'minimal'
-               \ }
-
-    let win = nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-    call setwinvar(win, '&winhighlight', 'NormalFloat:Normal')
-  endfunction
-
-  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+if exists('g:fzf_colors.bg')
+  call remove(g:fzf_colors, 'bg')
 endif
+
+let $FZF_DEFAULT_OPTS .= ' --border --margin=0,2 --layout=reverse'
+
+function! FloatingFZF()
+  let width = float2nr(&columns * 0.9)
+  let height = float2nr(&lines * 0.6)
+  let opts = { 'relative': 'editor',
+             \ 'row': (&lines - height) / 2,
+             \ 'col': (&columns - width) / 2,
+             \ 'width': width,
+             \ 'height': height,
+             \ 'style': 'minimal'
+             \ }
+
+  let win = nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+  call setwinvar(win, '&winhighlight', 'NormalFloat:Normal')
+endfunction
+
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
 command! -bang Gcheckout call fzf#run(fzf#wrap(
       \ {
-      \ 'source': 'git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)"',
+      \ 'source': 'git for-each-ref --count=100 --sort=-committerdate refs/heads/ --format="%(refname:short)"',
       \ 'sink': 'Git checkout',
       \ 'options': '+m'
+      \ }, <bang>0))
+
+function! s:prcheckout(line)
+  let parts = split(a:line, ' ')
+  execute 'Git pr checkout' substitute(parts[0], '#', '', '')
+endfunction
+
+command! -bang Gprcheckout call fzf#run(fzf#wrap(
+      \ {
+      \ 'source': 'hub pr list',
+      \ 'sink': function('s:prcheckout'),
+      \ 'options': '--ansi +m --bind "ctrl-s:execute(echo {} | cut -d'' '' -f4 | sed ''s/#//g'' | hub pr show)"'
       \ }, <bang>0))
 
 " vim-ruby/vim-ruby
