@@ -1,21 +1,53 @@
 " junegunn/fzf
-nnoremap <space>f :FilesMru --tiebreak=end<CR>
-nnoremap <space>F :Files<CR>
-nnoremap <space>t :Tags<CR>
-nnoremap <space>r :Rg<CR>
-nnoremap <space>r :Rg<CR>
-nmap <Leader>/ <Plug>RgRawSearch
-vmap <Leader>/ <Plug>RgRawVisualSelection
-nmap <Leader>* <Plug>RgRawWordUnderCursor
+nnoremap <silent> <space>f :FilesMru --tiebreak=end<CR>
+nnoremap <silent> <space>F :Files<CR>
+nnoremap <silent> <space>t :Tags<CR>
+nnoremap <silent> <space>r :Rg<CR>
+nnoremap <silent> <space>r :Rg<CR>
 
-nnoremap <space>c :Files app/controllers<CR>
-nnoremap <space>m :Files app/models<CR>
-nnoremap <space>j :Files app/jobs<CR>
-nnoremap <space>v :Files app/views<CR>
-nnoremap <space>s :Files app/services<CR>
+nnoremap <silent> <space>c :Files app/controllers<CR>
+nnoremap <silent> <space>m :Files app/models<CR>
+nnoremap <silent> <space>j :Files app/jobs<CR>
+nnoremap <silent> <space>v :Files app/views<CR>
+nnoremap <silent> <space>s :Files app/services<CR>
 
-nnoremap <leader>c :Commits<CR>
-nnoremap <leader>b :BCommits<CR>
+nnoremap <silent> <leader>c :Commits<CR>
+nnoremap <silent> <leader>b :BCommits<CR>
+
+" Open fzf in floating window
+if has('nvim') && exists('&winblend') && &termguicolors
+  set winblend=10
+
+  if exists('g:fzf_colors.bg')
+    call remove(g:fzf_colors, 'bg')
+  endif
+
+  let $FZF_DEFAULT_OPTS .= ' --border --margin=0,2 --layout=reverse'
+
+  function! FloatingFZF()
+    let width = float2nr(&columns * 0.9)
+    let height = float2nr(&lines * 0.6)
+    let opts = { 'relative': 'editor',
+               \ 'row': (&lines - height) / 2,
+               \ 'col': (&columns - width) / 2,
+               \ 'width': width,
+               \ 'height': height,
+               \ 'style': 'minimal'
+               \ }
+
+    let win = nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+    call setwinvar(win, '&winhighlight', 'NormalFloat:Normal')
+  endfunction
+
+  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+endif
+
+command! -bang Gcheckout call fzf#run(fzf#wrap(
+      \ {
+      \ 'source': 'git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)"',
+      \ 'sink': 'Gcheckout',
+      \ 'options': '-m'
+      \ }, <bang>0))
 
 " vim-ruby/vim-ruby
 let g:ruby_path = system('rbenv prefix')
