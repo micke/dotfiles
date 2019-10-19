@@ -39,6 +39,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export FZF_DEFAULT_COMMAND='fd --type file --no-ignore-vcs --hidden --follow --exclude .git'
+# fzf hybrid theme
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#c4c8c6,bg:#1c1f20,hl:#a5812d
+ --color=fg+:#cccccc,bg+:#27292d,hl+:#f6c76b
+ --color=info:#625a88,prompt:#6f7780,pointer:#dc595d
+ --color=marker:#a9b75d,spinner:#ba8dba,header:#79c1b8'
 
 # Homebrew config
 export HOMEBREW_INSTALL_CLEANUP=true
