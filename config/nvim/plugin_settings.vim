@@ -45,8 +45,8 @@ endif
 command! -bang Gcheckout call fzf#run(fzf#wrap(
       \ {
       \ 'source': 'git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)"',
-      \ 'sink': 'Gcheckout',
-      \ 'options': '-m'
+      \ 'sink': 'Git checkout',
+      \ 'options': '+m'
       \ }, <bang>0))
 
 " vim-ruby/vim-ruby
