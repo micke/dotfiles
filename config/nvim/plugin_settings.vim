@@ -340,7 +340,17 @@ let g:gutentags_file_list_command = 'rg --files --ignore-file=.tagignore'
 let g:gutentags_ctags_executable_ruby = 'rtags'
 
 " sbdchd/neoformat
-
 autocmd BufWritePre *.yaml Neoformat prettier
 autocmd BufWritePre *.yml Neoformat prettier
 autocmd BufWritePre *.tf Neoformat terraform
+
+" vim-tmux-navigator
+" fix netrw breaking <c-l>
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+  nnoremap <silent> <buffer> <c-l> :TmuxNavigateRight<cr>
+endfunction
