@@ -65,7 +65,7 @@ command! -bang Gprcheckout call fzf#run(fzf#wrap(
       \ {
       \ 'source': 'hub pr list',
       \ 'sink': function('s:prcheckout'),
-      \ 'options': '--ansi +m --bind "ctrl-s:execute(echo {} | cut -d'' '' -f4 | sed ''s/#//g'' | hub pr show)"'
+      \ 'options': '--ansi +m --bind "ctrl-s:execute(echo {} | cut -d'' '' -f4 | sed ''s/#//g'' | xargs hub pr show)"'
       \ }, <bang>0))
 
 " vim-ruby/vim-ruby
