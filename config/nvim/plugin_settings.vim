@@ -102,7 +102,7 @@ nnoremap <silent> <leader>w :ArgWrap<CR>
 
 " nathanaelkane/vim-indent-guides
 let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 
 " Raimondi/delimitMate
 let g:delimitMate_expand_space=1
@@ -304,7 +304,7 @@ let g:lightline = {
       \ },
       \ 'inactive': {
       \   'left':  [ [ 'relativepath' ] ],
-      \   'right': [ [ 'lineinfo' ] ]
+      \   'right': [ ['fugitive'] ]
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
@@ -345,6 +345,8 @@ autocmd BufWritePre *.yml Neoformat prettier
 autocmd BufWritePre *.tf Neoformat terraform
 
 " vim-tmux-navigator
+let g:tmux_navigator_disable_when_zoomed = 1
+
 " fix netrw breaking <c-l>
 augroup netrw_mapping
   autocmd!

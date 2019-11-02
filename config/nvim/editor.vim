@@ -54,7 +54,7 @@ set relativenumber
 set number
 
 " Netrw
-let g:netrw_localrmdir='rm -r'
+let g:netrw_rmdir_cmd='rm -r'
 
 " Display current line in a different color
 " set cursorline
