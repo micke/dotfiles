@@ -5,7 +5,7 @@
   branch = auto
   diff = auto
   status = auto
-  ui = auto
+  ui = true
 
 [user]
   name = Micke Lisinge
@@ -43,6 +43,7 @@
   excludesfile = ~/.gitignore
   editor = nvr --remote-tab-wait-silent +'set bufhidden=delete'
   autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [commit]
   gpgsign = true
@@ -57,3 +58,17 @@
 
 [diff]
   colorMoved = zebra
+
+# diff-so-fancy
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse

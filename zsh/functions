@@ -14,7 +14,7 @@ grb() {
   local commits
   commits=$(git lg --color=always -30) &&
   commit=$(echo "$commits" | fzf --ansi +s) &&
-  git rebase -i $(echo "$commit" | cut -d" " -f2)
+  git rebase -i $(echo "$commit" | cut -d" " -f2)~
 }
 gd() {
   git lg --color=always |
