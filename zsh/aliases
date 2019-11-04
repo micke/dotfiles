@@ -30,3 +30,4 @@ alias publickey="cat ~/.ssh/id_rsa.pub | pbcopy"
 
 # Default tool replacements
 alias diff="diff-so-fancy"
+alias cat="bat"

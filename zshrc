@@ -58,6 +58,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Load kubectl autocompletion
 # source <(kubectl completion zsh)
 
+# Use bat as manpager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 source /usr/local/opt/asdf/asdf.sh
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
