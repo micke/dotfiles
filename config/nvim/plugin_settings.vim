@@ -3,7 +3,6 @@ nnoremap <silent> <space>f :FilesMru --tiebreak=end<CR>
 nnoremap <silent> <space>F :Files<CR>
 nnoremap <silent> <space>t :Tags<CR>
 nnoremap <silent> <space>r :Rg<CR>
-nnoremap <silent> <space>r :Rg<CR>
 
 nnoremap <silent> <space>c :Files app/controllers<CR>
 nnoremap <silent> <space>m :Files app/models<CR>
@@ -48,6 +47,9 @@ function! FloatingFZF()
 endfunction
 
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+" Don't search in path when using ripgrep
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 command! -bang Gcheckout call fzf#run(fzf#wrap(
       \ {
@@ -264,7 +266,7 @@ nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
 nmap gi <Plug>(coc-git-chunkinfo)
 nmap <silent> gu :CocCommand git.chunkUndo<CR>
-nmap <silent> gs :CocCommand git.chunkStage<CR>
+nmap <silent> ga :CocCommand git.chunkStage<CR>
 nmap <silent> gf :CocCommand git.foldUnchanged<CR>
 omap ic <Plug>(coc-text-object-inner)
 xmap ic <Plug>(coc-text-object-inner)
