@@ -49,7 +49,7 @@ endfunction
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
 " Don't search in path when using ripgrep
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* RgNoPath call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 command! -bang Gcheckout call fzf#run(fzf#wrap(
       \ {
@@ -80,6 +80,11 @@ let g:textobj_ruby_no_mappings = 1
 " w0rp/ale
 set updatetime=100
 set signcolumn=yes
+let g:ale_set_highlights = 0
+let g:ale_set_loclist = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
 let g:ale_cache_executable_check_failures = 1
 let g:ale_virtualenv_dir_names = []
 let g:ale_fixers = {
@@ -264,10 +269,10 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
-nmap gi <Plug>(coc-git-chunkinfo)
-nmap <silent> gu :CocCommand git.chunkUndo<CR>
-nmap <silent> ga :CocCommand git.chunkStage<CR>
-nmap <silent> gf :CocCommand git.foldUnchanged<CR>
+nmap ggi <Plug>(coc-git-chunkinfo)
+nmap <silent> ggu :CocCommand git.chunkUndo<CR>
+nmap <silent> ggs :CocCommand git.chunkStage<CR>
+nmap <silent> ggf :CocCommand git.foldUnchanged<CR>
 omap ic <Plug>(coc-text-object-inner)
 xmap ic <Plug>(coc-text-object-inner)
 omap ic <Plug>(coc-text-object-outer)
@@ -328,7 +333,7 @@ let g:splitjoin_align = 1
 let g:git_messenger_always_into_popup = 1
 nmap gm <Plug>(git-messenger)
 
-" vim-indent-object
+" vim-textobj-comment
 let g:textobj_comment_no_default_key_mappings = 1
 xmap ak <Plug>(textobj-comment-a)
 omap ak <Plug>(textobj-comment-a)
