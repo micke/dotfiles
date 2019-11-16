@@ -1,4 +1,6 @@
 {
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.refreshOnInsertMode": true,
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "yaml.schemas": {
