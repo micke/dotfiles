@@ -4,3 +4,7 @@ deps
 .elixir_ls
 .git_crypt
 coverage
+.terraform
+log
+tmp
+.git
