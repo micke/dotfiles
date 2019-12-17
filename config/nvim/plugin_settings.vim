@@ -182,14 +182,11 @@ nmap <leader>pd <Plug>(pmv-open-docs)
 " coc.nvim
 set shortmess+=c
 call coc#add_extension(
-      \ 'coc-emoji',
       \ 'coc-solargraph',
-      \ 'coc-tsserver',
       \ 'coc-json',
       \ 'coc-css',
       \ 'coc-yaml',
       \ 'coc-tag',
-      \ 'coc-git',
       \ 'coc-docker',
       \)
 
@@ -262,12 +259,6 @@ command! -nargs=0 Format :call CocAction('format')
 " Use `:Fold` for fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-nmap [g <Plug>(coc-git-prevchunk)
-nmap ]g <Plug>(coc-git-nextchunk)
-nmap gi <Plug>(coc-git-chunkinfo)
-nmap <silent> gu :CocCommand git.chunkUndo<CR>
-nmap <silent> gs :CocCommand git.chunkStage<CR>
-nmap <silent> gf :CocCommand git.foldUnchanged<CR>
 omap ic <Plug>(coc-text-object-inner)
 xmap ic <Plug>(coc-text-object-inner)
 omap ic <Plug>(coc-text-object-outer)
