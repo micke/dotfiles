@@ -54,5 +54,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'itchyny/lightline.vim'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'justinmk/vim-gtfo'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()

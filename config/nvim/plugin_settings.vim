@@ -349,3 +349,7 @@ augroup END
 function! NetrwMapping()
   nnoremap <silent> <buffer> <c-l> :TmuxNavigateRight<cr>
 endfunction
+
+" airblade/vim-gitgutter
+let g:gitgutter_signs = 0
+let g:gitgutter_highlight_linenrs = 1
