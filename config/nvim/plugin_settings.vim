@@ -341,13 +341,14 @@ autocmd BufWritePre *.tf Neoformat terraform
 let g:tmux_navigator_disable_when_zoomed = 1
 
 " fix netrw breaking <c-l>
-augroup netrw_mapping
+augroup netrw_init
   autocmd!
-  autocmd filetype netrw call NetrwMapping()
+  autocmd filetype netrw call NetrwInit()
 augroup END
 
-function! NetrwMapping()
+function! NetrwInit()
   nnoremap <silent> <buffer> <c-l> :TmuxNavigateRight<cr>
+  call lightline#enable()
 endfunction
 
 " airblade/vim-gitgutter
