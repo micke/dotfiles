@@ -6,13 +6,12 @@ window:
     x: 2
     y: 2
   dynamic_padding: false
-  decorations: none
+  decorations: buttonless
   startup_mode: Maximized
 
 scrolling:
   history: 10000
   multiplier: 3
-  faux_multiplier: 3
   auto_scroll: false
 
 tabspaces: 8
@@ -47,35 +46,35 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '0x1c1f20'
-    foreground: '0xc4c8c6'
+    background: "0x1c1f20"
+    foreground: "0xc4c8c6"
   cursor:
-    text: '0x1c1f20'
-    cursor: '0xcccccc'
+    text: "0x1c1f20"
+    cursor: "0xcccccc"
   normal:
-    black:   '0x27292d'
-    red:     '0xdc595d'
-    green:   '0xa9b75d'
-    yellow:  '0xf6c76b'
-    blue:    '0x7aa1c0'
-    magenta: '0xba8dba'
-    cyan:    '0x79c1b8'
-    white:   '0x6f7780'
+    black: "0x27292d"
+    red: "0xdc595d"
+    green: "0xa9b75d"
+    yellow: "0xf6c76b"
+    blue: "0x7aa1c0"
+    magenta: "0xba8dba"
+    cyan: "0x79c1b8"
+    white: "0x6f7780"
   bright:
-    black:   '0x1c1f20'
-    red:     '0xea9054'
-    green:   '0x4d8c5f'
-    yellow:  '0xa5812d'
-    blue:    '0x625a88'
-    magenta: '0x5e415a'
-    cyan:    '0x79c1b8'
-    white:   '0xc4c8c6'
+    black: "0x1c1f20"
+    red: "0xea9054"
+    green: "0x4d8c5f"
+    yellow: "0xa5812d"
+    blue: "0x625a88"
+    magenta: "0x5e415a"
+    cyan: "0x79c1b8"
+    white: "0xc4c8c6"
   indexed_colors: []
 
 visual_bell:
   animation: EaseOutExpo
   duration: 0
-  color: '0xffffff'
+  color: "0xffffff"
 
 background_opacity: 1.0
 
@@ -91,7 +90,7 @@ mouse:
     modifiers: Command
 
 selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: false
 
 dynamic_title: true
@@ -117,37 +116,36 @@ shell:
 enable_experimental_conpty_backend: false
 alt_send_esc: true
 
-
 key_bindings:
-  - { key: Key0,     mods: Command, action: ResetFontSize    }
-  - { key: Equals,   mods: Command, action: IncreaseFontSize }
-  - { key: Add,      mods: Command, action: IncreaseFontSize }
-  - { key: Minus,    mods: Command, action: DecreaseFontSize }
-  - { key: Q,        mods: Command, action: Quit             }
-  - { key: W,        mods: Command, action: Quit             }
+  - { key: Key0, mods: Command, action: ResetFontSize }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Add, mods: Command, action: IncreaseFontSize }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }
+  - { key: Q, mods: Command, action: Quit }
+  - { key: W, mods: Command, action: Quit }
 
-  - { key: PageUp,                  chars: "\x1b[5~"         }
-  - { key: PageDown,                chars: "\x1b[6~"         }
-  - { key: Back,                    chars: "\x7f"            }
-  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"        }
-  - { key: Back,     mods: Command, chars: "\x15"            }
-  - { key: Left,     mods: Control, chars: "\x1b[1;5D"       }
-  - { key: Left,     mods: Alt,     chars: "\x1bb"           }
-  - { key: Left,     mods: Command, chars: "\x01"            }
-  - { key: Right,    mods: Control, chars: "\x1b[1;5C"       }
-  - { key: Right,    mods: Alt,     chars: "\x1bf"           }
-  - { key: Right,    mods: Command, chars: "\x05"            }
+  - { key: PageUp, chars: "\x1b[5~" }
+  - { key: PageDown, chars: "\x1b[6~" }
+  - { key: Back, chars: "\x7f" }
+  - { key: Back, mods: Alt, chars: "\x1b\x7f" }
+  - { key: Back, mods: Command, chars: "\x15" }
+  - { key: Left, mods: Control, chars: "\x1b[1;5D" }
+  - { key: Left, mods: Alt, chars: "\x1bb" }
+  - { key: Left, mods: Command, chars: "\x01" }
+  - { key: Right, mods: Control, chars: "\x1b[1;5C" }
+  - { key: Right, mods: Alt, chars: "\x1bf" }
+  - { key: Right, mods: Command, chars: "\x05" }
 
-  - { key: Key0,        mods: Control, chars: "\x1b[27;5;48~"   }
-  - { key: Key1,        mods: Control, chars: "\x1b[27;5;49~"   }
-  - { key: Key2,        mods: Control, chars: "\x1b[27;5;50~"   }
-  - { key: Key3,        mods: Control, chars: "\x1b[27;5;51~"   }
-  - { key: Key4,        mods: Control, chars: "\x1b[27;5;52~"   }
-  - { key: Key5,        mods: Control, chars: "\x1b[27;5;53~"   }
-  - { key: Key6,        mods: Control, chars: "\x1b[27;5;54~"   }
-  - { key: Key7,        mods: Control, chars: "\x1b[27;5;55~"   }
-  - { key: Key8,        mods: Control, chars: "\x1b[27;5;56~"   }
-  - { key: Key9,        mods: Control, chars: "\x1b[27;5;57~"   }
+  - { key: Key0, mods: Control, chars: "\x1b[27;5;48~" }
+  - { key: Key1, mods: Control, chars: "\x1b[27;5;49~" }
+  - { key: Key2, mods: Control, chars: "\x1b[27;5;50~" }
+  - { key: Key3, mods: Control, chars: "\x1b[27;5;51~" }
+  - { key: Key4, mods: Control, chars: "\x1b[27;5;52~" }
+  - { key: Key5, mods: Control, chars: "\x1b[27;5;53~" }
+  - { key: Key6, mods: Control, chars: "\x1b[27;5;54~" }
+  - { key: Key7, mods: Control, chars: "\x1b[27;5;55~" }
+  - { key: Key8, mods: Control, chars: "\x1b[27;5;56~" }
+  - { key: Key9, mods: Control, chars: "\x1b[27;5;57~" }
   - { key: A, mods: Alt, chars: "\x1ba" }
   - { key: B, mods: Alt, chars: "\x1bb" }
   - { key: C, mods: Alt, chars: "\x1bc" }
