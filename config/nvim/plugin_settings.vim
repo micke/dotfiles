@@ -82,6 +82,7 @@ set updatetime=100
 set signcolumn=yes
 let g:ale_cache_executable_check_failures = 1
 let g:ale_virtualenv_dir_names = []
+let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'ruby': [
