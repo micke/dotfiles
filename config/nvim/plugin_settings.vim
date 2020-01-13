@@ -144,6 +144,7 @@ let g:projectionist_heuristics = {
   \   }
   \ }
 let g:projectionist_ignore_term = 1
+let g:projectionist_ignore_man = 1
 
 " tpope/vim-surround
 autocmd FileType ruby let b:surround_45 = "\1block: \1 do\r end"
@@ -183,6 +184,7 @@ nmap <leader>pd <Plug>(pmv-open-docs)
 " coc.nvim
 set shortmess+=c
 call coc#add_extension(
+      \ 'coc-emoji',
       \ 'coc-solargraph',
       \ 'coc-json',
       \ 'coc-css',
@@ -306,7 +308,20 @@ let g:lightline = {
       \   'relativepath': 'LightlineRelativePath'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
+      \ 'subseparator': { 'left': '', 'right': '' },
+      \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+      \ },
       \ }
 
 " splitjoin
@@ -355,3 +370,30 @@ endfunction
 " airblade/vim-gitgutter
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_linenrs = 1
+
+" glacambre/firenvim
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'never',
+        \ },
+    \ }
+\ }
+
+if exists('g:started_by_firenvim') && g:started_by_firenvim
+    " general options
+    set laststatus=0 nonumber noruler noshowcmd
+
+    augroup firenvim
+      autocmd!
+      autocmd BufEnter *.txt setlocal filetype=markdown
+      autocmd FocusLost * ++nested silent write
+      autocmd InsertLeave * ++nested silent write
+    augroup END
+endif
