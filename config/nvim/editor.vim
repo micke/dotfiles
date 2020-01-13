@@ -21,6 +21,9 @@ set nojoinspaces
 set regexpengine=1
 set lazyredraw
 
+" Font settings for UI neovim ex. firenvim
+set guifont=Hasklig:h10
+
 " Persistent undo
 set undodir=~/.vim/undodir
 set undofile
