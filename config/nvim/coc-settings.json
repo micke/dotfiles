@@ -16,7 +16,7 @@
   "solargraph.autoformat": true,
   "solargraph.useBundler": false,
   "solargraph.bundlerPath": "/Users/lisinge/.rbenv/shims/bundle",
-  "git.enableGutters": true,
+  "coc.source.ultisnips.filetypes": [],
   "languageserver": {
     "terraform": {
       "command": "terraform-lsp",
