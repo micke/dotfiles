@@ -146,6 +146,7 @@ key_bindings:
   - { key: Key7, mods: Control, chars: "\x1b[27;5;55~" }
   - { key: Key8, mods: Control, chars: "\x1b[27;5;56~" }
   - { key: Key9, mods: Control, chars: "\x1b[27;5;57~" }
+  - { key: L, mods: Control, chars: "\x0c" } # Fixes CTRL-L resetting padding to 0
   - { key: A, mods: Alt, chars: "\x1ba" }
   - { key: B, mods: Alt, chars: "\x1bb" }
   - { key: C, mods: Alt, chars: "\x1bc" }
