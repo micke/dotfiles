@@ -107,13 +107,6 @@ nnoremap <silent> <leader>w :ArgWrap<CR>
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 0
 
-" Raimondi/delimitMate
-let g:delimitMate_expand_space=1
-let g:delimitMate_expand_cr=2
-let g:delimitMate_jump_expansion=1
-" inoremap <expr> <C-j> delimitMate#JumpAny()
-inoremap <expr> <C-l> delimitMate#JumpAny()
-
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 " Delete git buffers spawned by fugitive through neovim-remote
@@ -203,8 +196,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-imap <silent><expr> <CR> pumvisible() ? "\<C-y><CR>" : "\<Plug>delimitMateCR<Plug>DiscretionaryEnd"
 
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -372,7 +363,7 @@ let g:gitgutter_signs = 0
 let g:gitgutter_highlight_linenrs = 1
 
 " glacambre/firenvim
-let g:firenvim_config = { 
+let g:firenvim_config = {
     \ 'globalSettings': {
         \ 'alt': 'all',
     \  },
@@ -397,3 +388,9 @@ if exists('g:started_by_firenvim') && g:started_by_firenvim
       autocmd InsertLeave * ++nested silent write
     augroup END
 endif
+
+" matchup
+let g:matchup_surround_enabled = 1
+let g:matchup_delim_stopline = 1500
+let g:matchup_matchparen_deferred = 0
+let g:matchup_matchparen_hi_surround_always = 0
