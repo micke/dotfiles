@@ -56,6 +56,8 @@ endfunction
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
+" Rg with preview
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
 " Don't search in path when using ripgrep
 command! -bang -nargs=* RgNoPath call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 

@@ -45,6 +45,11 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --color=fg+:#cccccc,bg+:#27292d,hl+:#f6c76b
  --color=info:#625a88,prompt:#6f7780,pointer:#dc595d
  --color=marker:#a9b75d,spinner:#ba8dba,header:#79c1b8'
+# fzf vim half page up/down
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --bind="ctrl-u:half-page-up"
+ --bind="ctrl-d:half-page-down"
+'
 
 # Homebrew config
 export HOMEBREW_INSTALL_CLEANUP=true

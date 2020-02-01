@@ -1,3 +1,1 @@
 EXCLUDES="README.md LICENSE hybrid.itermcolors"
-SYMLINK_DIRS="Library/Preferences/bat"
-UNDOTTED="Library"
