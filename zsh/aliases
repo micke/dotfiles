@@ -13,6 +13,7 @@ alias d=devflow
 alias dc="devflow checkout"
 alias :q=exit
 alias :e=nvim
+alias vim=nvim
 
 alias h=heroku
 alias heroku="nocorrect heroku"

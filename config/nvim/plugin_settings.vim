@@ -404,3 +404,6 @@ let g:matchup_surround_enabled = 1
 let g:matchup_delim_stopline = 1500
 let g:matchup_matchparen_deferred = 0
 let g:matchup_matchparen_hi_surround_always = 0
+
+" junegunn/vim-after-objec
+autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')

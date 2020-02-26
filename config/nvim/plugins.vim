@@ -55,6 +55,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'justinmk/vim-gtfo'
 Plug 'airblade/vim-gitgutter'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'junegunn/vim-after-object'
 
 call plug#end()

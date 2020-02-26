@@ -15,6 +15,8 @@ set autowrite
 set diffopt+=vertical
 set nojoinspaces
 
+set winwidth=80
+
 " Fix for slow ruby syntax
 " https://github.com/vim-ruby/vim-ruby/issues/243
 " https://github.com/vim/vim/issues/282
