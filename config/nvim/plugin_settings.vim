@@ -194,6 +194,7 @@ call coc#add_extension(
       \ 'coc-yaml',
       \ 'coc-tag',
       \ 'coc-docker',
+      \ 'coc-go',
       \)
 
 inoremap <silent><expr> <TAB>
@@ -348,11 +349,13 @@ omap ik <Plug>(textobj-comment-i)
 " ludovicchabant/vim-gutentags	
 let g:gutentags_file_list_command = 'rg --files --ignore-file=.tagignore'
 let g:gutentags_ctags_executable_ruby = 'rtags'
+let g:gutentags_define_advanced_commands = 1
 
 " sbdchd/neoformat
 autocmd BufWritePre *.yaml Neoformat prettier
 autocmd BufWritePre *.yml Neoformat prettier
 autocmd BufWritePre *.tf Neoformat terraform
+autocmd BufWritePre *.tfvars Neoformat terraform
 
 " vim-tmux-navigator
 let g:tmux_navigator_disable_when_zoomed = 1
@@ -407,3 +410,6 @@ let g:matchup_matchparen_hi_surround_always = 0
 
 " junegunn/vim-after-objec
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
+
+" jiangmiao/auto-pairs
+let g:AutoPairsShortcutFastWrap = "<M-w>"

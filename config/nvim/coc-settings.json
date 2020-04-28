@@ -3,7 +3,11 @@
   "diagnostic.refreshOnInsertMode": true,
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
+  "yaml.format.enable": true,
+  "yaml.completion": true,
+  "yaml.schemaStore.enable": true,
   "yaml.schemas": {
+    "http://json.schemastore.org/kustomization": "/kustomization.y*ml",
     "kubernetes": "/*.y*ml"
   },
   "solargraph.hover": true,
@@ -24,4 +28,7 @@
       "initializationOptions": {}
     }
   },
+  "go.goplsOptions": {
+    "completeUnimported": true
+  }
 }

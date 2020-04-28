@@ -56,5 +56,7 @@ Plug 'cocopon/lightline-hybrid.vim'
 Plug 'justinmk/vim-gtfo'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-after-object'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'jasontbradshaw/pigeon.vim'
 
 call plug#end()
