@@ -69,8 +69,6 @@ export RUBYOPT='-W0'
 # Use bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-source /usr/local/opt/asdf/asdf.sh
-
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
