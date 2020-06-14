@@ -16,6 +16,8 @@ nnoremap <silent> <leader>b :BCommits<CR>
 nnoremap <silent> <leader>gc :Gcheckout<CR>
 nnoremap <silent> <leader>gpc :Gprcheckout<CR>
 
+let g:fzf_mru_no_sort = 1
+
 let g:fzf_action = {
   \ 'ctrl-s': 'vsplit',
   \ 'ctrl-t': 'tab split',
@@ -43,13 +45,13 @@ function! CreateCenteredFloatingWindow()
     let bot = "╰" . repeat("─", width - 2) . "╯"
     let lines = [top] + repeat([mid], height - 2) + [bot]
     let s:buf = nvim_create_buf(v:false, v:true)
-    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+    " call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
     call nvim_open_win(s:buf, v:true, opts)
     set winhl=Normal:Floating
-    let opts.row += 1
-    let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
+    " let opts.row += 1
+    " let opts.height -= 2
+    " let opts.col += 2
+    " let opts.width -= 4
     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
@@ -276,7 +278,7 @@ let g:easy_align_delimiters = {
 \ }
 
 " luochen1990/rainbow
-let g:rainbow_active = 1
+" let g:rainbow_active = 1
 
 " itchyny/lightline.vim
 set noshowmode " Don't show mode as lightline already shows mode
