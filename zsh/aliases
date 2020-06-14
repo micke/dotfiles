@@ -22,8 +22,9 @@ alias todos="glo | ag TODO: --nocolor"
 alias v=vim
 alias x=exit
 alias k=kubectl
-alias kp="kubectl --context production-alpha"
+alias kp="kubectl --context production"
 alias ks="kubectl --context sandbox"
+alias kt="kubectl --context tooling"
 
 alias ssh="TERM=xterm-256color ssh"
 
