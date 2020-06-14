@@ -9,7 +9,6 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-projectionist'
@@ -58,5 +57,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-after-object'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jasontbradshaw/pigeon.vim'
+Plug 'tomtom/tcomment_vim'
 
 call plug#end()
