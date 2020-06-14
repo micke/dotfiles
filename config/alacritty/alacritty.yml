@@ -12,9 +12,6 @@ window:
 scrolling:
   history: 10000
   multiplier: 3
-  auto_scroll: false
-
-tabspaces: 8
 
 font:
   size: 13.0
@@ -117,6 +114,7 @@ enable_experimental_conpty_backend: false
 alt_send_esc: true
 
 key_bindings:
+  - { key: Q, mods: Control, chars: "\x11" }
   - { key: Key0, mods: Command, action: ResetFontSize }
   - { key: Equals, mods: Command, action: IncreaseFontSize }
   - { key: Add, mods: Command, action: IncreaseFontSize }
