@@ -354,8 +354,8 @@ let g:gutentags_ctags_executable_ruby = 'rtags'
 let g:gutentags_define_advanced_commands = 1
 
 " sbdchd/neoformat
-autocmd BufWritePre *.yaml Neoformat prettier
-autocmd BufWritePre *.yml Neoformat prettier
+" autocmd BufWritePre *.yaml Neoformat prettier
+" autocmd BufWritePre *.yml Neoformat prettier
 autocmd BufWritePre *.tf Neoformat terraform
 autocmd BufWritePre *.tfvars Neoformat terraform
 
@@ -415,3 +415,9 @@ autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 
 " jiangmiao/auto-pairs
 let g:AutoPairsShortcutFastWrap = "<M-w>"
+
+" Yggdroot/indentLine
+let g:indentLine_char = '│'
+let g:indentLine_fileTypeExclude = ['help', 'defx', 'vimwiki']
+let g:indent_blankline_extra_indent_level = -1
+let g:indentLine_color_gui = '#282a2e'
