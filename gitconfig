@@ -23,6 +23,7 @@
   co = checkout
   st = status -sb
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  pp = !git pull && git push
   ctags = !.git/hooks/ctags
   pushu = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
   pu = pushu

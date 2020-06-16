@@ -49,6 +49,7 @@ nnoremap <leader>gbr :Gbrowse<CR>
 nnoremap <leader>gpl :Gpull<CR>
 nnoremap <leader>gps :Gpush<CR>
 nnoremap <leader>gpf :Gpush --force-with-lease<CR>
+nnoremap <leader>gpp :Dispatch! git pp<CR>
 nnoremap <leader>gpr :Dispatch! git p-r<CR>
 nnoremap <leader>gpu :Dispatch! hub pushu<CR>
 nnoremap <leader>gw :Gwrite<CR>
