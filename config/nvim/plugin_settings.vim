@@ -282,9 +282,6 @@ let g:easy_align_delimiters = {
 
 " itchyny/lightline.vim
 set noshowmode " Don't show mode as lightline already shows mode
-function! LightlineReadonly()
-  return &readonly ? '' : ''
-endfunction
 function! LightlineFugitive()
   if exists('*fugitive#head')
     let branch = fugitive#head()
@@ -299,7 +296,7 @@ let g:lightline = {
       \ 'colorscheme': 'hybrid',
       \ 'active': {
       \   'left':  [ [ 'mode' ],
-      \              [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ],
+      \              [ 'fugitive', 'relativepath', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ] ]
       \ },
       \ 'inactive': {
@@ -307,7 +304,6 @@ let g:lightline = {
       \   'right': [ ['fugitive'] ]
       \ },
       \ 'component_function': {
-      \   'readonly': 'LightlineReadonly',
       \   'fugitive': 'LightlineFugitive',
       \   'relativepath': 'LightlineRelativePath'
       \ },
