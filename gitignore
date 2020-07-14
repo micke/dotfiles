@@ -10,6 +10,7 @@ tags
 tags~
 tags.lock
 tags.temp
+tags.files
 tmp/**/*
 !tmp/cache/.keep
 vendor/bundler_gems
