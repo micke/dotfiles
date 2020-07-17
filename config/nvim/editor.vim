@@ -14,6 +14,7 @@ set showcmd            " display incomplete commands
 set autowrite
 set diffopt+=vertical
 set nojoinspaces
+set gdefault
 
 set winwidth=80
 
