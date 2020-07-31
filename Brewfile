@@ -172,6 +172,7 @@ brew "osx-cross/avr/avr-gcc@8", link: true
 brew "phrase/brewed/phraseapp"
 brew "puma/puma/puma-dev"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
+cask "1password"
 cask "aerial"
 cask "alacritty"
 cask "alfred"
