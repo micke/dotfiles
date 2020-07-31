@@ -6,3 +6,21 @@ echo "Setting defaults"
 
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.AppleMultitouchTrackpad HIDScrollZoomModifierMask -int 262144
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad HIDScrollZoomModifierMask -int 262144
+
+defaults write com.apple.controlstrip FullCustomized -array com.apple.system.group.brightness com.apple.system.mission-control com.apple.system.launchpad com.apple.system.group.keyboard-brightness com.apple.system.group.media com.apple.system.group.volume com.apple.system.screen-saver
+defaults write com.apple.controlstrip MiniCustomized -array com.apple.system.brightness com.apple.system.volume com.apple.system.mute com.apple.system.screen-lock
+
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock "mod-count" -int 32
+
+defaults write com.apple.rapport familySyncedName -string lisinge
+
+defaults write com.apple.touchbar.agent PresentationModeGlobal -string fullControlStrip
+
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess closeViewPanningMode -bool false
+defaults write com.apple.universalaccess closeViewZoomedIn -bool false
+defaults write com.apple.universalaccess hoverTextEnabled -bool false
