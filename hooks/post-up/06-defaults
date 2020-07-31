@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e
+
+echo "Setting defaults"
+
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad HIDScrollZoomModifierMask -int 262144
