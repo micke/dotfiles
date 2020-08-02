@@ -160,6 +160,7 @@ brew "osx-cross/avr/avr-gcc", link: false
 brew "osx-cross/avr/avr-gcc@8", link: true
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 cask "1password"
+cask "1password-cli"
 cask "aerial"
 cask "alacritty"
 cask "alfred"
@@ -175,6 +176,7 @@ cask "google-cloud-sdk"
 cask "gpg-suite"
 cask "java"
 cask "kicad"
+cask "librecad"
 cask "mattr-slate"
 cask "ngrok"
 cask "postgres"
