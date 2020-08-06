@@ -38,7 +38,6 @@ Plug 'tweekmonster/fzf-filemru'
 Plug 'w0rp/ale'
 Plug 'sbdchd/neoformat'
 Plug 'FooSoft/vim-argwrap'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise' " vim-endwise needs to load after delimitMate
 Plug 'tpope/vim-fugitive'

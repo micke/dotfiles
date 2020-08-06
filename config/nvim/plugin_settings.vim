@@ -115,10 +115,6 @@ nnoremap [r :ALEPreviousWrap<CR>
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
-" nathanaelkane/vim-indent-guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 0
-
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 " Delete git buffers spawned by fugitive through neovim-remote
