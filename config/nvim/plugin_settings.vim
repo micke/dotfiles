@@ -156,6 +156,7 @@ autocmd FileType ruby let b:surround_109 = "module \1module: \1\r end"
 " plasticboy/vim-markdown
 let g:vim_markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'css']
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
 
 " janko-m/vim-test
 let g:test#strategy = "dispatch"
@@ -193,6 +194,7 @@ call coc#add_extension(
       \ 'coc-tag',
       \ 'coc-docker',
       \ 'coc-go',
+      \ 'coc-elixir'
       \)
 
 inoremap <silent><expr> <TAB>

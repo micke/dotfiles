@@ -1,7 +1,6 @@
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'sheerun/vim-polyglot'
-Plug 'micke/vim-hybrid'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -59,5 +58,7 @@ Plug 'jasontbradshaw/pigeon.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
+
+Plug 'micke/vim-hybrid'
 
 call plug#end()

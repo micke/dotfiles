@@ -42,7 +42,7 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor = nvr --remote-tab-wait-silent +'set bufhidden=delete'
+  # editor = nvr --remote-tab-wait-silent +'set bufhidden=delete'
   autocrlf = input
   pager = diff-so-fancy | less --tabs=4 -RFX
 

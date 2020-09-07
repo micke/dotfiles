@@ -66,6 +66,10 @@ export RUBYOPT='-W0'
 # Load kubectl autocompletion
 # source <(kubectl completion zsh)
 
+# asdf
+source /usr/local/opt/asdf/asdf.sh
+export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+
 # Use bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
