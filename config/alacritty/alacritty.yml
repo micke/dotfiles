@@ -129,7 +129,7 @@ key_bindings:
   - { key: Back, mods: Command, chars: "\x15" }
   - { key: Left, mods: Control, chars: "\x1b[1;5D" }
   - { key: Left, mods: Alt, chars: "\x1bb" }
-  - { key: Left, mods: Command, chars: "\x01" }
+  - { key: Left, mods: Command, chars: "\x01b" }
   - { key: Right, mods: Control, chars: "\x1b[1;5C" }
   - { key: Right, mods: Alt, chars: "\x1bf" }
   - { key: Right, mods: Command, chars: "\x05" }
