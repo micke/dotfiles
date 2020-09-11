@@ -93,6 +93,11 @@ augroup quickfix
   autocmd FileType qf setlocal nolist wrap linebreak
 augroup END
 
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
