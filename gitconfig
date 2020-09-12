@@ -10,7 +10,7 @@
 [user]
   name = Micke Lisinge
   email = hi@micke.me
-  signingkey = 9168A4019C579B81
+  signingkey = 6EE5BDCF7EB16E6261963766F4930F1F5BE28623
 
 [merge]
   defaultToUpstream = true
