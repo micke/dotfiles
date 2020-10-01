@@ -13,7 +13,7 @@ nnoremap <silent> <space>s :Files app/services<CR>
 nnoremap <silent> <leader>c :Commits<CR>
 nnoremap <silent> <leader>b :BCommits<CR>
 
-nnoremap <silent> <leader>gc :Gcheckout<CR>
+nnoremap <silent> <leader>gc :GBranches<CR>
 nnoremap <silent> <leader>gpc :Gprcheckout<CR>
 
 let g:fzf_mru_no_sort = 1

@@ -19,7 +19,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-slash'
+Plug 'pgdouyon/vim-evanesco'
 Plug 'wellle/targets.vim'
 Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
