@@ -60,12 +60,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # Enable history in erlang and elixir shell
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Silence ruby 2.7 warnings
-export RUBYOPT='-W0'
-
-# Load kubectl autocompletion
-# source <(kubectl completion zsh)
-
 # asdf
 source /usr/local/opt/asdf/asdf.sh
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
