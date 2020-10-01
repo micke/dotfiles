@@ -26,6 +26,9 @@ alias kp="kubectl --context production"
 alias ks="kubectl --context sandbox"
 alias kt="kubectl --context tooling"
 alias kc="kubeconsole"
+alias kcp="kubeconsole production"
+alias kcs="kubeconsole staging"
+alias kct="kubeconsole tooling"
 
 alias ssh="TERM=xterm-256color ssh"
 
