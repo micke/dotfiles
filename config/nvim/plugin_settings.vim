@@ -376,33 +376,6 @@ endfunction
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_linenrs = 1
 
-" glacambre/firenvim
-let g:firenvim_config = {
-    \ 'globalSettings': {
-        \ 'alt': 'all',
-    \  },
-    \ 'localSettings': {
-        \ '.*': {
-            \ 'cmdline': 'neovim',
-            \ 'priority': 0,
-            \ 'selector': 'textarea',
-            \ 'takeover': 'never',
-        \ },
-    \ }
-\ }
-
-if exists('g:started_by_firenvim') && g:started_by_firenvim
-    " general options
-    set laststatus=0 nonumber noruler noshowcmd
-
-    augroup firenvim
-      autocmd!
-      autocmd BufEnter *.txt setlocal filetype=markdown
-      autocmd FocusLost * ++nested silent write
-      autocmd InsertLeave * ++nested silent write
-    augroup END
-endif
-
 " matchup
 let g:matchup_surround_enabled = 1
 let g:matchup_delim_stopline = 1500
@@ -420,3 +393,33 @@ let g:indentLine_char = '│'
 let g:indentLine_fileTypeExclude = ['help', 'defx', 'vimwiki']
 let g:indent_blankline_extra_indent_level = -1
 let g:indentLine_color_gui = '#282a2e'
+
+" AndrewRadev/switch.vim
+autocmd FileType ruby let b:switch_custom_definitions =
+      \ [
+      \   {
+      \     '\v\[\s*%((["''])%([^"'']\s@!)+\1,?\s*)*]': {
+      \       '\[':                                    '%w[',
+      \       '\v\s*(["''])(%([^"'']\s@!)+)\1,?(\s)*': '\2\3',
+      \       '\s*]':                                  ']',
+      \     },
+      \     '\v\%w\[\s*%([^"'',]\s*)+\]': {
+      \       '%w(\s*':        '[''',
+      \       '\v(\s+)@>\)@!': ''', ''',
+      \       '\s*)':          ''']',
+      \     },
+      \     '\v\[\s*%(:\@{0,2}\k+,?\s*)+\]': {
+      \       '\[':                        '%i[',
+      \       '\v\s*:(\@{0,2}\k+),?(\s)*': '\1\2',
+      \       '\s*]':                      ']',
+      \     },
+      \     '\v\%i\[\s*%(\@{0,2}\k+\s*)+\]': {
+      \       '\v\%i\((\s*)@>': '[:',
+      \       '\v(\s+)@>\)@!':  ', :',
+      \       '\s*)':           ']',
+      \     },
+      \   }
+      \ ]
+
+" posva/vim-vue
+let g:vue_pre_processors = 'detect_on_enter'

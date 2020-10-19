@@ -56,6 +56,10 @@ nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>ga :Gcommit -a<CR>
 
+" Split
+nnoremap <C-\> <C-W>|
+nnoremap <C-=> <C-W>=
+
 " Config mappings
 nnoremap <leader>ce :e $MYVIMRC<CR>
 nnoremap <leader>cs :so $MYVIMRC<CR>

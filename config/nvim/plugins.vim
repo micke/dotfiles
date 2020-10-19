@@ -44,7 +44,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'janko-m/vim-test'
 Plug 'mattn/webapi-vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'machakann/vim-highlightedyank'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'luochen1990/rainbow'
 Plug 'rhysd/git-messenger.vim'
