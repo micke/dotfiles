@@ -2,6 +2,7 @@
 nnoremap <silent> <space>f :FilesMru --tiebreak=end<CR>
 nnoremap <silent> <space>F :Files<CR>
 nnoremap <silent> <space>t :Tags<CR>
+nnoremap <silent> <space>bt :BTags<CR>
 nnoremap <silent> <space>r :Rg<CR>
 
 nnoremap <silent> <space>c :Files app/controllers<CR>
@@ -194,7 +195,8 @@ call coc#add_extension(
       \ 'coc-tag',
       \ 'coc-docker',
       \ 'coc-go',
-      \ 'coc-elixir'
+      \ 'coc-elixir',
+      \ 'coc-vetur',
       \)
 
 inoremap <silent><expr> <TAB>
@@ -379,8 +381,8 @@ let g:gitgutter_highlight_linenrs = 1
 " matchup
 let g:matchup_surround_enabled = 1
 let g:matchup_delim_stopline = 1500
-let g:matchup_matchparen_deferred = 0
-let g:matchup_matchparen_hi_surround_always = 0
+let g:matchup_matchparen_deferred = 1
+let g:matchup_matchparen_hi_surround_always = 1
 
 " junegunn/vim-after-objec
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
@@ -423,3 +425,9 @@ autocmd FileType ruby let b:switch_custom_definitions =
 
 " posva/vim-vue
 let g:vue_pre_processors = 'detect_on_enter'
+
+" stsewd/fzf-checkout.vim
+let g:fzf_branch_actions = {
+      \ 'new': {'keymap': 'ctrl-c'},
+      \ 'track': {'keymap': 'enter'},
+      \}

@@ -30,7 +30,7 @@
         <key>invisibles</key>
         <string>#586E75</string><!-- FIXME: ? -->
         <key>lineHighlight</key>
-        <string>#33363b</string>
+        <string>#585b61</string>
         <key>misspelling</key>
         <string>#CC6666</string>
         <key>selection</key>

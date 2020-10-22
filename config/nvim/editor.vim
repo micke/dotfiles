@@ -93,6 +93,11 @@ augroup quickfix
   autocmd FileType qf setlocal nolist wrap linebreak
 augroup END
 
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=1000 }
+augroup END
+
 command WQ wq
 command Wq wq
 command W w
