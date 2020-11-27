@@ -8,6 +8,7 @@ window:
   dynamic_padding: false
   decorations: buttonless
   startup_mode: Maximized
+  dynamic_title: true
 
 scrolling:
   history: 10000
@@ -68,7 +69,7 @@ colors:
     white: "0xc4c8c6"
   indexed_colors: []
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: "0xffffff"
@@ -89,8 +90,6 @@ mouse:
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: false
-
-dynamic_title: true
 
 cursor:
   style: Block
@@ -117,7 +116,7 @@ key_bindings:
   - { key: Q, mods: Control, chars: "\x11" }
   - { key: Key0, mods: Command, action: ResetFontSize }
   - { key: Equals, mods: Command, action: IncreaseFontSize }
-  - { key: Add, mods: Command, action: IncreaseFontSize }
+  - { key: Plus, mods: Command, action: IncreaseFontSize }
   - { key: Minus, mods: Command, action: DecreaseFontSize }
   - { key: Q, mods: Command, action: Quit }
   - { key: W, mods: Command, action: Quit }
