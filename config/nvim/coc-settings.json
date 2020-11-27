@@ -2,6 +2,7 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": true,
   "suggest.noselect": true,
+  "suggest.triggerAfterInsertEnter": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "yaml.format.enable": true,
   "yaml.completion": true,

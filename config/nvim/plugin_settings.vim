@@ -15,6 +15,8 @@ nnoremap <silent> <leader>c :Commits<CR>
 nnoremap <silent> <leader>b :BCommits<CR>
 
 nnoremap <silent> <leader>gc :GBranches<CR>
+nnoremap <silent> <leader>gcb :GBranches<CR>
+nnoremap <silent> <leader>gcm :Git checkout master<CR>
 nnoremap <silent> <leader>gpc :Gprcheckout<CR>
 
 let g:fzf_mru_no_sort = 1
@@ -393,7 +395,6 @@ let g:AutoPairsShortcutFastWrap = "<M-w>"
 " Yggdroot/indentLine
 let g:indentLine_char = '│'
 let g:indentLine_fileTypeExclude = ['help', 'defx', 'vimwiki']
-let g:indent_blankline_extra_indent_level = -1
 let g:indentLine_color_gui = '#282a2e'
 
 " AndrewRadev/switch.vim
@@ -428,6 +429,6 @@ let g:vue_pre_processors = 'detect_on_enter'
 
 " stsewd/fzf-checkout.vim
 let g:fzf_branch_actions = {
-      \ 'new': {'keymap': 'ctrl-c'},
       \ 'track': {'keymap': 'enter'},
+      \ 'checkout': {'keymap': 'alt-enter'},
       \}

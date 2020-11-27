@@ -9,7 +9,7 @@ function! InsertTabWrapper()
     return "\<c-p>"
   endif
 endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <silent><Tab> <c-r>=InsertTabWrapper()<cr>
 
 nnoremap Y y$
 
