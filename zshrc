@@ -15,6 +15,7 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
 
 export WORDCHARS=""
 
@@ -46,6 +47,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --bind="ctrl-u:half-page-up"
  --bind="ctrl-d:half-page-down"
+ --bind="up:preview-up"
+ --bind="down:preview-down"
 '
 
 # Homebrew config
@@ -63,6 +66,10 @@ export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 
 # Use bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Enable buildkit for docker
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

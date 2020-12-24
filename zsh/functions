@@ -25,3 +25,7 @@ gd() {
                 {}
 FZF-EOF"
 }
+
+workloadidentity() {
+  kubectl --context $1 run -it --rm --image google/cloud-sdk --namespace $2 --serviceaccount $3 micke-workload-identity-test
+}

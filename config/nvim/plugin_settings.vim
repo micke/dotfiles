@@ -397,38 +397,5 @@ let g:indentLine_char = '│'
 let g:indentLine_fileTypeExclude = ['help', 'defx', 'vimwiki']
 let g:indentLine_color_gui = '#282a2e'
 
-" AndrewRadev/switch.vim
-autocmd FileType ruby let b:switch_custom_definitions =
-      \ [
-      \   {
-      \     '\v\[\s*%((["''])%([^"'']\s@!)+\1,?\s*)*]': {
-      \       '\[':                                    '%w[',
-      \       '\v\s*(["''])(%([^"'']\s@!)+)\1,?(\s)*': '\2\3',
-      \       '\s*]':                                  ']',
-      \     },
-      \     '\v\%w\[\s*%([^"'',]\s*)+\]': {
-      \       '%w(\s*':        '[''',
-      \       '\v(\s+)@>\)@!': ''', ''',
-      \       '\s*)':          ''']',
-      \     },
-      \     '\v\[\s*%(:\@{0,2}\k+,?\s*)+\]': {
-      \       '\[':                        '%i[',
-      \       '\v\s*:(\@{0,2}\k+),?(\s)*': '\1\2',
-      \       '\s*]':                      ']',
-      \     },
-      \     '\v\%i\[\s*%(\@{0,2}\k+\s*)+\]': {
-      \       '\v\%i\((\s*)@>': '[:',
-      \       '\v(\s+)@>\)@!':  ', :',
-      \       '\s*)':           ']',
-      \     },
-      \   }
-      \ ]
-
 " posva/vim-vue
 let g:vue_pre_processors = 'detect_on_enter'
-
-" stsewd/fzf-checkout.vim
-let g:fzf_branch_actions = {
-      \ 'track': {'keymap': 'enter'},
-      \ 'checkout': {'keymap': 'alt-enter'},
-      \}

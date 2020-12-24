@@ -40,6 +40,16 @@ set wildmode=longest:full,list:full
 set complete=.,w,t
 set completeopt=noinsert,menuone,noselect
 
+set formatoptions-=a " Auto formatting is BAD.
+set formatoptions-=t " Don't auto format my code. I got linters for that.
+set formatoptions+=c " In general, I like it when comments respect textwidth
+set formatoptions+=q " Allow formatting comments w/ gq
+set formatoptions-=o " O and o, don't continue comments
+set formatoptions+=r " But do continue when pressing enter.
+set formatoptions+=n " Indent past the formatlistpat, not underneath it.
+set formatoptions+=j " Auto-remove comments if possible.
+set formatoptions-=2 " I'm not in gradeschool anymore
+
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
@@ -66,7 +76,7 @@ let g:netrw_rmdir_cmd='rm -r'
 set nowrap
 
 " Statusline
-set laststatus=2          " Always display the status line
+set laststatus=2 " Always display the status line
 
 augroup vimrcEx
   autocmd!

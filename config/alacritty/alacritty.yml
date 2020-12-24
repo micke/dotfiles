@@ -17,15 +17,15 @@ scrolling:
 font:
   size: 13.0
   normal:
-    family: Hasklig
+    family: Source Code Pro
     style: Regular
 
   bold:
-    family: Hasklig
+    family: Source Code Pro
     style: Bold
 
   italic:
-    family: Hasklig
+    family: Source Code Pro
     style: Italic
 
   offset:
