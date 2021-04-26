@@ -42,9 +42,9 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gbl :Gblame<CR>
 nnoremap <leader>gbr :Gbrowse<CR>
-nnoremap <leader>gpl :Gpull<CR>
-nnoremap <leader>gps :Gpush<CR>
-nnoremap <leader>gpf :Gpush --force-with-lease<CR>
+nnoremap <leader>gpl :Git pull<CR>
+nnoremap <leader>gps :Git push<CR>
+nnoremap <leader>gpf :Git push --force-with-lease<CR>
 nnoremap <leader>gpp :Dispatch! git pp<CR>
 nnoremap <leader>gpr :Dispatch! git p-r<CR>
 nnoremap <leader>gpu :Dispatch! hub pushu<CR>
