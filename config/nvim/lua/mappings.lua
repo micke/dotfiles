@@ -26,8 +26,18 @@ map("n", "<C-q>", [[ :q<CR>]])
 map("i", "<C-q>", [[ <esc>:q<CR>]])
 map("v", "<C-q>", [[ <esc>:q<CR>]])
 
--- Telescope
+-- Git
 map("n", "<Leader>gs", [[<Cmd> Git <CR>]], opt)
+map("n", "<Leader>gbl", [[<Cmd> Git blame <CR>]], opt)
+map("n", "<Leader>gbr", [[<Cmd> Git browse <CR>]], opt)
+map("n", "<Leader>gpl", [[<Cmd> Git pull <CR>]], opt)
+map("n", "<Leader>gps", [[<Cmd> Git push <CR>]], opt)
+map("n", "<Leader>gpf", [[<Cmd> Git push --force-with-lease<CR>]], opt)
+map("n", "<Leader>gpp", [[<Cmd> Dispatch! git pp <CR>]], opt)
+map("n", "<Leader>gpr", [[<Cmd> Dispatch! git p-r <CR>]], opt)
+map("n", "<Leader>gpu", [[<Cmd> Dispatch! git pushu <CR>]], opt)
+
+-- Telescope
 map("n", "<Leader>gb", [[<Cmd> Telescope git_branches <CR>]], opt)
 map("n", "<Leader>gc", [[<Cmd> Telescope git_commits <CR>]], opt)
 map("n", "<Leader>gcb", [[<Cmd> Telescope git_bcommits <CR>]], opt)

@@ -84,3 +84,5 @@ source $HOME/.zsh_prompt
 source $HOME/.secrets
 
 source ~/.fzf.zsh
+
+function gam() { "/Users/lisinge/bin/gam/gam" "$@" ; }
