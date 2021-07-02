@@ -56,7 +56,6 @@ Plug 'junegunn/vim-after-object'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jasontbradshaw/pigeon.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'Yggdroot/indentLine'
 
 Plug 'micke/vim-hybrid'
 

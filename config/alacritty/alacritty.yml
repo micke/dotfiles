@@ -17,15 +17,15 @@ scrolling:
 font:
   size: 13.0
   normal:
-    family: Source Code Pro
+    family: Hasklug Nerd Font
     style: Regular
 
   bold:
-    family: Source Code Pro
+    family: Hasklug Nerd Font
     style: Bold
 
   italic:
-    family: Source Code Pro
+    family: Hasklug Nerd Font
     style: Italic
 
   offset:
