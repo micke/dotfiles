@@ -19,7 +19,7 @@ map("n", "<leader>ce", ":e $MYVIMRC<CR>")
 map("n", "<leader>cs", ":source $MYVIMRC<CR>")
 map("n", "<leader>pi", ":PackerInstall<CR>")
 map("n", "<leader>pc", ":PackerClean<CR>")
-map("n", "<leader>pu", ":PackerUpdate<CR>")
+map("n", "<leader>pu", ":PackerSync<CR>")
 
 -- Quitting
 map("n", "<C-q>", [[ :q<CR>]])

@@ -52,6 +52,15 @@ opt("b", "expandtab", true)
 opt("b", "shiftwidth", 2)
 opt("b", "smartindent", true)
 
+opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "[at]", "")) -- Disable autoformatting
+opt("o", "formatoptions", vim.o.formatoptions .. "c") -- Respect textwidth in comments
+opt("o", "formatoptions", vim.o.formatoptions .. "q") -- Format comments with gq
+opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "[o]", "")) -- Don"t continue comments with o and O
+opt("o", "formatoptions", vim.o.formatoptions .. "r") -- Enter continues comments
+opt("o", "formatoptions", vim.o.formatoptions .. "n") -- Indent past the formatlistpat, not underneath it.
+opt("o", "formatoptions", vim.o.formatoptions .. "j") -- Auto-remove comments if possible.
+opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "2", ""))
+
 local M = {}
 
 function M.is_buffer_empty()

@@ -55,7 +55,7 @@ return packer.startup(function()
   use "907th/vim-auto-save"
   use "karb94/neoscroll.nvim"
   use "folke/which-key.nvim"
-  use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
+  use "lukas-reineke/indent-blankline.nvim"
   use "christoomey/vim-tmux-navigator"
 
   use "tpope/vim-unimpaired"

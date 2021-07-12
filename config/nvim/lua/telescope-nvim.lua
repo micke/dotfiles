@@ -35,7 +35,6 @@ M.config = function()
       file_ignore_patterns = {},
       hidden = false,
       generic_sorter = require "telescope.sorters".get_generic_fuzzy_sorter,
-      shorten_path = true,
       winblend = 0,
       border = {},
       borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
