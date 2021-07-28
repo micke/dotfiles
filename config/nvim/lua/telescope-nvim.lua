@@ -1,4 +1,5 @@
 local M = {}
+local actions = require('telescope.actions')
 
 M.config = function()
   require("telescope").setup {
@@ -11,6 +12,11 @@ M.config = function()
         "--line-number",
         "--column",
         "--smart-case"
+      },
+      mappings = {
+        i = {
+          ["<esc>"] = actions.close
+        },
       },
       prompt_prefix = "   ",
       selection_caret = "  ",

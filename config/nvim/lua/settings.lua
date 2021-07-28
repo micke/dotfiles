@@ -28,7 +28,7 @@ opt("o", "wrap", false)
 
 opt("o", "wildmode", "longest:full,list:full")
 
-opt("o", "undodir", "~/.vim/undodir")
+opt("o", "undodir", vim.fn.expand("~/.vim/undodir"))
 opt("o", "undofile", true)
 
 opt("o", "mouse", "a")

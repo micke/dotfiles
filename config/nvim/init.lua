@@ -21,7 +21,7 @@ g.auto_save = 0
 -- colorscheme related stuff
 cmd "syntax on"
 
-vim.g.tokyonight_style = "night"
+vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_italic_functions = true
 
 cmd "colorscheme tokyonight"
