@@ -1,9 +1,10 @@
 -- load all plugins
 require "plugins"
-require "misc-utils"
+require "settings"
 
 require "statusline"
 require "vim-matchup"
+require "splitjoin"
 
 require("colorizer").setup()
 require("neoscroll").setup() -- smooth scroll
@@ -44,7 +45,7 @@ require "file-icons"
 
 -- git signs , lsp symbols etc
 require "gitsigns-nvim"
-require("nvim-autopairs").setup()
+require "autopairs"
 require("lspkind").init()
 
 -- hide line numbers , statusline in specific buffers!
@@ -79,4 +80,5 @@ command! Q q
 
 require "mappings"
 require "whichkey"
+require "argwrap"
 require("nvim_comment").setup()

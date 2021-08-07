@@ -20,13 +20,25 @@ return packer.startup(function()
   use { "andymass/vim-matchup", event = "CursorMoved" }
 
   -- languages not supported by treesitter
-  use "kchmck/vim-coffee-script"
-  use "elixir-editors/vim-elixir"
+  use "sheerun/vim-polyglot"
 
   use "lewis6991/gitsigns.nvim"
   use "hoob3rt/lualine.nvim"
   use "windwp/nvim-autopairs"
-  use "alvan/vim-closetag"
+  use "windwp/nvim-ts-autotag"
+  use "AndrewRadev/splitjoin.vim"
+  use "AndrewRadev/dsf.vim"
+  use "AndrewRadev/switch.vim"
+  use "AndrewRadev/deleft.vim"
+  use "FooSoft/vim-argwrap"
+  use {
+    "rmagatti/goto-preview",
+    config = function()
+      require("goto-preview").setup({
+        default_mappings = true,
+      })
+    end
+  }
 
   -- Comment
   use "terrortylor/nvim-comment"
