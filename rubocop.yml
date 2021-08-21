@@ -1,5 +1,5 @@
 AllCops:
-  DisplayStyleGuide: true
+  DisplayStyleGuide: false
 
 Style/StringLiterals:
   Enabled: false

@@ -7,6 +7,7 @@ return packer.startup(function()
 
   -- color related stuff
   use "folke/tokyonight.nvim"
+  use "EdenEast/nightfox.nvim"
   use "norcalli/nvim-colorizer.lua"
 
   -- lang stuff
@@ -15,7 +16,7 @@ return packer.startup(function()
   use "neovim/nvim-lspconfig"
   use "hrsh7th/nvim-compe"
   use "onsails/lspkind-nvim"
-  use "sbdchd/neoformat"
+  -- use "sbdchd/neoformat"
   use "kabouzeid/nvim-lspinstall"
   use { "andymass/vim-matchup", event = "CursorMoved" }
 
@@ -69,6 +70,11 @@ return packer.startup(function()
   use "folke/which-key.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "christoomey/vim-tmux-navigator"
+
+  -- testing
+  use { "preservim/vimux" }
+  use { "vim-test/vim-test" }
+  use { "rcarriga/vim-ultest", run = ":UpdateRemotePlugins" }
 
   use "tpope/vim-unimpaired"
   use "tpope/vim-repeat"

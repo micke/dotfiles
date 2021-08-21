@@ -7,7 +7,9 @@ require "vim-matchup"
 require "splitjoin"
 
 require("colorizer").setup()
-require("neoscroll").setup() -- smooth scroll
+require("neoscroll").setup({
+  hide_cursor = false
+})
 
 -- lsp stuff
 require "nvim-lspconfig"
@@ -22,10 +24,13 @@ g.auto_save = 0
 -- colorscheme related stuff
 cmd "syntax on"
 
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_italic_functions = true
+-- vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_italic_functions = true
+-- cmd "colorscheme tokyonight"
 
-cmd "colorscheme tokyonight"
+vim.g.nightfox_style = "nightfox"
+vim.g.nightfox_italic_comments = 1
+require("nightfox").set()
 
 -- blankline
 
@@ -37,6 +42,8 @@ g.indent_blankline_buftype_exclude = {"terminal"}
 
 g.indent_blankline_show_trailing_blankline_indent = false
 g.indent_blankline_show_first_indent_level = false
+
+g["test#strategy"] = "dispatch"
 
 require "treesitter-nvim"
 
@@ -62,6 +69,15 @@ augroup openfile
 augroup end
 ]])
 
+vim.cmd([[
+function! Browse(pathOrUrl)
+  if has('mac')| let openCmd = 'open'| else| let openCmd = 'xdg-open'| endif
+    silent execute "! " . openCmd . " " . shellescape(a:pathOrUrl, 1)|
+endfunction
+
+command! -nargs=1 Browse call Browse(<q-args>)|
+]])
+
 vim.api.nvim_exec([[
 augroup highlight_yank
   autocmd!
@@ -74,6 +90,11 @@ command! WQ wq
 command! Wq wq
 command! W w
 command! Q q
+]], false)
+
+-- Autoformat on save
+vim.api.nvim_exec([[
+autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]], false)
 
 -- vim.cmd "autocmd BufRead,BufNewFile *.ex,*.exs,mix.lock set filetype=elixir"
