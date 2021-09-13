@@ -11,6 +11,8 @@ require("nvim-treesitter.configs").setup {
     "go",
     "ruby",
     "vue",
+    "yaml",
+    "typescript",
   },
   highlight = {
     enable = true,
@@ -39,6 +41,8 @@ require("nvim-treesitter.configs").setup {
         ["ic"] = "@class.inner",
         ["aa"] = "@parameter.outer",
         ["ia"] = "@parameter.inner",
+        ["ab"] = "@block.outer",
+        ["ib"] = "@block.inner",
       },
     },
     move = {
@@ -68,10 +72,19 @@ require("nvim-treesitter.configs").setup {
         ["dF"] = "@class.outer",
       },
     },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>A"] = "@parameter.inner",
+      },
+    },
   },
-  matchup = {
-    enable = true
-  },
+  -- matchup = {
+  --   enable = true
+  -- },
   autopairs = {
     enable = true
   },

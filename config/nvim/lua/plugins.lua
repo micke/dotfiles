@@ -13,6 +13,7 @@ return packer.startup(function()
   -- lang stuff
   use "nvim-treesitter/nvim-treesitter"
   use "nvim-treesitter/nvim-treesitter-textobjects"
+  use "nvim-treesitter/playground"
   use "neovim/nvim-lspconfig"
   use "hrsh7th/nvim-compe"
   use "onsails/lspkind-nvim"
@@ -25,7 +26,8 @@ return packer.startup(function()
 
   use "lewis6991/gitsigns.nvim"
   use "hoob3rt/lualine.nvim"
-  use "windwp/nvim-autopairs"
+  -- use "windwp/nvim-autopairs"
+  use "~/code/micke/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "AndrewRadev/splitjoin.vim"
   use "AndrewRadev/dsf.vim"
@@ -74,7 +76,6 @@ return packer.startup(function()
   -- testing
   use { "preservim/vimux" }
   use { "vim-test/vim-test" }
-  use { "rcarriga/vim-ultest", run = ":UpdateRemotePlugins" }
 
   use "tpope/vim-unimpaired"
   use "tpope/vim-repeat"
@@ -91,6 +92,14 @@ return packer.startup(function()
   use "tpope/vim-rsi"
   use "tpope/vim-fugitive"
   use "pgdouyon/vim-evanesco"
+
+  -- use {
+  --   "TimUntersberger/neogit",
+  --   requires = "nvim-lua/plenary.nvim",
+  --   config = function()
+  --     require("neo-git").config()
+  --   end
+  -- }
 end,
 {
   display = {

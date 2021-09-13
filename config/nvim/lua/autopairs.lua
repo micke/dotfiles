@@ -7,3 +7,4 @@ npairs.setup({
 
 npairs.add_rules(require('nvim-autopairs.rules.endwise-lua'))
 npairs.add_rules(require('nvim-autopairs.rules.endwise-ruby'))
+npairs.add_rules(require('nvim-autopairs.rules.endwise-elixir'))

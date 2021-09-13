@@ -51,15 +51,6 @@ map("n", "<Space>g", [[<Cmd> Telescope live_grep <CR>]], opt)
 map("n", "<Space>h", [[<Cmd>Telescope help_tags<CR>]], opt)
 map("n", "<Space>t", [[<Cmd>Telescope treesitter<CR>]], opt)
 
--- vim-ultest
--- map("n", "<Leader>t", [[<Cmd> Ultest <CR>]], opt)
--- map("n", "<Leader>n", [[<Cmd> UltestNearest <CR>]], opt)
--- map("n", "<Leader>s", [[<Cmd> UltestSummary <CR>]], opt)
--- map("n", "<Leader>o", [[<Cmd> UltestOutput <CR>]], opt)
--- map("n", "<Leader>a", [[<Cmd> UltestAttach <CR>]], opt)
--- map("n", "]t", [[<Plug>(ultest-next-fail)]], opt)
--- map("n", "[t", [[<Plug>(ultest-prev-fail)]], opt)
-
 map("n", "<Leader>t", [[<Cmd> TestFile <CR>]], opt)
 map("n", "<Leader>s", [[<Cmd> TestNearest <CR>]], opt)
 map("n", "<Leader>d", [[<Cmd> Dispatch <CR>]], opt)

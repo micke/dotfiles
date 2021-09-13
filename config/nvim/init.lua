@@ -28,9 +28,16 @@ cmd "syntax on"
 -- vim.g.tokyonight_italic_functions = true
 -- cmd "colorscheme tokyonight"
 
-vim.g.nightfox_style = "nightfox"
-vim.g.nightfox_italic_comments = 1
-require("nightfox").set()
+local nightfox = require("nightfox")
+nightfox.setup({
+  fox = "nightfox",
+  styles = {
+    comments = "italic",
+    keywords = "bold",
+    functions = "italic,bold"
+  }
+})
+nightfox.load()
 
 -- blankline
 
@@ -95,6 +102,21 @@ command! Q q
 -- Autoformat on save
 vim.api.nvim_exec([[
 autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.ex lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.exs lua vim.lsp.buf.formatting_sync(nil, 1000)
+]], false)
+
+vim.api.nvim_exec([[
+function! SynStack()
+  for i1 in synstack(line("."), col("."))
+    let i2 = synIDtrans(i1)
+    let n1 = synIDattr(i1, "name")
+    let n2 = synIDattr(i2, "name")
+    echo n1 "->" n2
+  endfor
+endfunction
+
+map <leader>hl <cmd>call SynStack()<cr>
 ]], false)
 
 -- vim.cmd "autocmd BufRead,BufNewFile *.ex,*.exs,mix.lock set filetype=elixir"
