@@ -1,10 +1,10 @@
-local colors = require("tokyonight.colors").setup()
+local colors = require("nightfox.colors").init()
 
 require "nvim-web-devicons".setup {
     override = {
         html = {
             icon = "",
-            color = colors.baby_pink,
+            color = colors.pink_br,
             name = "html"
         },
         css = {
@@ -14,12 +14,12 @@ require "nvim-web-devicons".setup {
         },
         js = {
             icon = "",
-            color = colors.sun,
+            color = colors.yellow_dm,
             name = "js"
         },
         ts = {
             icon = "ﯤ",
-            color = colors.teal,
+            color = colors.blue_br,
             name = "ts"
         },
         kt = {
@@ -64,12 +64,12 @@ require "nvim-web-devicons".setup {
         },
         rb = {
             icon = "",
-            color = colors.pink,
+            color = colors.red_dm,
             name = "rb"
         },
         vue = {
             icon = "﵂",
-            color = colors.vibrant_green,
+            color = colors.green_br,
             name = "vue"
         },
         py = {
