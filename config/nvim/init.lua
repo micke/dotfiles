@@ -40,14 +40,11 @@ nightfox.load()
 
 g["test#strategy"] = "dispatch"
 
-require "treesitter-nvim"
-
 require "nvimTree"
 require "file-icons"
 
 -- git signs , lsp symbols etc
 require "gitsigns-nvim"
-require "autopairs"
 require("lspkind").init()
 
 -- hide line numbers , statusline in specific buffers!

@@ -11,10 +11,30 @@ return packer.startup(function()
   use "norcalli/nvim-colorizer.lua"
 
   -- lang stuff
-  use "nvim-treesitter/nvim-treesitter"
-  use "nvim-treesitter/nvim-treesitter-textobjects"
-  use "nvim-treesitter/playground"
   use "neovim/nvim-lspconfig"
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    event = "BufRead",
+    config = function()
+      require "plugins.configs.treesitter"
+    end,
+  }
+  use {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+  }
+  use {
+    "nvim-treesitter/playground",
+    after = "nvim-treesitter",
+  }
+  use {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    after = "nvim-treesitter",
+  }
+  use {
+    "windwp/nvim-ts-autotag",
+    after = "nvim-treesitter"
+  }
 
   use {
     "rafamadriz/friendly-snippets",
@@ -79,9 +99,12 @@ return packer.startup(function()
 
   use "lewis6991/gitsigns.nvim"
   use "hoob3rt/lualine.nvim"
-  -- use "windwp/nvim-autopairs"
-  use "~/code/micke/nvim-autopairs"
-  use "windwp/nvim-ts-autotag"
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("plugins.configs.others").autopairs()
+    end,
+  }
   use "AndrewRadev/splitjoin.vim"
   use "AndrewRadev/dsf.vim"
   use "AndrewRadev/switch.vim"
