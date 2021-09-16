@@ -13,7 +13,6 @@ require("neoscroll").setup({
 
 -- lsp stuff
 require "nvim-lspconfig"
-require "compe-completion"
 
 local cmd = vim.cmd
 local g = vim.g
@@ -38,17 +37,6 @@ nightfox.setup({
   }
 })
 nightfox.load()
-
--- blankline
-
-g.indentLine_enabled = 1
-g.indent_blankline_char = "▏"
-
-g.indent_blankline_filetype_exclude = {"help", "terminal", "dashboard"}
-g.indent_blankline_buftype_exclude = {"terminal"}
-
-g.indent_blankline_show_trailing_blankline_indent = false
-g.indent_blankline_show_first_indent_level = false
 
 g["test#strategy"] = "dispatch"
 

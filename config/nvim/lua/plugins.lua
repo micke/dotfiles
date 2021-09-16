@@ -15,7 +15,60 @@ return packer.startup(function()
   use "nvim-treesitter/nvim-treesitter-textobjects"
   use "nvim-treesitter/playground"
   use "neovim/nvim-lspconfig"
-  use "hrsh7th/nvim-compe"
+
+  use {
+    "rafamadriz/friendly-snippets",
+    event = "InsertEnter",
+  }
+
+  use {
+    "hrsh7th/nvim-cmp",
+    after = "friendly-snippets",
+    config = function()
+      require "plugins.configs.cmp"
+    end,
+  }
+
+  use {
+    "L3MON4D3/LuaSnip",
+    wants = "friendly-snippets",
+    after = "nvim-cmp",
+    config = function()
+      require("plugins.configs.others").luasnip()
+    end,
+  }
+
+  use {
+    "saadparwaiz1/cmp_luasnip",
+    after = "LuaSnip",
+  }
+
+  use {
+    "hrsh7th/cmp-nvim-lsp",
+    after = "nvim-cmp",
+  }
+
+  use {
+    "hrsh7th/cmp-buffer",
+    after = "cmp-nvim-lsp",
+  }
+
+  use {
+    "hrsh7th/cmp-path",
+    after = "cmp-nvim-lsp",
+  }
+
+  use {
+    "hrsh7th/cmp-vsnip",
+    after = "cmp-nvim-lsp",
+  }
+
+  use {
+    "andersevenrud/compe-tmux",
+    after = "cmp-nvim-lsp",
+    branch = "cmp"
+  }
+
   use "onsails/lspkind-nvim"
   -- use "sbdchd/neoformat"
   use "kabouzeid/nvim-lspinstall"
@@ -36,6 +89,7 @@ return packer.startup(function()
   use "FooSoft/vim-argwrap"
   use {
     "rmagatti/goto-preview",
+    after = "telescope.nvim",
     config = function()
       require("goto-preview").setup({
         default_mappings = true,
@@ -45,10 +99,6 @@ return packer.startup(function()
 
   -- Comment
   use "terrortylor/nvim-comment"
-
-  -- snippet support
-  use "hrsh7th/vim-vsnip"
-  use "rafamadriz/friendly-snippets"
 
   -- file managing , picker etc
   use "kyazdani42/nvim-tree.lua"
@@ -70,7 +120,15 @@ return packer.startup(function()
   use "907th/vim-auto-save"
   use "karb94/neoscroll.nvim"
   use "folke/which-key.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
+
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufRead",
+    config = function()
+      require("plugins.configs.others").blankline()
+    end,
+  }
+
   use "christoomey/vim-tmux-navigator"
 
   -- testing
