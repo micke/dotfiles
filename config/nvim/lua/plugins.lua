@@ -101,6 +101,7 @@ return packer.startup(function()
   use "hoob3rt/lualine.nvim"
   use {
     "windwp/nvim-autopairs",
+    after = "nvim-cmp",
     config = function()
       require("plugins.configs.others").autopairs()
     end,

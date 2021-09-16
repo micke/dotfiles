@@ -18,6 +18,7 @@ ts_config.setup {
     "vue",
     "yaml",
     "typescript",
+    "regex",
   },
   highlight = {
     enable = true,
