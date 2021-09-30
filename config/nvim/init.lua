@@ -40,7 +40,6 @@ nightfox.load()
 
 g["test#strategy"] = "dispatch"
 
-require "nvimTree"
 require "file-icons"
 
 -- git signs , lsp symbols etc

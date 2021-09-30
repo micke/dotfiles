@@ -125,8 +125,14 @@ return packer.startup(function()
   use "terrortylor/nvim-comment"
 
   -- file managing , picker etc
-  use "kyazdani42/nvim-tree.lua"
   use "kyazdani42/nvim-web-devicons"
+  use {
+    "kyazdani42/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    config = function()
+      require("plugins.configs.nvimtree")
+    end,
+  }
   use {
     "nvim-telescope/telescope.nvim",
     requires = {

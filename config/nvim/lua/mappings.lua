@@ -27,7 +27,7 @@ map("i", "<C-q>", [[ <esc>:q<CR>]])
 map("v", "<C-q>", [[ <esc>:q<CR>]])
 
 -- nvimtree
-map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
+map("n", "<C-n>", ":NvimTreeToggle<CR>", {silent = true})
 
 -- Git
 map("n", "<Leader>gs", [[<Cmd> Git <CR>]], opt)
