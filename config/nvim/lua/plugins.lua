@@ -11,10 +11,8 @@ return packer.startup(function()
   use "norcalli/nvim-colorizer.lua"
 
   -- lang stuff
-  use "neovim/nvim-lspconfig"
   use {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufRead",
     config = function()
       require "plugins.configs.treesitter"
     end,
@@ -38,12 +36,10 @@ return packer.startup(function()
 
   use {
     "rafamadriz/friendly-snippets",
-    event = "InsertEnter",
   }
 
   use {
     "hrsh7th/nvim-cmp",
-    after = "friendly-snippets",
     config = function()
       require "plugins.configs.cmp"
     end,
@@ -52,7 +48,6 @@ return packer.startup(function()
   use {
     "L3MON4D3/LuaSnip",
     wants = "friendly-snippets",
-    after = "nvim-cmp",
     config = function()
       require("plugins.configs.others").luasnip()
     end,
@@ -60,38 +55,37 @@ return packer.startup(function()
 
   use {
     "saadparwaiz1/cmp_luasnip",
-    after = "LuaSnip",
   }
 
   use {
     "hrsh7th/cmp-nvim-lsp",
-    after = "nvim-cmp",
   }
 
   use {
     "hrsh7th/cmp-buffer",
-    after = "cmp-nvim-lsp",
   }
 
   use {
     "hrsh7th/cmp-path",
-    after = "cmp-nvim-lsp",
   }
 
   use {
     "hrsh7th/cmp-vsnip",
-    after = "cmp-nvim-lsp",
   }
 
   use {
     "andersevenrud/compe-tmux",
-    after = "cmp-nvim-lsp",
     branch = "cmp"
   }
 
+  use {
+    "neovim/nvim-lspconfig",
+  }
   use "onsails/lspkind-nvim"
   -- use "sbdchd/neoformat"
-  use "kabouzeid/nvim-lspinstall"
+  use {
+    "kabouzeid/nvim-lspinstall",
+  }
   use { "andymass/vim-matchup", event = "CursorMoved" }
 
   -- languages not supported by treesitter
@@ -101,7 +95,6 @@ return packer.startup(function()
   use "hoob3rt/lualine.nvim"
   use {
     "windwp/nvim-autopairs",
-    after = "nvim-cmp",
     config = function()
       require("plugins.configs.others").autopairs()
     end,
@@ -128,7 +121,6 @@ return packer.startup(function()
   use "kyazdani42/nvim-web-devicons"
   use {
     "kyazdani42/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     config = function()
       require("plugins.configs.nvimtree")
     end,

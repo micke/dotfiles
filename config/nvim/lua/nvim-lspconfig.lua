@@ -53,9 +53,14 @@ local function setup_servers()
   local lspconf = require("lspconfig")
   local servers = require "lspinstall".installed_servers()
 
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
   for _, lang in pairs(servers) do
     if lang == "vue" then
       lspconf[lang].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
         init_options = {
           config = {
             vetur = {
@@ -68,6 +73,8 @@ local function setup_servers()
       }
       elseif lang == "lua" then
       lspconf[lang].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
         root_dir = function()
           return vim.loop.cwd()
         end,
@@ -88,9 +95,21 @@ local function setup_servers()
           }
         }
       }
+    elseif lang == "elixir" then
+      lspconf[lang].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+          elixirLS = {
+            dialyzerEnabled = true,
+            enableTestLenses = true
+          }
+        }
+      }
     else
       lspconf[lang].setup {
         on_attach = on_attach,
+        capabilities = capabilities,
         -- root_dir = vim.loop.cwd
       }
     end
@@ -104,6 +123,23 @@ require "lspinstall".post_install_hook = function()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
+
+-- replace the default lsp diagnostic symbols
+local function lspSymbol(name, icon)
+   vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
+end
+
+lspSymbol("Error", "")
+lspSymbol("Information", "")
+lspSymbol("Hint", "")
+lspSymbol("Warning", "")
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+   border = "single",
+})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+   border = "single",
+})
 
 -- replace the default lsp diagnostic letters with prettier symbols
 vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
