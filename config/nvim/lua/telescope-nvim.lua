@@ -1,5 +1,6 @@
 local M = {}
 local actions = require('telescope.actions')
+local trouble = require("trouble.providers.telescope")
 
 M.config = function()
   require("telescope").setup {
@@ -15,7 +16,9 @@ M.config = function()
       },
       mappings = {
         i = {
-          ["<esc>"] = actions.close
+          ["<esc>"] = actions.close,
+          ["<c-q>"] = trouble.open_with_trouble,
+          ["<c-t>"] = trouble.open_with_trouble,
         },
       },
       prompt_prefix = "   ",

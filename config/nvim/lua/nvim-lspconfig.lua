@@ -45,84 +45,79 @@ function on_attach(client, bufnr)
   end
 end
 
--- lspInstall + lspconfig stuff
+local lspconf = require("lspconfig")
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+local lsp_installer = require("nvim-lsp-installer")
 
-local function setup_servers()
-  require "lspinstall".setup()
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
 
-  local lspconf = require("lspconfig")
-  local servers = require "lspinstall".installed_servers()
+  -- (optional) Customize the options passed to the server
+  -- if server.name == "tsserver" then
+  --     opts.root_dir = function() ... end
+  -- end
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-
-  for _, lang in pairs(servers) do
-    if lang == "vue" then
-      lspconf[lang].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        init_options = {
-          config = {
-            vetur = {
-              completion = {
-                autoImport = true,
-              }
+  -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
+  if server.name == "vuels" then
+    server:setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      init_options = {
+        config = {
+          vetur = {
+            completion = {
+              autoImport = true,
             }
           }
         }
       }
-      elseif lang == "lua" then
-      lspconf[lang].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        root_dir = function()
-          return vim.loop.cwd()
-        end,
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = {"vim"}
-            },
-            workspace = {
-              library = {
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-              }
-            },
-            telemetry = {
-              enable = false
+    })
+  elseif server.name == "sumneko_lua" then
+    server:setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      root_dir = function()
+        return vim.loop.cwd()
+      end,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = {"vim"}
+          },
+          workspace = {
+            library = {
+              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
             }
+          },
+          telemetry = {
+            enable = false
           }
         }
       }
-    elseif lang == "elixir" then
-      lspconf[lang].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = {
-          elixirLS = {
-            dialyzerEnabled = true,
-            enableTestLenses = true
-          }
+    })
+  elseif server.name == "elixirls" then
+    server:setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        elixirLS = {
+          dialyzerEnabled = true,
+          enableTestLenses = true
         }
       }
-    else
-      lspconf[lang].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        -- root_dir = vim.loop.cwd
-      }
-    end
+    })
+  else
+    server:setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      -- root_dir = vim.loop.cwd
+    })
   end
-end
 
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require "lspinstall".post_install_hook = function()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
+  vim.cmd [[ do User LspAttachBuffers ]]
+end)
 
 -- replace the default lsp diagnostic symbols
 local function lspSymbol(name, icon)

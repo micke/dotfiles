@@ -82,9 +82,8 @@ return packer.startup(function()
     "neovim/nvim-lspconfig",
   }
   use "onsails/lspkind-nvim"
-  -- use "sbdchd/neoformat"
   use {
-    "kabouzeid/nvim-lspinstall",
+    "williamboman/nvim-lsp-installer",
   }
   use { "andymass/vim-matchup", event = "CursorMoved" }
 
@@ -172,6 +171,14 @@ return packer.startup(function()
   use "tpope/vim-rsi"
   use "tpope/vim-fugitive"
   use "pgdouyon/vim-evanesco"
+
+  use {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {
+      }
+    end
+  }
 
   -- use {
   --   "TimUntersberger/neogit",

@@ -51,7 +51,9 @@ g.nvim_tree_icons = {
 }
 
 nvimtree.setup {
-   lsp_diagnostics = false,
+   diagnostics = {
+      enable = true
+   },
    disable_netrw = true,
    hijack_netrw = true,
    auto_close = false,

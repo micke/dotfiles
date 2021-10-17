@@ -19,6 +19,11 @@ ts_config.setup {
     "yaml",
     "typescript",
     "regex",
+    "elixir",
+    "scss",
+    "dockerfile",
+    "hcl",
+    "graphql",
   },
   highlight = {
     enable = true,
