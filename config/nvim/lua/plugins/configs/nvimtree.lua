@@ -25,6 +25,10 @@ g.nvim_tree_show_icons = {
    git = 1,
 }
 
+vim.cmd([[
+autocmd BufEnter NvimTree set cursorline
+]])
+
 g.nvim_tree_icons = {
    default = "",
    symlink = "",

@@ -8,6 +8,7 @@ return packer.startup(function()
   -- color related stuff
   use "folke/tokyonight.nvim"
   use "EdenEast/nightfox.nvim"
+  use "olimorris/onedarkpro.nvim"
   use "norcalli/nvim-colorizer.lua"
 
   -- lang stuff
@@ -176,6 +177,7 @@ return packer.startup(function()
     "folke/trouble.nvim",
     config = function()
       require("trouble").setup {
+        mode = {"lsp_workspace_diagnostics", "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"}
       }
     end
   }

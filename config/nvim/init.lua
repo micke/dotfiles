@@ -23,10 +23,12 @@ g.auto_save = 0
 -- colorscheme related stuff
 cmd "syntax on"
 
+-- Tokyonight
 -- vim.g.tokyonight_style = "night"
 -- vim.g.tokyonight_italic_functions = true
 -- cmd "colorscheme tokyonight"
 
+-- Nightfox
 local nightfox = require("nightfox")
 nightfox.setup({
   fox = "nightfox",
@@ -37,6 +39,17 @@ nightfox.setup({
   }
 })
 nightfox.load()
+
+-- Onedark
+-- require("onedark").setup({
+--   comment_style = "italic",
+--   keyword_style = "bold",
+--   function_style = "italic,bold",
+--   sidebars = {"qf", "vista_kind", "terminal", "packer"},
+-- })
+
+-- Onedark Pro
+-- require("onedarkpro").load()
 
 g["test#strategy"] = "dispatch"
 

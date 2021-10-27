@@ -45,20 +45,11 @@ function on_attach(client, bufnr)
   end
 end
 
-local lspconf = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
-  local opts = {}
-
-  -- (optional) Customize the options passed to the server
-  -- if server.name == "tsserver" then
-  --     opts.root_dir = function() ... end
-  -- end
-
-  -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
   if server.name == "vuels" then
     server:setup({
       on_attach = on_attach,
