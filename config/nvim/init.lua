@@ -31,7 +31,7 @@ cmd "syntax on"
 -- Nightfox
 local nightfox = require("nightfox")
 nightfox.setup({
-  fox = "nightfox",
+  fox = "hybridfox",
   styles = {
     comments = "italic",
     keywords = "bold",

@@ -7,7 +7,7 @@ return packer.startup(function()
 
   -- color related stuff
   use "folke/tokyonight.nvim"
-  use "EdenEast/nightfox.nvim"
+  use "~/code/micke/nightfox.nvim"
   use "olimorris/onedarkpro.nvim"
   use "norcalli/nvim-colorizer.lua"
 
@@ -45,6 +45,8 @@ return packer.startup(function()
       require "plugins.configs.cmp"
     end,
   }
+
+  use "github/copilot.vim"
 
   use {
     "L3MON4D3/LuaSnip",
