@@ -11,7 +11,6 @@ vim.o.termguicolors = true
 g.nvim_tree_add_trailing = 0
 g.nvim_tree_git_hl = 1
 g.nvim_tree_gitignore = 0
-g.nvim_tree_hide_dotfiles = 0
 g.nvim_tree_highlight_opened_files = 0
 g.nvim_tree_indent_markers = 1
 g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
@@ -60,6 +59,8 @@ nvimtree.setup {
    },
    disable_netrw = true,
    hijack_netrw = true,
+   hide_dotfiles = false,
+   nvim_tree_ignore = { ".git", "node_modules", ".cache" },
    auto_close = false,
    open_on_tab = false,
    hijack_cursor = true,
