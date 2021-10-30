@@ -3,10 +3,9 @@ local M = {}
 -- local config = require("core.utils").load_config()
 
 M.autopairs = function()
-  local present1, autopairs = pcall(require, "nvim-autopairs")
-  local present2, autopairs_completion = pcall(require, "nvim-autopairs.completion.cmp")
+  local present, autopairs = pcall(require, "nvim-autopairs")
 
-  if not (present1 or present2) then
+  if not present then
     return
   end
 
@@ -18,13 +17,6 @@ M.autopairs = function()
   autopairs.add_rules(require('nvim-autopairs.rules.endwise-lua'))
   autopairs.add_rules(require('nvim-autopairs.rules.endwise-ruby'))
   autopairs.add_rules(require('nvim-autopairs.rules.endwise-elixir'))
-
-  autopairs_completion.setup({
-    map_cr = true,
-    map_complete = true,
-    auto_select = false,
-    insert = false,
-  })
 end
 
 M.autosave = function()

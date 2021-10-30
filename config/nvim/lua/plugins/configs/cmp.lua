@@ -1,12 +1,15 @@
-local present, cmp = pcall(require, "cmp")
+local present1, cmp = pcall(require, "cmp")
+local present2, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
 
-if not present then
+if not (present1 or present2) then
    return
 end
 
 vim.opt.completeopt = "menuone,noselect"
 
 local lspkind = require("lspkind")
+
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
 
 -- nvim-cmp setup
 cmp.setup {
@@ -33,7 +36,7 @@ cmp.setup {
 --          return vim_item
 --       end,
       format = function(entry, vim_item)
-         vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+         vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
          vim_item.menu = ({
             buffer = "[buffer]",
@@ -51,10 +54,10 @@ cmp.setup {
       ["<C-u>"] = cmp.mapping.scroll_docs(4),
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<C-e>"] = cmp.mapping.close(),
-      -- ["<CR>"] = cmp.mapping.confirm {
-      --    behavior = cmp.ConfirmBehavior.Replace,
-      --    select = true,
-      -- },
+      ["<CR>"] = cmp.mapping.confirm {
+         behavior = cmp.ConfirmBehavior.Replac,
+         select = false,
+      },
       ["<Tab>"] = function(fallback)
          if require("luasnip").expand_or_jumpable() then
             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
