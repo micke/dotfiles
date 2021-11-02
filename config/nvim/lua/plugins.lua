@@ -6,9 +6,7 @@ return packer.startup(function()
   use "wbthomason/packer.nvim"
 
   -- color related stuff
-  use "folke/tokyonight.nvim"
   use "~/code/micke/nightfox.nvim"
-  use "olimorris/onedarkpro.nvim"
   use "norcalli/nvim-colorizer.lua"
 
   -- lang stuff
