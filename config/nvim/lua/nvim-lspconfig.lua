@@ -99,6 +99,16 @@ lsp_installer.on_server_ready(function(server)
         }
       }
     })
+  elseif server.name == "solargraph" then
+    server:setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        solargraph = {
+          formatting = true,
+        }
+      }
+    })
   else
     server:setup({
       on_attach = on_attach,

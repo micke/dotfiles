@@ -44,8 +44,6 @@ return packer.startup(function()
     end,
   }
 
-  use "github/copilot.vim"
-
   use {
     "L3MON4D3/LuaSnip",
     wants = "friendly-snippets",
