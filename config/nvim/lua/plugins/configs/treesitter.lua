@@ -32,10 +32,10 @@ ts_config.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = 'gnn',
-      node_incremental = 'grn',
-      scope_incremental = 'grc',
-      node_decremental = 'grm',
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
     },
   },
   indent = {
@@ -93,9 +93,9 @@ ts_config.setup {
       },
     },
   },
-  -- matchup = {
-  --   enable = true
-  -- },
+  matchup = {
+    enable = true
+  },
   autopairs = {
     enable = true
   },
