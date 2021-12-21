@@ -5,6 +5,7 @@ require "settings"
 require "statusline"
 require "vim-matchup"
 require "splitjoin"
+require "diagnostics"
 
 require("colorizer").setup()
 require("neoscroll").setup({

@@ -93,9 +93,9 @@ ts_config.setup {
       },
     },
   },
-  matchup = {
-    enable = true
-  },
+  -- matchup = {
+  --   enable = true
+  -- },
   autopairs = {
     enable = true
   },
