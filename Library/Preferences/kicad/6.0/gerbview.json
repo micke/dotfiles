@@ -1,0 +1,206 @@
+{
+  "appearance": {
+    "color_theme": "_builtin_default",
+    "page_type": "GERBER",
+    "show_border_and_titleblock": false,
+    "show_dcodes": false,
+    "show_negative_objects": false
+  },
+  "color_picker": {
+    "default_tab": 0
+  },
+  "cross_probing": {
+    "auto_highlight": true,
+    "center_on_items": true,
+    "zoom_to_fit": true
+  },
+  "excellon_defaults": {
+    "inch_integer_len": 2,
+    "inch_mantissa_len": 4,
+    "lz_format": true,
+    "mm_integer_len": 3,
+    "mm_mantissa_len": 3,
+    "unit_mm": false
+  },
+  "find_replace": {
+    "find_history": [],
+    "find_string": "",
+    "flags": 1,
+    "replace_history": [],
+    "replace_string": ""
+  },
+  "gerber_to_pcb_copperlayers_count": 2,
+  "gerber_to_pcb_layers": [],
+  "graphics": {
+    "canvas_type": 1,
+    "high_contrast_factor": 0.3499999940395355,
+    "highlight_factor": 0.5,
+    "select_factor": 0.75
+  },
+  "lib_tree": {
+    "column_width": 360
+  },
+  "meta": {
+    "version": 0
+  },
+  "printing": {
+    "background": false,
+    "color_theme": "",
+    "layers": [],
+    "monochrome": true,
+    "scale": 1.0,
+    "title_block": false,
+    "use_theme": false
+  },
+  "system": {
+    "drill_file_history": [
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel.drl"
+    ],
+    "file_history": [
+      "/Users/lisinge/Downloads/gerber/MLC Dubbel-PasteTop.gtp",
+      "/Users/lisinge/Downloads/SO12201206472/SO12201206472.Gbr",
+      "/Users/lisinge/Downloads/SO12112216166 (1)/SO12112216166.GBR",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/MLC Dubbel Programmer/gerbers/gerber/MLC Programmer-PasteTop.gtp",
+      "/Users/lisinge/Downloads/SO12112216170 (1)/so12112216170.gbr",
+      "/Users/lisinge/Downloads/3850570A_Y7_gerbers_Y7/ok/ts",
+      "/Users/lisinge/Downloads/3850570A_Y7_gerbers_Y7/ok/to",
+      "/Users/lisinge/Downloads/3850570A_Y7_gerbers_Y7/ok/tl",
+      "/Users/lisinge/Downloads/3850570A_Y7_gerbers_Y7/ok/bl",
+      "/Users/lisinge/Downloads/3850570A_Y7_gerbers_Y7/ok/ko",
+      "/Users/lisinge/Downloads/3850570A_Y7_gerbers_Y7/ok/drl",
+      "/Users/lisinge/Downloads/3850570A_Y7_gerbers_Y7/ok/bs",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/bo",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/drl",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/ko",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/bl",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/bs",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/tl",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/to",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/ok/ts",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/drill_report.rpt",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-CmtUser.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel.drl",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-drl_map.pdf",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-CuBottom.gbl",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-PasteBottom.gbp",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-PasteTop.gtp",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-SilkTop.gto",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-SilkBottom.gbo",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-MaskBottom.gbs",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-MaskTop.gts",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-EdgeCuts.gm1",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers/gerber/MLC Dubbel-CuTop.gtl",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-EdgeCuts.gm1",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-MaskTop.gts",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-MaskBottom.gbs",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-SilkBottom.gbo",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-SilkTop.gto",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-PasteTop.gtp",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-PasteBottom.gbp",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-CuBottom.gbl",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-CuTop.gtl",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-drl_map.pdf",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel-CmtUser.gbr",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/drill_report.rpt",
+      "/Users/lisinge/Downloads/SO12112216170/so12112216170.gbr",
+      "/Users/lisinge/Downloads/SO12112216166/SO12112216166.GBR",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-Edge_Cuts.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-B_Mask.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-F_Mask.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-B_SilkS.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-F_SilkS.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-B_Paste.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-F_Paste.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-B_Cu.gbr",
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-F_Cu.gbr"
+    ],
+    "first_run_shown": true,
+    "job_file_history": [
+      "/Users/lisinge/Documents/KiCad/projects/LLC Single/gerbers/LLC Single-job.gbrjob",
+      "/Users/lisinge/Downloads/3850570A_Y8_gerbers_Y8/yg/3850570A_Y8_gerbers_Y8/gerber/MLC Dubbel.gbrjob"
+    ],
+    "last_imperial_units": 0,
+    "last_metric_units": 1,
+    "max_undo_items": 0,
+    "units": 1,
+    "zip_file_history": [
+      "/Users/lisinge/Downloads/MLC.gerbers.zip",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/gerbers.zip",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/MLC Dubbel Programmer/gerbers.zip",
+      "/Users/lisinge/Documents/KiCad/projects/MLC Dubbel Simplified/MLC Dubbel Programmer/gerbers/gerbers.zip"
+    ]
+  },
+  "window": {
+    "cursor": {
+      "always_show_cursor": true,
+      "fullscreen_cursor": true
+    },
+    "display": 0,
+    "grid": {
+      "axes_enabled": true,
+      "fast_grid_1": 1,
+      "fast_grid_2": 2,
+      "last_size": 21,
+      "line_width": 1.0,
+      "min_spacing": 10.0,
+      "show": true,
+      "sizes": [
+        "1000 mil",
+        "500 mil",
+        "250 mil",
+        "200 mil",
+        "100 mil",
+        "50 mil",
+        "25 mil",
+        "20 mil",
+        "10 mil",
+        "5 mil",
+        "2 mil",
+        "1 mil",
+        "5.0 mm",
+        "2.5 mm",
+        "1.0 mm",
+        "0.5 mm",
+        "0.25 mm",
+        "0.2 mm",
+        "0.1 mm",
+        "0.05 mm",
+        "0.025 mm",
+        "0.01 mm"
+      ],
+      "snap": 2,
+      "style": 0,
+      "user_grid_x": "10 mil",
+      "user_grid_y": "10 mil"
+    },
+    "maximized": true,
+    "mru_path": "/Users/lisinge/Downloads/gerber",
+    "perspective": "layout2|name=MainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=641;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=AuxToolbar;caption=;state=139644;dir=1;layer=4;row=0;pos=0;prop=100000;bestw=1080;besth=29;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=579;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Layers Manager;state=1532;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=174;besth=32;minw=174;minh=32;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=174;floath=32|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=168;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=34|dock_size(1,4,0)=29|dock_size(3,6,0)=30|dock_size(4,3,0)=34|dock_size(2,3,0)=174|dock_size(5,0,0)=402|",
+    "pos_x": 256,
+    "pos_y": 200,
+    "size_x": 1280,
+    "size_y": 720,
+    "zoom_factors": [
+      0.022,
+      0.035,
+      0.05,
+      0.08,
+      0.13,
+      0.22,
+      0.35,
+      0.6,
+      1.0,
+      2.2,
+      3.5,
+      5.0,
+      8.0,
+      13.0,
+      22.0,
+      35.0,
+      50.0,
+      80.0,
+      130.0,
+      220.0
+    ]
+  }
+}
