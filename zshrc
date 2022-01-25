@@ -3,27 +3,33 @@ HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
+if [ "$(uname -m)" = "arm64" ]; then
+  export BREW_PREFIX="/opt/homebrew"
+else
+  export BREW_PREFIX="/usr/local"
+fi
+
 # Go
 export GOPATH=$HOME/code/micke/go
 
 # PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="$BREW_PREFIX/bin:$BREW_PREFIX/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$BREW_PREFIX/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin/:$PATH"
 export PATH="$HOME/.bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/mysql@5.6/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
+export PATH="$BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
 
 export WORDCHARS=""
 
 # editor
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/opt/homebrew/bin/nvim
 
 # shell
-export SHELL=/usr/local/bin/zsh
+export SHELL=/opt/homebrew/bin/zsh
 
 # cd
 export CDPATH="$CDPATH:$HOME/code"
@@ -63,7 +69,7 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # asdf
-source /usr/local/opt/asdf/asdf.sh
+source $BREW_PREFIX/opt/asdf/asdf.sh
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 
 # Use bat as manpager
@@ -74,7 +80,7 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $HOME/.zsh/completion
 source $HOME/.zsh/keybindings

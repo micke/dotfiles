@@ -98,9 +98,6 @@ defaults write com.apple.dock show-recents -bool false
 # Show the ~/Library folder
 chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
-# Stop iTunes from responding to the keyboard media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
-
 for app in "Dock" "Finder"; do
   killall "${app}" > /dev/null 2>&1
 done
