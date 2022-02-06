@@ -74,8 +74,7 @@ return packer.startup(function()
   }
 
   use {
-    "andersevenrud/compe-tmux",
-    branch = "cmp"
+    "andersevenrud/compe-tmux"
   }
 
   use {
