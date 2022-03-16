@@ -13,7 +13,7 @@ fi
 export GOPATH=$HOME/code/micke/go
 
 # PATH
-export PATH="$BREW_PREFIX/bin:$BREW_PREFIX/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/usr/local/bin:$BREW_PREFIX/bin:$BREW_PREFIX/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="$BREW_PREFIX/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin/:$PATH"

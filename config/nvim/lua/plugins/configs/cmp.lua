@@ -19,31 +19,9 @@ cmp.setup {
       end,
    },
    formatting = {
---       format = function(entry, vim_item)
---          -- load lspkind icons
---          vim_item.kind = string.format(
---             "%s %s",
---             require("plugins.configs.lspkind_icons").icons[vim_item.kind],
---             vim_item.kind
---          )
--- 
---          vim_item.menu = ({
---             nvim_lsp = "[LSP]",
---             nvim_lua = "[Lua]",
---             buffer = "[BUF]",
---          })[entry.source.name]
--- 
---          return vim_item
---       end,
       format = function(entry, vim_item)
          vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
-         -- vim_item.menu = ({
-         --    buffer = "[buffer]",
-         --    nvim_lsp = "[LSP]",
-         --    tmux = "[tmux]",
-         --    vsnip = "[snippet]",
-         -- })[entry.source.name]
          return vim_item
       end
    },
@@ -55,7 +33,7 @@ cmp.setup {
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<C-e>"] = cmp.mapping.close(),
       ["<CR>"] = cmp.mapping.confirm {
-         behavior = cmp.ConfirmBehavior.Replac,
+         behavior = cmp.ConfirmBehavior.Replace,
          select = false,
       },
    },

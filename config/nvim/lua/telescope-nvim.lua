@@ -1,5 +1,21 @@
 local M = {}
 local actions = require('telescope.actions')
+local action_state = require("telescope.actions.state")
+
+local custom_actions = {}
+
+function custom_actions.fzf_multi_select(prompt_bufnr)
+    local picker = action_state.get_current_picker(prompt_bufnr)
+    local num_selections = table.getn(picker:get_multi_selection())
+
+    if num_selections > 1 then
+        actions.send_selected_to_qflist(prompt_bufnr)
+        actions.open_qflist()
+    else
+        actions.file_edit(prompt_bufnr)
+    end
+end
+
 local trouble = require("trouble.providers.telescope")
 
 M.config = function()
@@ -12,13 +28,15 @@ M.config = function()
         "--with-filename",
         "--line-number",
         "--column",
-        "--smart-case"
+        "--smart-case",
+        "--trim"
       },
       mappings = {
         i = {
           ["<esc>"] = actions.close,
-          ["<c-q>"] = trouble.open_with_trouble,
-          ["<c-t>"] = trouble.open_with_trouble,
+          ["<M-Left>"] = function() vim.cmd ":normal! b" end,
+          ["<M-Right>"] = function() vim.cmd ":normal! w" end,
+          ["<M-BS>"] = { "<c-s-w>", type = "command" },
         },
       },
       prompt_prefix = "   ",
@@ -64,7 +82,24 @@ M.config = function()
     },
     pickers = {
       find_files = {
-        hidden = true
+        hidden = true,
+        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+        mappings = {
+          i = {
+            ["<c-q>"] = trouble.send_to_qflist,
+            ["<c-t>"] = trouble.open_with_trouble,
+            ["<cr>"] = custom_actions.fzf_multi_select,
+          },
+        },
+      },
+      live_grep = {
+        mappings = {
+          i = {
+            ["<c-q>"] = trouble.send_to_qflist,
+            ["<c-t>"] = trouble.open_with_trouble,
+            ["<cr>"] = custom_actions.fzf_multi_select,
+          },
+        },
       }
     },
   }

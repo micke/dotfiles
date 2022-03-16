@@ -86,6 +86,12 @@ return packer.startup(function()
   }
   use { "andymass/vim-matchup", event = "CursorMoved" }
 
+  use {
+    "ray-x/lsp_signature.nvim",
+    after = "nvim-lspconfig",
+    config = function() require("plugins.configs.others").signature() end,
+  }
+
   -- languages not supported by treesitter
   use "sheerun/vim-polyglot"
 
