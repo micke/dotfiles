@@ -1,6 +1,7 @@
 require("lualine").setup {
   options = {
-    theme = "nightfox"
+    theme = "nightfox",
+    globalstatus = true,
   },
   sections = {
     lualine_c = {
@@ -11,5 +12,5 @@ require("lualine").setup {
       }
     },
     lualine_x = {'encoding', 'filetype'},
-  }
+  },
 }

@@ -59,7 +59,6 @@ nvimtree.setup {
     dotfiles = false,
     custom = { ".git", "node_modules", ".cache" }
   },
-  auto_close = false,
   open_on_tab = false,
   hijack_cursor = true,
   update_cwd = false,
@@ -72,7 +71,6 @@ nvimtree.setup {
     auto_open = false,
   },
   view = {
-    allow_resize = true,
     side = "left",
     width = 40,
   },

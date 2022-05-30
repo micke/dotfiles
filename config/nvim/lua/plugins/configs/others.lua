@@ -11,7 +11,9 @@ M.autopairs = function()
 
   autopairs.setup({
     check_ts = true,
-    fast_wrap = {},
+    fast_wrap = {
+      map = "<M-w>"
+    },
   })
 
   autopairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
@@ -67,6 +69,7 @@ M.blankline = function()
     buftype_exclude = { "terminal" },
     show_trailing_blankline_indent = false,
     show_first_indent_level = false,
+    show_current_context = true,
   }
 end
 

@@ -53,5 +53,6 @@ cmp.setup {
          },
       },
       { name = "path" },
+      { name = "tmux" }
    },
 }

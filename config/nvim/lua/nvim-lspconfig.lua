@@ -26,13 +26,13 @@ function on_attach(client, bufnr)
   vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, opts)
 
   -- Set some keybinds conditional on server capabilities
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, opts)
-  elseif client.resolved_capabilities.document_range_formatting then
+  elseif client.server_capabilities.documentRangeFormattingProvider then
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.range_formatting, opts)
   end
 
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec([[
     augroup lsp_document_highlight
     autocmd! * <buffer>

@@ -74,7 +74,7 @@ return packer.startup(function()
   }
 
   use {
-    "andersevenrud/compe-tmux"
+    "andersevenrud/cmp-tmux"
   }
 
   use {
@@ -96,7 +96,7 @@ return packer.startup(function()
   use "sheerun/vim-polyglot"
 
   use "lewis6991/gitsigns.nvim"
-  use "hoob3rt/lualine.nvim"
+  use "nvim-lualine/lualine.nvim"
   use {
     "windwp/nvim-autopairs",
     config = function()

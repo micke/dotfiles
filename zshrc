@@ -69,7 +69,7 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # asdf
-source $BREW_PREFIX/opt/asdf/asdf.sh
+source $BREW_PREFIX/opt/asdf/libexec/asdf.sh
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 
 # Use bat as manpager

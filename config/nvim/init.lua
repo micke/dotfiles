@@ -61,11 +61,11 @@ require "gitsigns-nvim"
 require("lspkind").init()
 
 -- hide line numbers , statusline in specific buffers!
-vim.api.nvim_exec([[
-  au bufenter term://* setlocal nonumber
-  au bufenter,bufwinenter,winenter,cmdwinenter * if bufname('%') == "nvimtree" | set laststatus=0 | else | set laststatus=2 | endif
-  au bufenter term://* set laststatus=0 
-]], false)
+-- vim.api.nvim_exec([[
+--   au bufenter term://* setlocal nonumber
+--   au bufenter,bufwinenter,winenter,cmdwinenter * if bufname('%') == "nvimtree" | set laststatus=0 | else | set laststatus=2 | endif
+--   au bufenter term://* set laststatus=0 
+-- ]], false)
 
 -- Open files in last position
 vim.cmd([[
