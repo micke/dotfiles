@@ -8,46 +8,9 @@ local g = vim.g
 
 vim.o.termguicolors = true
 
-g.nvim_tree_add_trailing = 0
-g.nvim_tree_git_hl = 1
-g.nvim_tree_highlight_opened_files = 0
-g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
---
-g.nvim_tree_show_icons = {
-  folders = 1,
-  -- folder_arrows= 1
-  files = 1,
-  git = 1,
-}
-
 vim.cmd([[
 autocmd BufEnter NvimTree set cursorline
 ]])
-
-g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    deleted = "",
-    ignored = "◌",
-    renamed = "➜",
-    staged = "✓",
-    unmerged = "",
-    unstaged = "✗",
-    untracked = "★",
-  },
-  folder = {
-    -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
-    -- arrow_open = "",
-    -- arrow_closed = "",
-    default = "",
-    empty = "", -- 
-    empty_open = "",
-    open = "",
-    symlink = "",
-    symlink_open = "",
-  },
-}
 
 nvimtree.setup {
   diagnostics = {
@@ -75,9 +38,44 @@ nvimtree.setup {
     width = 40,
   },
   renderer = {
+    root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" },
+    highlight_opened_files = "none",
+    highlight_git = true,
+    add_trailing = false,
     indent_markers = {
       enable = true,
     },
+    icons = {
+      show = {
+        folder = true,
+        -- folder_arrow = true,
+        file = true,
+        git = true,
+      },
+      glyphs = {
+        default = "",
+        symlink = "",
+        git = {
+          deleted = "",
+          ignored = "◌",
+          renamed = "➜",
+          staged = "✓",
+          unmerged = "",
+          unstaged = "✗",
+          untracked = "★",
+        },
+        folder = {
+          -- arrow_open = "",
+          -- arrow_closed = "",
+          default = "",
+          empty = "", -- 
+          empty_open = "",
+          open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      }
+    }
   },
   git = {
     ignore = false

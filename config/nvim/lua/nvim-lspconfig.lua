@@ -27,7 +27,7 @@ function on_attach(client, bufnr)
 
   -- Set some keybinds conditional on server capabilities
   if client.server_capabilities.documentFormattingProvider then
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, opts)
+    vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
   elseif client.server_capabilities.documentRangeFormattingProvider then
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.range_formatting, opts)
   end

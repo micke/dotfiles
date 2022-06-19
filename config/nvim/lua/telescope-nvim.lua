@@ -1,6 +1,7 @@
 local M = {}
 local actions = require('telescope.actions')
 local action_state = require("telescope.actions.state")
+local telescope = require("telescope")
 
 local custom_actions = {}
 
@@ -19,7 +20,7 @@ end
 local trouble = require("trouble.providers.telescope")
 
 M.config = function()
-  require("telescope").setup {
+  telescope.setup {
     defaults = {
       vimgrep_arguments = {
         "rg",
@@ -79,6 +80,12 @@ M.config = function()
         override_file_sorter = true,
         case_mode = "smart_case"
       },
+      gitmoji = {
+        action = function(entry)
+          local current_line = vim.api.nvim_get_current_line()
+          vim.api.nvim_set_current_line(entry.value .. " " .. current_line)
+        end,
+      },
     },
     pickers = {
       find_files = {
@@ -104,7 +111,8 @@ M.config = function()
     },
   }
 
-  require("telescope").load_extension("fzf")
+  telescope.load_extension("fzf")
+  telescope.load_extension("gitmoji")
 end
 
 return M

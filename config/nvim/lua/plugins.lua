@@ -135,6 +135,7 @@ return packer.startup(function()
       {"nvim-lua/popup.nvim"},
       {"nvim-lua/plenary.nvim"},
       {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
+      {"olacin/telescope-gitmoji.nvim"},
     },
     cmd = "Telescope",
     config = function()
