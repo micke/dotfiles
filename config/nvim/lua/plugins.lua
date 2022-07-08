@@ -144,7 +144,6 @@ return packer.startup(function()
   }
 
   -- misc
-  use "907th/vim-auto-save"
   use "karb94/neoscroll.nvim"
   use "folke/which-key.nvim"
 
