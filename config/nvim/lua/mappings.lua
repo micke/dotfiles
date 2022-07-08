@@ -50,7 +50,7 @@ map("n", "<Space>h", [[<Cmd> Telescope help_tags<CR>]], opt)
 map("n", "<Space>t", [[<Cmd> Telescope treesitter<CR>]], opt)
 map("n", "<Space>s", [[<Cmd> Telescope lsp_workspace_symbols<CR>]], opt)
 map("n", "<Space>r", [[<Cmd> Telescope resume<CR>]], opt)
-map("n", "<Space>e", [[<Cmd> Telescope gitmoji<CR>]], opt)
+map("n", "<Space>m", [[<Cmd> Telescope gitmoji<CR>]], opt)
 
 map("n", "<Leader>t", [[<Cmd> TestFile <CR>]], opt)
 map("n", "<Leader>s", [[<Cmd> TestNearest <CR>]], opt)
