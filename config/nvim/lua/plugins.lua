@@ -100,7 +100,7 @@ return packer.startup(function()
   use {
     "windwp/nvim-autopairs",
     config = function()
-      require("plugins.configs.others").autopairs()
+      require("plugins.configs.autopairs")
     end,
   }
   use "AndrewRadev/splitjoin.vim"

@@ -1,55 +1,5 @@
 local M = {}
 
--- local config = require("core.utils").load_config()
-
-M.autopairs = function()
-  local present, autopairs = pcall(require, "nvim-autopairs")
-
-  if not present then
-    return
-  end
-
-  autopairs.setup({
-    check_ts = true,
-    fast_wrap = {
-      map = "<M-w>"
-    },
-  })
-
-  autopairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
-  autopairs.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
-  autopairs.add_rules(require("nvim-autopairs.rules.endwise-elixir"))
-end
-
-M.autosave = function()
-  -- autosave.nvim plugin is disabled by default
-  local present, autosave = pcall(require, "autosave")
-  if not present then
-    return
-  end
-
-  autosave.setup {
-    enabled = config.options.plugin.autosave, -- takes boolean value from chadrc.lua
-    execution_message = "autosaved at : " .. vim.fn.strftime "%H:%M:%S",
-    events = { "InsertLeave", "TextChanged" },
-    conditions = {
-      exists = true,
-      filetype_is_not = {},
-      modifiable = true,
-    },
-    clean_command_line_interval = 2500,
-    on_off_commands = true,
-    write_all_buffers = false,
-  }
-end
-
-M.better_escape = function()
-  local m = require("core.utils").load_config().mappings.plugin.better_escape.esc_insertmode
-
-  vim.g.better_escape_interval = config.options.plugin.esc_insertmode_timeout or 300
-  vim.g.better_escape_shortcut = m
-end
-
 M.blankline = function()
   require("indent_blankline").setup {
     indentLine_enabled = 1,
