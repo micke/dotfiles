@@ -92,6 +92,11 @@ return packer.startup(function()
     config = function() require("plugins.configs.others").signature() end,
   }
 
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
+  }
+
   -- languages not supported by treesitter
   use "sheerun/vim-polyglot"
 
@@ -103,11 +108,17 @@ return packer.startup(function()
       require("plugins.configs.autopairs")
     end,
   }
+  use "junegunn/vim-easy-align"
   use "AndrewRadev/splitjoin.vim"
   use "AndrewRadev/dsf.vim"
   use "AndrewRadev/switch.vim"
   use "AndrewRadev/deleft.vim"
-  use "FooSoft/vim-argwrap"
+  use {
+    "FooSoft/vim-argwrap",
+    config = function()
+      require("plugins.configs.argwrap")
+    end
+  }
   use {
     "rmagatti/goto-preview",
     after = "telescope.nvim",

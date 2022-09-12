@@ -24,6 +24,16 @@ map("n", "<leader>pu", ":PackerSync<CR>")
 -- Quitting
 map("", "<C-q>", [[:q<CR>]])
 
+-- TmuxNavigator
+map("i", "<C-h>", [[<C-o>:TmuxNavigateLeft<CR>]])
+map("i", "<C-j>", [[<C-o>:TmuxNavigateDown<CR>]])
+map("i", "<C-k>", [[<C-o>:TmuxNavigateUp<CR>]])
+map("i", "<C-l>", [[<C-o>:TmuxNavigateRight<CR>]])
+-- map("c", "<C-h>", [[<C-o>:TmuxNavigateLeft<CR>]])
+-- map("c", "<C-j>", [[<C-o>:TmuxNavigateDown<CR>]])
+-- map("c", "<C-k>", [[<C-o>:TmuxNavigateUp<CR>]])
+-- map("c", "<C-l>", [[<C-o>:TmuxNavigateRight<CR>]])
+
 -- nvimtree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", {silent = true})
 
@@ -60,5 +70,8 @@ map("n", "<Leader>d", [[<Cmd> Dispatch <CR>]], opt)
 
 map("n", "]t", [[<Cmd> lua require("trouble").next({skip_groups = true, jump = true})<CR>]])
 map("n", "[t", [[<Cmd> lua require("trouble").previous({skip_groups = true, jump = true})<CR>]])
+
+map("n", "ga", [[<Plug>(EasyAlign)]], opt)
+map("x", "ga", [[<Plug>(EasyAlign)]], opt)
 
 map("n", "<Leader>e", [[<cmd>0r !gitmoji-selector<CR>]])

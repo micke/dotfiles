@@ -121,5 +121,4 @@ map <leader>hl <cmd>call SynStack()<cr>
 
 require "mappings"
 require "whichkey"
-require "argwrap"
 require("nvim_comment").setup()

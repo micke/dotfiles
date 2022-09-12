@@ -21,15 +21,22 @@ function on_attach(client, bufnr)
   vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
   vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
   vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-  vim.keymap.set("n", "[d", vim.lsp.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "]d", vim.lsp.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, opts)
+  -- vim.keymap.set("n", "[d", vim.lsp.diagnostic.goto_prev, opts)
+  -- vim.keymap.set("n", "]d", vim.lsp.diagnostic.goto_next, opts)
+  -- vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, opts)
+
+  -- print(vim.inspect(client.server_capabilities))
 
   -- Set some keybinds conditional on server capabilities
   if client.server_capabilities.documentFormattingProvider then
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
   elseif client.server_capabilities.documentRangeFormattingProvider then
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.range_formatting, opts)
+  end
+
+  if client.server_capabilities.documentSymbolProvider then
+    local navic = require "nvim-navic"
+    navic.attach(client, bufnr)
   end
 
   if client.server_capabilities.documentHighlightProvider then
@@ -57,7 +64,19 @@ lsp_installer.on_server_ready(function(server)
           vetur = {
             completion = {
               autoImport = true,
-            }
+            },
+            format = {
+              enable = true,
+              defaultFormatter = {
+                js = "prettier-eslint",
+                ts = "prettier-eslint",
+              },
+            },
+            validation = {
+              script = false,
+              style = true,
+              template = true,
+            },
           }
         }
       }

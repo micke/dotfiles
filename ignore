@@ -9,3 +9,5 @@ log
 tmp
 .git
 tags
+doc
+vendor

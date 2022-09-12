@@ -62,6 +62,8 @@ opt("o", "formatoptions", vim.o.formatoptions .. "n") -- Indent past the formatl
 opt("o", "formatoptions", vim.o.formatoptions .. "j") -- Auto-remove comments if possible.
 opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "2", ""))
 
+opt("o", "winbar", "%{%v:lua.require'winbar'.get_winbar()%}")
+
 local M = {}
 
 function M.is_buffer_empty()
