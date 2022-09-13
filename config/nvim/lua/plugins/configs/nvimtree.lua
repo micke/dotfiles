@@ -20,7 +20,7 @@ nvimtree.setup {
   hijack_netrw = true,
   filters = {
     dotfiles = false,
-    custom = { ".git", "node_modules", ".cache" }
+    custom = { "^.git$", "node_modules", ".cache" }
   },
   open_on_tab = false,
   hijack_cursor = true,
