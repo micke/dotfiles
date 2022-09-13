@@ -105,4 +105,7 @@ ts_config.setup {
   context_commentstring = {
     enable = true
   },
+  endwise = {
+    enable = true
+  },
 }

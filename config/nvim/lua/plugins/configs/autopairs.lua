@@ -11,10 +11,6 @@ autopairs.setup({
   },
 })
 
-autopairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
-autopairs.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
-autopairs.add_rules(require("nvim-autopairs.rules.endwise-elixir"))
-
 local Rule   = require'nvim-autopairs.rule'
 
 autopairs.add_rules {

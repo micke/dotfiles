@@ -33,6 +33,10 @@ return packer.startup(function()
     "windwp/nvim-ts-autotag",
     after = "nvim-treesitter"
   }
+  use {
+    "RRethy/nvim-treesitter-endwise",
+    after = "nvim-treesitter"
+  }
 
   use {
     "rafamadriz/friendly-snippets",
