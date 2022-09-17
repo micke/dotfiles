@@ -25,6 +25,8 @@ ts_config.setup {
     "hcl",
     "graphql",
   },
+  sync_install = false,
+  auto_install = true,
   highlight = {
     enable = true,
     use_languagetree = true,
@@ -45,9 +47,15 @@ ts_config.setup {
     select = {
       enable = true,
       lookahead = true,
+      include_surrounding_whitespace = false,
+      selection_modes = {
+        ["@function.outer"] = "V",
+      },
       keymaps = {
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
+        ["am"] = "@function.outer",
+        ["im"] = "@function.inner",
         ["ac"] = "@class.outer",
         ["ic"] = "@class.inner",
         ["aa"] = "@parameter.outer",
