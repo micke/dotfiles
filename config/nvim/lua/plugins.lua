@@ -176,6 +176,20 @@ return packer.startup(function()
   use { "preservim/vimux" }
   use { "vim-test/vim-test" }
 
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "olimorris/neotest-rspec",
+      "haydenmeade/neotest-jest",
+    },
+    config = function()
+      require("plugins.configs.neotest")
+    end,
+  }
+
   use "tpope/vim-unimpaired"
   use "tpope/vim-repeat"
   use "tpope/vim-surround"

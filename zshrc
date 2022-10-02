@@ -79,7 +79,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=18"
 source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $HOME/.zsh/completion

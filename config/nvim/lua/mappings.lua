@@ -66,6 +66,15 @@ map("n", "<Leader>t", [[<Cmd> TestFile <CR>]], opt)
 map("n", "<Leader>s", [[<Cmd> TestNearest <CR>]], opt)
 map("n", "<Leader>d", [[<Cmd> Dispatch <CR>]], opt)
 
+-- NeoTest
+map("n", "<Leader>nt", [[<Cmd> lua require("neotest").run.run(vim.fn.expand("%")) <CR>]], opt)
+map("n", "<Leader>nc", [[<Cmd> lua require("neotest").run.run() <CR>]], opt)
+map("n", "<Leader>na", [[<Cmd> lua require("neotest").run.run(vim.fn.getcwd()) <CR>]], opt)
+map("n", "<Leader>nd", [[<Cmd> lua require("neotest").run.run({, strategy = "dap"}) <CR>]], opt)
+map("n", "<Leader>ns", [[<Cmd> lua require("neotest").run.stop() <CR>]], opt)
+map("n", "<Leader>no", [[<Cmd> lua require("neotest").output.open({ enter = true }) <CR>]], opt)
+map("n", "<Leader>nna", [[<Cmd> lua require("neotest").run.attach() <CR>]], opt)
+
 -- Trouble
 
 map("n", "]t", [[<Cmd> lua require("trouble").next({skip_groups = true, jump = true})<CR>]])

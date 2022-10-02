@@ -35,7 +35,7 @@ opt("o", "undofile", true)
 opt("o", "mouse", "a")
 
 opt("w", "signcolumn", "yes")
-opt("o", "cmdheight", 1)
+opt("o", "cmdheight", 0)
 
 opt("o", "updatetime", 250)
 opt("o", "clipboard", "unnamedplus")
