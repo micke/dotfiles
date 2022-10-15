@@ -26,6 +26,7 @@ opt("o", "termguicolors", true)
 opt("o", "joinspaces", false)
 opt("o", "gdefault", true)
 opt("o", "wrap", false)
+opt("o", "spell", false)
 
 opt("o", "wildmode", "longest:full,list:full")
 
@@ -35,7 +36,7 @@ opt("o", "undofile", true)
 opt("o", "mouse", "a")
 
 opt("w", "signcolumn", "yes")
-opt("o", "cmdheight", 0)
+opt("o", "cmdheight", 1)
 
 opt("o", "updatetime", 250)
 opt("o", "clipboard", "unnamedplus")

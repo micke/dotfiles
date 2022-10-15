@@ -158,6 +158,13 @@ return packer.startup(function()
     end
   }
 
+  use {
+    "ibhagwan/fzf-lua",
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+    },
+  }
+
   -- misc
   use "karb94/neoscroll.nvim"
   use "folke/which-key.nvim"
