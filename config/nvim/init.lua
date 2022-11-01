@@ -32,14 +32,16 @@ cmd "syntax on"
 -- Nightfox
 local nightfox = require("nightfox")
 nightfox.setup({
-  fox = "hybridfox",
-  styles = {
-    comments = "italic",
-    keywords = "bold",
-    functions = "italic,bold"
+  options = {
+    styles = {
+      comments = "italic",
+      keywords = "bold",
+      functions = "italic,bold"
+    },
   }
 })
-nightfox.load()
+
+vim.cmd("colorscheme hybridfox")
 
 -- Onedark
 -- require("onedark").setup({

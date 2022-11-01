@@ -6,7 +6,7 @@ return packer.startup(function()
   use "wbthomason/packer.nvim"
 
   -- color related stuff
-  use "~/code/micke/nightfox.nvim"
+  use "~/code/EdenEast/nightfox.nvim"
   use "norcalli/nvim-colorizer.lua"
 
   -- lang stuff
@@ -229,6 +229,13 @@ return packer.startup(function()
   --     require("neo-git").config()
   --   end
   -- }
+
+  use {
+    "ggandor/leap.nvim",
+    config = function()
+      require("leap").add_default_mappings()
+    end
+  }
 end,
 {
   display = {

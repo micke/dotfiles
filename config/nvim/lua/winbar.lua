@@ -35,12 +35,12 @@
 --
 local M = {}
 
-local colors = require("nightfox.colors").init()
+local colors = require("nightfox.palette").load("hybridfox")
 local navic = require "nvim-navic"
 
-vim.api.nvim_set_hl(0, "WinBarSeparator", { fg = colors.fg_gutter })
-vim.api.nvim_set_hl(0, "WinBarFilename", { fg = colors.blue, bg = colors.fg_gutter })
-vim.api.nvim_set_hl(0, "WinBarContext", { fg = colors.blue, bg = colors.fg_gutter })
+vim.api.nvim_set_hl(0, "WinBarSeparator", { fg = colors.fg3 })
+vim.api.nvim_set_hl(0, "WinBarFilename", { fg = colors.blue.base, bg = colors.fg3 })
+vim.api.nvim_set_hl(0, "WinBarContext", { fg = colors.blue.base, bg = colors.fg3 })
 
 M.winbar_filetype_exclude = {
   "help",

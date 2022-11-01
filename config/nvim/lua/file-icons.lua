@@ -1,110 +1,110 @@
-local colors = require("nightfox.colors").init()
+local colors = require("nightfox.palette").load("hybridfox")
 
 require "nvim-web-devicons".setup {
   override = {
     html = {
       icon = "",
-      color = colors.pink_br,
+      color = colors.pink.bright,
       name = "html"
     },
     css = {
       icon = "",
-      color = colors.blue,
+      color = colors.blue.base,
       name = "css"
     },
     js = {
       icon = "",
-      color = colors.yellow_dm,
+      color = colors.yellow.dim,
       name = "js"
     },
     ts = {
       icon = "ﯤ",
-      color = colors.blue_br,
+      color = colors.blue.bright,
       name = "ts"
     },
     kt = {
       icon = "󱈙",
-      color = colors.orange,
+      color = colors.orange.base,
       name = "kt"
     },
     png = {
       icon = "",
-      color = colors.dark_purple,
+      color = colors.magenta.dark,
       name = "png"
     },
     jpg = {
       icon = "",
-      color = colors.dark_purple,
+      color = colors.magenta.dark,
       name = "jpg"
     },
     jpeg = {
       icon = "",
-      color = "colors.dark_purple",
+      color = colors.magenta.dark,
       name = "jpeg"
     },
     mp3 = {
       icon = "",
-      color = colors.white,
+      color = colors.white.base,
       name = "mp3"
     },
     mp4 = {
       icon = "",
-      color = colors.white,
+      color = colors.white.base,
       name = "mp4"
     },
     out = {
       icon = "",
-      color = colors.white,
+      color = colors.white.base,
       name = "out"
     },
     Dockerfile = {
       icon = "",
-      color = colors.cyan,
+      color = colors.cyan.base,
       name = "Dockerfile"
     },
     rb = {
       icon = "",
-      color = colors.red_dm,
+      color = colors.red.dim,
       name = "rb"
     },
     vue = {
       icon = "﵂",
-      color = colors.green_br,
+      color = colors.green.bright,
       name = "vue"
     },
     py = {
       icon = "",
-      color = colors.cyan,
+      color = colors.cyan.base,
       name = "py"
     },
     toml = {
       icon = "",
-      color = colors.blue,
+      color = colors.blue.base,
       name = "toml"
     },
     lock = {
       icon = "",
-      color = colors.red,
+      color = colors.red.base,
       name = "lock"
     },
     zip = {
       icon = "",
-      color = colors.sun,
+      color = colors.yellow.base,
       name = "zip"
     },
     xz = {
       icon = "",
-      color = colors.sun,
+      color = colors.yellow.base,
       name = "xz"
     },
     deb = {
       icon = "",
-      color = colors.cyan,
+      color = colors.cyan.base,
       name = "deb"
     },
     rpm = {
       icon = "",
-      color = colors.orange,
+      color = colors.orange.base,
       name = "rpm"
     }
   }
