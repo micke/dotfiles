@@ -17,9 +17,13 @@ map("n", "Y", "y$")
 -- Config
 map("n", "<leader>ce", ":e $MYVIMRC<CR>")
 map("n", "<leader>cs", ":source $MYVIMRC<CR>")
-map("n", "<leader>pi", ":PackerInstall<CR>")
-map("n", "<leader>pc", ":PackerClean<CR>")
-map("n", "<leader>pu", ":PackerSync<CR>")
+vim.keymap.set("n", "<leader>pu", function()
+  local packer = require("packer")
+  local snapshotName = os.date("%Y-%m-%dT%T")
+  packer.snapshot(snapshotName)
+  print("Took packer snapshot with name: " .. snapshotName)
+  packer.sync()
+end)
 
 -- Quitting
 map("", "<C-q>", [[:q<CR>]])
