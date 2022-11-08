@@ -113,6 +113,8 @@ M.config = function()
 
   telescope.load_extension("fzf")
   telescope.load_extension("gitmoji")
+
+  require"plenary.filetype".add_file("terraform")
 end
 
 return M
