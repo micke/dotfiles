@@ -229,12 +229,13 @@ return packer.startup(function()
   --     require("neo-git").config()
   --   end
   -- }
-
   use {
-    "ggandor/leap.nvim",
-    config = function()
-      require("leap").add_default_mappings()
-    end
+    "bennypowers/nvim-regexplainer",
+    config = function() require'regexplainer'.setup() end,
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      "MunifTanjim/nui.nvim",
+    }
   }
 end,
 {
