@@ -50,91 +50,112 @@ function on_attach(client, bufnr)
   end
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lsp_installer = require("nvim-lsp-installer")
+require("mason").setup {
+  ui = {
+    icons = {
+      package_installed = "✓"
+    }
+  }
+}
+require("mason-lspconfig").setup {
+  automatic_installation = true
+}
 
-lsp_installer.on_server_ready(function(server)
-  if server.name == "vuels" then
-    server:setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      init_options = {
-        config = {
-          vetur = {
-            completion = {
-              autoImport = true,
-            },
-            format = {
-              enable = true,
-              defaultFormatter = {
-                js = "prettier-eslint",
-                ts = "prettier-eslint",
-              },
-            },
-            validation = {
-              script = false,
-              style = true,
-              template = true,
-            },
-          }
-        }
-      }
-    })
-  elseif server.name == "sumneko_lua" then
-    server:setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      root_dir = function()
-        return vim.loop.cwd()
-      end,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = {"vim"}
-          },
-          workspace = {
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-            }
-          },
-          telemetry = {
-            enable = false
-          }
-        }
-      }
-    })
-  elseif server.name == "elixirls" then
-    server:setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = {
-        elixirLS = {
-          dialyzerEnabled = true,
-          enableTestLenses = true
-        }
-      }
-    })
-  elseif server.name == "solargraph" then
-    server:setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = {
-        solargraph = {
-          formatting = true,
-        }
-      }
-    })
-  else
-    server:setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      -- root_dir = vim.loop.cwd
-    })
-  end
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require("lspconfig")
 
-  vim.cmd [[ do User LspAttachBuffers ]]
-end)
+lspconfig.vuels.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    config = {
+      vetur = {
+        completion = {
+          autoImport = true,
+        },
+        format = {
+          enable = true,
+          defaultFormatter = {
+            js = "prettier-eslint",
+            ts = "prettier-eslint",
+          },
+        },
+        validation = {
+          script = false,
+          style = true,
+          template = true,
+        },
+      }
+    }
+  }
+})
+
+lspconfig.sumneko_lua.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = function()
+    return vim.loop.cwd()
+  end,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {"vim"}
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+        }
+      },
+      telemetry = {
+        enable = false
+      }
+    }
+  }
+})
+
+lspconfig.elixirls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = true,
+      enableTestLenses = true
+    }
+  }
+})
+
+lspconfig.solargraph.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    solargraph = {
+      formatting = true,
+    }
+  }
+})
+
+for _, server in ipairs {
+  "ansiblels",
+  "bashls",
+  "cmake",
+  "cssls",
+  "dockerls",
+  "eslint",
+  "graphql",
+  "html",
+  "jsonls",
+  "sorbet",
+  "sqlls",
+  "terraformls",
+  "tsserver",
+  "yamlls",
+} do
+  lspconfig[server].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
 
 -- replace the default lsp diagnostic symbols
 local function lspSymbol(name, icon)

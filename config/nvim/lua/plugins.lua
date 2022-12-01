@@ -82,12 +82,14 @@ return packer.startup(function()
   }
 
   use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.configs.lspconfig")
+    end
   }
-  use "onsails/lspkind-nvim"
-  use {
-    "williamboman/nvim-lsp-installer",
-  }
+  use { "onsails/lspkind-nvim" }
   use { "andymass/vim-matchup", event = "CursorMoved" }
 
   use {

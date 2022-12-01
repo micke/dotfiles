@@ -12,8 +12,7 @@ require("neoscroll").setup({
   hide_cursor = false
 })
 
--- lsp stuff
-require "nvim-lspconfig"
+require("plugins.configs.lspconfig")
 
 local cmd = vim.cmd
 local g = vim.g
