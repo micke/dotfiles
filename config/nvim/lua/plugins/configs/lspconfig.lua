@@ -145,7 +145,6 @@ for _, server in ipairs {
   "graphql",
   "html",
   "jsonls",
-  "sorbet",
   "sqlls",
   "terraformls",
   "tsserver",
