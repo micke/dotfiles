@@ -7,22 +7,44 @@ require("gitsigns").setup {
     changedelete = {hl = "DiffChange", text = "~", numhl = "GitSignsChangeNr"}
   },
   numhl = true,
-  keymaps = {
-    -- Default keymap options
-    noremap = true,
-    buffer = true,
-    ["n ]c"] = {expr = true, '&diff ? \']c\' : \'<cmd>lua require"gitsigns".next_hunk()<CR>\''},
-    ["n [c"] = {expr = true, '&diff ? \'[c\' : \'<cmd>lua require"gitsigns".prev_hunk()<CR>\''},
-    ["n <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-    ["n <leader>hu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-    ["n <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-    ["n <leader>hp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-    ["n <leader>hb"] = '<cmd>lua require"gitsigns".blame_line()<CR>'
-  },
   watch_gitdir = {
     interval = 100,
     follow_files = true
   },
   signcolumn = false,
-  status_formatter = nil -- Use default
+  status_formatter = nil, -- Use default
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', ']c', function()
+      if vim.wo.diff then return ']c' end
+      vim.schedule(function() gs.next_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    map('n', '[c', function()
+      if vim.wo.diff then return '[c' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    -- Actions
+    map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    map('n', '<leader>hu', gs.undo_stage_hunk)
+    map('n', '<leader>hp', gs.preview_hunk)
+    map('n', '<leader>hb', function() gs.blame_line{full=true} end)
+    map('n', '<leader>hd', gs.diffthis)
+    map('n', '<leader>td', gs.toggle_deleted)
+
+    -- Text object
+    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+  end
 }

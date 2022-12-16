@@ -24,6 +24,7 @@ ts_config.setup {
     "dockerfile",
     "hcl",
     "graphql",
+    "diff",
   },
   sync_install = false,
   auto_install = true,
