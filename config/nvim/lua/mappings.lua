@@ -13,6 +13,7 @@ map("n", "yae", [[ <Cmd> %y+<CR>]])
 map("n", "vae", "ggVG")
 
 map("n", "Y", "y$")
+map("n", "<Leader>i", [[<Cmd> Inspect<CR>]])
 
 -- Config
 map("n", "<leader>ce", ":e $MYVIMRC<CR>")

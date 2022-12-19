@@ -37,7 +37,12 @@ nightfox.setup({
       keywords = "bold",
       functions = "italic,bold"
     },
-  }
+  },
+  groups = {
+    all = {
+      ["@symbol"] = { link = "Identifier" }
+    },
+  },
 })
 
 vim.cmd("colorscheme hybridfox")

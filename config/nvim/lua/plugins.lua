@@ -2,7 +2,7 @@ local packer = require("packer")
 local use = packer.use
 
 -- using { } for using different branch , loading plugin with certain commands etc
-return packer.startup(function()
+return packer.startup({function()
   use "wbthomason/packer.nvim"
 
   -- color related stuff
@@ -216,6 +216,16 @@ return packer.startup(function()
   use "pgdouyon/vim-evanesco"
 
   use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function ()
+      require("plugins.configs.null-ls")
+    end
+  }
+
+  use {
     "folke/trouble.nvim",
     config = function()
       require("trouble").setup {
@@ -240,8 +250,7 @@ return packer.startup(function()
     }
   }
 end,
-{
-  display = {
-    border = {"┌", "─", "┐", "│", "┘", "─", "└", "│"}
+  config = {
+    max_jobs = 30,
   }
 })
