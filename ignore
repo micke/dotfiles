@@ -12,3 +12,5 @@ tags
 doc
 vendor
 public/packs
+public/packs-test
+packed.js

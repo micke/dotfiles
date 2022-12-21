@@ -106,6 +106,7 @@ command! Q q
 -- Autoformat on save
 vim.api.nvim_exec([[
 autocmd BufWritePre *.tf lua vim.lsp.buf.format { async = false }
+autocmd BufWritePre *.tfvars lua vim.lsp.buf.format { async = false }
 autocmd BufWritePre *.ex lua vim.lsp.buf.format { async = false }
 autocmd BufWritePre *.exs lua vim.lsp.buf.format { async = false }
 ]], false)

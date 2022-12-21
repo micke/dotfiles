@@ -53,7 +53,7 @@ map("n", "<Leader>gpf", [[<Cmd> Git push --force-with-lease<CR>]], opt)
 map("n", "<Leader>gpp", [[<Cmd> Git pp <CR>]], opt)
 map("n", "<Leader>gpr", [[<Cmd> Git p-r <CR>]], opt)
 map("n", "<Leader>gpu", [[<Cmd> Git pushu <CR>]], opt)
-map("n", "<Leader>gcm", [[<Cmd> Git checkout master <CR>]], opt)
+map("n", "<Leader>gcm", [[<Cmd> Git cm <CR>]], opt)
 
 -- Telescope
 map("n", "<Leader>gb", [[<Cmd> Telescope git_branches <CR>]], opt)
