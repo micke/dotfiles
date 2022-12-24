@@ -165,6 +165,9 @@ return packer.startup({function()
     requires = {
       "kyazdani42/nvim-web-devicons",
     },
+    config = function()
+      require("plugins.configs.fzf")
+    end,
   }
 
   -- misc
