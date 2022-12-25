@@ -90,7 +90,7 @@ return packer.startup({function()
     end
   }
   use { "onsails/lspkind-nvim" }
-  use { "andymass/vim-matchup", event = "CursorMoved" }
+  use { "andymass/vim-matchup" }
 
   use {
     "ray-x/lsp_signature.nvim",
@@ -232,7 +232,8 @@ return packer.startup({function()
     "folke/trouble.nvim",
     config = function()
       require("trouble").setup {
-        mode = {"lsp_workspace_diagnostics", "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"}
+        mode = {"lsp_workspace_diagnostics", "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"},
+        use_diagnostic_signs = true,
       }
     end
   }
