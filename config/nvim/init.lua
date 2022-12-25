@@ -35,7 +35,7 @@ nightfox.setup({
     styles = {
       comments = "italic",
       keywords = "bold",
-      functions = "italic,bold"
+      functions = "bold"
     },
   },
   groups = {

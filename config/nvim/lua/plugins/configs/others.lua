@@ -40,7 +40,8 @@ M.blankline = function()
       "tuple",
       "do_block",
       "block_mapping_pair"
-    }
+    },
+    context_char_list = { "▎" },
   }
 end
 
