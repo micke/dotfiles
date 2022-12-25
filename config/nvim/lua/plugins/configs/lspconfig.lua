@@ -58,7 +58,11 @@ require("mason").setup {
   }
 }
 require("mason-lspconfig").setup {
-  automatic_installation = true
+  automatic_installation = {
+    exclude = {
+      "solargraph",
+    },
+  },
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -130,7 +134,10 @@ lspconfig.solargraph.setup({
   capabilities = capabilities,
   settings = {
     solargraph = {
+      -- commandPath = vim.env.HOME .. "/.asdf/shims/solargraph",
+      diagnostics = true,
       formatting = true,
+      -- useBundler = true,
     }
   }
 })
