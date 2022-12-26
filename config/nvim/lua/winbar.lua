@@ -1,38 +1,3 @@
--- local winbar = {}
---
--- winbar.filetype_exclude = {
---     "fugitive"
--- }
---
--- local colors = require('nightfox.colors').init()
--- vim.api.nvim_set_hl(0, "WinBarSeparator", { fg = colors.bg_statusline })
--- vim.api.nvim_set_hl(0, "WinBarContent", { fg = colors.green, bg = colors.bg_statusline })
---
--- winbar.eval = function()
---     if vim.api.nvim_eval_statusline("%f",{})["str"] == "[No Name]" then
---         return ""
---     end
---
---     for _, ft in ipairs(winbar.filetype_exclude) do
---         if vim.bo.filetype == ft then
---             return ""
---         end
---     end
---
---     local cw = vim.api.nvim_get_current_win()
---     return "%#WinBarSeparator#"
---         .. ""
---         .. "%*"
---         .. "%#WinBarContent#"
---         .. cw
---         .. "%*"
---         .. "%#WinBarSeparator#"
---         .. ""
---         .. "%*"
--- end
---
--- return winbar
---
 local M = {}
 
 local colors = require("nightfox.palette").load("hybridfox")

@@ -1,25 +1,47 @@
-local M = {}
-local actions = require('telescope.actions')
-local action_state = require("telescope.actions.state")
-local telescope = require("telescope")
+local M = {
+  "nvim-telescope/telescope.nvim",
+  dependencies = {
+    { "nvim-lua/popup.nvim" },
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "olacin/telescope-gitmoji.nvim" },
+  },
+  cmd = "Telescope",
+  keys = {
+    { "<Leader>gc", [[<Cmd> Telescope git_branches <CR>]] },
+    { "<Leader>gcc", [[<Cmd> Telescope git_commits <CR>]] },
+    { "<Leader>gcb", [[<Cmd> Telescope git_bcommits <CR>]] },
+    { "<Space>f", [[<Cmd> Telescope find_files <CR>]] },
+    { "<Space>g", [[<Cmd> FzfLua grep search="" <CR>]] },
+    { "<Space>h", [[<Cmd> Telescope help_tags<CR>]] },
+    { "<Space>t", [[<Cmd> Telescope treesitter<CR>]] },
+    { "<Space>s", [[<Cmd> Telescope lsp_workspace_symbols<CR>]] },
+    { "<Space>r", [[<Cmd> Telescope resume<CR>]] },
+    { "<Space>m", [[<Cmd> Telescope gitmoji<CR>]] },
+  },
+}
 
-local custom_actions = {}
+function M.config()
+  local actions = require('telescope.actions')
+  local action_state = require("telescope.actions.state")
+  local telescope = require("telescope")
 
-function custom_actions.fzf_multi_select(prompt_bufnr)
-    local picker = action_state.get_current_picker(prompt_bufnr)
-    local num_selections = table.getn(picker:get_multi_selection())
+  local custom_actions = {}
 
-    if num_selections > 1 then
-        actions.send_selected_to_qflist(prompt_bufnr)
-        actions.open_qflist()
-    else
-        actions.file_edit(prompt_bufnr)
-    end
-end
+  function custom_actions.fzf_multi_select(prompt_bufnr)
+      local picker = action_state.get_current_picker(prompt_bufnr)
+      local num_selections = table.getn(picker:get_multi_selection())
 
-local trouble = require("trouble.providers.telescope")
+      if num_selections > 1 then
+          actions.send_selected_to_qflist(prompt_bufnr)
+          actions.open_qflist()
+      else
+          actions.file_edit(prompt_bufnr)
+      end
+  end
 
-M.config = function()
+  local trouble = require("trouble.providers.telescope")
+
   telescope.setup {
     defaults = {
       vimgrep_arguments = {

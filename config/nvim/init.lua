@@ -1,77 +1,22 @@
--- load all plugins
-require "plugins"
-require "settings"
-
-require "statusline"
-require "vim-matchup"
-require "splitjoin"
-require "diagnostics"
-
-require("colorizer").setup()
-require("neoscroll").setup({
-  hide_cursor = false
-})
-
-require("plugins.configs.lspconfig")
-
 local cmd = vim.cmd
 local g = vim.g
 
 g.mapleader = ","
+
+-- Set up lazy
+require "config.lazy"
+require "settings"
+
 g.auto_save = 0
 
 -- colorscheme related stuff
 cmd "syntax on"
 
--- Tokyonight
--- vim.g.tokyonight_style = "night"
--- vim.g.tokyonight_italic_functions = true
--- cmd "colorscheme tokyonight"
-
--- Nightfox
-local nightfox = require("nightfox")
-nightfox.setup({
-  options = {
-    styles = {
-      comments = "italic",
-      keywords = "bold",
-      functions = "bold"
-    },
-  },
-  groups = {
-    all = {
-      ["@symbol"] = { link = "Identifier" }
-    },
-  },
-})
-
-vim.cmd("colorscheme hybridfox")
-
--- Onedark
--- require("onedark").setup({
---   comment_style = "italic",
---   keyword_style = "bold",
---   function_style = "italic,bold",
---   sidebars = {"qf", "vista_kind", "terminal", "packer"},
--- })
-
--- Onedark Pro
--- require("onedarkpro").load()
-
 g["test#strategy"] = "dispatch"
 
-require "file-icons"
-
--- git signs , lsp symbols etc
-require "gitsigns-nvim"
-require("lspkind").init()
-
--- hide line numbers , statusline in specific buffers!
--- vim.api.nvim_exec([[
---   au bufenter term://* setlocal nonumber
---   au bufenter,bufwinenter,winenter,cmdwinenter * if bufname('%') == "nvimtree" | set laststatus=0 | else | set laststatus=2 | endif
---   au bufenter term://* set laststatus=0 
--- ]], false)
+vim.diagnostic.config({
+  virtual_text = false,
+})
 
 -- Open files in last position
 vim.cmd([[
@@ -127,5 +72,3 @@ map <leader>hl <cmd>call SynStack()<cr>
 -- vim.cmd "autocmd BufRead,BufNewFile *.ex,*.exs,mix.lock set filetype=elixir"
 
 require "mappings"
-require "whichkey"
-require("nvim_comment").setup()
