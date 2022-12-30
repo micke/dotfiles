@@ -8,6 +8,17 @@ local M = {
     "windwp/nvim-ts-autotag",
     "RRethy/nvim-treesitter-endwise",
     { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle"},
+    {
+      "nvim-treesitter/nvim-treesitter-context",
+      config = {
+        patterns = {
+          ruby = {
+            "do_block",
+            "block",
+          }
+        }
+      },
+    },
   }
 }
 
