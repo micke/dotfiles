@@ -46,14 +46,14 @@ return {
       { "<leader>gpu", "<cmd> Git pushu <cr>" },
       { "<leader>gcm", "<cmd> Git cm <cr>" },
     },
+    dependencies = {
+      "tpope/vim-rhubarb",
+    }
   },
   { "tpope/vim-git", lazy = false },
   { "tpope/vim-projectionist", lazy = false },
   { "tpope/vim-rails", lazy = false },
-  { "tpope/vim-rake", lazy = false },
-  { "tpope/vim-rbenv", lazy = false },
   { "tpope/vim-repeat", lazy = false },
-  { "tpope/vim-rhubarb", lazy = false },
   { "tpope/vim-rsi", lazy = false },
   { "tpope/vim-surround", lazy = false },
   { "tpope/vim-unimpaired", lazy = false },
@@ -62,20 +62,12 @@ return {
   { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end, lazy = false },
 
   { "christoomey/vim-tmux-navigator", lazy = false },
+  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle"},
 
   {
-    "bennypowers/nvim-regexplainer",
-    config = true,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "MunifTanjim/nui.nvim",
-    }
-  },
-  {
     "rmagatti/goto-preview",
-    config = {
-      default_mappings = true,
-    },
+    keys = { "gpd", "gpt", "gpi", "gpi", "gP", "gpr" },
+    config = { default_mappings = true },
   },
   {
     "SmiteshP/nvim-navic",

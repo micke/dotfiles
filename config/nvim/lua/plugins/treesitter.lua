@@ -7,7 +7,7 @@ local M = {
     "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
     "RRethy/nvim-treesitter-endwise",
-    { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle"},
+    { "bennypowers/nvim-regexplainer", config = true },
     {
       "nvim-treesitter/nvim-treesitter-context",
       config = {
@@ -23,7 +23,7 @@ local M = {
 }
 
 M.config = function ()
-  ts_config = require("nvim-treesitter.configs")
+  local ts_config = require("nvim-treesitter.configs")
 
   ts_config.setup {
     ensure_installed = {
