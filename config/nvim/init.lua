@@ -16,6 +16,7 @@ g["test#strategy"] = "dispatch"
 
 vim.diagnostic.config({
   virtual_text = false,
+  update_in_insert = true,
 })
 
 -- Open files in last position
