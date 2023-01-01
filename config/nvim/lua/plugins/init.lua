@@ -57,6 +57,7 @@ return {
   { "tpope/vim-rsi", lazy = false },
   { "tpope/vim-surround", lazy = false },
   { "tpope/vim-unimpaired", lazy = false },
+  { "tpope/vim-sleuth", event = "BufReadPost" },
   { "williamboman/mason-lspconfig.nvim" },
 
   { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end, lazy = false },
