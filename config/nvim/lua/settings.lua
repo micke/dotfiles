@@ -27,6 +27,7 @@ opt("o", "joinspaces", false)
 opt("o", "gdefault", true)
 opt("o", "wrap", false)
 opt("o", "spell", false)
+opt("o", "scrolloff", 3)
 
 opt("o", "wildmode", "longest:full,list:full")
 
@@ -62,20 +63,3 @@ opt("o", "formatoptions", vim.o.formatoptions .. "r") -- Enter continues comment
 opt("o", "formatoptions", vim.o.formatoptions .. "n") -- Indent past the formatlistpat, not underneath it.
 opt("o", "formatoptions", vim.o.formatoptions .. "j") -- Auto-remove comments if possible.
 opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "2", ""))
-
-opt("o", "winbar", "%{%v:lua.require'winbar'.get_winbar()%}")
-
-local M = {}
-
-function M.is_buffer_empty()
-    -- Check whether the current buffer is empty
-    return vim.fn.empty(vim.fn.expand("%:t")) == 1
-end
-
-function M.has_width_gt(cols)
-    -- Check if the windows width is greater than a given number of columns
-    return vim.fn.winwidth(0) / 2 > cols
-end
--- file extension specific tabbing
-vim.cmd([[autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
-return M
