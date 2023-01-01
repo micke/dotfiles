@@ -138,6 +138,7 @@ function M.config()
     "cssls",
     "dockerls",
     "eslint",
+    "gopls",
     "graphql",
     "html",
     "jsonls",
