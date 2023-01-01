@@ -1,12 +1,3 @@
-[submodule "rbenv/plugins/rbenv-ctags"]
-	path = rbenv/plugins/rbenv-ctags
-	url = git://github.com/tpope/rbenv-ctags.git
-[submodule "rbenv/plugins/rbenv/plugins/rbenv-default-gems"]
-	path = rbenv/plugins/rbenv/plugins/rbenv-default-gems
-	url = git://github.com/rbenv/rbenv-default-gems.git
-[submodule "rbenv/plugins/rbenv-default-gems"]
-	path = rbenv/plugins/rbenv-default-gems
-	url = git://github.com/rbenv/rbenv-default-gems.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
