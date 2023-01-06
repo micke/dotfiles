@@ -4,7 +4,6 @@ local M =  {
     { "<C-n>", [[<Cmd> NvimTreeToggle<CR>]] },
   },
   cmd = { "NvimTreeToggle" },
-  lazy = false
 }
 
 function M.config()
@@ -18,7 +17,6 @@ function M.config()
     diagnostics = {
       enable = true
     },
-    disable_netrw = true,
     hijack_netrw = true,
     filters = {
       dotfiles = false,

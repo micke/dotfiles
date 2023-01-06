@@ -52,7 +52,6 @@ return {
   },
   { "tpope/vim-git", lazy = false },
   { "tpope/vim-projectionist", lazy = false },
-  { "tpope/vim-rails", lazy = false },
   { "tpope/vim-repeat", lazy = false },
   { "tpope/vim-rsi", lazy = false },
   { "tpope/vim-surround", lazy = false },

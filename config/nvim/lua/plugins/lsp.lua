@@ -141,6 +141,11 @@ function M.config()
     }
   })
 
+  lspconfig.coffeesense.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+
   for _, server in ipairs {
     "ansiblels",
     "bashls",

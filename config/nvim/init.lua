@@ -3,6 +3,10 @@ local g = vim.g
 
 g.mapleader = ","
 
+-- Disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 -- Set up lazy
 require "config.lazy"
 require "settings"
@@ -69,7 +73,5 @@ endfunction
 
 map <leader>hl <cmd>call SynStack()<cr>
 ]], false)
-
--- vim.cmd "autocmd BufRead,BufNewFile *.ex,*.exs,mix.lock set filetype=elixir"
 
 require "mappings"
