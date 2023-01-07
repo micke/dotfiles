@@ -61,7 +61,6 @@ return {
 
   { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end, lazy = false },
 
-  { "christoomey/vim-tmux-navigator", lazy = false },
   { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle"},
 
   {
