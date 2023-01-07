@@ -50,7 +50,7 @@ return {
       "tpope/vim-rhubarb",
     }
   },
-  { "tpope/vim-git", lazy = false },
+  { "tpope/vim-git", enabled = false, lazy = false },
   { "tpope/vim-projectionist", lazy = false },
   { "tpope/vim-repeat", lazy = false },
   { "tpope/vim-rsi", lazy = false },
@@ -58,7 +58,6 @@ return {
   { "tpope/vim-unimpaired", lazy = false },
   { "tpope/vim-sleuth", event = "BufReadPost" },
   { "williamboman/mason-lspconfig.nvim" },
-
   { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end, lazy = false },
   {
     "rmagatti/goto-preview",

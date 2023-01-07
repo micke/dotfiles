@@ -1,42 +1,11 @@
-function map(mode, lhs, rhs, opts)
-  local options = {noremap = true}
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local set = vim.keymap.set
 
-local opt = {}
+set("n", "yae", [[ <cmd>%y+<cr>]], { desc = "yank everything" })
+set("n", "vae", [[ ggVG]], { desc = "visual everything" })
+set("n", "dae", [[ ggdG]], { desc = "delete everything" })
+set("n", "Y", [[y$]], { desc = "yank till end" })
 
--- EVERYTHING --
-map("n", "yae", [[ <Cmd> %y+<CR>]])
-map("n", "vae", "ggVG")
+set("n", "<leader>i", [[<cmd Inspect<cr>]], { desc = "Inspect highlighting" })
 
-map("n", "Y", "y$")
-map("n", "<Leader>i", [[<Cmd> Inspect<CR>]])
-
--- Config
-map("n", "<leader>ce", ":e $MYVIMRC<CR>")
-map("n", "<leader>cs", ":source $MYVIMRC<CR>")
-vim.keymap.set("n", "<leader>pu", function()
-  local packer = require("packer")
-  local snapshotName = os.date("%Y-%m-%dT%T")
-  packer.snapshot(snapshotName)
-  print("Took packer snapshot with name: " .. snapshotName)
-  packer.sync()
-end)
-
--- Quitting
-map("", "<C-q>", [[:q<CR>]])
-
--- TmuxNavigator
-map("i", "<C-h>", [[<C-o>:TmuxNavigateLeft<CR>]])
-map("i", "<C-j>", [[<C-o>:TmuxNavigateDown<CR>]])
-map("i", "<C-k>", [[<C-o>:TmuxNavigateUp<CR>]])
-map("i", "<C-l>", [[<C-o>:TmuxNavigateRight<CR>]])
--- map("c", "<C-h>", [[<C-o>:TmuxNavigateLeft<CR>]])
--- map("c", "<C-j>", [[<C-o>:TmuxNavigateDown<CR>]])
--- map("c", "<C-k>", [[<C-o>:TmuxNavigateUp<CR>]])
--- map("c", "<C-l>", [[<C-o>:TmuxNavigateRight<CR>]])
-
-map("n", "<Leader>e", [[<cmd>0r !gitmoji-selector<CR>]])
+set("n", "<leader>pu", function() require("lazy").sync() end)
+set("", "<C-q>", [[<cmd> q<cr>]], { desc = "Quit" })
