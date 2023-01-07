@@ -60,9 +60,6 @@ return {
   { "williamboman/mason-lspconfig.nvim" },
 
   { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end, lazy = false },
-
-  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle"},
-
   {
     "rmagatti/goto-preview",
     keys = { "gpd", "gpt", "gpi", "gpi", "gP", "gpr" },

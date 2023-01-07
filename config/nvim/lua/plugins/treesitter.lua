@@ -3,6 +3,7 @@ local M = {
   build = ":TSUpdate",
   event = "BufReadPost",
   dependencies = {
+  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle"},
     "nvim-treesitter/nvim-treesitter-textobjects",
     "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
