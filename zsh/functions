@@ -27,7 +27,7 @@ FZF-EOF"
 }
 
 workloadidentity() {
-  kubectl --context $1 run -it --rm --image google/cloud-sdk --namespace $2 --service-account $3 micke-workload-identity-test
+  kubectl --context $1 run -it --rm --image google/cloud-sdk --namespace $2 --overrides="{ \"spec\": { \"serviceAccount\": \"$3\" }  }" micke-workload-identity-test
 }
 testpod() {
   kubectl --context $1 run -it --rm --image ubuntu micke-testpod

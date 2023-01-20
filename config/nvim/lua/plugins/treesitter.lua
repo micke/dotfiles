@@ -3,7 +3,6 @@ local M = {
   build = ":TSUpdate",
   event = "BufReadPost",
   dependencies = {
-  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle"},
     "nvim-treesitter/nvim-treesitter-textobjects",
     "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
@@ -11,7 +10,7 @@ local M = {
     { "bennypowers/nvim-regexplainer", config = true },
     {
       "nvim-treesitter/nvim-treesitter-context",
-      config = {
+      opts = {
         patterns = {
           ruby = {
             "do_block",

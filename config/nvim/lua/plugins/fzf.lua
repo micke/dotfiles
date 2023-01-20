@@ -7,7 +7,7 @@ return {
     { "<Space>g", [[<Cmd> FzfLua grep search="" <CR>]] }
   },
   cmd = "FzfLua",
-  config = {
+  opts = {
     keymap = {
       builtin = {
         ["<C-u>"] = "preview-page-up",

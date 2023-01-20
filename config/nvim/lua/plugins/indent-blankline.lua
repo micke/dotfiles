@@ -1,7 +1,7 @@
 local M = {
   "lukas-reineke/indent-blankline.nvim",
   event = "BufReadPre",
-  config = {
+  opts = {
     indentLine_enabled = 1,
     char = "▏",
     filetype_exclude = {

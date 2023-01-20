@@ -4,7 +4,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  config = {
+  opts = {
     sources = {
       -- null_ls.builtins.diagnostics.eslint,
       -- null_ls.builtins.code_actions.eslint,

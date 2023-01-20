@@ -5,7 +5,7 @@ return {
     { "]t", [[<Cmd> lua require("trouble").next({skip_groups = true, jump = true})<CR>]] },
     { "[t", [[<Cmd> lua require("trouble").previous({skip_groups = true, jump = true})<CR>]] },
   },
-  config = {
+  opts = {
     mode = {
       "lsp_workspace_diagnostics",
       "lsp_workspace_diagnostics",

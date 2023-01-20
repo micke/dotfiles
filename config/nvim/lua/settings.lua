@@ -1,65 +1,59 @@
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
+local o = vim.o
+local b = vim.bo
+local w = vim.wo
 
-local function opt(scope, key, value)
-    scopes[scope][key] = value
-    if scope ~= "o" then
-        scopes["o"][key] = value
-    end
-end
+o.compatible = false
+o.hidden = true
+o.backup = false
+o.autoindent = true
+o.writebackup = false
+o.swapfile = false
+o.history = 500
+o.ruler = false
+o.showcmd = true
+o.showmode = false
+o.autowrite = true
+o.ignorecase = true
+o.smartcase = true
+o.splitbelow = true
+o.splitright = true
+o.termguicolors = true
+o.joinspaces = false
+o.gdefault = true
+o.wrap = false
+o.spell = false
+o.scrolloff = 3
 
-opt("o", "compatible", false)
-opt("o", "hidden", true)
-opt("o", "backup", false)
-opt("o", "autoindent", true)
-opt("o", "writebackup", false)
-opt("o", "swapfile", false)
-opt("o", "history", 500)
-opt("o", "ruler", false)
-opt("o", "showcmd", true)
-opt("o", "showmode", false)
-opt("o", "autowrite", true)
-opt("o", "ignorecase", true)
-opt("o", "smartcase", true)
-opt("o", "splitbelow", true)
-opt("o", "splitright", true)
-opt("o", "termguicolors", true)
-opt("o", "joinspaces", false)
-opt("o", "gdefault", true)
-opt("o", "wrap", false)
-opt("o", "spell", false)
-opt("o", "scrolloff", 3)
+o.wildmode = "longest:full,list:full"
 
-opt("o", "wildmode", "longest:full,list:full")
+o.undodir = vim.fn.expand("~/.vim/undodir")
+o.undofile = true
 
-opt("o", "undodir", vim.fn.expand("~/.vim/undodir"))
-opt("o", "undofile", true)
+o.mouse = "a"
 
-opt("o", "mouse", "a")
+w.signcolumn = "yes"
+o.cmdheight = 1
 
-opt("w", "signcolumn", "yes")
-opt("o", "cmdheight", 1)
+o.updatetime = 250
+o.clipboard = "unnamedplus"
 
-opt("o", "updatetime", 250)
-opt("o", "clipboard", "unnamedplus")
+w.number = true
+o.numberwidth = 2
+o.relativenumber = true
 
-opt("w", "number", true)
-opt("o", "numberwidth", 2)
-opt("o", "relativenumber", true)
+o.incsearch = true
+o.inccommand = "nosplit"
+o.grepprg = "rg --vimgrep"
 
-opt("o", "incsearch", true)
-opt("o", "inccommand", "nosplit")
-opt("o", "grepprg", "rg --vimgrep")
+b.expandtab = true
+b.shiftwidth = 2
+b.smartindent = true
 
--- for indenline
-opt("b", "expandtab", true)
-opt("b", "shiftwidth", 2)
-opt("b", "smartindent", true)
-
-opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "[at]", "")) -- Disable autoformatting
-opt("o", "formatoptions", vim.o.formatoptions .. "c") -- Respect textwidth in comments
-opt("o", "formatoptions", vim.o.formatoptions .. "q") -- Format comments with gq
-opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "[o]", "")) -- Don"t continue comments with o and O
-opt("o", "formatoptions", vim.o.formatoptions .. "r") -- Enter continues comments
-opt("o", "formatoptions", vim.o.formatoptions .. "n") -- Indent past the formatlistpat, not underneath it.
-opt("o", "formatoptions", vim.o.formatoptions .. "j") -- Auto-remove comments if possible.
-opt("o", "formatoptions", string.gsub(vim.o.formatoptions, "2", ""))
+o.formatoptions = string.gsub(vim.o.formatoptions, "[at]", "") -- Disable autoformatting
+o.formatoptions = vim.o.formatoptions .. "c" -- Respect textwidth in comments
+o.formatoptions = vim.o.formatoptions .. "q" -- Format comments with gq
+o.formatoptions = string.gsub(vim.o.formatoptions, "[o]", "") -- Don"t continue comments with o and O
+o.formatoptions = vim.o.formatoptions .. "r" -- Enter continues comments
+o.formatoptions = vim.o.formatoptions .. "n" -- Indent past the formatlistpat, not underneath it.
+o.formatoptions = vim.o.formatoptions .. "j" -- Auto-remove comments if possible.
+o.formatoptions = string.gsub(vim.o.formatoptions, "2", "")

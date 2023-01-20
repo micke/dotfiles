@@ -11,5 +11,5 @@ return {
     { "<C-k>", [[<cmd>NvimTmuxNavigateUp<cr>]], mode = "n" },
     { "<C-l>", [[<cmd>NvimTmuxNavigateRight<cr>]], mode = "n" },
   },
-  config = {},
+  opts = {},
 }
