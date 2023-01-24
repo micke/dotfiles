@@ -9,19 +9,13 @@ local M = {
 function M.config()
   require("gitsigns").setup {
     signs = {
-      add = {hl = "DiffAdd", text = "▌", numhl = "GitSignsAddNr"},
-      change = {hl = "DiffChange", text = "▌", numhl = "GitSignsChangeNr"},
-      delete = {hl = "DiffDelete", text = "_", numhl = "GitSignsDeleteNr"},
-      topdelete = {hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr"},
-      changedelete = {hl = "DiffChange", text = "~", numhl = "GitSignsChangeNr"}
+      add = { text = "▎" },
+      change = { text = "▎" },
+      delete = { text = "契" },
+      topdelete = { text = "契" },
+      changedelete = { text = "▎" },
+      untracked = { text = "▎" },
     },
-    numhl = true,
-    watch_gitdir = {
-      interval = 100,
-      follow_files = true
-    },
-    signcolumn = false,
-    status_formatter = nil, -- Use default
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
 

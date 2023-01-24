@@ -4,16 +4,26 @@ local M = {
   dependencies = {
     "ray-x/lsp_signature.nvim",
     "hrsh7th/cmp-nvim-lsp",
-  }
+  },
+  opts = {
+    diagnostics = {
+      underline = true,
+      virtual_text = false,
+      update_in_insert = true,
+      severity_sort = true,
+    }
+  },
 }
 
-function M.config()
+function M.config(_, opts)
   require("mason")
 
-  local opts = { noremap = true, silent = true }
+  local kmopts = { noremap = true, silent = true }
 
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, kmopts)
+  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, kmopts)
+
+  vim.diagnostic.config(opts.diagnostics)
 
   function on_attach(client, bufnr)
     require("lsp_signature").on_attach({ bind = true, handler_opts = { border = "rounded" } }, bufnr)
@@ -34,15 +44,15 @@ function M.config()
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-    -- vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, opts)
+    -- vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, kmopts)
 
     -- print(vim.inspect(client.server_capabilities))
 
     -- Set some keybinds conditional on server capabilities
     if client.server_capabilities.documentFormattingProvider then
-      vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+      vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, kmopts)
     elseif client.server_capabilities.documentRangeFormattingProvider then
-      vim.keymap.set("n", "<leader>f", vim.lsp.buf.range_formatting, opts)
+      vim.keymap.set("n", "<leader>f", vim.lsp.buf.range_formatting, kmopts)
     end
 
     if client.server_capabilities.documentHighlightProvider then
@@ -171,16 +181,6 @@ function M.config()
     }
   end
 
-  -- replace the default lsp diagnostic symbols
-  local function lspSymbol(name, icon)
-     vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
-  end
-
-  lspSymbol("Error", "")
-  lspSymbol("Information", "")
-  lspSymbol("Hint", "")
-  lspSymbol("Warning", "")
-
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
      border = "single",
   })
@@ -189,10 +189,11 @@ function M.config()
   })
 
   -- replace the default lsp diagnostic letters with prettier symbols
-  vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
-  vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
-  vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
-  vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
+  local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+  for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+  end
 end
 
 return M

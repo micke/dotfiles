@@ -1,75 +1,44 @@
-local cmd = vim.cmd
-local g = vim.g
-
-g.mapleader = ","
-
--- Disable netrw
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
+vim.g.mapleader = ","
 
 -- Set up lazy
 require "config.lazy"
 require "settings"
 
-g.auto_save = 0
-
--- colorscheme related stuff
-cmd "syntax on"
-
-g["test#strategy"] = "dispatch"
-
-vim.diagnostic.config({
-  virtual_text = false,
-  update_in_insert = true,
+-- Open files in last position
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"')
+    local lcount = vim.api.nvim_buf_line_count(0)
+    if mark[1] > 0 and mark[1] <= lcount then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
 })
 
--- Open files in last position
-vim.cmd([[
-augroup openfile
-  au BufReadPost * if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-augroup end
-]])
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({ timeout=1000 })
+  end,
+})
 
-vim.cmd([[
-function! Browse(pathOrUrl)
-  if has('mac')| let openCmd = 'open'| else| let openCmd = 'xdg-open'| endif
-    silent execute "! " . openCmd . " " . shellescape(a:pathOrUrl, 1)|
-endfunction
+-- Autoformat on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = {
+    "*.tf",
+    "*.tfvars",
+    "*.ex",
+    "*.exs",
+  },
+  callback = function()
+    vim.lsp.buf.format { async = false }
+  end,
+})
 
-command! -nargs=1 Browse call Browse(<q-args>)|
-]])
-
-vim.api.nvim_exec([[
-augroup highlight_yank
-  autocmd!
-  au textyankpost * silent! lua vim.highlight.on_yank { higroup='incsearch', timeout=1000 }
-augroup end
-]], false)
-
+-- Don't force me to lift my fingers
 vim.api.nvim_create_user_command("WQ", "wq", {})
 vim.api.nvim_create_user_command("Wq", "wq", {})
 vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 
--- Autoformat on save
-vim.api.nvim_exec([[
-autocmd BufWritePre *.tf lua vim.lsp.buf.format { async = false }
-autocmd BufWritePre *.tfvars lua vim.lsp.buf.format { async = false }
-autocmd BufWritePre *.ex lua vim.lsp.buf.format { async = false }
-autocmd BufWritePre *.exs lua vim.lsp.buf.format { async = false }
-]], false)
-
-vim.api.nvim_exec([[
-function! SynStack()
-  for i1 in synstack(line("."), col("."))
-    let i2 = synIDtrans(i1)
-    let n1 = synIDattr(i1, "name")
-    let n2 = synIDattr(i2, "name")
-    echo n1 "->" n2
-  endfor
-endfunction
-
-map <leader>hl <cmd>call SynStack()<cr>
-]], false)
-
 require "mappings"
+require "status"

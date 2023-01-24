@@ -16,8 +16,31 @@ vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup("plugins", {
   defaults = { lazy = true },
   dev = { path = "~/code" },
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
   checker = {
     enabled = true,
     notify = false,
+  },
+  performance = {
+    cache = {
+      enabled = true,
+      -- disable_events = {},
+    },
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "rplugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
   },
 })
