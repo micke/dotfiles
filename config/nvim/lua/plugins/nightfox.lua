@@ -17,7 +17,8 @@ return {
       },
       groups = {
         all = {
-          ["@symbol"] = { link = "Identifier" }
+          ["@symbol"] = { link = "Identifier" },
+          ["@text.literal"] = { style = "" },
         },
       },
     })
