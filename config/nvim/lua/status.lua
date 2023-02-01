@@ -20,10 +20,10 @@ function M.column()
   end
 
   local nu = " "
-  local number = vim.api.nvim_win_get_option(vim.g.statusline_winid, "number")
-  if number and vim.wo.relativenumber and vim.v.virtnum == 0 then
+  -- local number = vim.api.nvim_win_get_option(vim.g.statusline_winid, "number")
+  -- if number and vim.wo.relativenumber and vim.v.virtnum == 0 then
     nu = vim.v.relnum == 0 and vim.v.lnum or vim.v.relnum
-  end
+  -- end
   local components = {
     sign and ("%#" .. sign.texthl .. "#" .. sign.text .. "%*") or " ",
     [[%=]],
