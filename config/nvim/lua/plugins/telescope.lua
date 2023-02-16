@@ -60,6 +60,8 @@ function M.config()
           ["<M-Left>"] = function() vim.cmd ":normal! b" end,
           ["<M-Right>"] = function() vim.cmd ":normal! w" end,
           ["<M-BS>"] = { "<c-s-w>", type = "command" },
+          -- ["<C-h>"] = { "<C-o><cmd>NvimTmuxNavigateLeft<cr>", type = "command" },
+          -- ["<C-j>"] = { "<C-o><cmd>NvimTmuxNavigateDown<cr>", type = "command" },
         },
       },
       prompt_prefix = "   ",
