@@ -17,7 +17,7 @@ local M = {
     { "<Space>t", [[<Cmd> Telescope treesitter<CR>]] },
     { "<Space>s", [[<Cmd> Telescope lsp_workspace_symbols<CR>]] },
     { "<Space>r", [[<Cmd> Telescope resume<CR>]] },
-    { "<Space>m", [[<Cmd> Telescope gitmoji<CR>]] },
+    { "<Space>e", [[<Cmd> Telescope gitmoji<CR>]] },
   },
 }
 
@@ -107,7 +107,7 @@ function M.config()
       gitmoji = {
         action = function(entry)
           local current_line = vim.api.nvim_get_current_line()
-          vim.api.nvim_set_current_line(entry.value .. " " .. current_line)
+          vim.api.nvim_set_current_line(entry.value.value .. " " .. current_line)
         end,
       },
     },

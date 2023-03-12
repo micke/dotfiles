@@ -8,11 +8,6 @@ return {
   },
   cmd = "FzfLua",
   opts = {
-    keymap = {
-      builtin = {
-        ["<C-u>"] = "preview-page-up",
-        ["<C-d>"]   = "preview-page-down",
-      }
-    }
+    "telescope",
   },
 }

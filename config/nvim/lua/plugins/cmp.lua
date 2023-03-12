@@ -35,9 +35,7 @@ M.config = function()
         return vim_item
       end
     },
-    mapping = {
-      ["<C-p>"] = cmp.mapping.select_prev_item(),
-      ["<C-n>"] = cmp.mapping.select_next_item(),
+    mapping = cmp.mapping.preset.insert({
       ["<C-d>"] = cmp.mapping.scroll_docs(-4),
       ["<C-u>"] = cmp.mapping.scroll_docs(4),
       ["<C-Space>"] = cmp.mapping.complete(),
@@ -46,7 +44,7 @@ M.config = function()
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
       },
-    },
+    }),
     sources = {
       { name = "nvim_lsp" },
       { name = "luasnip" },

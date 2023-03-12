@@ -99,7 +99,7 @@ function M.config(_, opts)
           validation = {
             script = false,
             style = true,
-            template = true,
+            template = false,
           },
         }
       }

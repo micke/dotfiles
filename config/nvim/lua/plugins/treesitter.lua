@@ -15,10 +15,23 @@ local M = {
           ruby = {
             "do_block",
             "block",
-          }
+          },
         }
       },
     },
+    {
+      "Wansmer/treesj",
+      config = function()
+        local u = require("treesj.langs.utils")
+        local javascriptdef = require("treesj.langs.javascript")
+
+        require("treesj").setup({
+          max_join_length = 500,
+          langs = {
+          },
+        })
+      end,
+    }
   }
 }
 

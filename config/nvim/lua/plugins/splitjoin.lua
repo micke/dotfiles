@@ -1,5 +1,6 @@
 return {
   "AndrewRadev/splitjoin.vim",
+  enabled = false,
   keys = {
     { "gS", "<cmd> SplitjoinJoin <cr>" },
     { "gJ", "<cmd> SplitjoinJoin <cr>" },
@@ -15,5 +16,6 @@ return {
     vim.g.splitjoin_ruby_options_as_arguments = true
     vim.g.splitjoin_ruby_curly_braces = false
     vim.g.splitjoin_align = true
+    vim.g.splitjoin_html_attributes_bracket_on_new_line = true
   end
 }
