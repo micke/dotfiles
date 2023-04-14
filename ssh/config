@@ -5,8 +5,3 @@ Host *
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
   IdentityFile ~/.ssh/id_rsa
-
-Host 10.0.0.1
-  User root
-  HostkeyAlgorithms +ssh-rsa
-  PubkeyAcceptedAlgorithms +ssh-rsa

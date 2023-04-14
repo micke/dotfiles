@@ -1,5 +1,6 @@
 local M = {
   "karb94/neoscroll.nvim",
+  enabled = true,
   name = "neoscroll",
   keys = { "<C-u>", "<C-d>", "gg", "G" },
   opts = {

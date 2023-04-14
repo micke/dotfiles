@@ -1,8 +1,11 @@
+local treesj = require("plugins.treesitter.treesj")
+
 local M = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   event = "BufReadPost",
   dependencies = {
+    treesj,
     "nvim-treesitter/nvim-treesitter-textobjects",
     "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
@@ -19,19 +22,6 @@ local M = {
         }
       },
     },
-    {
-      "Wansmer/treesj",
-      config = function()
-        local u = require("treesj.langs.utils")
-        local javascriptdef = require("treesj.langs.javascript")
-
-        require("treesj").setup({
-          max_join_length = 500,
-          langs = {
-          },
-        })
-      end,
-    }
   }
 }
 
