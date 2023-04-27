@@ -6,6 +6,7 @@ local M = {
 
     local config = {
       max_join_length = 1000,
+      check_syntax_error = false,
       -- langs = {
       --   javascript = u.merge_preset(javascriptdef, {
       --     statement_block = u.set_preset_for_statement({

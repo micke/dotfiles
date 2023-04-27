@@ -43,7 +43,7 @@ function M.config(_, opts)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-    vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+    vim.keymap.set("n", "<space>d", vim.diagnostic.open_float)
     -- vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, kmopts)
 
     -- print(vim.inspect(client.server_capabilities))
