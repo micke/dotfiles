@@ -44,6 +44,7 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope-gitmoji.nvim": { "branch": "master", "commit": "b8672e5f816fcf1f0a248e9c41f05e7b7f1e9d94" },
   "telescope.nvim": { "branch": "master", "commit": "d77b37f4520e5fc2cf4c74c12e42ed4b589bd367" },
+  "treesj": { "branch": "main", "commit": "c1d691d203063e25cadd46abc020dec659519232" },
   "trouble.nvim": { "branch": "main", "commit": "d56bfc0c501ced4002a57cb60433362fb2ce9c4d" },
   "vim-abolish": { "branch": "master", "commit": "cb3dcb220262777082f63972298d57ef9e9455ec" },
   "vim-argwrap": { "branch": "master", "commit": "feaba6b8b6ca099d267c81ee2c4ba43ce6de8499" },
