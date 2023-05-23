@@ -9,6 +9,14 @@ return {
       },
       filetypes = {
         yaml = true,
+        haml = true,
+      },
+      server_opts_overrides = {
+        settings = {
+          advanced = {
+            inlineSuggestCount = 5,
+          },
+        },
       },
     })
   end,

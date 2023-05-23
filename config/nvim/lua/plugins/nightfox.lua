@@ -1,5 +1,6 @@
 return {
   "EdenEast/nightfox.nvim",
+  enabled = false,
   dev = true,
   lazy = false,
   priority = 999,
@@ -23,120 +24,42 @@ return {
       },
     })
 
-    vim.cmd("colorscheme hybridfox")
-
-    vim.o.winbar = "%{%v:lua.require'winbar'.get_winbar()%}"
-
     local colors = require("nightfox.palette").load("hybridfox")
 
-    require "nvim-web-devicons".setup {
-      override = {
-        html = {
-          icon = "",
-          color = colors.pink.bright,
-          name = "html"
-        },
-        css = {
-          icon = "",
-          color = colors.blue.base,
-          name = "css"
-        },
-        js = {
-          icon = "",
-          color = colors.yellow.dim,
-          name = "js"
-        },
-        ts = {
-          icon = "ﯤ",
-          color = colors.blue.bright,
-          name = "ts"
-        },
-        kt = {
-          icon = "󱈙",
-          color = colors.orange.base,
-          name = "kt"
-        },
-        png = {
-          icon = "",
-          color = colors.magenta.dark,
-          name = "png"
-        },
-        jpg = {
-          icon = "",
-          color = colors.magenta.dark,
-          name = "jpg"
-        },
-        jpeg = {
-          icon = "",
-          color = colors.magenta.dark,
-          name = "jpeg"
-        },
-        mp3 = {
-          icon = "",
-          color = colors.white.base,
-          name = "mp3"
-        },
-        mp4 = {
-          icon = "",
-          color = colors.white.base,
-          name = "mp4"
-        },
-        out = {
-          icon = "",
-          color = colors.white.base,
-          name = "out"
-        },
-        Dockerfile = {
-          icon = "",
-          color = colors.cyan.base,
-          name = "Dockerfile"
-        },
-        rb = {
-          icon = "",
-          color = colors.red.dim,
-          name = "rb"
-        },
-        vue = {
-          icon = "﵂",
-          color = colors.green.bright,
-          name = "vue"
-        },
-        py = {
-          icon = "",
-          color = colors.cyan.base,
-          name = "py"
-        },
-        toml = {
-          icon = "",
-          color = colors.blue.base,
-          name = "toml"
-        },
-        lock = {
-          icon = "",
-          color = colors.red.base,
-          name = "lock"
-        },
-        zip = {
-          icon = "",
-          color = colors.yellow.base,
-          name = "zip"
-        },
-        xz = {
-          icon = "",
-          color = colors.yellow.base,
-          name = "xz"
-        },
-        deb = {
-          icon = "",
-          color = colors.cyan.base,
-          name = "deb"
-        },
-        rpm = {
-          icon = "",
-          color = colors.orange.base,
-          name = "rpm"
-        }
-      }
-    }
+    -- WinBar/Navic
+
+    vim.api.nvim_set_hl(0, "WinBarSeparator",         { fg = colors.base })
+    vim.api.nvim_set_hl(0, "WinBarFilename",          { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "WinBarContext",           { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsFile",          { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsModule",        { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsNamespace",     { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsPackage",       { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsClass",         { bg = colors.base, fg = colors.yellow.base })
+    vim.api.nvim_set_hl(0, "NavicIconsMethod",        { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsProperty",      { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsField",         { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsConstructor",   { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsEnum",          { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsInterface",     { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsFunction",      { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsVariable",      { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsConstant",      { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsString",        { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsNumber",        { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsBoolean",       { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsArray",         { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsObject",        { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsKey",           { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsNull",          { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsEnumMember",    { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsStruct",        { bg = colors.base, fg = colors.yellow.base })
+    vim.api.nvim_set_hl(0, "NavicIconsEvent",         { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsOperator",      { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicIconsTypeParameter", { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicText",               { bg = colors.base, fg = colors.blue.base })
+    vim.api.nvim_set_hl(0, "NavicSeparator",          { bg = colors.base, fg = colors.blue.base })
+
+    vim.cmd("colorscheme hybridfox")
   end,
 }

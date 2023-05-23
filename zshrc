@@ -43,12 +43,20 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export FZF_DEFAULT_COMMAND='fd --type file --no-ignore-vcs --hidden --follow --exclude .git'
+
 # fzf hybrid theme
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#c4c8c6,bg:#1c1f20,gutter:#1c1f20,hl:#a5812d
- --color=fg+:#cccccc,bg+:#27292d,hl+:#f6c76b
- --color=info:#625a88,prompt:#6f7780,pointer:#dc595d
- --color=marker:#a9b75d,spinner:#ba8dba,header:#79c1b8'
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#  --color=fg:#c4c8c6,bg:#1c1f20,gutter:#1c1f20,hl:#a5812d
+#  --color=fg+:#cccccc,bg+:#27292d,hl+:#f6c76b
+#  --color=info:#625a88,prompt:#6f7780,pointer:#dc595d
+#  --color=marker:#a9b75d,spinner:#ba8dba,header:#79c1b8'
+
+# fzf catppuccin theme
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+ --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+ --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+ --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
+
 # fzf vim half page up/down
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --bind="ctrl-u:half-page-up"
@@ -79,7 +87,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=18"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $HOME/.zsh/completion

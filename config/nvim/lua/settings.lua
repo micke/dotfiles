@@ -26,6 +26,8 @@ o.scrolloff = 3
 
 o.wildmode = "longest:full,list:full"
 
+o.winbar = "%{%v:lua.require'winbar'.get_winbar()%}"
+
 o.undodir = vim.fn.expand("~/.vim/undodir")
 o.undofile = true
 

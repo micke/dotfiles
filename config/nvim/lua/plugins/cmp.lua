@@ -28,12 +28,23 @@ M.config = function()
         require("luasnip").lsp_expand(args.body)
       end,
     },
+    window = {
+      completion = {
+        winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+        col_offset = -3,
+        side_padding = 0,
+      },
+    },
     formatting = {
-      format = function(_, vim_item)
-        vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+      fields = { "kind", "abbr", "menu" },
+      format = function(entry, vim_item)
+        local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+        local strings = vim.split(kind.kind, "%s", { trimempty = true })
+        kind.kind = " " .. (strings[1] or "") .. " "
+        kind.menu = "    (" .. (strings[2] or "") .. ")"
 
-        return vim_item
-      end
+        return kind
+      end,
     },
     mapping = cmp.mapping.preset.insert({
       ["<C-d>"] = cmp.mapping.scroll_docs(-4),

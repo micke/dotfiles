@@ -6,7 +6,7 @@ local M = {
 function M.config()
   require("lualine").setup {
     options = {
-      theme = "hybridfox",
+      theme = "catppuccin",
       globalstatus = true,
     },
     sections = {
