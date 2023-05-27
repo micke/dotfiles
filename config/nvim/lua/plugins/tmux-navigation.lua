@@ -1,15 +1,21 @@
 return {
   "alexghergh/nvim-tmux-navigation",
-  keys = {
-    { "<C-h>", [[<C-o><cmd>NvimTmuxNavigateLeft<cr>]], mode = "i" },
-    { "<C-j>", [[<C-o><cmd>NvimTmuxNavigateDown<cr>]], mode = "i" },
-    { "<C-k>", [[<C-o><cmd>NvimTmuxNavigateUp<cr>]], mode = "i" },
-    { "<C-l>", [[<C-o><cmd>NvimTmuxNavigateRight<cr>]], mode = "i" },
+  lazy = false,
+  config = function()
+    local navigation = require"nvim-tmux-navigation"
 
-    { "<C-h>", [[<cmd>NvimTmuxNavigateLeft<cr>]], mode = { "n", "c" } },
-    { "<C-j>", [[<cmd>NvimTmuxNavigateDown<cr>]], mode = { "n", "c" } },
-    { "<C-k>", [[<cmd>NvimTmuxNavigateUp<cr>]], mode = { "n", "c" } },
-    { "<C-l>", [[<cmd>NvimTmuxNavigateRight<cr>]], mode = { "n", "c" } },
-  },
-  opts = {},
+    navigation.setup {
+      disable_when_zoomed = true,
+    }
+
+    vim.keymap.set({ "n", "c" }, "<c-h>", navigation.NvimTmuxNavigateLeft, { noremap = true, silent = true })
+    vim.keymap.set({ "n", "c" }, "<c-j>", navigation.NvimTmuxNavigateDown, { noremap = true, silent = true })
+    vim.keymap.set({ "n", "c" }, "<c-k>", navigation.NvimTmuxNavigateUp, { noremap = true, silent = true })
+    vim.keymap.set({ "n", "c" }, "<c-l>", navigation.NvimTmuxNavigateRight, { noremap = true, silent = true })
+
+    vim.keymap.set({ "i" }, "<c-h>", [[<C-o><cmd>NvimTmuxNavigateLeft<cr>]], { noremap = true, silent = true })
+    vim.keymap.set({ "i" }, "<c-j>", [[<cmd>NvimTmuxNavigateDown<cr>]], { noremap = true, silent = true })
+    vim.keymap.set({ "i" }, "<c-k>", [[<cmd>NvimTmuxNavigateUp<cr>]], { noremap = true, silent = true })
+    vim.keymap.set({ "i" }, "<c-l>", [[<cmd>NvimTmuxNavigateRight<cr>]], { noremap = true, silent = true })
+  end,
 }
