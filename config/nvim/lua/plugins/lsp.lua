@@ -159,6 +159,18 @@ function M.config(_, opts)
     capabilities = capabilities,
   })
 
+  lspconfig.yamlls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+      yaml = {
+        keyOrdering = false
+      },
+      redhat = { telemetry = { enabled = false } },
+    },
+  })
+
+
   for _, server in ipairs {
     "ansiblels",
     "bashls",
@@ -173,7 +185,6 @@ function M.config(_, opts)
     "sqlls",
     "terraformls",
     "tsserver",
-    "yamlls",
   } do
     lspconfig[server].setup {
       on_attach = on_attach,
