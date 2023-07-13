@@ -1,6 +1,5 @@
 return {
   { "AndrewRadev/deleft.vim", keys = { "dh", "<cmd>:Deleft<cr>" } },
-  { "williamboman/mason-lspconfig.nvim" },
   {
     "terrortylor/nvim-comment",
     config = function()

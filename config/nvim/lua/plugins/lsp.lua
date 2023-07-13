@@ -71,7 +71,7 @@ function M.config(_, opts)
       vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
         group = "lsp_document_highlight",
         buffer = bufnr,
-        callback = vim.lsp.buf.clear_references,
+        callback = function() vim.lsp.buf.clear_references() end,
       })
     end
   end
@@ -182,6 +182,7 @@ function M.config(_, opts)
     "graphql",
     "html",
     "jsonls",
+    "rnix",
     "sqlls",
     "terraformls",
     "tsserver",

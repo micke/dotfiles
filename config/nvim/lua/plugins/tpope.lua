@@ -52,16 +52,10 @@ return {
   {
     "tpope/vim-projectionist",
     event = "BufReadPre",
-    cond = function()
-      return vim.loop.fs_stat(".projections.json")
-    end,
   },
   {
     "tpope/vim-rails",
     event = "BufReadPost",
-    cond = function()
-      return vim.loop.fs_stat("config/environment.rb")
-    end,
   },
   { "tpope/vim-repeat", lazy = false },
   { "tpope/vim-rsi", lazy = false },
