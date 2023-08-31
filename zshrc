@@ -87,6 +87,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
+export SOPS_AGE_KEY_FILE=$HOME/.config/sops/age/keys.txt
+
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 

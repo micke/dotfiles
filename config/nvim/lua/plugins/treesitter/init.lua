@@ -128,9 +128,9 @@ M.config = function ()
         },
       },
     },
-    matchup = {
-      enable = true
-    },
+    -- matchup = {
+    --   enable = true
+    -- },
     autopairs = {
       enable = true
     },
