@@ -1,47 +1,38 @@
 local M = {
   "lukas-reineke/indent-blankline.nvim",
+  main = "ibl",
   event = "BufReadPre",
   opts = {
-    indentLine_enabled = 1,
-    char = "▏",
-    filetype_exclude = {
-      "help",
-      "terminal",
-      "dashboard",
-      "packer",
-      "lspinfo",
-      "TelescopePrompt",
-      "TelescopeResults",
-      "nvchad_cheatsheet",
-      "lsp-installer",
-      "",
+    indent = { char = "▏" },
+    exclude = {
+      filetypes = {
+        "help",
+        "terminal",
+        "dashboard",
+        "packer",
+        "lspinfo",
+        "TelescopePrompt",
+        "TelescopeResults",
+        "nvchad_cheatsheet",
+        "lsp-installer",
+        "",
+      },
+      buftypes = {
+        "terminal",
+        "nofile"
+      }
     },
-    buftype_exclude = { "terminal", "nofile" },
-    show_trailing_blankline_indent = false,
-    show_first_indent_level = false,
-    show_current_context = true,
-    show_current_context_start = true,
-    context_patterns = {
-      "class",
-      "^func",
-      "method",
-      "^if",
-      "while",
-      "for",
-      "with",
-      "try",
-      "except",
-      "arguments",
-      "argument_list",
-      "object",
-      "dictionary",
-      "element",
-      "table",
-      "tuple",
-      "do_block",
-      "block_mapping_pair"
+    scope = {
+      char = { "▎" },
+      show_end = false,
+      include = {
+        node_type = {
+          ["*"] = {
+            "*"
+          },
+        },
+      },
     },
-    context_char_list = { "▎" },
   },
 }
 

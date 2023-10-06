@@ -10,6 +10,8 @@ return {
       filetypes = {
         yaml = true,
         haml = true,
+        gitcommit = true,
+        gitrebase = true,
       },
       server_opts_overrides = {
         settings = {
