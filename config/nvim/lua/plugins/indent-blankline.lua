@@ -27,8 +27,14 @@ local M = {
       show_end = false,
       include = {
         node_type = {
-          ["*"] = {
-            "*"
+          -- ["*"] = {
+          --   "*"
+          -- },
+          typescript = {
+            "object"
+          },
+          javascript = {
+            "object"
           },
         },
       },

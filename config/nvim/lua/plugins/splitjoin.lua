@@ -1,8 +1,8 @@
 return {
   "AndrewRadev/splitjoin.vim",
-  enabled = false,
+  enabled = true,
   keys = {
-    { "gS", "<cmd> SplitjoinJoin <cr>" },
+    { "gS", "<cmd> SplitjoinSplit <cr>" },
     { "gJ", "<cmd> SplitjoinJoin <cr>" },
   },
   lazy = false,

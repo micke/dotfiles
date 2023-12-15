@@ -27,13 +27,8 @@ local excludes = function()
   return false
 end
 
-local function get_modified()
-  if vim.api.nvim_buf_get_option(0, "mod") then
-    local mod = ""
-    return "%#WinBarFilename# " .. mod .. " " .. "%t" .. " %*"
-  end
-
-  return "%#WinBarFilename# " .. "%f" .. " %*"
+local function get_filename()
+  return "%#WinBarFilename# " .. vim.fn.expand('%:~:.') .. " %*"
 end
 
 local function get_location()
@@ -52,7 +47,7 @@ function M.get_winbar()
   if navic.is_available() then
     return "%#WinBarSeparator#"
       .. "%*"
-      .. get_modified()
+      .. get_filename()
       .. get_location()
       .. "%<%#WinBarSeparator#"
       .. ""
@@ -60,7 +55,7 @@ function M.get_winbar()
   else
     return "%#WinBarSeparator#"
       .. "%*"
-      .. get_modified()
+      .. get_filename()
       .. "%#WinBarSeparator#"
       .. ""
       .. "%*"

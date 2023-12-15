@@ -80,30 +80,10 @@ function M.config(_, opts)
   capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
   local lspconfig = require("lspconfig")
 
-  lspconfig.vuels.setup({
+  lspconfig.volar.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    init_options = {
-      config = {
-        vetur = {
-          completion = {
-            autoImport = true,
-          },
-          format = {
-            enable = true,
-            defaultFormatter = {
-              js = "prettier-eslint",
-              ts = "prettier-eslint",
-            },
-          },
-          validation = {
-            script = false,
-            style = true,
-            template = false,
-          },
-        }
-      }
-    }
+    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   })
 
   lspconfig.lua_ls.setup({
@@ -147,11 +127,16 @@ function M.config(_, opts)
     settings = {
       solargraph = {
         -- commandPath = vim.env.HOME .. "/.asdf/shims/solargraph",
-        diagnostics = true,
-        formatting = true,
+        diagnostics = false,
+        formatting = false,
         -- useBundler = true,
       }
     }
+  })
+
+  lspconfig.rubocop.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
   })
 
   lspconfig.coffeesense.setup({

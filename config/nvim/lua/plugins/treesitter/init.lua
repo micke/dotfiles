@@ -1,4 +1,5 @@
 local treesj = require("plugins.treesitter.treesj")
+local contextCommentString = require("plugins.treesitter.ts-context-commentstring")
 
 local M = {
   "nvim-treesitter/nvim-treesitter",
@@ -6,8 +7,8 @@ local M = {
   event = "BufReadPost",
   dependencies = {
     treesj,
+    contextCommentString,
     "nvim-treesitter/nvim-treesitter-textobjects",
-    "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
     "RRethy/nvim-treesitter-endwise",
     { "bennypowers/nvim-regexplainer", config = true },
@@ -57,6 +58,7 @@ M.config = function ()
     highlight = {
       enable = true,
       use_languagetree = true,
+      additional_vim_regex_highlighting = false,
     },
     incremental_selection = {
       enable = true,
@@ -135,9 +137,6 @@ M.config = function ()
       enable = true
     },
     autotag = {
-      enable = true
-    },
-    context_commentstring = {
       enable = true
     },
     endwise = {
