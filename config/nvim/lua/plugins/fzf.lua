@@ -1,7 +1,7 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = {
-    "kyazdani42/nvim-web-devicons",
+    "nvim-tree/nvim-web-devicons",
   },
   keys = {
     { "<Space>g", [[<Cmd> FzfLua grep search="" <CR>]] }

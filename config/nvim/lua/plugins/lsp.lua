@@ -127,17 +127,17 @@ function M.config(_, opts)
     settings = {
       solargraph = {
         -- commandPath = vim.env.HOME .. "/.asdf/shims/solargraph",
-        diagnostics = false,
+        diagnostics = true,
         formatting = false,
         -- useBundler = true,
       }
     }
   })
 
-  lspconfig.rubocop.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-  })
+  -- lspconfig.rubocop.setup({
+  --   on_attach = on_attach,
+  --   capabilities = capabilities,
+  -- })
 
   lspconfig.coffeesense.setup({
     on_attach = on_attach,
