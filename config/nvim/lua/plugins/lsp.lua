@@ -46,15 +46,6 @@ function M.config(_, opts)
     vim.keymap.set("n", "<space>d", vim.diagnostic.open_float)
     -- vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, kmopts)
 
-    -- print(vim.inspect(client.server_capabilities))
-
-    -- Set some keybinds conditional on server capabilities
-    if client.server_capabilities.documentFormattingProvider then
-      vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, kmopts)
-    elseif client.server_capabilities.documentRangeFormattingProvider then
-      vim.keymap.set("n", "<leader>f", vim.lsp.buf.range_formatting, kmopts)
-    end
-
     if client.server_capabilities.documentHighlightProvider then
       vim.api.nvim_create_augroup("lsp_document_highlight", {
         clear = false
@@ -128,7 +119,7 @@ function M.config(_, opts)
       solargraph = {
         -- commandPath = vim.env.HOME .. "/.asdf/shims/solargraph",
         diagnostics = true,
-        formatting = false,
+        formatting = true,
         -- useBundler = true,
       }
     }

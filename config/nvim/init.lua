@@ -21,19 +21,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- Autoformat on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = {
-    "*.tf",
-    "*.tfvars",
-    "*.ex",
-    "*.exs",
-  },
-  callback = function()
-    vim.lsp.buf.format { async = false }
-  end,
-})
-
 -- Don't force me to lift my fingers
 vim.api.nvim_create_user_command("WQ", "wq", {})
 vim.api.nvim_create_user_command("Wq", "wq", {})
