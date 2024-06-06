@@ -40,7 +40,7 @@ function M.config()
       end
   end
 
-  local trouble = require("trouble.providers.telescope")
+  local trouble = require("trouble.sources.telescope")
 
   telescope.setup {
     defaults = {
@@ -117,8 +117,8 @@ function M.config()
         find_command = { "fd", "--type", "f", "--strip-cwd-prefix", "--no-ignore-vcs", "--hidden" },
         mappings = {
           i = {
-            ["<c-q>"] = trouble.send_to_qflist,
-            ["<c-t>"] = trouble.open_with_trouble,
+            ["<c-q>"] = trouble.open,
+            ["<c-t>"] = trouble.open,
             ["<cr>"] = custom_actions.fzf_multi_select,
           },
         },
@@ -126,8 +126,8 @@ function M.config()
       live_grep = {
         mappings = {
           i = {
-            ["<c-q>"] = trouble.send_to_qflist,
-            ["<c-t>"] = trouble.open_with_trouble,
+            ["<c-q>"] = trouble.open,
+            ["<c-t>"] = trouble.open,
             ["<cr>"] = custom_actions.fzf_multi_select,
           },
         },

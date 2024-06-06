@@ -11,6 +11,17 @@ local M = {
       virtual_text = false,
       update_in_insert = true,
       severity_sort = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "󰅙 ",
+          [vim.diagnostic.severity.WARN] = "󰀦 ",
+          [vim.diagnostic.severity.HINT] = "󰌵 ",
+          [vim.diagnostic.severity.INFO] = "󰋽 ",
+        },
+      },
+      jump = {
+        float = true,
+      },
     }
   },
 }
@@ -19,9 +30,6 @@ function M.config(_, opts)
   require("mason")
 
   local kmopts = { noremap = true, silent = true }
-
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, kmopts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, kmopts)
 
   vim.diagnostic.config(opts.diagnostics)
 
