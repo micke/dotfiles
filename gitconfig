@@ -78,3 +78,6 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+[diff "sops"]
+	textconv = sops -d
+	cachetextconv = false
