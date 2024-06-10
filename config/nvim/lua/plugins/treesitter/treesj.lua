@@ -1,8 +1,9 @@
 local M = {
   "Wansmer/treesj",
+  keys = { "<space>m", "<space>j", "<space>s" },
   config = function()
-    local u = require("treesj.langs.utils")
-    local javascriptdef = require("treesj.langs.javascript")
+    -- local u = require("treesj.langs.utils")
+    -- local javascriptdef = require("treesj.langs.javascript")
 
     local config = {
       max_join_length = 1000,
