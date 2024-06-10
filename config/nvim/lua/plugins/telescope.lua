@@ -1,6 +1,9 @@
+local treesitter = require("plugins.treesitter.init")
+
 local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
+    treesitter,
     { "nvim-lua/popup.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -137,8 +140,6 @@ function M.config()
 
   telescope.load_extension("fzf")
   telescope.load_extension("gitmoji")
-
-  require"plenary.filetype".add_file("terraform")
 end
 
 return M

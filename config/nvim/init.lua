@@ -21,6 +21,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.filetype.add({
+  extension = {
+    tf = "terraform",
+    tfvars = "terraform",
+  }
+})
+
 -- Don't force me to lift my fingers
 vim.api.nvim_create_user_command("WQ", "wq", {})
 vim.api.nvim_create_user_command("Wq", "wq", {})
