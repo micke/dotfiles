@@ -154,6 +154,17 @@ function M.config(_, opts)
     },
   })
 
+  lspconfig.terraformls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+      terraformls = {
+        diagnostics = false,
+      },
+      diagnostics = false
+    },
+  })
+
 
   for _, server in ipairs {
     "ansiblels",
@@ -168,7 +179,6 @@ function M.config(_, opts)
     "jsonls",
     "rnix",
     "sqlls",
-    "terraformls",
     "tsserver",
   } do
     lspconfig[server].setup {
@@ -183,13 +193,6 @@ function M.config(_, opts)
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
      border = "single",
   })
-
-  -- replace the default lsp diagnostic letters with prettier symbols
-  local signs = { Error = "󰅙 ", Warn = "󰀦 ", Hint = "󰌵 ", Info = "󰋽 " }
-  for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-  end
 end
 
 return M
