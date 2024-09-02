@@ -11,7 +11,6 @@ local M = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "windwp/nvim-ts-autotag",
     "RRethy/nvim-treesitter-endwise",
-    { "bennypowers/nvim-regexplainer", config = true },
     {
       "nvim-treesitter/nvim-treesitter-context",
       opts = {

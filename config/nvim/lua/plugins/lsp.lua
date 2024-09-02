@@ -120,23 +120,28 @@ function M.config(_, opts)
     }
   })
 
-  lspconfig.solargraph.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-      solargraph = {
-        -- commandPath = vim.env.HOME .. "/.asdf/shims/solargraph",
-        diagnostics = true,
-        formatting = true,
-        -- useBundler = true,
-      }
-    }
-  })
+  -- lspconfig.solargraph.setup({
+  --   on_attach = on_attach,
+  --   capabilities = capabilities,
+  --   settings = {
+  --     solargraph = {
+  --       -- commandPath = vim.env.HOME .. "/.asdf/shims/solargraph",
+  --       diagnostics = true,
+  --       formatting = true,
+  --       -- useBundler = true,
+  --     }
+  --   }
+  -- })
 
   -- lspconfig.rubocop.setup({
   --   on_attach = on_attach,
   --   capabilities = capabilities,
   -- })
+
+  lspconfig.ruby_lsp.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
 
   lspconfig.coffeesense.setup({
     on_attach = on_attach,

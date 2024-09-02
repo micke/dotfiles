@@ -1,5 +1,10 @@
 return {
-  { "AndrewRadev/deleft.vim", keys = { "dh", "<cmd>:Deleft<cr>" } },
+  {
+    "AndrewRadev/deleft.vim",
+    keys = {
+      { "dh", "<cmd>:Deleft<cr>" },
+    },
+  },
   {
     "terrortylor/nvim-comment",
     config = function()

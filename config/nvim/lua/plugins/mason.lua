@@ -32,6 +32,7 @@ function M.config()
     automatic_installation = {
       exclude = {
         "solargraph",
+        "ruby_lsp",
       },
     },
   })
