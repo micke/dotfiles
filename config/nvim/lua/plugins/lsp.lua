@@ -141,6 +141,11 @@ function M.config(_, opts)
   lspconfig.ruby_lsp.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+    init_options = {
+      enabledFeatures = {
+        semanticHighlighting = false,
+      },
+    }
   })
 
   lspconfig.coffeesense.setup({
