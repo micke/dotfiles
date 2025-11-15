@@ -77,15 +77,15 @@ function M.config(_, opts)
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-  local lspconfig = require("lspconfig")
 
-  lspconfig.volar.setup({
+  vim.lsp.config("vue_ls", {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   })
+  vim.lsp.enable("vue_ls")
 
-  lspconfig.lua_ls.setup({
+  vim.lsp.config("lua_ls", {
     on_attach = on_attach,
     capabilities = capabilities,
     root_dir = function()
@@ -108,8 +108,9 @@ function M.config(_, opts)
       }
     }
   })
+  vim.lsp.enable("lua_ls")
 
-  lspconfig.elixirls.setup({
+  vim.lsp.config("elixirls", {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -119,8 +120,9 @@ function M.config(_, opts)
       }
     }
   })
+  vim.lsp.enable("elixirls")
 
-  -- lspconfig.solargraph.setup({
+  -- vim.lsp.config("solargraph", {
   --   on_attach = on_attach,
   --   capabilities = capabilities,
   --   settings = {
@@ -133,12 +135,12 @@ function M.config(_, opts)
   --   }
   -- })
 
-  -- lspconfig.rubocop.setup({
+  -- vim.lsp.config("rubocop", {
   --   on_attach = on_attach,
   --   capabilities = capabilities,
   -- })
 
-  lspconfig.ruby_lsp.setup({
+  vim.lsp.config("ruby_lsp", {
     on_attach = on_attach,
     capabilities = capabilities,
     init_options = {
@@ -147,13 +149,15 @@ function M.config(_, opts)
       },
     }
   })
+  vim.lsp.enable("ruby_lsp")
 
-  lspconfig.coffeesense.setup({
+  vim.lsp.config("coffeesense", {
     on_attach = on_attach,
     capabilities = capabilities,
   })
+  vim.lsp.enable("coffeesense")
 
-  lspconfig.yamlls.setup({
+  vim.lsp.config("yamlls", {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -163,8 +167,9 @@ function M.config(_, opts)
       redhat = { telemetry = { enabled = false } },
     },
   })
+  vim.lsp.enable("yamlls")
 
-  lspconfig.terraformls.setup({
+  vim.lsp.config("terraformls", {
     on_attach = on_attach,
     capabilities = capabilities,
     -- init_options = {
@@ -174,9 +179,11 @@ function M.config(_, opts)
     --   diagnostics = false
     -- },
   })
+  vim.lsp.enable("terraformls")
 
-  lspconfig.ts_ls.setup({
+  vim.lsp.config("ts_ls", {
   })
+  vim.lsp.enable("ts_ls")
 
 
   for _, server in ipairs {
@@ -193,10 +200,11 @@ function M.config(_, opts)
     "rnix",
     "sqlls",
   } do
-    lspconfig[server].setup {
+    vim.lsp.config(server, {
       on_attach = on_attach,
       capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable(server)
   end
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
