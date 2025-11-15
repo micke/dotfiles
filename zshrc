@@ -13,13 +13,14 @@ fi
 export GOPATH=$HOME/code/micke/go
 
 # PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/rustup/bin:$PATH"
 export PATH="/usr/local/bin:$BREW_PREFIX/bin:$BREW_PREFIX/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="$BREW_PREFIX/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin/:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$BREW_PREFIX/opt/mysql@5.6/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
 
@@ -34,6 +35,8 @@ export SHELL=/opt/homebrew/bin/zsh
 # cd
 export CDPATH="$CDPATH:$HOME/code"
 setopt auto_cd
+
+setopt ignore_eof
 
 # Avoid issues in tmux
 export LC_CTYPE="UTF-8"
@@ -80,9 +83,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 source $BREW_PREFIX/opt/asdf/libexec/asdf.sh
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 
-# Use bat as manpager
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 # Enable buildkit for docker
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
@@ -100,7 +100,3 @@ source $HOME/.zsh_prompt
 source $HOME/.secrets
 
 source ~/.fzf.zsh
-
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi

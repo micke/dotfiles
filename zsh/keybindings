@@ -6,6 +6,7 @@ bindkey -e
 # History search with arrows up/down.
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
+bindkey '^U' backward-kill-line
 
 # Make the delete key work
 bindkey "\e[3~" delete-char

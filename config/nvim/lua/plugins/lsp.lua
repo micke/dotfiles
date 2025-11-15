@@ -167,12 +167,15 @@ function M.config(_, opts)
   lspconfig.terraformls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    init_options = {
-      terraformls = {
-        diagnostics = false,
-      },
-      diagnostics = false
-    },
+    -- init_options = {
+    --   terraformls = {
+    --     diagnostics = false,
+    --   },
+    --   diagnostics = false
+    -- },
+  })
+
+  lspconfig.ts_ls.setup({
   })
 
 
@@ -189,7 +192,6 @@ function M.config(_, opts)
     "jsonls",
     "rnix",
     "sqlls",
-    "tsserver",
   } do
     lspconfig[server].setup {
       on_attach = on_attach,

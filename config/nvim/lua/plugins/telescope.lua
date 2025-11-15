@@ -14,7 +14,7 @@ local M = {
     { "<Leader>gc", [[<Cmd> Telescope git_branches <CR>]] },
     { "<Leader>gcc", [[<Cmd> Telescope git_commits <CR>]] },
     { "<Leader>gcb", [[<Cmd> Telescope git_bcommits <CR>]] },
-    { "<Space>f", [[<Cmd> Telescope find_files <CR>]] },
+    -- { "<Space>f", [[<Cmd> Telescope find_files <CR>]] },
     { "<Space>g", [[<Cmd> FzfLua grep search="" <CR>]] },
     { "<Space>h", [[<Cmd> Telescope help_tags<CR>]] },
     { "<Space>t", [[<Cmd> Telescope treesitter<CR>]] },

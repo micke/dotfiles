@@ -31,13 +31,14 @@ alias kc="kubeconsole"
 alias kcp="kubeconsole production"
 alias kcs="kubeconsole sandbox"
 alias kct="kubeconsole tooling"
+alias kcpv="kubeconsole pv"
 
 alias ssh="TERM=xterm-256color ssh"
 
 alias publickey="cat ~/.ssh/id_ed25519.pub | pbcopy"
+alias newlineton='awk '\''{printf "%s\\n", $0}'\'''
 
 # Default tool replacements
 alias diff="diff-so-fancy"
-alias cat="bat"
 
 alias wp="bin/webpack-dev-server --hot"
