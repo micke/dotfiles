@@ -19,6 +19,7 @@ export PATH="/usr/local/bin:$BREW_PREFIX/bin:$BREW_PREFIX/sbin:/usr/bin:/bin:/us
 export PATH="$BREW_PREFIX/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin/:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$BREW_PREFIX/opt/mysql@5.6/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
@@ -100,3 +101,14 @@ source $HOME/.zsh_prompt
 source $HOME/.secrets
 
 source ~/.fzf.zsh
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
+# bun completions
+[ -s "/Users/lisinge/.bun/_bun" ] && source "/Users/lisinge/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

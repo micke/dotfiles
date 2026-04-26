@@ -38,6 +38,7 @@ M.config = function ()
       "go",
       "graphql",
       "hcl",
+      "helm",
       "html",
       "javascript",
       "json",

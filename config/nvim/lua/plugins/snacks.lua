@@ -1,16 +1,22 @@
 local treesitter = require("plugins.treesitter.init")
+local navigation = require("plugins.tmux-navigation")
 
 return {
   "folke/snacks.nvim",
   dependencies = {
     treesitter,
+    navigation,
   },
-  -- priority = 1000,
-  -- lazy = false,
+  priority = 1000,
+  lazy = false,
   ---@type snacks.Config
-  opts = {
+  opts = function()
+    local navigation = require"nvim-tmux-navigation"
+  return {
     image = { enabled = true },
-    excplorer = {},
+    scroll = { enabled = true },
+    animate = { enabled = true },
+    statuscolumn = { enabled = true },
     picker = {
       matcher = {
         frecency = true,
@@ -28,6 +34,21 @@ return {
           },
         },
       },
+      sources = {
+        explorer = {
+          win = {
+            list = {
+              keys = {
+                ["<CR>"] = { { "pick_win", "jump" }, mode = { "n", "i" } },
+                ["<c-h>"] = { navigation.NvimTmuxNavigateLeft, mode = { "n", "i" } },
+                ["<c-j>"] = { navigation.NvimTmuxNavigateDown , mode = { "n", "i" } },
+                ["<c-k>"] = { navigation.NvimTmuxNavigateUp, mode = { "n", "i" } },
+                ["<c-l>"] = { navigation.NvimTmuxNavigateRight, mode = { "n", "i" } },
+              },
+            },
+          },
+        },
+      },
       -- previewers = {
       --   file = {
       --     max_size = 10 * 1024 * 1024, -- 10 MB
@@ -35,7 +56,8 @@ return {
       --   }
       -- }
     },
-  },
+  }
+  end,
   keys = {
     { "<space>e", function() Snacks.explorer() end, desc = "File Explorer" },
 
@@ -46,7 +68,7 @@ return {
     { "<space>sb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
 
     -- Git
-    { "<space>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
+    { "<space>gb", function() Snacks.picker.git_branches({ all = true }) end, desc = "Git Branches" },
     { "<space>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
     { "<space>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
     { "<space>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },

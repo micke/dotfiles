@@ -5,5 +5,8 @@ Include ~/.orbstack/ssh/config
 
 Include ~/.ssh/local
 
+Host 10.0.10.10
+  ForwardAgent yes
+
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

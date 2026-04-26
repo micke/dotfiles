@@ -1,6 +1,7 @@
 return {
   "NvChad/nvim-colorizer.lua",
   event = "BufReadPre",
+  enabled = false,
   opts = {
     filetypes = { "*", "!lazy" },
     buftype = { "*", "!prompt", "!nofile" },

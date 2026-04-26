@@ -1,7 +1,7 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
-  version = "v1.11.0",
+  -- version = "v1.11.0",
   lazy = false,
   priority = 999,
   dependencies = {
@@ -31,43 +31,43 @@ return {
           WinBarFilename = { bg = winBarBackground, fg = C.teal },
           WinBarContext = { bg = winBarBackground, fg = C.blue },
 
-          Pmenu = { fg = C.overlay2, bg = C.surface1 },
-          PmenuSel = { fg = C.text, bg = C.surface0 },
-
-          CmpItemMenu = { fg = C.pink, bg = "NONE", style = { "italic" } },
-
-          CmpItemKindField = brightenFgPair(C.red),
-          CmpItemKindProperty = brightenFgPair(C.red),
-          CmpItemKindEvent = brightenFgPair(C.red),
-
-          CmpItemKindText = brightenFgPair(C.green),
-          CmpItemKindEnum = brightenFgPair(C.green),
-          CmpItemKindKeyword = brightenFgPair(C.green),
-
-          CmpItemKindConstant = brightenFgPair(C.yellow),
-          CmpItemKindConstructor = brightenFgPair(C.yellow),
-          CmpItemKindReference = brightenFgPair(C.yellow),
-
-          CmpItemKindFunction = brightenFgPair(C.mauve),
-          CmpItemKindStruct = brightenFgPair(C.mauve),
-          CmpItemKindClass = brightenFgPair(C.mauve),
-          CmpItemKindModule = brightenFgPair(C.mauve),
-          CmpItemKindOperator = brightenFgPair(C.mauve),
-
-          CmpItemKindVariable = brightenFgPair(C.rosewater),
-          CmpItemKindFile = brightenFgPair(C.rosewater),
-
-          CmpItemKindUnit = brightenFgPair(C.peach),
-          CmpItemKindSnippet = brightenFgPair(C.peach),
-          CmpItemKindFolder = brightenFgPair(C.peach),
-
-          CmpItemKindMethod = brightenFgPair(C.blue),
-          CmpItemKindValue = brightenFgPair(C.blue),
-          CmpItemKindEnumMember = brightenFgPair(C.blue),
-
-          CmpItemKindInterface = brightenFgPair(C.teal),
-          CmpItemKindColor = brightenFgPair(C.teal),
-          CmpItemKindTypeParameter = brightenFgPair(C.teal),
+          -- Pmenu = { fg = C.overlay2, bg = C.surface1 },
+          -- PmenuSel = { fg = C.text, bg = C.surface0 },
+          --
+          -- CmpItemMenu = { fg = C.pink, bg = "NONE", style = { "italic" } },
+          --
+          -- CmpItemKindField = brightenFgPair(C.red),
+          -- CmpItemKindProperty = brightenFgPair(C.red),
+          -- CmpItemKindEvent = brightenFgPair(C.red),
+          --
+          -- CmpItemKindText = brightenFgPair(C.green),
+          -- CmpItemKindEnum = brightenFgPair(C.green),
+          -- CmpItemKindKeyword = brightenFgPair(C.green),
+          --
+          -- CmpItemKindConstant = brightenFgPair(C.yellow),
+          -- CmpItemKindConstructor = brightenFgPair(C.yellow),
+          -- CmpItemKindReference = brightenFgPair(C.yellow),
+          --
+          -- CmpItemKindFunction = brightenFgPair(C.mauve),
+          -- CmpItemKindStruct = brightenFgPair(C.mauve),
+          -- CmpItemKindClass = brightenFgPair(C.mauve),
+          -- CmpItemKindModule = brightenFgPair(C.mauve),
+          -- CmpItemKindOperator = brightenFgPair(C.mauve),
+          --
+          -- CmpItemKindVariable = brightenFgPair(C.rosewater),
+          -- CmpItemKindFile = brightenFgPair(C.rosewater),
+          --
+          -- CmpItemKindUnit = brightenFgPair(C.peach),
+          -- CmpItemKindSnippet = brightenFgPair(C.peach),
+          -- CmpItemKindFolder = brightenFgPair(C.peach),
+          --
+          -- CmpItemKindMethod = brightenFgPair(C.blue),
+          -- CmpItemKindValue = brightenFgPair(C.blue),
+          -- CmpItemKindEnumMember = brightenFgPair(C.blue),
+          --
+          -- CmpItemKindInterface = brightenFgPair(C.teal),
+          -- CmpItemKindColor = brightenFgPair(C.teal),
+          -- CmpItemKindTypeParameter = brightenFgPair(C.teal),
         }
       end,
     }

@@ -195,6 +195,7 @@ function M.config(_, opts)
     "eslint",
     "gopls",
     "graphql",
+    "helm_ls",
     "html",
     "jsonls",
     "rnix",
