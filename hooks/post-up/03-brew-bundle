@@ -3,5 +3,3 @@
 set -e
 
 brew bundle --global
-brew update
-brew upgrade

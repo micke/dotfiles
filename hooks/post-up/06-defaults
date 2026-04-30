@@ -95,9 +95,6 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
-# Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
-
 for app in "Dock" "Finder"; do
   killall "${app}" > /dev/null 2>&1
 done
