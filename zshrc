@@ -48,18 +48,13 @@ export LANG=en_US.UTF-8
 
 export FZF_DEFAULT_COMMAND='fd --type file --no-ignore-vcs --hidden --follow --exclude .git'
 
-# fzf hybrid theme
-# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-#  --color=fg:#c4c8c6,bg:#1c1f20,gutter:#1c1f20,hl:#a5812d
-#  --color=fg+:#cccccc,bg+:#27292d,hl+:#f6c76b
-#  --color=info:#625a88,prompt:#6f7780,pointer:#dc595d
-#  --color=marker:#a9b75d,spinner:#ba8dba,header:#79c1b8'
-
 # fzf catppuccin theme
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
- --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
- --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
- --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
+--color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
+--color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
+--color=selected-bg:#494D64 \
+--color=border:#6E738D,label:#CAD3F5"
 
 # fzf vim half page up/down
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -74,15 +69,8 @@ export HOMEBREW_INSTALL_CLEANUP=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 
-# Fix OBJC error on mojave
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
 # Enable history in erlang and elixir shell
 export ERL_AFLAGS="-kernel shell_history enabled"
-
-# asdf
-source $BREW_PREFIX/opt/asdf/libexec/asdf.sh
-export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 
 # Enable buildkit for docker
 export COMPOSE_DOCKER_CLI_BUILD=1
@@ -100,7 +88,7 @@ source $HOME/.zsh/aliases
 source $HOME/.zsh_prompt
 source $HOME/.secrets
 
-source ~/.fzf.zsh
+source <(fzf --zsh)
 
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -112,3 +100,6 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# mise
+eval "$($BREW_PREFIX/bin/mise activate zsh)"
