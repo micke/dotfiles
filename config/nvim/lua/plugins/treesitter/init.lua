@@ -3,14 +3,23 @@ local contextCommentString = require("plugins.treesitter.ts-context-commentstrin
 
 local M = {
   "nvim-treesitter/nvim-treesitter",
+  branch = "main",
+  version = false,
   build = ":TSUpdate",
-  event = "BufReadPost",
+  lazy = false,
   dependencies = {
     treesj,
     contextCommentString,
     "nvim-treesitter/nvim-treesitter-textobjects",
-    "windwp/nvim-ts-autotag",
     "RRethy/nvim-treesitter-endwise",
+    {
+      "windwp/nvim-ts-autotag",
+      opts = {
+        opts = {
+          enable_close_on_slash = true,
+        },
+      }
+    },
     {
       "nvim-treesitter/nvim-treesitter-context",
       opts = {
@@ -26,35 +35,35 @@ local M = {
 }
 
 M.config = function ()
-  local ts_config = require("nvim-treesitter.configs")
+  local ts_config = require("nvim-treesitter")
+
+  ts_config.install {
+    "bash",
+    "css",
+    "diff",
+    "dockerfile",
+    "elixir",
+    "go",
+    "graphql",
+    "hcl",
+    "helm",
+    "html",
+    "javascript",
+    "json",
+    "lua",
+    "nix",
+    "python",
+    "regex",
+    "ruby",
+    "rust",
+    "scss",
+    "typescript",
+    "vue",
+    "yaml",
+    "embedded_template",
+  }
 
   ts_config.setup {
-    ensure_installed = {
-      "bash",
-      "css",
-      "diff",
-      "dockerfile",
-      "elixir",
-      "go",
-      "graphql",
-      "hcl",
-      "helm",
-      "html",
-      "javascript",
-      "json",
-      "lua",
-      "nix",
-      "python",
-      "regex",
-      "ruby",
-      "rust",
-      "scss",
-      "typescript",
-      "vue",
-      "yaml",
-    },
-    sync_install = false,
-    auto_install = true,
     highlight = {
       enable = true,
       use_languagetree = true,
@@ -129,18 +138,6 @@ M.config = function ()
           ["<leader>A"] = "@parameter.inner",
         },
       },
-    },
-    -- matchup = {
-    --   enable = true
-    -- },
-    autopairs = {
-      enable = true
-    },
-    autotag = {
-      enable = true
-    },
-    endwise = {
-      enable = true
     },
   }
 end
