@@ -42,16 +42,16 @@ function M.config(_, opts)
 
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover { border = "rounded" } end, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set("n", "gk", vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set("n", "gk", function() vim.lsp.buf.signature_help { border = "rounded" } end, bufopts)
     vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufopts)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-    vim.keymap.set("n", "<space>d", vim.diagnostic.open_float)
+    vim.keymap.set("n", "<space>d", function() vim.diagnostic.open_float { border = "rounded" } end)
     -- vim.keymap.set("n", "<space>q", vim.lsp.diagnostic.set_loclist, kmopts)
 
     if client.server_capabilities.documentHighlightProvider then
@@ -207,13 +207,6 @@ function M.config(_, opts)
     })
     vim.lsp.enable(server)
   end
-
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-     border = "single",
-  })
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-     border = "single",
-  })
 end
 
 return M
