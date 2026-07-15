@@ -1,0 +1,189 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MAIN_REPO="$HOME/code/teamtailor/aboard"
+STATE_DIR="$HOME/.cache/aboard-feature/sessions"
+LOG_FILE="$HOME/.cache/aboard-feature/teardown.log"
+
+usage() {
+  echo "Usage: aboard-feature <branch-name> [base]"
+  echo "       aboard-feature setup"
+  echo "       aboard-feature teardown <session-name>"
+  echo ""
+  echo "Creates a worktree at ~/code/teamtailor/aboard-<name> (feature/ and fix/"
+  echo "prefixes stripped from the directory name), symlinks .env.development from"
+  echo "the main checkout, and opens a tmux session with nvim + claude and a server"
+  echo "window that installs gems and node modules, creates an isolated aboard-env"
+  echo "(own port, database, and puma-dev mapping), and starts ./bin/dev."
+  echo ""
+  echo "When the tmux session is killed, the aboard-env is destroyed and the"
+  echo "worktree removed (kept if it has uncommitted changes) via a session-closed"
+  echo "hook. Teardown output lands in $LOG_FILE."
+  echo ""
+  echo "  base    Ref to branch from. With no base, an existing remote branch"
+  echo "          (e.g. an open PR) is fetched and checked out; otherwise the"
+  echo "          branch is created from origin/main (fetched first). Passing a"
+  echo "          base forces a new branch; pass '.' to branch from the main"
+  echo "          checkout's current HEAD."
+  echo ""
+  echo "  setup     Internal: run by the server window before ./bin/dev."
+  echo "  teardown  Internal: run by the tmux session-closed hook."
+  exit 1
+}
+
+sanitize_env_name() {
+  printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9-' '-' |
+    cut -c1-31 | sed 's/^-*//; s/-*$//'
+}
+
+state_file_for() {
+  printf '%s/%s' "$STATE_DIR" "${1//\//_}"
+}
+
+# Runs inside the worktree (cwd) in the tmux server window, so output is
+# visible and mise is active in the interactive shell.
+setup() {
+  bundle check >/dev/null 2>&1 || { echo "==> Installing gems..."; bundle install; }
+  echo "==> Installing node modules..."
+  npm install
+
+  # Give the worktree its own port, databases, and puma-dev mapping so it can
+  # run alongside the main checkout. Skip if this worktree already has one.
+  if [ ! -f .aboard-env-name ]; then
+    slug="$(basename "$PWD")"
+    slug="${slug#aboard-}"
+    bin/aboard-env create "$(sanitize_env_name "$slug")"
+  fi
+}
+
+# Runs from the global tmux session-closed hook. Only acts on sessions this
+# script created (tracked in STATE_DIR); destroys the aboard-env and removes
+# the worktree unless it has uncommitted changes.
+teardown() {
+  session="$1"
+  state_file="$(state_file_for "$session")"
+  [ -f "$state_file" ] || exit 0
+
+  dir="$(cat "$state_file")"
+  mkdir -p "$(dirname "$LOG_FILE")"
+  exec >>"$LOG_FILE" 2>&1
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] tearing down session '$session' ($dir)"
+
+  # The hook runs outside a login shell; make sure ruby/node resolve via mise.
+  export PATH="$HOME/.local/share/mise/shims:$PATH"
+
+  if [ -d "$dir" ]; then
+    if [ -f "$dir/.aboard-env-name" ]; then
+      (cd "$dir" && bin/aboard-env destroy "$(cat .aboard-env-name)" -y) ||
+        echo "aboard-env destroy failed; run it manually"
+    fi
+    git -C "$MAIN_REPO" worktree remove "$dir" ||
+      echo "worktree not removed (uncommitted changes?); left at $dir"
+  fi
+
+  rm -f "$state_file"
+  echo "done"
+}
+
+case "${1:-}" in
+  setup)
+    setup
+    exit 0
+    ;;
+  teardown)
+    [ $# -ge 2 ] || usage
+    teardown "$2"
+    exit 0
+    ;;
+esac
+
+[ $# -ge 1 ] || usage
+
+branch="$1"
+base="${2:-}"
+
+git -C "$MAIN_REPO" rev-parse --git-dir >/dev/null 2>&1 ||
+  { echo "error: $MAIN_REPO is not a git repository" >&2; exit 1; }
+
+x="${branch#feature/}"
+x="${x#fix/}"
+dir="$HOME/code/teamtailor/aboard-$x"
+session="$(echo "$branch" | tr '.:' '--')"
+
+if [ -d "$dir" ]; then
+  echo "Worktree $dir already exists, reusing it."
+elif git -C "$MAIN_REPO" show-ref --verify --quiet "refs/heads/$branch"; then
+  echo "Branch $branch already exists, adding worktree for it."
+  git -C "$MAIN_REPO" worktree add "$dir" "$branch"
+elif [ -z "$base" ] &&
+  git -C "$MAIN_REPO" ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+  echo "Remote branch origin/$branch exists, checking it out."
+  git -C "$MAIN_REPO" fetch origin "$branch"
+  git -C "$MAIN_REPO" worktree add --track -b "$branch" "$dir" "origin/$branch"
+else
+  if [ -z "$base" ]; then
+    echo "Fetching origin/main..."
+    git -C "$MAIN_REPO" fetch origin main
+    base="origin/main"
+  elif [ "$base" = "." ]; then
+    base="$(git -C "$MAIN_REPO" rev-parse --abbrev-ref HEAD)"
+  fi
+  echo "Creating $branch from $base in $dir"
+  git -C "$MAIN_REPO" worktree add -b "$branch" "$dir" "$base"
+fi
+
+ln -sfn "$MAIN_REPO/.env.development" "$dir/.env.development"
+
+if command -v mise >/dev/null && [ -f "$dir/mise.toml" ]; then
+  mise trust "$dir/mise.toml" >/dev/null 2>&1 || true
+fi
+
+# Track the session -> worktree mapping for teardown, and make sure the
+# session-closed hook is installed (idempotent; survives until the tmux
+# server restarts, which also ends every session it would clean up after).
+mkdir -p "$STATE_DIR"
+printf '%s\n' "$dir" > "$(state_file_for "$session")"
+tmux set-hook -g session-closed \
+  "run-shell '$HOME/.bin/aboard-feature teardown \"#{hook_session_name}\"'"
+
+if ! tmux has-session -t "=$session" 2>/dev/null; then
+  # Size the detached session like the client it will be attached to, so the
+  # 30% split is computed against the real height instead of the 80x24 default.
+  if [ -n "${TMUX:-}" ]; then
+    read -r width height < <(tmux display-message -p '#{client_width} #{client_height}')
+  else
+    width="$(tput cols 2>/dev/null || echo 200)"
+    height="$(tput lines 2>/dev/null || echo 50)"
+  fi
+
+  tmux new-session -d -s "$session" -c "$dir" -n editor -x "$width" -y "$height"
+  tmux send-keys -t "=$session:editor" 'nvim' Enter
+  tmux split-window -v -l 30% -t "=$session:editor" -c "$dir"
+  tmux send-keys -t "=$session:editor" "claude -n \"$branch\"" Enter
+  tmux new-window -t "=$session" -n server -c "$dir"
+  tmux send-keys -t "=$session:server" 'aboard-feature setup && ./bin/dev' Enter
+  tmux select-window -t "=$session:editor"
+  tmux select-pane -t "=$session:editor.{top}"
+fi
+
+# Show the env's URL in the status bar. Prefer the name aboard-env actually
+# recorded; fall back to the name setup will pick. The URL is prepended to the
+# global status-right rather than replacing it -- that value carries the
+# tmux-continuum save hook and the catppuccin session module, and a per-session
+# override that dropped them would silently stop continuum's periodic saves.
+if [ -f "$dir/.aboard-env-name" ]; then
+  env_name="$(cat "$dir/.aboard-env-name")"
+else
+  env_name="$(sanitize_env_name "$x")"
+fi
+global_right="$(tmux show-options -gv status-right)"
+# Note: set-option rejects the "=" exact-match target prefix, unlike send-keys.
+tmux set-option -t "$session" status-right-length 160
+tmux set-option -t "$session" status-right \
+  "#[dim]https://app.$env_name.aboardhr.localhost #[default]$global_right"
+
+if [ -n "${TMUX:-}" ]; then
+  tmux switch-client -t "=$session"
+else
+  tmux attach-session -t "=$session"
+fi

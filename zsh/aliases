@@ -42,3 +42,4 @@ alias newlineton='awk '\''{printf "%s\\n", $0}'\'''
 alias diff="diff-so-fancy"
 
 alias wp="bin/webpack-dev-server --hot"
+alias af=aboard-feature
